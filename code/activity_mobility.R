@@ -36,3 +36,6 @@ brazil_mobility_q1 <- mobility %>%
 # doubling days of covid --------------------------------------------------
 # https://en.wikipedia.org/wiki/Doubling_time
 
+#covid %<>% 
+#    mutate(doubl_time_cases = )
+
