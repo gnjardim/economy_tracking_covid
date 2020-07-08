@@ -1,0 +1,56 @@
+---
+title: "Atividade x Mobilidade"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(lubridate)
+```
+
+```{r, include = FALSE, warning = FALSE}
+# google mobility report
+mobility <- read_csv("../input/Global_Mobility_Report.csv") %>% 
+    filter(country_region == "Brazil") %>% 
+    mutate(sub_region_1    = str_remove_all(sub_region_1, "State of "),
+           iso_3166_2_code = str_remove_all(iso_3166_2_code, "BR-"))
+
+# brasil.io (caso_full)
+covid <- read_csv("../input/caso_full.csv") %>% 
+    filter(place_type == "state", is_repeated == FALSE)
+    
+
+brasil <- covid %>% 
+    group_by(date) %>% 
+    summarise(last_available_deaths    = sum(last_available_deaths),
+              last_available_confirmed = sum(last_available_confirmed))
+
+estados <- covid %>% 
+    select(-city, -is_repeated, -place_type) %>% 
+    arrange(state, date)
+```
+
+```{r include = FALSE}
+# calculate empirical relation --------------------------------------------
+# The empirical relationship between mobility and GDP growth rate across economies in the first quarter of 2020 is used to convert a country’s economic activity based on people’s mobility levels.
+
+relation_eq <- function(mobility) {
+    activity <- 0.3*mobility - 0.01
+}
+
+
+# doubling days of covid --------------------------------------------------
+# More precisely, it is days between the current date (the date at which the measurement is taken) and the most recent prior date at which the confirmed cases were half the current level
+
+nearest_n <- function(x, num) {
+    x[which.min(abs(x - num))]
+}
+
+brasil <- brasil %>% 
+    mutate(half_cum_cases  = last_available_confirmed / 2,
+           half_cum_deaths = last_available_deaths / 2)
+
+```
+
