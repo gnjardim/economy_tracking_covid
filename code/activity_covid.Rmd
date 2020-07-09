@@ -1,10 +1,10 @@
 ---
-title: "Atividade x Mobilidade"
+title: "Atividade x COVID"
 output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, fig.width = 6, fig.height = 3.2)
+knitr::opts_chunk$set(echo = TRUE, fig.width = 6, fig.height = 4)
 
 library(tidyverse)
 library(lubridate)
@@ -162,7 +162,7 @@ bases_estados_df <- map(list_estados, doubl_dates_st) %>%
                                 100, relation_eq(mobility)),
            smth_date   = rollmean(dist_date, 7, na.pad = T),
            smth_activ  = rollmean(activity, 7, na.pad = T)
-          )%>%
+          ) %>%
     arrange(state, date, regiao)
 
 
@@ -174,80 +174,57 @@ estados_mob_b <- bases_estados_df %>%
 ```
 
 ```{r include = FALSE}
-plot_activity_mobility <- function(df){
+plot_activity_mobility <- function(df) {
     p <- ggplot(df, aes(x = smth_date, y = smth_activ)) +
-        geom_path(color = "steelblue", size =0.8) +
+    geom_path(color = "steelblue", size = 0.8) +
     geom_vline(xintercept = 19, linetype = "dotted", size = 0.8) +
     #geom_point(data = brasil_mob_b, shape = 22, fill = "white") +
-    ylim(70,100)+
+    ylim(70, 100)+
     xlim(0, 25) + 
-    theme(legend.position="none")+
-    facet_wrap(~state)
+    facet_wrap(~ state) +
+    ylab("Daily Economic Activity") + xlab("Doubling days of confirmed cases")
     
     return(p)
 }
 
 
 
-plot_regiao <- function(reg){
-    base_regiao <-bases_estados_df %>% 
-               filter(regiao == reg)%>% 
-    group_by(state)
+plot_regiao <- function(reg) {
     
-list_estados_regiao <- group_split(base_regiao)
-
-plots_list <- lapply(list_estados_regiao, plot_activity_mobility) 
-  
-return(plots_list) 
+    base_regiao <- bases_estados_df %>% 
+        filter(regiao == reg)
+    
+    return(plot_activity_mobility(base_regiao)) 
 }
 
-label_y = textGrob("Daily Economic Activity", rot = 90, vjust = 0.5)
-label_x = textGrob("Doubling days of confirmed cases", rot = 180, hjust = 0.5) 
-
 ```
 
-## Replicando para a Região Sudeste
-```{r echo = FALSE, warning = FALSE}
-lista_plot_sudeste <- plot_regiao("Sudeste")
-n <- length(lista_plot_sudeste)
-nCol <- floor(sqrt(n))
-do.call("grid.arrange", c(lista_plot_sudeste, ncol=nCol))
-
+\pagebreak
+## Região Sudeste
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+plot_regiao("Sudeste")
 ```
 
-## Replicando para a Região Sul
-```{r echo = FALSE, warning = FALSE}
-lista_plot_sul <- plot_regiao("Sul")
-n <- length(lista_plot_sul)
-nCol <- floor(sqrt(n))
-do.call("grid.arrange", c(lista_plot_sul, ncol=nCol))
-
+\pagebreak
+## Região Sul
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 3}
+plot_regiao("Sul")
 ```
 
-## Replicando para a Região Centro-Oeste
-```{r echo = FALSE, warning = FALSE}
-lista_plot_co <- plot_regiao("Centro-Oeste")
-n <- length(lista_plot_co)
-nCol <- floor(sqrt(n))
-do.call("grid.arrange", c(lista_plot_co, ncol=nCol))
-
+\pagebreak
+## Região Centro-Oeste
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+plot_regiao("Centro-Oeste")
 ```
 
-## Replicando para a Região Nordeste
-```{r echo = FALSE, warning = FALSE}
-lista_plot_nordeste <- plot_regiao("Nordeste")
-n <- length(lista_plot_nordeste)
-nCol <- floor(sqrt(n))
-do.call("grid.arrange", c(lista_plot_nordeste, ncol=nCol))
-
+\pagebreak
+## Região Nordeste
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
+plot_regiao("Nordeste")
 ```
 
-
-## Replicando para a Região Norte
-```{r echo = FALSE, warning = FALSE}
-lista_plot_norte <- plot_regiao("Norte")
-n <- length(lista_plot_norte)
-nCol <- floor(sqrt(n))
-do.call("grid.arrange", c(lista_plot_nordeste, ncol=nCol))
-
+\pagebreak
+## Região Norte
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
+plot_regiao("Norte")
 ```
