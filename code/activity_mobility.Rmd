@@ -37,14 +37,13 @@ brasil <- covid %>%
 
 estados <- covid %>% 
     select(-city, -is_repeated, -place_type) %>% 
-    group_by(state, date)%>%
-        summarise(last_available_deaths    = sum(last_available_deaths),
-              last_available_confirmed = sum(last_available_confirmed))%>%
+    group_by(state, date) %>%
+    summarise(last_available_deaths    = sum(last_available_deaths),
+              last_available_confirmed = sum(last_available_confirmed)) %>%
     full_join(mobility %>% filter(!is.na(sub_region_1)),
-              by = c("state" = "iso_3166_2_code","date"="date")) %>%
-    select(-starts_with("country_region"),-starts_with("sub_region"),
--starts_with("census_fips")) %>% 
-    arrange(state,date)
+              by = c("state" = "iso_3166_2_code", "date" = "date")) %>%
+    select(-starts_with("country_region"),-starts_with("sub_region"), -starts_with("census_fips")) %>% 
+    arrange(state, date)
   
 ```
 
@@ -83,7 +82,7 @@ doubling_days <- function(half_num, current_date, df) {
 
 # run functions in data ---------------------------------------------------
 brasil <- brasil %>% 
-    mutate(across(matches("last_available"), ~replace(., is.na(.), 0))) %>% 
+    mutate(across(matches("last_available"), ~replace(., is.na(.), 0)),) %>% 
     mutate(half_cum_cases  = last_available_confirmed / 2,
            half_cum_deaths = last_available_deaths / 2)
 
@@ -119,27 +118,36 @@ ggplot(brasil_df, aes(x = smth_date, y = smth_activ)) +
 ```
 
 ![https://www.luohanacademy.com/indices/covid19/overview](../meta/PET_Brazil.png){#id .class width=90% height=100%}
+
 ```{r include = FALSE}
-# run functions in data ---------------------------------------------------
-# States 
-estados <- estados %>%
-    mutate(across(matches("last_available"), ~replace(., is.na(.), 0))) %>% 
-    group_by(state,date)%>%
-    mutate(half_cum_cases  = last_available_confirmed / 2,
-           half_cum_deaths = last_available_deaths / 2)%>% 
-    group_by(state)
-
-list_estados <- group_split(estados)
-
 doubl_dates_st <- function(df){
-    df <- map2(df$half_cum_cases, df$date,
-                                ~ doubling_days(.x, .y,df))%>%
-    unlist()
-    return(df)
+    dates <- map2(df$half_cum_cases, df$date, ~ doubling_days(.x, .y, df)) %>%
+        unlist()
+    
+    df_dt <- df %>% 
+        mutate(doubl_dates = c(NA, dates)) %>% 
+        mutate(doubl_dates = ifelse(half_cum_cases == 0, NA, doubl_dates) %>% as_date())
+    
+    return(df_dt)
 }
 
-bases_estados_df <- lapply(list_estados, doubl_dates_st) 
+# run functions in data ---------------------------------------------------
+# states 
+estados <- estados %>%
+    mutate(across(matches("last_available"), ~replace(., is.na(.), 0))) %>% 
+    mutate(half_cum_cases  = last_available_confirmed / 2,
+           half_cum_deaths = last_available_deaths / 2) %>% 
+    group_by(state)
+
+# split by state
+list_estados <- group_split(estados)
+
+bases_estados_df <- map(list_estados, doubl_dates_st) %>% 
+    bind_rows() %>% 
+    group_by(state) %>% 
+    fill(doubl_dates)
     
+
 # find bottom of activity
 
 ```
