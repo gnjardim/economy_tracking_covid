@@ -119,7 +119,7 @@ Como *sanity check*, replicamos o gráfico feito para o Brasil no relatório, ut
 $$
 \Delta \text{Atividade} = 0.38 \cdot \Delta\text{Mobilidade}
 $$
-A partir disso, usamos a média móvel de 7 dias do Índice de Atividade construído e do número de dias necessários para duplicar os casos, buscando suavizar a série.
+A partir disso, usamos a média móvel de 7 dias do Índice de Atividade construído e do número de dias necessários para duplicar os casos, buscando suavizar a série, conforme indicado.
 
 \vspace{1cm}
 ```{r echo = FALSE, warning = FALSE}
