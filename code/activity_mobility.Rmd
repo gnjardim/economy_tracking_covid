@@ -11,6 +11,7 @@ library(lubridate)
 library(zoo)
 library(dplyr)
 library(owdbr)
+library(gridExtra)
 
 theme_set(theme_bw())
 ```
@@ -173,14 +174,15 @@ estados_mob_b <- bases_estados_df %>%
 ```
 
 ```{r include = FALSE}
-reg <- "Sudeste"
 plot_activity_mobility <- function(df){
     p <- ggplot(df, aes(x = smth_date, y = smth_activ)) +
+        geom_path(color = "steelblue", size =0.8) +
     geom_vline(xintercept = 19, linetype = "dotted", size = 0.8) +
     #geom_point(data = brasil_mob_b, shape = 22, fill = "white") +
     ylim(70,100)+
     xlim(0, 25) + 
-    ylab("Daily Economic Activity") + xlab("Doubling days of confirmed cases") 
+    theme(legend.position="none")+
+    facet_wrap(~state)
     
     return(p)
 }
@@ -191,18 +193,61 @@ plot_regiao <- function(reg){
     base_regiao <-bases_estados_df %>% 
                filter(regiao == reg)%>% 
     group_by(state)
+    
 list_estados_regiao <- group_split(base_regiao)
 
-pots_list <- lapply(list_estados_regiao, plot_activity_mobility) 
+plots_list <- lapply(list_estados_regiao, plot_activity_mobility) 
   
-return(pots_list) 
+return(plots_list) 
 }
+
+label_y = textGrob("Daily Economic Activity", rot = 90, vjust = 0.5)
+label_x = textGrob("Doubling days of confirmed cases", rot = 180, hjust = 0.5) 
 
 ```
 
 ## Replicando para a Região Sudeste
 ```{r echo = FALSE, warning = FALSE}
-plot_regiao("Sudeste")[[1]]
+lista_plot_sudeste <- plot_regiao("Sudeste")
+n <- length(lista_plot_sudeste)
+nCol <- floor(sqrt(n))
+do.call("grid.arrange", c(lista_plot_sudeste, ncol=nCol))
 
 ```
 
+## Replicando para a Região Sul
+```{r echo = FALSE, warning = FALSE}
+lista_plot_sul <- plot_regiao("Sul")
+n <- length(lista_plot_sul)
+nCol <- floor(sqrt(n))
+do.call("grid.arrange", c(lista_plot_sul, ncol=nCol))
+
+```
+
+## Replicando para a Região Centro-Oeste
+```{r echo = FALSE, warning = FALSE}
+lista_plot_co <- plot_regiao("Centro-Oeste")
+n <- length(lista_plot_co)
+nCol <- floor(sqrt(n))
+do.call("grid.arrange", c(lista_plot_co, ncol=nCol))
+
+```
+
+## Replicando para a Região Nordeste
+```{r echo = FALSE, warning = FALSE}
+lista_plot_nordeste <- plot_regiao("Nordeste")
+n <- length(lista_plot_nordeste)
+nCol <- floor(sqrt(n))
+do.call("grid.arrange", c(lista_plot_nordeste, ncol=nCol))
+
+```
+
+
+## Replicando para a Região Norte
+```{r echo = FALSE, warning = FALSE}
+lista_plot_norte <- plot_regiao("Norte")
+n <- length(lista_plot_norte)
+nCol <- floor(sqrt(n))
+do.call("grid.arrange", c(lista_plot_nordeste, ncol=nCol))
+
+```
