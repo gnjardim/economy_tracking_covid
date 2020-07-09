@@ -4,7 +4,7 @@ output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, fig.width = 6, fig.height = 4)
+knitr::opts_chunk$set(echo = TRUE, fig.width = 6, fig.height = 3.2)
 
 library(tidyverse)
 library(lubridate)
@@ -113,11 +113,19 @@ brasil_mob_b <- brasil_df %>% filter(smth_activ == min(smth_activ, na.rm = TRUE)
 ```
 
 
-## Replicando para o Brasil
+## Replicando para o Brasil  
+
+Como *sanity check*, replicamos o gráfico feito para o Brasil no relatório, utilizando os dados de mobilidade do Google e o número de casos de COVID do país. Usamos a seguinte equação para estabelecer a relação entre os dados de mobilidade e o índice de atividade, baseada no relatório original: 
+$$
+\Delta \text{Atividade} = 0.38 \cdot \Delta\text{Mobilidade}
+$$
+A partir disso, usamos a média móvel de 7 dias do Índice de Atividade construído e do número de dias necessários para duplicar os casos, buscando suavizar a série.
+
+\vspace{1cm}
 ```{r echo = FALSE, warning = FALSE}
 ggplot(brasil_df, aes(x = smth_date, y = smth_activ)) +
     geom_path(color = "steelblue") +
-    geom_vline(xintercept = 19, linetype = "dotted", size = 0.8) +
+    #geom_vline(xintercept = 19, linetype = "dotted", size = 0.8) +
     #geom_point(data = brasil_mob_b, shape = 22, fill = "white") +
     ylim(70,100)+
     xlim(0, 25) + 
@@ -126,6 +134,8 @@ ggplot(brasil_df, aes(x = smth_date, y = smth_activ)) +
 
 ![https://www.luohanacademy.com/indices/covid19/overview](../meta/PET_Brazil.png){#id .class width=90% height=100%}
 
+\pagebreak
+Aplicando a mesma metodologia para cada um dos estados:
 ```{r include = FALSE}
 doubl_dates_st <- function(df){
     dates <- map2(df$half_cum_cases, df$date, ~ doubling_days(.x, .y, df)) %>%
@@ -170,16 +180,16 @@ bases_estados_df <- map(list_estados, doubl_dates_st) %>%
 estados_mob_b <- bases_estados_df %>%
     group_by(state) %>%
     filter(smth_activ == min(smth_activ, na.rm = TRUE))
-
 ```
 
 ```{r include = FALSE}
 plot_activity_mobility <- function(df) {
+    
     p <- ggplot(df, aes(x = smth_date, y = smth_activ)) +
     geom_path(color = "steelblue", size = 0.8) +
-    geom_vline(xintercept = 19, linetype = "dotted", size = 0.8) +
+    #geom_vline(xintercept = 19, linetype = "dotted", size = 0.8) +
     #geom_point(data = brasil_mob_b, shape = 22, fill = "white") +
-    ylim(70, 100)+
+    ylim(70, 100) +
     xlim(0, 25) + 
     facet_wrap(~ state) +
     ylab("Daily Economic Activity") + xlab("Doubling days of confirmed cases")
@@ -196,10 +206,8 @@ plot_regiao <- function(reg) {
     
     return(plot_activity_mobility(base_regiao)) 
 }
-
 ```
 
-\pagebreak
 ## Região Sudeste
 ```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
 plot_regiao("Sudeste")
