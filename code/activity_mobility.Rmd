@@ -10,6 +10,7 @@ library(tidyverse)
 library(lubridate)
 library(zoo)
 library(dplyr)
+library(owdbr)
 
 theme_set(theme_bw())
 ```
@@ -35,16 +36,20 @@ brasil <- covid %>%
     select(-starts_with("country_region"), -starts_with("sub_region")) %>% 
     arrange(date)
 
+uf_estado <- owdbr::uflist()
+
 estados <- covid %>% 
     select(-city, -is_repeated, -place_type) %>% 
     group_by(state, date) %>%
     summarise(last_available_deaths    = sum(last_available_deaths),
               last_available_confirmed = sum(last_available_confirmed)) %>%
     full_join(mobility %>% filter(!is.na(sub_region_1)),
-              by = c("state" = "iso_3166_2_code", "date" = "date")) %>%
+              by = c("state" = "iso_3166_2_code", "date" = "date"))%>%
     select(-starts_with("country_region"),-starts_with("sub_region"), -starts_with("census_fips")) %>% 
-    arrange(state, date)
+    left_join(uf_estado,by = c("state" = "UF"))%>%
+    select(- State )
   
+
 ```
 
 ```{r include = FALSE}
@@ -145,9 +150,33 @@ list_estados <- group_split(estados)
 bases_estados_df <- map(list_estados, doubl_dates_st) %>% 
     bind_rows() %>% 
     group_by(state) %>% 
-    fill(doubl_dates)
-    
+    fill(doubl_dates)%>%
+    ungroup()%>%
+    mutate(doubl_dates = as.Date(doubl_dates),
+           dist_date   = as.numeric(date - doubl_dates),
+           mobility    = rowMeans(select(., ends_with("baseline"))),
+           activity    = ifelse(relation_eq(mobility) > 100, 
+                                100, relation_eq(mobility)),
+           smth_date   = rollmean(dist_date, 7, na.pad = T),
+           smth_activ  = rollmean(activity, 7, na.pad = T)
+          )%>%
+    arrange(state,date,regiao)
+
 
 # find bottom of activity
+estados_mob_b <- bases_estados_df %>%
+    group_by(state)%>%
+    filter(smth_activ == min(smth_activ, na.rm = TRUE))
 
+```
+
+## Replicando para a Rio de Janeiro
+```{r echo = FALSE, warning = FALSE}
+base_rj <-bases_estados_df %>% 
+    filter(state == "RJ")
+ggplot(base_rj, aes(x = smth_date, y = smth_activ)) +
+    geom_path(color = "steelblue") +
+    geom_vline(xintercept = 19, linetype = "dotted", size = 0.8) +
+    #geom_point(data = brasil_mob_b, shape = 22, fill = "white") 
+    ylab("Daily Economic Activity") + xlab("Doubling days of confirmed cases") 
 ```
