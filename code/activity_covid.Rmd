@@ -9,8 +9,9 @@ knitr::opts_chunk$set(echo = TRUE, fig.width = 6, fig.height = 3.2)
 library(tidyverse)
 library(lubridate)
 library(janitor)
-library(zoo)
 library(dplyr)
+library(dynlm)
+library(zoo)
 
 theme_set(theme_bw())
 ```
@@ -250,9 +251,6 @@ plot_regiao("Norte")
 
 \pagebreak
 # Usando dados de energia
-
-Trocando os dados de mobilidade pela diferença entre o consumo de energia atual e no ano anterior (em MWh).
-
 ```{r echo = FALSE, warning = FALSE}
 data_max <- max(energy$data) - 366
 
@@ -294,31 +292,46 @@ plot_regiao_energia <- function(reg) {
 }
 ```
 
-## Região Sudeste
+## Testando a relação entre consumo de energia e o índice anterior
+```{r echo = FALSE, warning = FALSE, message = FALSE}
+regression <- dynlm(smth_activ ~ smth_consumo, data = energy_df) %>% 
+    coef()
+
+ggplot(energy_df, aes(x = smth_consumo, y = smth_activ)) +
+    geom_point(color = "steelblue") +
+    geom_abline(slope = regression[2], intercept = regression[1])
+```
+
+
+## Repetindo os gráficos  
+Trocando os dados de mobilidade pela diferença entre o consumo de energia atual e no ano anterior (em MWh).
+
+
+### Região Sudeste
 ```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
 plot_regiao_energia("Sudeste")
 ```
 
 \pagebreak
-## Região Sul
+### Região Sul
 ```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 3}
 plot_regiao_energia("Sul")
 ```
 
 \pagebreak
-## Região Centro-Oeste
+### Região Centro-Oeste
 ```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
 plot_regiao_energia("Centro-Oeste")
 ```
 
 \pagebreak
-## Região Nordeste
+### Região Nordeste
 ```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
 plot_regiao_energia("Nordeste")
 ```
 
 \pagebreak
-## Região Norte
+### Região Norte
 ```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
 plot_regiao_energia("Norte")
 ```
