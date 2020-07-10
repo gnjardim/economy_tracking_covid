@@ -257,7 +257,7 @@ data_max <- max(energy$data) - 366
 ano_anterior <- energy %>% 
     filter(data >= as.Date("2019-01-01") & data <= as.Date("2019-12-31")) %>% 
     rename(ano_anterior = consumo) %>% 
-    mutate(data = data + 366)
+    mutate(data = data + 365)
 
 energy_df <- energy %>% 
     left_join(ano_anterior) %>% 
@@ -266,8 +266,7 @@ energy_df <- energy %>%
     full_join(bases_estados_df, by = c("data" = "date", "uf" = "state")) %>% 
     group_by(uf) %>% 
     arrange(uf, data) %>% 
-    mutate(dif_baseline = 100 + (dif_baseline / sd(dif_baseline, na.rm = TRUE)),
-           smth_consumo = rollmean(dif_baseline, 7, na.pad = T))
+    mutate(smth_consumo = rollmean(dif_baseline, 7, na.pad = T))
 ```
 
 ```{r echo = FALSE, warning = FALSE, message = FALSE}
@@ -277,7 +276,7 @@ plot_activity_energy <- function(df) {
     geom_path(color = "steelblue", size = 0.8) +
     xlim(0, 25) + 
     facet_wrap(~ uf) +
-    ylab("Energy Consumption") + xlab("Doubling days of confirmed cases")
+    ylab("Change from previous year in Energy Consumption") + xlab("Doubling days of confirmed cases")
     
     return(p)
 }
