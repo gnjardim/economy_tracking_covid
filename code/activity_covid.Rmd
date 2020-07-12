@@ -10,7 +10,6 @@ library(tidyverse)
 library(lubridate)
 library(janitor)
 library(dplyr)
-library(dynlm)
 library(zoo)
 
 theme_set(theme_bw())
@@ -35,16 +34,17 @@ energy <- read_csv2("../input/energia_data.csv") %>%
     group_by(data, uf, estado, classe) %>% 
     summarise(consumo = sum(consumo_m_wh))
     
-# brasil.io (caso_full)
-covid <- read_csv("../input/caso_full.csv") %>% 
-    filter(place_type == "state", is_repeated == FALSE)
+# https://covid.saude.gov.br/
+covid <- read_csv2("../input/HIST_PAINEL_COVIDBR_11jul2020.csv") %>% 
+    filter(!is.na(estado)) %>% 
+    mutate(date = as.Date(data, "%d/%m/%Y"))
 
 
 # divide into brazil and states -------------------------------------------
 brasil <- covid %>% 
     group_by(date) %>% 
-    summarise(last_available_deaths    = sum(last_available_deaths),
-              last_available_confirmed = sum(last_available_confirmed)) %>% 
+    summarise(last_available_deaths    = sum(obitosAcumulado),
+              last_available_confirmed = sum(casosAcumulado)) %>% 
     full_join(mobility %>% filter(is.na(sub_region_1))) %>% 
     select(-starts_with("country_region"), -starts_with("sub_region")) %>% 
     arrange(date)
@@ -52,14 +52,14 @@ brasil <- covid %>%
 uf_estado <- owdbr::uflist()
 
 estados <- covid %>% 
-    select(-city, -is_repeated, -place_type) %>% 
-    group_by(state, date) %>%
-    summarise(last_available_deaths    = sum(last_available_deaths),
-              last_available_confirmed = sum(last_available_confirmed)) %>%
+    group_by(estado, date) %>%
+    summarise(last_available_deaths    = sum(obitosAcumulado),
+              last_available_confirmed = sum(casosAcumulado)) %>%
+    rename(state = estado) %>% 
     full_join(mobility %>% filter(!is.na(sub_region_1)),
               by = c("state" = "iso_3166_2_code", "date" = "date"))%>%
     select(-starts_with("country_region"), -starts_with("sub_region"),  -starts_with("census_fips")) %>% 
-    left_join(uf_estado,by = c("state" = "UF")) %>%
+    left_join(uf_estado, by = c("state" = "UF")) %>%
     select(-State)%>% 
     arrange(regiao, state, date)
 
@@ -70,7 +70,7 @@ estados <- covid %>%
 # The empirical relationship between mobility and GDP growth rate across economies in the first quarter of 2020 is used to convert a country’s economic activity based on people’s mobility levels.
 
 relation_eq <- function(mobility) {
-    activity <- 100 + (0.38*mobility)
+    activity <- (0.3886 * mobility + 0.61) + 100
 }
 
 
@@ -112,7 +112,9 @@ doubl_dates <- map2(brasil$half_cum_cases, brasil$date,
 brasil_df <- brasil %>% 
     mutate(doubl_dates = c(NA, doubl_dates) %>% as_date(),
            dist_date   = as.numeric(date - doubl_dates),
-           mobility    = rowMeans(select(., ends_with("baseline"))),
+           mobility    = ((retail_and_recreation_percent_change_from_baseline + 
+                          grocery_and_pharmacy_percent_change_from_baseline) / 2 +  
+                              workplaces_percent_change_from_baseline) / 2,
            activity    = ifelse(relation_eq(mobility) > 100, 
                                 100, relation_eq(mobility)),
            smth_date   = rollmean(dist_date, 7, na.pad = T),
@@ -129,7 +131,7 @@ brasil_mob_b <- brasil_df %>% filter(smth_activ == min(smth_activ, na.rm = TRUE)
 
 Como *sanity check*, replicamos o gráfico feito para o Brasil no relatório, utilizando os dados de mobilidade do Google e o número de casos de COVID do país. Usamos a seguinte equação para estabelecer a relação entre os dados de mobilidade e o índice de atividade, baseada no relatório original: 
 $$
-\Delta \text{Atividade} = 0.38 \cdot \Delta\text{Mobilidade}
+\text{Atividade} = 0.3886 \cdot \text{Mobilidade} + 0.61
 $$
 A partir disso, usamos a média móvel de 7 dias do Índice de Atividade construído e do número de dias necessários para duplicar os casos, buscando suavizar a série, conforme indicado.
 
@@ -139,7 +141,7 @@ ggplot(brasil_df, aes(x = smth_date, y = smth_activ)) +
     geom_path(color = "steelblue") +
     #geom_vline(xintercept = 19, linetype = "dotted", size = 0.8) +
     #geom_point(data = brasil_mob_b, shape = 22, fill = "white") +
-    ylim(70,100)+
+    ylim(70, 100)+
     xlim(0, 25) + 
     ylab("Daily Economic Activity") + xlab("Doubling days of confirmed cases") 
 ```
@@ -177,15 +179,17 @@ bases_estados_df <- map(list_estados, doubl_dates_st) %>%
     arrange(date) %>% 
     fill(doubl_dates) %>%
     ungroup() %>%
+    arrange(state, date, regiao) %>% 
     mutate(doubl_dates = as.Date(doubl_dates),
            dist_date   = as.numeric(date - doubl_dates),
-           mobility    = rowMeans(select(., ends_with("baseline"))),
+           mobility    = ((retail_and_recreation_percent_change_from_baseline + 
+                          grocery_and_pharmacy_percent_change_from_baseline) / 2 +  
+                              workplaces_percent_change_from_baseline) / 2,
            activity    = ifelse(relation_eq(mobility) > 100, 
                                 100, relation_eq(mobility)),
            smth_date   = rollmean(dist_date, 7, na.pad = T),
            smth_activ  = rollmean(activity, 7, na.pad = T)
-          ) %>%
-    arrange(state, date, regiao)
+          )
 
 
 # find bottom of activity
@@ -208,7 +212,6 @@ plot_activity_mobility <- function(df) {
     
     return(p)
 }
-
 
 
 plot_regiao <- function(reg) {
