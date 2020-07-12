@@ -194,7 +194,7 @@ plot_activity_mobility <- function(df) {
     #geom_vline(xintercept = 19, linetype = "dotted", size = 0.8) +
     #geom_point(data = brasil_mob_b, shape = 22, fill = "white") +
     ylim(70, 100) +
-    xlim(0, 25) + 
+    xlim(0, 40) + 
     facet_wrap(~ state) +
     ylab("Daily Economic Activity") + xlab("Doubling days of confirmed cases")
     
