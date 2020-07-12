@@ -22,18 +22,6 @@ mobility <- read_csv("../input/Global_Mobility_Report.csv") %>%
     mutate(sub_region_1    = str_remove_all(sub_region_1, "State of "),
            iso_3166_2_code = str_remove_all(iso_3166_2_code, "BR-"))
 
-# energy data (não tem RR)
-energy <- read_csv2("../input/energia_data.csv") %>% 
-    select(Data:`Consumo (MWh)`, -starts_with("12 meses"), 
-           -`\"Consumo (MWm)\"`, -Data_Acompanhamento, `Última Data`) %>% 
-    rename(ramo = `Ramo de atividade`) %>% 
-    clean_names() %>% 
-    mutate(data        = as.Date(data, "%d/%m/%Y"),
-           ultima_data = as.Date(ultima_data, "%d/%m/%Y")) %>% 
-    arrange(data, uf, classe, ramo) %>% 
-    group_by(data, uf, estado, classe) %>% 
-    summarise(consumo = sum(consumo_m_wh))
-    
 # https://covid.saude.gov.br/
 covid <- read_csv2("../input/HIST_PAINEL_COVIDBR_11jul2020.csv") %>% 
     filter(!is.na(estado)) %>% 
@@ -70,7 +58,7 @@ estados <- covid %>%
 # The empirical relationship between mobility and GDP growth rate across economies in the first quarter of 2020 is used to convert a country’s economic activity based on people’s mobility levels.
 
 relation_eq <- function(mobility) {
-    activity <- (0.3886 * mobility + 0.61) + 100
+    activity <- 0.3886 * mobility + 0.61
 }
 
 
@@ -112,13 +100,13 @@ doubl_dates <- map2(brasil$half_cum_cases, brasil$date,
 brasil_df <- brasil %>% 
     mutate(doubl_dates = c(NA, doubl_dates) %>% as_date(),
            dist_date   = as.numeric(date - doubl_dates),
-           mobility    = ((retail_and_recreation_percent_change_from_baseline + 
+           mobility    = (100 + ((retail_and_recreation_percent_change_from_baseline + 
                           grocery_and_pharmacy_percent_change_from_baseline) / 2 +  
-                              workplaces_percent_change_from_baseline) / 2,
-           activity    = ifelse(relation_eq(mobility) > 100, 
-                                100, relation_eq(mobility)),
-           smth_date   = rollmean(dist_date, 7, na.pad = T),
-           smth_activ  = rollmean(activity, 7, na.pad = T)
+                              workplaces_percent_change_from_baseline) / 2) / 100,
+           activity    = ifelse(relation_eq(mobility) > 1, 
+                                1, relation_eq(mobility)),
+           smth_date   = rollmean(dist_date, 7, na.pad = TRUE),
+           smth_activ  = rollmean(activity, 7, na.pad = TRUE) * 100
           )
 
 # find bottom of activity
@@ -182,13 +170,13 @@ bases_estados_df <- map(list_estados, doubl_dates_st) %>%
     arrange(state, date, regiao) %>% 
     mutate(doubl_dates = as.Date(doubl_dates),
            dist_date   = as.numeric(date - doubl_dates),
-           mobility    = ((retail_and_recreation_percent_change_from_baseline + 
+           mobility    = (100 + ((retail_and_recreation_percent_change_from_baseline + 
                           grocery_and_pharmacy_percent_change_from_baseline) / 2 +  
-                              workplaces_percent_change_from_baseline) / 2,
-           activity    = ifelse(relation_eq(mobility) > 100, 
-                                100, relation_eq(mobility)),
-           smth_date   = rollmean(dist_date, 7, na.pad = T),
-           smth_activ  = rollmean(activity, 7, na.pad = T)
+                              workplaces_percent_change_from_baseline) / 2) / 100,
+           activity    = ifelse(relation_eq(mobility) > 1, 
+                                1, relation_eq(mobility)),
+           smth_date   = rollmean(dist_date, 7, na.pad = TRUE),
+           smth_activ  = rollmean(activity, 7, na.pad = TRUE) * 100
           )
 
 
