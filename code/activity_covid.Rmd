@@ -32,7 +32,7 @@ energy <- read_csv2("../input/energia_data.csv") %>%
     mutate(data        = as.Date(data, "%d/%m/%Y"),
            ultima_data = as.Date(ultima_data, "%d/%m/%Y")) %>% 
     arrange(data, uf, classe, ramo) %>% 
-    group_by(data, uf, estado) %>% 
+    group_by(data, uf, estado, classe) %>% 
     summarise(consumo = sum(consumo_m_wh))
     
 # brasil.io (caso_full)
@@ -251,7 +251,7 @@ plot_regiao("Norte")
 
 \pagebreak
 # Usando dados de energia
-```{r echo = FALSE, warning = FALSE}
+```{r echo = FALSE, warning = FALSE, message = FALSE}
 data_max <- max(energy$data) - 366
 
 ano_anterior <- energy %>% 
@@ -259,8 +259,27 @@ ano_anterior <- energy %>%
     rename(ano_anterior = consumo) %>% 
     mutate(data = data + 365)
 
-energy_df <- energy %>% 
-    left_join(ano_anterior) %>% 
+total_energy_df <- energy %>% 
+    group_by(data, uf, estado) %>% 
+    summarise(consumo = sum(consumo)) %>% 
+    left_join(ano_anterior %>% 
+                  group_by(data, uf, estado) %>% 
+                  summarise(ano_anterior = sum(ano_anterior))) %>% 
+    filter(data >= as.Date("2020-02-25")) %>% 
+    mutate(dif_baseline = consumo - ano_anterior) %>% 
+    full_join(bases_estados_df, by = c("data" = "date", "uf" = "state")) %>% 
+    group_by(uf) %>% 
+    arrange(uf, data) %>% 
+    mutate(smth_consumo = rollmean(dif_baseline, 7, na.pad = T))
+
+acl_energy_df <- energy %>% 
+    filter(classe == "Consumidor Especial" | classe == "Consumidor Livre") %>% 
+    group_by(data, uf, estado) %>% 
+    summarise(consumo = sum(consumo)) %>% 
+    left_join(ano_anterior %>% 
+                  filter(classe == "Consumidor Especial" | classe == "Consumidor Livre") %>% 
+                  group_by(data, uf, estado) %>% 
+                  summarise(ano_anterior = sum(ano_anterior))) %>% 
     filter(data >= as.Date("2020-02-25")) %>% 
     mutate(dif_baseline = consumo - ano_anterior) %>% 
     full_join(bases_estados_df, by = c("data" = "date", "uf" = "state")) %>% 
@@ -276,61 +295,81 @@ plot_activity_energy <- function(df) {
     geom_path(color = "steelblue", size = 0.8) +
     xlim(0, 25) + 
     facet_wrap(~ uf) +
-    ylab("Change from previous year in Energy Consumption") + xlab("Doubling days of confirmed cases")
+    ylab("Change from previous year in energy consumption") + xlab("Doubling days of confirmed cases")
     
     return(p)
 }
 
 
-plot_regiao_energia <- function(reg) {
+plot_regiao_energia <- function(df, reg) {
     
-    base_regiao <- energy_df %>% 
+    base_regiao <- df %>% 
         filter(regiao == reg)
     
     return(plot_activity_energy(base_regiao)) 
 }
 ```
 
-## Testando a relação entre consumo de energia e o índice anterior
-```{r echo = FALSE, warning = FALSE, message = FALSE}
-regression <- dynlm(smth_activ ~ smth_consumo, data = energy_df) %>% 
-    coef()
 
-ggplot(energy_df, aes(x = smth_consumo, y = smth_activ)) +
-    geom_point(color = "steelblue") +
-    geom_abline(slope = regression[2], intercept = regression[1])
-```
+Trocando os dados de mobilidade pela diferença entre o consumo de energia atual e no mesmo dia do ano anterior (em MWh).
 
 
-## Repetindo os gráficos  
-Trocando os dados de mobilidade pela diferença entre o consumo de energia atual e no ano anterior (em MWh).
-
-
-### Região Sudeste
+## Região Sudeste
 ```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
-plot_regiao_energia("Sudeste")
+plot_regiao_energia(total_energy_df, "Sudeste")
 ```
 
 \pagebreak
-### Região Sul
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 3}
-plot_regiao_energia("Sul")
-```
-
-\pagebreak
-### Região Centro-Oeste
+**Somente ACL**  
 ```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
-plot_regiao_energia("Centro-Oeste")
+plot_regiao_energia(acl_energy_df, "Sudeste")
+```
+
+
+\pagebreak
+## Região Sul
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+plot_regiao_energia(total_energy_df, "Sul")
 ```
 
 \pagebreak
-### Região Nordeste
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
-plot_regiao_energia("Nordeste")
+**Somente ACL**  
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+plot_regiao_energia(acl_energy_df, "Sul")
 ```
 
 \pagebreak
-### Região Norte
+## Região Centro-Oeste
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+plot_regiao_energia(total_energy_df, "Centro-Oeste")
+```
+
+\pagebreak
+**Somente ACL**  
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+plot_regiao_energia(acl_energy_df, "Centro-Oeste")
+```
+
+\pagebreak
+## Região Nordeste
 ```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
-plot_regiao_energia("Norte")
+plot_regiao_energia(total_energy_df, "Nordeste")
+```
+
+\pagebreak
+**Somente ACL**  
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
+plot_regiao_energia(acl_energy_df, "Nordeste")
+```
+
+\pagebreak
+## Região Norte
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
+plot_regiao_energia(total_energy_df, "Norte")
+```
+
+\pagebreak
+**Somente ACL**  
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
+plot_regiao_energia(acl_energy_df, "Norte")
 ```
