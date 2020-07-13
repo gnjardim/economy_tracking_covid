@@ -20,7 +20,9 @@ theme_set(theme_bw())
 mobility <- read_csv("../input/Global_Mobility_Report.csv") %>% 
     filter(country_region == "Brazil") %>% 
     mutate(sub_region_1    = str_remove_all(sub_region_1, "State of "),
-           iso_3166_2_code = str_remove_all(iso_3166_2_code, "BR-"))
+           iso_3166_2_code = str_remove_all(iso_3166_2_code, "BR-"))%>%
+    mutate_at(vars(contains('baseline')), funs(1 + ./100))
+
 
 # energy data (não tem RR)
 energy <- read_csv2("../input/energia_data.csv") %>% 
@@ -187,6 +189,7 @@ bases_estados_df <- map(list_estados, doubl_dates_st) %>%
                               workplaces_percent_change_from_baseline) / 2,
            activity    = ifelse(relation_eq(mobility) > 100, 
                                 100, relation_eq(mobility)),
+           smth_mobility = rollmean(mobility, 7, na.pad = T),
            smth_date   = rollmean(dist_date, 7, na.pad = T),
            smth_activ  = rollmean(activity, 7, na.pad = T)
           )
@@ -196,6 +199,8 @@ bases_estados_df <- map(list_estados, doubl_dates_st) %>%
 estados_mob_b <- bases_estados_df %>%
     group_by(state) %>%
     filter(smth_activ == min(smth_activ, na.rm = TRUE))
+#export 
+write.csv(bases_estados_df, file = "../meta/bases_estados_df.csv")
 ```
 
 ```{r include = FALSE}
