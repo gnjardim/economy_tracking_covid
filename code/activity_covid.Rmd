@@ -239,10 +239,12 @@ pre_covid_df_fun <- function(df) {
     post_df <- df %>% 
     group_by(data, uf, estado) %>% 
     summarise(consumo_diario = sum(consumo)) %>% 
-    mutate(pre_covid = ifelse(data <= as.Date("2020-02-25"), 1, 0) %>% factor())
+    mutate(pre_covid = ifelse(data <= as.Date("2020-02-25"), 1, 0) %>% factor(),
+           mes       = month(data),
+           ano       = year(data))
     
     # estimar media e dummies
-    mod <- lm(consumo_diario ~ factor(uf) + factor(month(data)) + pre_covid, 
+    mod <- lm(consumo_diario ~ factor(uf) + factor(mes) + factor(ano) + pre_covid, 
               data = post_df)    
     
     # adicionar coluna de predito
