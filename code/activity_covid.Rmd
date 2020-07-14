@@ -9,6 +9,7 @@ knitr::opts_chunk$set(echo = TRUE, fig.width = 6, fig.height = 3.2)
 library(tidyverse)
 library(lubridate)
 library(janitor)
+library(modelr)
 library(dplyr)
 library(zoo)
 
@@ -100,6 +101,20 @@ doubling_days <- function(half_num, current_date, df) {
     return(last_date$date)
 }
 
+create_columns <- function(df) {
+    
+    post_df <- df %>% 
+    mutate(dist_date   = as.numeric(date - doubl_dates),
+           mobility    = ((retail_and_recreation_percent_change_from_baseline + 
+                          grocery_and_pharmacy_percent_change_from_baseline) / 2 +  
+                              workplaces_percent_change_from_baseline) / 2,
+           smth_date   = rollmean(dist_date, 7, na.pad = T, align = "right"),
+           smth_mob    = pmin(1, rollmean(mobility, 7, na.pad = T, align = "right"), na.rm = TRUE),
+           activity    = relation_eq(smth_mob)
+          )
+    
+}
+
 # run functions in data ---------------------------------------------------
 brasil <- brasil %>% 
     mutate(across(matches("last_available"), ~replace(., is.na(.), 0)),) %>% 
@@ -112,18 +127,8 @@ doubl_dates <- map2(brasil$half_cum_cases, brasil$date,
     unlist()
 
 brasil_df <- brasil %>% 
-    mutate(doubl_dates = c(NA, doubl_dates) %>% as_date(),
-           dist_date   = as.numeric(date - doubl_dates),
-           mobility    = ((retail_and_recreation_percent_change_from_baseline + 
-                          grocery_and_pharmacy_percent_change_from_baseline) / 2 +  
-                              workplaces_percent_change_from_baseline) / 2,
-           activity    = ifelse(relation_eq(mobility) > 100, 
-                                100, relation_eq(mobility)),
-           smth_date   = rollmean(dist_date, 7, na.pad = T, align = "right"),
-           smth_mob    = pmin(1, rollmean(mobility, 7, na.pad = T, align = "right"), na.rm = TRUE),
-           smth_activ  = rollmean(activity, 7, na.pad = T, align = "right")
-          )
-
+    mutate(doubl_dates = c(NA, doubl_dates) %>% as_date()) %>% 
+    create_columns()
 ```
 
 # Usando dados de mobilidade  
@@ -169,17 +174,7 @@ bases_estados_df <- map(list_estados, doubl_dates_st) %>%
     fill(doubl_dates) %>%
     ungroup() %>%
     arrange(state, date, regiao) %>% 
-    mutate(doubl_dates = as.Date(doubl_dates),
-           dist_date   = as.numeric(date - doubl_dates),
-           mobility    = ((retail_and_recreation_percent_change_from_baseline + 
-                          grocery_and_pharmacy_percent_change_from_baseline) / 2 +  
-                              workplaces_percent_change_from_baseline) / 2,
-           activity    = ifelse(relation_eq(mobility) > 100, 
-                                100, relation_eq(mobility)),
-           smth_mob    = pmin(1, rollmean(mobility, 7, na.pad = T, align = "right"), na.rm = TRUE),
-           smth_date   = rollmean(dist_date, 7, na.pad = T, align = "right"),
-           smth_activ  = rollmean(activity, 7, na.pad = T, align = "right")
-          )
+    create_columns()
 
 ```
 
@@ -242,11 +237,17 @@ plot_regiao("Norte")
 pre_covid_df_fun <- function(df) {
     
     post_df <- df %>% 
-    filter(data >= as.Date("2019-01-01") & data <= as.Date("2020-02-25")) %>% 
     group_by(data, uf, estado) %>% 
-    summarise(consumo_diario_pre = sum(consumo)) %>% 
-    group_by(uf, estado) %>% 
-    summarise(media_diaria_pre = mean(consumo_diario_pre))
+    summarise(consumo_diario = sum(consumo)) %>% 
+    mutate(pre_covid = ifelse(data <= as.Date("2020-02-25"), 1, 0) %>% factor())
+    
+    # estimar media e dummies
+    mod <- lm(consumo_diario ~ factor(uf) + factor(month(data)) + pre_covid, 
+              data = post_df)    
+    
+    # adicionar coluna de predito
+    pred_df <- post_df %>% 
+        add_predictions(mod)
     
 }
 
@@ -258,7 +259,7 @@ energy_df_fun <- function(df, df_pre_cov) {
         summarise(consumo = sum(consumo)) %>% 
         left_join(df_pre_cov) %>% 
         filter(data >= as.Date("2020-01-01")) %>% 
-        mutate(dif_baseline = (consumo - media_diaria_pre) / media_diaria_pre) %>% 
+        mutate(dif_baseline = (consumo - pred) / pred) %>% 
         full_join(bases_estados_df, by = c("data" = "date", "uf" = "state")) %>% 
         group_by(uf) %>% 
         arrange(uf, data) %>% 
