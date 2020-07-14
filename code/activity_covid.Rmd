@@ -234,8 +234,9 @@ plot_regiao("Norte")
 \pagebreak
 # Usando dados de energia
 ```{r echo = FALSE, warning = FALSE, message = FALSE}
+
 pre_covid_df_fun <- function(df) {
-    
+    df<-energy
     post_df <- df %>% 
     group_by(data, uf, estado) %>% 
     summarise(consumo_diario = sum(consumo)) %>% 
@@ -243,16 +244,22 @@ pre_covid_df_fun <- function(df) {
            mes       = month(data),
            ano       = year(data))
     
+    # base in of sample
+    df_oss <- post_df %>%
+        filter(pre_covid !=0)
+    
+    #base
+    
+    
     # estimar media e dummies
-    mod <- lm(consumo_diario ~ factor(uf) + factor(mes) + factor(ano) + pre_covid, 
-              data = post_df)    
+    mod <- lm(consumo_diario ~ factor(uf)*factor(mes) + factor(ano) , 
+              data = df_oss)    
     
     # adicionar coluna de predito
     pred_df <- post_df %>% 
         add_predictions(mod)
     
 }
-
 
 energy_df_fun <- function(df, df_pre_cov) {
     
