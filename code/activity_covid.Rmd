@@ -21,21 +21,20 @@ theme_set(theme_bw())
 mobility <- read_csv("../input/Global_Mobility_Report.csv") %>% 
     filter(country_region == "Brazil") %>% 
     mutate(sub_region_1    = str_remove_all(sub_region_1, "State of "),
-           iso_3166_2_code = str_remove_all(iso_3166_2_code, "BR-"))%>%
+           iso_3166_2_code = str_remove_all(iso_3166_2_code, "BR-")) %>%
     mutate_at(vars(contains('baseline')), funs(1 + ./100))
 
 
 # energy data (não tem RR)
 energy <- read_csv2("../input/energia_data.csv") %>% 
-    select(Data:`Consumo (MWh)`, -starts_with("12 meses"), 
-           -`\"Consumo (MWm)\"`, -Data_Acompanhamento, `Última Data`) %>% 
     rename(ramo = `Ramo de atividade`) %>% 
+    mutate(Estado = iconv(Estado, from = "UTF-8", to = "ASCII//TRANSLIT") %>% 
+                    trimws()) %>% 
     clean_names() %>% 
-    mutate(data        = as.Date(data, "%d/%m/%Y"),
-           ultima_data = as.Date(ultima_data, "%d/%m/%Y")) %>% 
-    arrange(data, uf, classe, ramo) %>% 
-    group_by(data, uf, estado, classe) %>% 
-    summarise(consumo = sum(consumo_m_wh))
+    mutate(data        = as.Date(data, "%d/%m/%Y")) %>% 
+    arrange(data, classe, ramo) %>% 
+    group_by(data, estado, classe) %>% 
+    summarise(consumo = sum(consumo_m_wm))
     
 # https://covid.saude.gov.br/
 covid <- read_csv2("../input/HIST_PAINEL_COVIDBR_11jul2020.csv") %>% 
@@ -60,10 +59,10 @@ estados <- covid %>%
               last_available_confirmed = sum(casosAcumulado)) %>%
     rename(state = estado) %>% 
     full_join(mobility %>% filter(!is.na(sub_region_1)),
-              by = c("state" = "iso_3166_2_code", "date" = "date"))%>%
+              by = c("state" = "iso_3166_2_code", "date" = "date")) %>%
     select(-starts_with("country_region"), -starts_with("sub_region"),  -starts_with("census_fips")) %>% 
     left_join(uf_estado, by = c("state" = "UF")) %>%
-    select(-State)%>% 
+    rename(estado = State) %>% 
     arrange(regiao, state, date)
 
 ```
@@ -236,9 +235,9 @@ plot_regiao("Norte")
 ```{r echo = FALSE, warning = FALSE, message = FALSE}
 
 pre_covid_df_fun <- function(df) {
-    df<-energy
+    
     post_df <- df %>% 
-    group_by(data, uf, estado) %>% 
+    group_by(data, estado) %>% 
     summarise(consumo_diario = sum(consumo)) %>% 
     mutate(pre_covid = ifelse(data <= as.Date("2020-02-25"), 1, 0) %>% factor(),
            mes       = month(data),
@@ -246,13 +245,10 @@ pre_covid_df_fun <- function(df) {
     
     # base in of sample
     df_oss <- post_df %>%
-        filter(pre_covid !=0)
-    
-    #base
-    
+        filter(pre_covid != 0)
     
     # estimar media e dummies
-    mod <- lm(consumo_diario ~ factor(uf)*factor(mes) + factor(ano) , 
+    mod <- lm(consumo_diario ~ factor(estado) * factor(mes) + factor(ano), 
               data = df_oss)    
     
     # adicionar coluna de predito
@@ -264,15 +260,15 @@ pre_covid_df_fun <- function(df) {
 energy_df_fun <- function(df, df_pre_cov) {
     
     post_df <- df %>% 
-        group_by(data, uf, estado) %>% 
-        summarise(consumo = sum(consumo)) %>% 
+        group_by(data, estado) %>% 
+        summarise(consumo_diario = sum(consumo)) %>% 
         left_join(df_pre_cov) %>% 
         filter(data >= as.Date("2020-01-01")) %>% 
-        mutate(dif_baseline = (consumo - pred) / pred) %>% 
-        full_join(bases_estados_df, by = c("data" = "date", "uf" = "state")) %>% 
-        group_by(uf) %>% 
-        arrange(uf, data) %>% 
-        mutate(smth_consumo = pmin(0, rollmean(dif_baseline, 7, na.pad = T, align = "right")), na.rm = TRUE)
+        mutate(dif_baseline = (consumo_diario - pred) / pred) %>% 
+        full_join(bases_estados_df, by = c("data" = "date", "estado" = "estado")) %>% 
+        group_by(estado) %>% 
+        arrange(estado, data) %>% 
+        mutate(smth_consumo = pmin(0, rollmean(dif_baseline, 7, na.pad = T, align = "right")))
     
 }
 
@@ -301,7 +297,7 @@ plot_activity_energy <- function(df) {
     p <- ggplot(df, aes(x = smth_date, y = smth_consumo)) +
     geom_path(color = "steelblue", size = 0.8) +
     xlim(0, 40) + 
-    facet_wrap(~ uf) +
+    facet_wrap(~ estado) +
     ylab("Change from baseline in energy consumption") + xlab("Doubling days of confirmed cases")
     
     return(p)
@@ -318,7 +314,7 @@ plot_regiao_energia <- function(df, reg) {
 ```
 
 
-Trocando os dados de mobilidade pela diferença entre o consumo de energia atual e no mesmo dia do ano anterior (em MWh).
+Trocando os dados de mobilidade pela diferença percentual entre o consumo de energia atual e o esperado.
 
 
 ## Região Sudeste
