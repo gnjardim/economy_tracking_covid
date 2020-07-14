@@ -119,39 +119,26 @@ brasil_df <- brasil %>%
                               workplaces_percent_change_from_baseline) / 2,
            activity    = ifelse(relation_eq(mobility) > 100, 
                                 100, relation_eq(mobility)),
-           smth_date   = rollmean(dist_date, 7, na.pad = T),
-           smth_activ  = rollmean(activity, 7, na.pad = T)
+           smth_date   = rollmean(dist_date, 7, na.pad = T, align = "right"),
+           smth_mob    = pmin(1, rollmean(mobility, 7, na.pad = T, align = "right"), na.rm = TRUE),
+           smth_activ  = rollmean(activity, 7, na.pad = T, align = "right")
           )
 
-# find bottom of activity
-brasil_mob_b <- brasil_df %>% filter(smth_activ == min(smth_activ, na.rm = TRUE))
-
 ```
 
+# Usando dados de mobilidade  
 
-## Replicando para o Brasil  
+## Brasil  
 
-Como *sanity check*, replicamos o gráfico feito para o Brasil no relatório, utilizando os dados de mobilidade do Google e o número de casos de COVID do país. Usamos a seguinte equação para estabelecer a relação entre os dados de mobilidade e o índice de atividade, baseada no relatório original: 
-$$
-\text{Atividade} = 0.3886 \cdot \text{Mobilidade} + 0.61
-$$
-A partir disso, usamos a média móvel de 7 dias do Índice de Atividade construído e do número de dias necessários para duplicar os casos, buscando suavizar a série, conforme indicado.
-
-\vspace{1cm}
 ```{r echo = FALSE, warning = FALSE}
-ggplot(brasil_df, aes(x = smth_date, y = smth_activ)) +
+ggplot(brasil_df, aes(x = smth_date, y = smth_mob)) +
     geom_path(color = "steelblue") +
-    #geom_vline(xintercept = 19, linetype = "dotted", size = 0.8) +
-    #geom_point(data = brasil_mob_b, shape = 22, fill = "white") +
-    ylim(70, 100)+
-    xlim(0, 25) + 
-    ylab("Daily Economic Activity") + xlab("Doubling days of confirmed cases") 
+    xlim(0, 40) + 
+    ylab("Mobility Index") + xlab("Doubling days of confirmed cases") 
 ```
 
-![https://www.luohanacademy.com/indices/covid19/overview](../meta/PET_Brazil.png){#id .class width=90% height=100%}
 
 \pagebreak
-Aplicando a mesma metodologia para cada um dos estados:
 ```{r include = FALSE}
 doubl_dates_st <- function(df) {
     dates <- map2(df$half_cum_cases, df$date, ~ doubling_days(.x, .y, df)) %>%
@@ -189,31 +176,23 @@ bases_estados_df <- map(list_estados, doubl_dates_st) %>%
                               workplaces_percent_change_from_baseline) / 2,
            activity    = ifelse(relation_eq(mobility) > 100, 
                                 100, relation_eq(mobility)),
-           smth_mobility = rollmean(mobility, 7, na.pad = T),
-           smth_date   = rollmean(dist_date, 7, na.pad = T),
-           smth_activ  = rollmean(activity, 7, na.pad = T)
+           smth_mob    = pmin(1, rollmean(mobility, 7, na.pad = T, align = "right"), na.rm = TRUE),
+           smth_date   = rollmean(dist_date, 7, na.pad = T, align = "right"),
+           smth_activ  = rollmean(activity, 7, na.pad = T, align = "right")
           )
 
-
-# find bottom of activity
-estados_mob_b <- bases_estados_df %>%
-    group_by(state) %>%
-    filter(smth_activ == min(smth_activ, na.rm = TRUE))
-#export 
-write.csv(bases_estados_df, file = "../meta/bases_estados_df.csv")
 ```
 
 ```{r include = FALSE}
 plot_activity_mobility <- function(df) {
     
-    p <- ggplot(df, aes(x = smth_date, y = smth_activ)) +
+    p <- ggplot(df, aes(x = smth_date, y = smth_mob)) +
     geom_path(color = "steelblue", size = 0.8) +
     #geom_vline(xintercept = 19, linetype = "dotted", size = 0.8) +
     #geom_point(data = brasil_mob_b, shape = 22, fill = "white") +
-    ylim(70, 100) +
-    xlim(0, 25) + 
+    xlim(0, 40) + 
     facet_wrap(~ state) +
-    ylab("Daily Economic Activity") + xlab("Doubling days of confirmed cases")
+    ylab("Mobility Index") + xlab("Doubling days of confirmed cases")
     
     return(p)
 }
@@ -260,40 +239,50 @@ plot_regiao("Norte")
 \pagebreak
 # Usando dados de energia
 ```{r echo = FALSE, warning = FALSE, message = FALSE}
-data_max <- max(energy$data) - 366
+pre_covid_df_fun <- function(df) {
+    
+    post_df <- df %>% 
+    filter(data >= as.Date("2019-01-01") & data <= as.Date("2020-02-25")) %>% 
+    group_by(data, uf, estado) %>% 
+    summarise(consumo_diario_pre = sum(consumo)) %>% 
+    group_by(uf, estado) %>% 
+    summarise(media_diaria_pre = mean(consumo_diario_pre))
+    
+}
 
-ano_anterior <- energy %>% 
-    filter(data >= as.Date("2019-01-01") & data <= as.Date("2019-12-31")) %>% 
-    rename(ano_anterior = consumo) %>% 
-    mutate(data = data + 365)
+
+energy_df_fun <- function(df, df_pre_cov) {
+    
+    post_df <- df %>% 
+        group_by(data, uf, estado) %>% 
+        summarise(consumo = sum(consumo)) %>% 
+        left_join(df_pre_cov) %>% 
+        filter(data >= as.Date("2020-01-01")) %>% 
+        mutate(dif_baseline = (consumo - media_diaria_pre) / media_diaria_pre) %>% 
+        full_join(bases_estados_df, by = c("data" = "date", "uf" = "state")) %>% 
+        group_by(uf) %>% 
+        arrange(uf, data) %>% 
+        mutate(smth_consumo = pmin(0, rollmean(dif_baseline, 7, na.pad = T, align = "right")), na.rm = TRUE)
+    
+}
+
+# consumo total -----------------------------------------------------------
+pre_covid <- energy %>% 
+    pre_covid_df_fun()
 
 total_energy_df <- energy %>% 
-    group_by(data, uf, estado) %>% 
-    summarise(consumo = sum(consumo)) %>% 
-    left_join(ano_anterior %>% 
-                  group_by(data, uf, estado) %>% 
-                  summarise(ano_anterior = sum(ano_anterior))) %>% 
-    filter(data >= as.Date("2020-02-25")) %>% 
-    mutate(dif_baseline = consumo - ano_anterior) %>% 
-    full_join(bases_estados_df, by = c("data" = "date", "uf" = "state")) %>% 
-    group_by(uf) %>% 
-    arrange(uf, data) %>% 
-    mutate(smth_consumo = rollmean(dif_baseline, 7, na.pad = T))
+    energy_df_fun(pre_covid)
+
+
+# consumo acl -------------------------------------------------------------
+acl_pre_covid <- energy %>% 
+    filter(classe == "Consumidor Especial" | classe == "Consumidor Livre") %>% 
+    pre_covid_df_fun()
+
 
 acl_energy_df <- energy %>% 
     filter(classe == "Consumidor Especial" | classe == "Consumidor Livre") %>% 
-    group_by(data, uf, estado) %>% 
-    summarise(consumo = sum(consumo)) %>% 
-    left_join(ano_anterior %>% 
-                  filter(classe == "Consumidor Especial" | classe == "Consumidor Livre") %>% 
-                  group_by(data, uf, estado) %>% 
-                  summarise(ano_anterior = sum(ano_anterior))) %>% 
-    filter(data >= as.Date("2020-02-25")) %>% 
-    mutate(dif_baseline = consumo - ano_anterior) %>% 
-    full_join(bases_estados_df, by = c("data" = "date", "uf" = "state")) %>% 
-    group_by(uf) %>% 
-    arrange(uf, data) %>% 
-    mutate(smth_consumo = rollmean(dif_baseline, 7, na.pad = T))
+    energy_df_fun(acl_pre_covid)
 ```
 
 ```{r echo = FALSE, warning = FALSE, message = FALSE}
@@ -301,9 +290,9 @@ plot_activity_energy <- function(df) {
     
     p <- ggplot(df, aes(x = smth_date, y = smth_consumo)) +
     geom_path(color = "steelblue", size = 0.8) +
-    xlim(0, 25) + 
+    xlim(0, 40) + 
     facet_wrap(~ uf) +
-    ylab("Change from previous year in energy consumption") + xlab("Doubling days of confirmed cases")
+    ylab("Change from baseline in energy consumption") + xlab("Doubling days of confirmed cases")
     
     return(p)
 }
@@ -336,13 +325,13 @@ plot_regiao_energia(acl_energy_df, "Sudeste")
 
 \pagebreak
 ## Região Sul
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 3}
 plot_regiao_energia(total_energy_df, "Sul")
 ```
 
 \pagebreak
 **Somente ACL**  
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 3}
 plot_regiao_energia(acl_energy_df, "Sul")
 ```
 
