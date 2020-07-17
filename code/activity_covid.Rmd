@@ -116,7 +116,7 @@ create_columns <- function(df) {
 
 # run functions in data ---------------------------------------------------
 brasil <- brasil %>% 
-    mutate(across(matches("last_available"), ~replace(., is.na(.), 0)),) %>% 
+    mutate(across(matches("last_available"), ~replace(., is.na(.), 0))) %>% 
     mutate(half_cum_cases  = last_available_confirmed / 2,
            half_cum_deaths = last_available_deaths / 2)
 
