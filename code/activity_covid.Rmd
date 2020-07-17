@@ -22,8 +22,7 @@ mobility <- read_csv("../input/Global_Mobility_Report.csv") %>%
     filter(country_region == "Brazil") %>% 
     mutate(sub_region_1    = str_remove_all(sub_region_1, "State of "),
            iso_3166_2_code = str_remove_all(iso_3166_2_code, "BR-")) %>%
-    mutate_at(vars(contains('baseline')), funs(1 + ./100))
-
+	mutate(across(contains("baseline"), ~ 1 + ./100))
 
 # energy data (não tem RR)
 energy <- read_csv2("../input/energia_data.csv") %>% 
@@ -103,14 +102,14 @@ doubling_days <- function(half_num, current_date, df) {
 create_columns <- function(df) {
     
     post_df <- df %>% 
-    mutate(dist_date   = as.numeric(date - doubl_dates),
-           mobility    = ((retail_and_recreation_percent_change_from_baseline + 
-                          grocery_and_pharmacy_percent_change_from_baseline) / 2 +  
-                              workplaces_percent_change_from_baseline) / 2,
-           smth_date   = rollmean(dist_date, 7, na.pad = T, align = "right"),
-           smth_mob    = pmin(1, rollmean(mobility, 7, na.pad = T, align = "right"), na.rm = TRUE),
-           activity    = relation_eq(smth_mob)
-          )
+		mutate(dist_date   = as.numeric(date - doubl_dates),
+			   mobility    = ((retail_and_recreation_percent_change_from_baseline + 
+			   				grocery_and_pharmacy_percent_change_from_baseline) / 2 +  
+			   					workplaces_percent_change_from_baseline) / 2,
+			   smth_date   = rollmean(dist_date, 7, na.pad = T, align = "right"),
+			   smth_mob    = pmin(1, rollmean(mobility, 7, na.pad = T, align = "right"), na.rm = TRUE),
+			   activity    = relation_eq(smth_mob)
+	    	  )
     
 }
 
@@ -181,12 +180,12 @@ bases_estados_df <- map(list_estados, doubl_dates_st) %>%
 plot_activity_mobility <- function(df) {
     
     p <- ggplot(df, aes(x = smth_date, y = smth_mob)) +
-    geom_path(color = "steelblue", size = 0.8) +
-    #geom_vline(xintercept = 19, linetype = "dotted", size = 0.8) +
-    #geom_point(data = brasil_mob_b, shape = 22, fill = "white") +
-    xlim(0, 40) + 
-    facet_wrap(~ state) +
-    ylab("Mobility Index") + xlab("Doubling days of confirmed cases")
+		geom_path(color = "steelblue", size = 0.8) +
+		#geom_vline(xintercept = 19, linetype = "dotted", size = 0.8) +
+		#geom_point(data = brasil_mob_b, shape = 22, fill = "white") +
+		xlim(0, 40) + 
+		facet_wrap(~ state) +
+		ylab("Mobility Index") + xlab("Doubling days of confirmed cases")
     
     return(p)
 }
@@ -237,11 +236,12 @@ plot_regiao("Norte")
 pre_covid_df_fun <- function(df) {
     
     post_df <- df %>% 
-    group_by(data, estado) %>% 
-    summarise(consumo_diario = sum(consumo)) %>% 
-    mutate(pre_covid = ifelse(data <= as.Date("2020-02-25"), 1, 0) %>% factor(),
-           mes       = month(data),
-           ano       = year(data))
+		group_by(data, estado) %>% 
+		summarise(consumo_diario = sum(consumo)) %>% 
+		mutate(pre_covid = ifelse(data <= as.Date("2020-02-25"), 1, 0) %>% factor(),
+			   mes       = month(data),
+			   ano       = year(data)
+			  )
     
     # base in of sample
     df_oss <- post_df %>%
@@ -295,10 +295,10 @@ acl_energy_df <- energy %>%
 plot_activity_energy <- function(df) {
     
     p <- ggplot(df, aes(x = smth_date, y = smth_consumo)) +
-    geom_path(color = "steelblue", size = 0.8) +
-    xlim(0, 40) + 
-    facet_wrap(~ estado) +
-    ylab("Change from baseline in energy consumption") + xlab("Doubling days of confirmed cases")
+		geom_path(color = "steelblue", size = 0.8) +
+		xlim(0, 40) + 
+		facet_wrap(~ estado) +
+		ylab("Change from baseline in energy consumption") + xlab("Doubling days of confirmed cases")
     
     return(p)
 }
