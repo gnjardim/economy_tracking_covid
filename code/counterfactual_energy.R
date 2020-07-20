@@ -1,27 +1,3 @@
-#' Counterfactual for energy data
-
-# clean environment -------------------------------------------------------
-rm(list = ls())
-
-
-# packages ----------------------------------------------------------------
-library(tidyverse)
-library(lubridate)
-library(janitor)
-
-
-# load data ---------------------------------------------------------------
-energy <- read_csv2("input/energia_data.csv") %>% 
-    rename(ramo = `Ramo de atividade`) %>% 
-    mutate(Estado = iconv(Estado, from = "UTF-8", to = "ASCII//TRANSLIT") %>% 
-               trimws()) %>% 
-    clean_names() %>% 
-    mutate(data = as.Date(data, "%d/%m/%Y")) %>% 
-    arrange(data, classe, ramo) %>% 
-    group_by(data, estado, classe) %>% 
-    summarise(consumo = sum(consumo_m_wm))
-
-
 # functions ---------------------------------------------------------------
 bsm_model_fit <- function(df_ts) {
     
@@ -35,7 +11,7 @@ bsm_model_fit <- function(df_ts) {
     
 }
 
-counterfact_df <- function(df) {
+counterfact_model <- function(df) {
     
     # agregar dados por mês e dividir df por estado
     list_states_df <- df %>% 
@@ -52,5 +28,7 @@ counterfact_df <- function(df) {
     
     # fitar modelo bsm para cada estado na lista
     bsm_model <- map(list_states_df, bsm_model_fit)
-    
+    names(bsm_model) <- unique(df$estado)
+    return(bsm_model)
 }
+bsm_model<- counterfact_model(energy)
