@@ -11,14 +11,12 @@ library(tidyverse)
 library(lubridate)
 library(janitor)
 library(modelr)
-library(dplyr)
-library(rlang)
 library(zoo)
 library(forecast)
 library(kableExtra)
 
 
-source('code/counterfactual_energy.R', encoding = 'UTF-8')
+source('counterfactual_energy.R', encoding = 'UTF-8')
 theme_set(theme_bw())
 ```
 
@@ -28,7 +26,7 @@ Relatório tem como objetivo testar o modelo **BSM** utilizado para contrafactua
 
 
 ```{r, include = FALSE, warning = FALSE}
-energy <- read_csv2("input/energia_data.csv") %>% 
+energy <- read_csv2("../input/energia_data.csv") %>% 
     rename(ramo = `Ramo de atividade`) %>% 
     mutate(Estado = iconv(Estado, from = "UTF-8", to = "ASCII//TRANSLIT") %>% 
                trimws()) %>% 
@@ -42,35 +40,39 @@ bsm_model <- counterfact_model(energy)
 ```
 
 
-```{r , echo=FALSE}
+```{r echo=FALSE}
 teste_modelos <- function(UF){
-#Modelo
-    modelo <- bsm_model[[paste0(UF)]]
     
-# Básicos do Modelo
+    # modelo
+    modelo <- bsm_model[[UF]]
+    
+    # coeficientes
     table <- kable(modelo$coef)
-    
-#Limpando base 
-    df <- energy %>% 
-       dplyr:: filter(estado == UF)
-#Vendo Resíduo
+
+    # resíduos
     plot_residuo <- forecast::checkresiduals(modelo)
 
-# Fited x SA
-    sm <- tsSmooth(modelo)
-    modelo_sa <- df - sm[,1]
-
-    plot_fit_sa <- ggplot() + 
-      geom_line(df,sm[,1],col='blue')+
-      geom_line(fitted(modelo)[,1],col='red')+
-      geom_line(modelo.sa, col='black')
+    # fitted x observed
+    fitted_serie <- tibble(fit = fitted(modelo)) %>% 
+        mutate(fit = as.numeric(fit))
     
-return(list(plot_residuo,plot_fit_sa))
+    datas <- seq.Date(from = as.Date("2018-07-01"), 
+                      to   = as.Date("2020-02-01"),
+                      by   = "month")
+    
+    df <- tibble(date  = datas,
+                 sm    = , 
+                 serie = modelo$data %>% as.numeric())
+
+    # plot
+    plot_fit_sa <- ggplot(df, mapping = aes(x = date)) + 
+      geom_line(aes(y = sm), col = 'blue') +
+      geom_line(aes(y = serie), col = 'red')
+    
+    return(list(plot_residuo, plot_fit_sa))
 }
 
-Estados <- unique(energy$estado)
-
-list_residual <- lapply(Estados,teste_modelos)
-
+nome_estados <- unique(energy$estado)
+list_residual <- map(nome_estados, teste_modelos)
 ```
 

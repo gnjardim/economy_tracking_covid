@@ -29,6 +29,7 @@ counterfact_model <- function(df) {
     # fitar modelo bsm para cada estado na lista
     bsm_model <- map(list_states_df, bsm_model_fit)
     names(bsm_model) <- unique(df$estado)
+    
     return(bsm_model)
 }
-bsm_model<- counterfact_model(energy)
+
