@@ -41,6 +41,7 @@ bsm_model <- counterfact_model(energy)
 
 
 ```{r echo=FALSE}
+UF <- "Acre"
 teste_modelos <- function(UF){
     
     # modelo
@@ -50,26 +51,28 @@ teste_modelos <- function(UF){
     table <- kable(modelo$coef)
 
     # resíduos
-    plot_residuo <- forecast::checkresiduals(modelo)
+    plot_residuo <- checkresiduals(modelo)
 
     # fitted x observed
-    fitted_serie <- tibble(fit = fitted(modelo)) %>% 
-        mutate(fit = as.numeric(fit))
     
     datas <- seq.Date(from = as.Date("2018-07-01"), 
                       to   = as.Date("2020-02-01"),
                       by   = "month")
     
+    
     df <- tibble(date  = datas,
-                 sm    = , 
+                 sm    = fitted(modelo)[,1], 
                  serie = modelo$data %>% as.numeric())
 
+    plot <- autoplot(modelo$data) +
+    autolayer(fitted(modelo, h=1))
+    
     # plot
     plot_fit_sa <- ggplot(df, mapping = aes(x = date)) + 
       geom_line(aes(y = sm), col = 'blue') +
       geom_line(aes(y = serie), col = 'red')
     
-    return(list(plot_residuo, plot_fit_sa))
+    return(list(table, plot_residuo, plot_fit_sa))
 }
 
 nome_estados <- unique(energy$estado)
