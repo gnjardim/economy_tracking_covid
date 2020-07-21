@@ -42,8 +42,34 @@ bsm_model <- counterfact_model(energy)
 
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
-teste_modelos <- function(UF){
+rquadrado <- function (UF){
+  modelo <- bsm_model[[UF]]
     
+    # resíduos
+  
+    # fitted x observed
+    datas <- seq.Date(from = as.Date("2018-07-01"), 
+                      to   = as.Date("2020-02-01"),
+                      by   = "month")
+    
+    fitted_vals <- fitted(modelo)
+    
+    # build df
+    df <- tibble(date     = datas,
+                 Fitted   = fitted_vals[, 1] + fitted_vals[, 2] + fitted_vals[,3],              Observed = modelo$data %>% as.numeric())
+
+    #Calculating R2
+rss <- sum((df$Fitted - df$Observed) ^ 2)  ## residual sum of squares
+tss <- sum((df$Observed - mean(df$Observed)) ^ 2)  ## total sum of squares
+rsq <- 1 - rss/tss
+
+print(paste0("Estado: ", UF, " R_Squared: ", rsq))
+  
+}
+
+teste_modelos <- function(UF){
+    #
+  
     # modelo
     modelo <- bsm_model[[UF]]
     
@@ -83,9 +109,222 @@ teste_modelos <- function(UF){
 }
 
 nome_estados <- unique(energy$estado)
-list_plots   <- map(nome_estados, teste_modelos)
+#list_plots   <- map(nome_estados, teste_modelos)
 ```
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
-list_plots
+UF <- nome_estados[1]
+rquadrado(UF)
+checkresiduals( bsm_model[[UF]])
+teste_modelos(UF)
+
 ```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+UF <- nome_estados[2]
+rquadrado(UF)
+checkresiduals( bsm_model[[UF]])
+teste_modelos(UF)
+
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+UF <- nome_estados[3]
+rquadrado(UF)
+checkresiduals( bsm_model[[UF]])
+teste_modelos(UF)
+
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+UF <- nome_estados[4]
+rquadrado(UF)
+checkresiduals( bsm_model[[UF]])
+teste_modelos(UF)
+
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+UF <- nome_estados[5]
+rquadrado(UF)
+checkresiduals( bsm_model[[UF]])
+teste_modelos(UF)
+
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+UF <- nome_estados[6]
+rquadrado(UF)
+checkresiduals( bsm_model[[UF]])
+teste_modelos(UF)
+
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+UF <- nome_estados[7]
+rquadrado(UF)
+checkresiduals( bsm_model[[UF]])
+teste_modelos(UF)
+
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+UF <- nome_estados[8]
+rquadrado(UF)
+checkresiduals( bsm_model[[UF]])
+teste_modelos(UF)
+
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+UF <- nome_estados[9]
+rquadrado(UF)
+checkresiduals( bsm_model[[UF]])
+teste_modelos(UF)
+
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+UF <- nome_estados[10]
+rquadrado(UF)
+checkresiduals( bsm_model[[UF]])
+teste_modelos(UF)
+
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+UF <- nome_estados[11]
+rquadrado(UF)
+checkresiduals( bsm_model[[UF]])
+teste_modelos(UF)
+
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+UF <- nome_estados[12]
+rquadrado(UF)
+checkresiduals( bsm_model[[UF]])
+teste_modelos(UF)
+
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+UF <- nome_estados[13]
+rquadrado(UF)
+checkresiduals( bsm_model[[UF]])
+teste_modelos(UF)
+
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+UF <- nome_estados[14]
+rquadrado(UF)
+checkresiduals( bsm_model[[UF]])
+teste_modelos(UF)
+
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+UF <- nome_estados[15]
+rquadrado(UF)
+checkresiduals( bsm_model[[UF]])
+teste_modelos(UF)
+
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+UF <- nome_estados[16]
+rquadrado(UF)
+checkresiduals( bsm_model[[UF]])
+teste_modelos(UF)
+
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+UF <- nome_estados[17]
+rquadrado(UF)
+checkresiduals( bsm_model[[UF]])
+teste_modelos(UF)
+
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+UF <- nome_estados[18]
+rquadrado(UF)
+checkresiduals( bsm_model[[UF]])
+teste_modelos(UF)
+
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+UF <- nome_estados[19]
+rquadrado(UF)
+checkresiduals( bsm_model[[UF]])
+teste_modelos(UF)
+
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+UF <- nome_estados[20]
+rquadrado(UF)
+checkresiduals( bsm_model[[UF]])
+teste_modelos(UF)
+
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+UF <- nome_estados[21]
+rquadrado(UF)
+checkresiduals( bsm_model[[UF]])
+teste_modelos(UF)
+
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+UF <- nome_estados[22]
+rquadrado(UF)
+checkresiduals( bsm_model[[UF]])
+teste_modelos(UF)
+
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+UF <- nome_estados[23]
+rquadrado(UF)
+checkresiduals( bsm_model[[UF]])
+teste_modelos(UF)
+
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+UF <- nome_estados[24]
+rquadrado(UF)
+checkresiduals( bsm_model[[UF]])
+teste_modelos(UF)
+
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+UF <- nome_estados[25]
+rquadrado(UF)
+checkresiduals( bsm_model[[UF]])
+teste_modelos(UF)
+
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+UF <- nome_estados[26]
+rquadrado(UF)
+checkresiduals( bsm_model[[UF]])
+teste_modelos(UF)
+
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+UF <- nome_estados[26]
+rquadrado(UF)
+checkresiduals( bsm_model[[UF]])
+teste_modelos(UF)
+
+```
+
