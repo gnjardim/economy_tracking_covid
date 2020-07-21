@@ -4,7 +4,7 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, fig.width = 6, fig.height = 3.2)
+knitr::opts_chunk$set(echo = TRUE, fig.width = 10, fig.height = 5.2)
 
 
 library(tidyverse)
@@ -13,6 +13,7 @@ library(janitor)
 library(modelr)
 library(zoo)
 library(forecast)
+library(gridExtra)
 library(kableExtra)
 
 
@@ -40,42 +41,51 @@ bsm_model <- counterfact_model(energy)
 ```
 
 
-```{r echo=FALSE}
-UF <- "Acre"
+```{r echo=FALSE, warning=FALSE, message=FALSE}
 teste_modelos <- function(UF){
     
     # modelo
     modelo <- bsm_model[[UF]]
     
-    # coeficientes
-    table <- kable(modelo$coef)
-
     # resíduos
-    plot_residuo <- checkresiduals(modelo)
+    #plot_residuo <- checkresiduals(modelo)
 
     # fitted x observed
-    
     datas <- seq.Date(from = as.Date("2018-07-01"), 
                       to   = as.Date("2020-02-01"),
                       by   = "month")
     
+    fitted_vals <- fitted(modelo)
     
-    df <- tibble(date  = datas,
-                 sm    = fitted(modelo)[,1], 
-                 serie = modelo$data %>% as.numeric())
+    # build df
+    df <- tibble(date     = datas,
+                 Fitted   = fitted_vals[, 1] + fitted_vals[, 2] + fitted_vals[, 3], 
+                 Observed = modelo$data %>% as.numeric())
 
+    # plot componentes
     plot <- autoplot(modelo$data) +
-    autolayer(fitted(modelo, h=1))
+      autolayer(fitted(modelo)) +
+      ggtitle(UF) +
+      ylab("Energy Monthly Consumption") +
+      theme(plot.margin = unit(c(0.2,0.8,0.2,0.2), "cm"))
     
     # plot
     plot_fit_sa <- ggplot(df, mapping = aes(x = date)) + 
-      geom_line(aes(y = sm), col = 'blue') +
-      geom_line(aes(y = serie), col = 'red')
+      geom_line(aes(y = Observed, color = 'black')) +
+      geom_line(aes(y = Fitted, color = 'red')) +
+      ggtitle(UF) +
+      scale_color_manual(values = c('black', 'red'), name = "",
+                         labels = c("Observed", "Fitted")) + 
+      ylab("Energy Monthly Consumption") + xlab("Time") +
+      theme(plot.margin = unit(c(0.2,0.2,0.2,0.8), "cm"))
     
-    return(list(table, plot_residuo, plot_fit_sa))
+    return(invisible(grid.arrange(plot, plot_fit_sa, ncol = 2)))
 }
 
 nome_estados <- unique(energy$estado)
-list_residual <- map(nome_estados, teste_modelos)
+list_plots   <- map(nome_estados, teste_modelos)
 ```
 
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+list_plots
+```
