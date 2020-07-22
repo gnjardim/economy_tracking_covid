@@ -37,7 +37,7 @@ energy <- read_csv2("../input/energia_data.csv") %>%
     summarise(consumo = sum(consumo_m_wm))
     
 # https://covid.saude.gov.br/
-covid <- read_csv2("../input/HIST_PAINEL_COVIDBR_11jul2020.csv") %>% 
+covid <- read_csv2("../input/PAINEL_COVIDBR.csv") %>% 
     filter(!is.na(estado)) %>% 
     mutate(date = as.Date(data, "%d/%m/%Y"))
 
@@ -115,24 +115,6 @@ create_columns <- function(df) {
 }
 
 
-# define initial and end dates --------------------------------------------
-find_initial_date <- function(df) {
-    
-    initial_date <- df %>% 
-        filter(!is.na(smth_date)) %>% 
-        slice(1) %>% 
-        pull(date)
-}
-
-find_end_date <- function(df, activity_column) {
-    
-    end_date <- df %>% 
-        filter(!is.na( !!activity_column )) %>% 
-        slice(n()) %>% 
-        pull(date)
-}
-
-
 # run functions in data ---------------------------------------------------
 brasil <- brasil %>% 
     mutate(across(matches("last_available"), ~replace(., is.na(.), 0))) %>% 
@@ -148,14 +130,6 @@ brasil_df <- brasil %>%
     mutate(doubl_dates = c(NA, doubl_dates) %>% as_date()) %>% 
     create_columns() %>% 
     filter(!is.na(mobility))
-
-### define dates
-initial_date <- find_initial_date(brasil)
-end_date     <- find_end_date(brasil_df, "mobility")
-dates <- c(initial_date, end_date)
-
-brasil_df <- brasil_df %>% 
-    mutate(inicio_fim = ifelse(date %in% dates, date, NA) %>% as.Date())
 ```
 
 # Usando dados de mobilidade  
@@ -165,7 +139,6 @@ brasil_df <- brasil_df %>%
 ```{r echo = FALSE, warning = FALSE}
 ggplot(brasil_df, aes(x = smth_date, y = smth_mob)) +
     geom_path(color = "steelblue") +
-    geom_text(aes(label = inicio_fim)) +
     xlim(0, 40) + 
     ylab("Mobility Index") + xlab("Doubling days of confirmed cases") 
 ```
@@ -214,8 +187,7 @@ plot_activity_mobility <- function(df) {
 		geom_path(color = "steelblue", size = 0.8) +
 		#geom_vline(xintercept = 19, linetype = "dotted", size = 0.8) +
 		#geom_point(data = brasil_mob_b, shape = 22, fill = "white") +
-        geom_text(aes(label = inicio_fim)) +
-		xlim(0, 40) + 
+        xlim(0, 40) + 
 		facet_wrap(~ state) +
 		ylab("Mobility Index") + xlab("Doubling days of confirmed cases")
     
@@ -276,12 +248,12 @@ pre_covid_df_fun <- function(df) {
 			  )
     
     # base in of sample
-    df_oss <- post_df %>%
+    df_ins <- post_df %>%
         filter(pre_covid != 0)
     
     # estimar media e dummies
     mod <- lm(consumo_diario ~ factor(estado) * factor(mes) + factor(ano), 
-              data = df_oss)    
+              data = df_ins)    
     
     # adicionar coluna de predito
     pred_df <- post_df %>% 
@@ -322,8 +294,6 @@ acl_energy_df <- energy %>%
     filter(classe == "Consumidor Especial" | classe == "Consumidor Livre") %>% 
     energy_df_fun(acl_pre_covid)
 
-
-end_date <- find_end_date(brasil_df, "dif_baseline")
 ```
 
 ```{r echo = FALSE, warning = FALSE, message = FALSE}
