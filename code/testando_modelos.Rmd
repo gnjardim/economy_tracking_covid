@@ -62,7 +62,7 @@ rquadrado <- function (UF){
     tss <- sum((df$Observed - mean(df$Observed)) ^ 2)  ## total sum of squares
     rsq <- 1 - rss/tss
 
-    print(paste0("Estado: ", UF, ", R2: ", rsq))
+    print(paste0("Estado: ", UF, ", R2: ", round(rsq, 3)))
   
 }
 
