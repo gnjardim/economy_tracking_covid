@@ -236,28 +236,46 @@ plot_regiao("Norte")
 \pagebreak
 # Usando dados de energia
 ```{r echo = FALSE, warning = FALSE, message = FALSE}
+feriados <- read_csv2("../input/feriados.csv") %>% 
+    mutate(data = as.Date(data, "%d/%m/%Y"))
+
+```
+
+```{r echo = FALSE, warning = FALSE, message = FALSE}
 
 pre_covid_df_fun <- function(df) {
     
-    post_df <- df %>% 
-		group_by(data, estado) %>% 
+    list_df <- df %>% 
+        left_join(feriados) %>% 
+		group_by(data, estado, feriado) %>% 
 		summarise(consumo_diario = sum(consumo)) %>% 
-		mutate(pre_covid = ifelse(data <= as.Date("2020-02-25"), 1, 0) %>% factor(),
-			   mes       = month(data),
-			   ano       = year(data)
-			  )
-    
-    # base in of sample
-    df_ins <- post_df %>%
-        filter(pre_covid != 0)
+		mutate(pre_covid  = ifelse(data <= as.Date("2020-02-25"), 1, 0),
+			   mes        = month(data) %>% factor(),
+			   ano        = year(data),
+			   dia_semana = wday(data),
+			   trend      = as.numeric(data) - as.numeric(as.Date("2018-08-01")),
+			   trend2     = trend^2,
+			   d_feriado  = ifelse(!is.na(feriado), feriado, 0) %>% factor()
+			  ) %>% 
+        group_by(estado) %>% 
+        group_split()
     
     # estimar media e dummies
-    mod <- lm(consumo_diario ~ factor(estado) * factor(mes) + factor(ano), 
-              data = df_ins)    
+    mod <- map(list_df,
+               ~ lm(consumo_diario ~ mes + factor(ano) + d_feriado +
+                                     factor(dia_semana) + trend + trend2, 
+                  data = .x %>% filter(pre_covid == 1)))
+    
+    r2 <- tibble(estado = unique(df$estado) %>% sort(),
+                 r2 = map(mod, summary) %>% map_dbl("r.squared"))
+        
     
     # adicionar coluna de predito
-    pred_df <- post_df %>% 
-        add_predictions(mod)
+    pred_df <- map2(.x = list_df, .y = mod, 
+                    ~ add_predictions(.x, .y)) %>% 
+        bind_rows()
+    
+    return(pred_df)
     
 }
 
@@ -287,12 +305,15 @@ total_energy_df <- energy %>%
 # consumo acl -------------------------------------------------------------
 acl_pre_covid <- energy %>% 
     filter(classe == "Consumidor Especial" | classe == "Consumidor Livre") %>% 
-    pre_covid_df_fun()
+    filter(estado != "Amapa") %>%   # só tem dados de distribuidor
+    pre_covid_df_fun() %>% 
+    filter(!is.na(pred))
 
 
 acl_energy_df <- energy %>% 
     filter(classe == "Consumidor Especial" | classe == "Consumidor Livre") %>% 
-    energy_df_fun(acl_pre_covid)
+    energy_df_fun(acl_pre_covid) %>% 
+    filter(!is.na(pred))
 
 ```
 
@@ -303,7 +324,7 @@ plot_activity_energy <- function(df) {
 		geom_path(color = "steelblue", size = 0.8) +
 		xlim(0, 40) + 
 		facet_wrap(~ estado) +
-		ylab("Change from baseline in energy consumption") + xlab("Doubling days of confirmed cases")
+		ylab("Change from predicted in energy consumption") + xlab("Doubling days of confirmed cases")
     
     return(p)
 }
@@ -378,6 +399,6 @@ plot_regiao_energia(total_energy_df, "Norte")
 
 \pagebreak
 **Somente ACL**  
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
 plot_regiao_energia(acl_energy_df, "Norte")
 ```
