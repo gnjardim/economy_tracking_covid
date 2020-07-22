@@ -42,7 +42,7 @@ bsm_model <- counterfact_model(energy)
 
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
-rquadrado <- function (UF){
+rquadrado <- function(UF) {
     
     modelo <- bsm_model[[UF]]
     
@@ -69,7 +69,6 @@ rquadrado <- function (UF){
 
 teste_modelos <- function(UF){
     
-  
     # modelo
     modelo <- bsm_model[[UF]]
     
