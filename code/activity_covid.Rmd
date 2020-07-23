@@ -344,6 +344,17 @@ plot_regiao_energia <- function(df, reg) {
 
 Trocando os dados de mobilidade pela diferença percentual entre o consumo de energia atual e o esperado.
 
+Para definir o contrafactual, fazemos uma regressão para cada estado, com os dados de 08/2018 até 02/2020, da seguinte forma:
+
+\begin{equation}
+\begin{split} \label{reg_energia}
+\text{Consumo Diario}{t} = \beta_0 & + \sum{i=2}^{3} \psi_i D_{\text{ano}{it}}+ \sum{i=2}^{12} \delta_i D_{\text{mês}{it}} + \sum{i=2}^{7} \lambda_i D_{\text{dia da semana}_{it}} + \\
+&\quad + \sum_{i=2}^{k} \theta_i D_{\text{feriado}_{it}} + \phi_1t + \phi_2t^2 + \epsilon_t
+\end{split}
+\end{equation}
+
+A partir de \ref{reg_energia}, usamos os valores preditos para os dados a partir de Março de 2020 como o esperado para o consumo de energia. A diferença percentual mostrada nos gráficos abaixo se baseia nesses valores.
+
 
 ## Região Sudeste
 ```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
