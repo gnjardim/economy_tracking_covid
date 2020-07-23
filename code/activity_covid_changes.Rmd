@@ -243,7 +243,7 @@ Para definir o contrafactual, fazemos duas regressões para cada estado,uma com 
 + Com tendência e tendência quadrática  
 \begin{equation}
 \begin{split} \label{reg_energia_com_tendencia}
-\text{Consumo Diario}_{t} = \beta_0 & + \sum_{i=2}^{3} \psi_i D_{\text{ano}_{it}}+ \sum_{i=2}^{52} \delta_i D_{\text{semana}_{it}} + \sum_{i=2}^{7} \lambda_i D_{\text{dia da semana}_{it}} + \\
+\text{Consumo Diario}_{t} = \beta_0 & + \sum_{i=2}^{52} \delta_i D_{\text{semana}_{it}} + \sum_{i=2}^{7} \lambda_i D_{\text{dia da semana}_{it}} + \\
 &\quad + \sum_{i=2}^{k} \theta_i D_{\text{feriado}_{it}} + \phi_1t + \phi_2t^2 + \epsilon_t
 \end{split}
 \end{equation}
@@ -252,7 +252,7 @@ Para definir o contrafactual, fazemos duas regressões para cada estado,uma com 
 + Sem tendência  
 \begin{equation}
 \begin{split} \label{reg_energia_sem_tendencia}
-\text{Consumo Diario}_{t} = \beta_0 & + \sum_{i=2}^{3} \psi_i D_{\text{ano}_{it}}+ \sum_{i=2}^{52} \delta_i D_{\text{semana}_{it}} + \sum_{i=2}^{7} \lambda_i D_{\text{dia da semana}_{it}} + \\
+\text{Consumo Diario}_{t} = \beta_0 & + \sum_{i=2}^{52} \delta_i D_{\text{semana}_{it}} + \sum_{i=2}^{7} \lambda_i D_{\text{dia da semana}_{it}} + \\
 &\quad + \sum_{i=2}^{k} \theta_i D_{\text{feriado}_{it}} + \epsilon_t
 \end{split}
 \end{equation}
@@ -286,13 +286,12 @@ pre_covid_df_fun <- function(df, tendencia = TRUE) {
     # regressao nas dummies
     if(tendencia == TRUE){
     mod <- map(list_df,
-               ~ lm(consumo_diario ~ semana + factor(ano) + d_feriado +
-                                     factor(dia_semana) + trend + trend2, 
+               ~ lm(consumo_diario ~ semana + d_feriado + factor(dia_semana) + 
+                                     trend + trend2, 
                   data = .x %>% filter(pre_covid == 1)))
     } else {
     mod <- map(list_df,
-               ~ lm(consumo_diario ~ semana + factor(ano) + d_feriado +
-                                     factor(dia_semana), 
+               ~ lm(consumo_diario ~ semana + d_feriado + factor(dia_semana), 
                   data = .x %>% filter(pre_covid == 1)))
     }
 
