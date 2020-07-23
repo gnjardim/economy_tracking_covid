@@ -348,7 +348,7 @@ Para definir o contrafactual, fazemos uma regressão para cada estado, com os da
 
 \begin{equation}
 \begin{split} \label{reg_energia}
-\text{Consumo Diario}{t} = \beta_0 & + \sum{i=2}^{3} \psi_i D_{\text{ano}{it}}+ \sum{i=2}^{12} \delta_i D_{\text{mês}{it}} + \sum{i=2}^{7} \lambda_i D_{\text{dia da semana}_{it}} + \\
+\text{Consumo Diario}_{t} = \beta_0 & + \sum_{i=2}^{3} \psi_i D_{\text{ano}_{it}}+ \sum_{i=2}^{12} \delta_i D_{\text{mês}_{it}} + \sum_{i=2}^{7} \lambda_i D_{\text{dia da semana}_{it}} + \\
 &\quad + \sum_{i=2}^{k} \theta_i D_{\text{feriado}_{it}} + \phi_1t + \phi_2t^2 + \epsilon_t
 \end{split}
 \end{equation}
