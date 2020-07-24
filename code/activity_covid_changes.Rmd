@@ -13,6 +13,7 @@ library(modelr)
 library(dplyr)
 library(rlang)
 library(zoo)
+library(writexl)
 
 theme_set(theme_bw())
 ```
@@ -297,13 +298,17 @@ pre_covid_df_fun <- function(df, tendencia = TRUE) {
     }
     r2 <- tibble(estado = unique(df$estado) %>% sort(),
                  r2 = map(mod, summary) %>% map_dbl("r.squared"))
-        
+    if(tendencia == TRUE){
+    write_xlsx(r2, "../output/r2_tendencia_semana.xlsx") 
+    } else {
+    write_xlsx(r2,"../output/r2_sem_tendencia_semana.xlsx") 
+    }
     
     # adicionar coluna de predito
     pred_df <- map2(.x = list_df, .y = mod, 
                     ~ add_predictions(.x, .y)) %>% 
         bind_rows()
-    
+    invisible(r2)
     return(pred_df)
     
 }
@@ -367,6 +372,17 @@ acl_energy_df_sem_tendencia <- energy %>%
     filter(classe == "Consumidor Especial" | classe == "Consumidor Livre") %>% 
     energy_df_fun(acl_pre_covid_sem_tendencia) %>% 
     filter(!is.na(pred))
+
+```
+
+```{r echo = FALSE, warning = FALSE, message = FALSE}
+#Calculando R2
+r_sqrared_fun <- function(df,mod){
+    r2 <- tibble(estado = unique(df$estado) %>% sort(),
+                 r2 = map(mod, summary) %>% map_dbl("r.squared"))
+}
+
+
 
 ```
 
