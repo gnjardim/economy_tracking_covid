@@ -240,24 +240,25 @@ plot_regiao("Norte")
 
 Para definir o contrafactual, fazemos duas regressões para cada estado,uma com tendência quadrática e outra sem tendência com os dados de 08/2018 até 02/2020, da seguinte forma:
 
-+ Com tendência quadrática
++ Com tendência e tendência quadrática  
 \begin{equation}
 \begin{split} \label{reg_energia_com_tendencia}
-\text{Consumo Diario}{t} = \beta_0 & + \sum{i=2}^{3} \psi_i D_{\text{ano}{it}}+ \sum{i=2}^{52} \delta_i D_{\text{Semana}{it}} + \sum{i=2}^{7} \lambda_i D_{\text{dia da semana}_{it}} + \\
+\text{Consumo Diario}_{t} = \beta_0 & + \sum_{i=2}^{52} \delta_i D_{\text{semana}_{it}} + \sum_{i=2}^{7} \lambda_i D_{\text{dia da semana}_{it}} + \\
 &\quad + \sum_{i=2}^{k} \theta_i D_{\text{feriado}_{it}} + \phi_1t + \phi_2t^2 + \epsilon_t
 \end{split}
 \end{equation}
 
 
-+Sem tendência 
++ Sem tendência  
 \begin{equation}
 \begin{split} \label{reg_energia_sem_tendencia}
-\text{Consumo Diario}{t} = \beta_0 & + \sum{i=2}^{3} \psi_i D_{\text{ano}{it}}+ \sum{i=2}^{52} \delta_i D_{\text{Semana}{it}} + \sum{i=2}^{7} \lambda_i D_{\text{dia da semana}_{it}} + \\
+\text{Consumo Diario}_{t} = \beta_0 & + \sum_{i=2}^{52} \delta_i D_{\text{semana}_{it}} + \sum_{i=2}^{7} \lambda_i D_{\text{dia da semana}_{it}} + \\
 &\quad + \sum_{i=2}^{k} \theta_i D_{\text{feriado}_{it}} + \epsilon_t
 \end{split}
 \end{equation}
 
-A partir das \ref{reg_energia_com_tendencia} e \ref{reg_energia_sem_tendencia}, usamos os valores preditos para os dados a partir de Março de 2020 como o esperado para o consumo de energia. A diferença percentual mostrada nos gráficos abaixo se baseia nesses valores.
+A partir de \ref{reg_energia_com_tendencia} e \ref{reg_energia_sem_tendencia}, usamos os valores preditos para os dados a partir de Março de 2020 como o esperado para o consumo de energia. A diferença percentual mostrada nos gráficos abaixo se baseia nesses valores.
+
 
 ```{r echo = FALSE, warning = FALSE, message = FALSE}
 feriados <- read_csv2("../input/feriados.csv") %>% 
@@ -285,16 +286,15 @@ pre_covid_df_fun <- function(df, tendencia = TRUE) {
     # regressao nas dummies
     if(tendencia == TRUE){
     mod <- map(list_df,
-               ~ lm(consumo_diario ~ semana + factor(ano) + d_feriado +
-                                     factor(dia_semana) + trend + trend2, 
+               ~ lm(consumo_diario ~ semana + d_feriado + factor(dia_semana) + 
+                                     trend + trend2, 
                   data = .x %>% filter(pre_covid == 1)))
     } else {
     mod <- map(list_df,
-               ~ lm(consumo_diario ~ semana + factor(ano) + d_feriado +
-                                     factor(dia_semana) , 
+               ~ lm(consumo_diario ~ semana + d_feriado + factor(dia_semana), 
                   data = .x %>% filter(pre_covid == 1)))
-        
     }
+
     r2 <- tibble(estado = unique(df$estado) %>% sort(),
                  r2 = map(mod, summary) %>% map_dbl("r.squared"))
         
@@ -325,14 +325,14 @@ energy_df_fun <- function(df, df_pre_cov) {
 }
 
 # consumo total -----------------------------------------------------------
-##Com tendêcia quadrática 
+## Com tendêcia quadrática 
 pre_covid_com_tendecia <- energy %>% 
     pre_covid_df_fun()
 
 total_energy_df_com_tendencia <- energy %>% 
     energy_df_fun(pre_covid_com_tendecia)
 
-##Sem tendência
+## Sem tendência
 pre_covid_sem_tendecia <- energy %>% 
     pre_covid_df_fun(tendencia = FALSE)
 
@@ -341,7 +341,7 @@ total_energy_df_sem_tendencia <- energy %>%
 
 
 # consumo acl -------------------------------------------------------------
-##Com tendêcia quadrática 
+## Com tendêcia quadrática 
 acl_pre_covid_com_tendencia <- energy %>% 
     filter(classe == "Consumidor Especial" | classe == "Consumidor Livre") %>% 
     filter(estado != "Amapa") %>%   # só tem dados de distribuidor
@@ -355,7 +355,7 @@ acl_energy_df_com_tendencia <- energy %>%
     filter(!is.na(pred))
 
 
-##Sem tendêcia  
+## Sem tendêcia  
 acl_pre_covid_sem_tendencia <- energy %>% 
     filter(classe == "Consumidor Especial" | classe == "Consumidor Livre") %>% 
     filter(estado != "Amapa") %>%   # só tem dados de distribuidor
@@ -396,25 +396,29 @@ plot_regiao_energia <- function(df, reg) {
 
 Trocando os dados de mobilidade pela diferença percentual entre o consumo de energia atual e o esperado.
 
-## Região Sudeste
-**Total de Consumo**
-**Com tendência quadrática**
+\pagebreak
+## Região Sudeste  
+**Total de Consumo**  
+**Com tendência e tendência quadrática**  
 ```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
 plot_regiao_energia(total_energy_df_com_tendencia, "Sudeste")
 ```
 
-**Sem tendência**
+\pagebreak
+**Sem tendência**  
 ```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
 plot_regiao_energia(total_energy_df_sem_tendencia, "Sudeste")
 ```
 
 \pagebreak
 **Somente ACL**  
-**Com tendência quadrática**
+**Com tendência e tendência quadrática**  
 ```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
 plot_regiao_energia(acl_energy_df_com_tendencia, "Sudeste")
 ```
-**Sem tendência**
+
+\pagebreak
+**Sem tendência**  
 ```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
 plot_regiao_energia(acl_energy_df_sem_tendencia, "Sudeste")
 ```
@@ -422,99 +426,107 @@ plot_regiao_energia(acl_energy_df_sem_tendencia, "Sudeste")
 
 \pagebreak
 ## Região Sul
-**Total de Consumo**
-**Com tendência quadrática**
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+**Total de Consumo**  
+**Com tendência e tendência quadrática**  
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 4}
 plot_regiao_energia(total_energy_df_com_tendencia, "Sul")
 ```
 
-**Sem tendência**
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+**Sem tendência**  
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 4}
 plot_regiao_energia(total_energy_df_sem_tendencia, "Sul")
 ```
 
 \pagebreak
-**Somente ACL**  
-**Com tendência quadrática**
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+**Somente ACL**   
+**Com tendência e tendência quadrática**  
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 4}
 plot_regiao_energia(acl_energy_df_com_tendencia, "Sul")
 ```
-**Sem tendência**
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+
+**Sem tendência**  
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 4}
 plot_regiao_energia(acl_energy_df_sem_tendencia, "Sul")
 ```
 
 
-
 \pagebreak
-
 ## Região Centro-Oeste
-**Total de Consumo**
-**Com tendência quadrática**
+**Total de Consumo**  
+**Com tendência e tendência quadrática**  
 ```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
 plot_regiao_energia(total_energy_df_com_tendencia, "Centro-Oeste")
 ```
 
-**Sem tendência**
+\pagebreak
+**Sem tendência**  
 ```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
 plot_regiao_energia(total_energy_df_sem_tendencia, "Centro-Oeste")
 ```
 
 \pagebreak
 **Somente ACL**  
-**Com tendência quadrática**
+**Com tendência e tendência quadrática**  
 ```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
 plot_regiao_energia(acl_energy_df_com_tendencia, "Centro-Oeste")
 ```
-**Sem tendência**
+
+\pagebreak
+**Sem tendência**  
 ```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
 plot_regiao_energia(acl_energy_df_sem_tendencia, "Centro-Oeste")
 ```
 
 \pagebreak
-## Região Nordeste
-
-**Total de Consumo**
-**Com tendência quadrática**
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+## Região Nordeste  
+**Total de Consumo**    
+**Com tendência e tendência quadrática**  
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
 plot_regiao_energia(total_energy_df_com_tendencia, "Nordeste")
 ```
-**Sem tendência**
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+
+\pagebreak
+**Sem tendência**  
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
 plot_regiao_energia(total_energy_df_sem_tendencia, "Nordeste")
 ```
 
 \pagebreak
 **Somente ACL**  
-**Com tendência quadrática**
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+**Com tendência e tendência quadrática**  
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
 plot_regiao_energia(acl_energy_df_com_tendencia, "Nordeste")
 ```
-**Sem tendência**
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+
+\pagebreak
+**Sem tendência**  
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
 plot_regiao_energia(acl_energy_df_sem_tendencia, "Nordeste")
 ```
 
 \pagebreak
-## Região Norte
-
-**Total de Consumo**
-**Com tendência quadrática**
+## Região Norte  
+**Total de Consumo**  
+**Com tendência e tendência quadrática**  
 ```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
 plot_regiao_energia(total_energy_df_com_tendencia, "Norte")
 ```
-**Sem tendência**
+
+\pagebreak
+**Sem tendência**  
 ```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
 plot_regiao_energia(total_energy_df_sem_tendencia, "Norte")
 ```
 
 \pagebreak
 **Somente ACL**  
-**Com tendência quadrática**
+**Com tendência e tendência quadrática**  
 ```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
 plot_regiao_energia(acl_energy_df_com_tendencia, "Norte")
 ```
-**Sem tendência**
+
+\pagebreak
+**Sem tendência**  
 ```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
 plot_regiao_energia(acl_energy_df_sem_tendencia, "Norte")
 ```
