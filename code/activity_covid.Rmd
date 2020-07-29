@@ -137,11 +137,11 @@ brasil_df <- brasil %>%
 ## Brasil  
 
 ```{r echo = FALSE, warning = FALSE}
-ggplot(brasil_df, aes(x = smth_date, y = smth_mob)) +
+ggplot(brasil_df, aes(x = smth_date, y = activity)) +
     geom_path(color = "steelblue") +
     geom_hline(yintercept = 1, color = "red") +
     xlim(0, 40) + 
-    ylab("Mobility Index") + xlab("Doubling days of confirmed cases") 
+    ylab("Activity Index") + xlab("Doubling days of confirmed cases") 
 ```
 
 
@@ -184,14 +184,14 @@ bases_estados_df <- map(list_estados, doubl_dates_st) %>%
 ```{r include = FALSE}
 plot_activity_mobility <- function(df) {
     
-    p <- ggplot(df, aes(x = smth_date, y = smth_mob)) +
+    p <- ggplot(df, aes(x = smth_date, y = activity)) +
 		geom_path(color = "steelblue", size = 0.8) +
 		#geom_vline(xintercept = 19, linetype = "dotted", size = 0.8) +
 		#geom_point(data = brasil_mob_b, shape = 22, fill = "white") +
         geom_hline(yintercept = 1, color = "red") +
         xlim(0, 40) + 
 		facet_wrap(~ state) +
-		ylab("Mobility Index") + xlab("Doubling days of confirmed cases")
+		ylab("Activity Index") + xlab("Doubling days of confirmed cases")
     
     return(p)
 }
