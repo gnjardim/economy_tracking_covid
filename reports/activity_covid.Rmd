@@ -10,8 +10,6 @@ library(tidyverse)
 library(lubridate)
 library(janitor)
 library(modelr)
-library(dplyr)
-library(rlang)
 library(zoo)
 
 theme_set(theme_bw())
