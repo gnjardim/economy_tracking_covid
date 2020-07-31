@@ -40,8 +40,8 @@ plot_fit_energy <- function(df) {
     
     p <- df %>% 
         ggplot(aes(x = data)) +
-        geom_line(aes(y = ma_consumo), color = "black") +
-        geom_line(aes(y = ma_pred), color = "steelblue") +
+        geom_line(aes(y = ma_consumo), color = "black", size = 0.8) +
+        geom_line(aes(y = ma_pred), color = "steelblue", size = 0.8) +
         facet_wrap(~estado, scales = "free") +
         ylab("7-days Moving Average of Energy Consumption") + 
         xlab("Time") +
@@ -59,3 +59,25 @@ plot_regiao_energia <- function(df, reg, fplot) {
     
     return(fplot(base_regiao)) 
 }
+
+plot_energy_mobility <- function(df, reg){
+    
+    base_regiao     <- df %>% 
+        filter(regiao == reg)
+    
+    start <- base_regiao %>% 
+        filter(!is.na(smth_mob) & !is.na(ma_consumo))%>%
+        filter(data == min(data))
+
+    p <-base_regiao%>%
+        ggplot(aes(x = ma_consumo, y = smth_mob)) +
+        geom_path(color = "steelblue", size = 0.8) +
+        facet_wrap(~estado, scales = "free") +
+        geom_point(start,mapping=aes(x=ma_consumo,y=smth_mob), colour="red")+
+        ylab("Mobility") + xlab("Moving average of Energy Consumption")
+    
+    return(p)
+    
+    
+}
+

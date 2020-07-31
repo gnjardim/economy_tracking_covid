@@ -203,3 +203,66 @@ plot_regiao_energia(total_energy_df, "Norte", plot_activity_energy)
 ```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
 plot_regiao_energia(acl_energy_df, "Norte", plot_activity_energy)
 ```
+
+
+# Relação Mobilidade x Consumo de Energia  
+
+## Região Sudeste
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+plot_energy_mobility(total_energy_df, "Sudeste")
+```
+
+\pagebreak
+**Somente ACL**  
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+plot_energy_mobility(acl_energy_df, "Sudeste")
+```
+
+
+\pagebreak
+## Região Sul
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 3}
+plot_energy_mobility(total_energy_df, "Sul")
+```
+
+\pagebreak
+**Somente ACL**  
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 3}
+plot_energy_mobility(acl_energy_df, "Sul")
+```
+
+\pagebreak
+## Região Centro-Oeste
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+plot_energy_mobility(total_energy_df, "Centro-Oeste")
+```
+
+\pagebreak
+**Somente ACL**  
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+plot_energy_mobility(acl_energy_df, "Centro-Oeste")
+```
+
+\pagebreak
+## Região Nordeste
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
+plot_energy_mobility(total_energy_df, "Nordeste")
+```
+
+\pagebreak
+**Somente ACL**  
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
+plot_energy_mobility(acl_energy_df, "Nordeste")
+```
+
+\pagebreak
+## Região Norte
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+plot_energy_mobility(total_energy_df, "Norte")
+```
+
+\pagebreak
+**Somente ACL**  
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+plot_energy_mobility(acl_energy_df, "Norte")
+```
