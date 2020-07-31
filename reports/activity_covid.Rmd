@@ -1,0 +1,205 @@
+---
+title: "Atividade x COVID"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.width = 6, fig.height = 3.2)
+
+library(tidyverse)
+library(lubridate)
+library(janitor)
+library(modelr)
+library(dplyr)
+library(rlang)
+library(zoo)
+
+theme_set(theme_bw())
+
+# source code
+source("../code/_proc_functions.R", encoding = "UTF-8")
+source("../code/_plot_functions.R", encoding = "UTF-8")
+source("../code/0_pre_processing.R", encoding = "UTF-8")
+```
+
+# Usando dados de mobilidade  
+
+## Brasil  
+
+```{r echo = FALSE, warning = FALSE}
+ggplot(brasil_df, aes(x = smth_date, y = activity)) +
+    geom_path(color = "steelblue") +
+    geom_hline(yintercept = 1, color = "red") +
+    xlim(0, 40) + 
+    ylab("Activity Index") + xlab("Doubling days of confirmed cases") 
+```
+
+
+\pagebreak
+## Região Sudeste
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+plot_regiao("Sudeste")
+```
+
+\pagebreak
+## Região Sul
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 3}
+plot_regiao("Sul")
+```
+
+\pagebreak
+## Região Centro-Oeste
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+plot_regiao("Centro-Oeste")
+```
+
+\pagebreak
+## Região Nordeste
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
+plot_regiao("Nordeste")
+```
+
+\pagebreak
+## Região Norte
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
+plot_regiao("Norte")
+```
+
+\pagebreak
+# Usando dados de energia  
+Trocando os dados de mobilidade pela diferença percentual entre o consumo de energia atual e o esperado.
+
+Para definir o contrafactual, fazemos uma regressão para cada estado, com os dados de 08/2018 até 02/2020, da seguinte forma:
+
+\begin{equation}
+\begin{split} \label{reg_energia}
+\text{Consumo Diario}_{t} = \beta_0 & + \sum_{i=2}^{3} \psi_i D_{\text{ano}_{it}}+ \sum_{i=2}^{12} \delta_i D_{\text{mês}_{it}} + \sum_{i=2}^{7} \lambda_i D_{\text{dia da semana}_{it}} + \\
+&\quad + \sum_{i=2}^{k} \theta_i D_{\text{feriado}_{it}} + \phi_1t + \phi_2t^2 + \epsilon_t
+\end{split}
+\end{equation}
+
+A partir de \ref{reg_energia}, usamos os valores preditos para os dados a partir de Março de 2020 como o esperado para o consumo de energia. A diferença percentual mostrada nos gráficos abaixo se baseia nesses valores.
+
+# Testando o fit  
+
+## Região Sudeste
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+plot_regiao_energia(total_energy_df, "Sudeste", plot_fit_energy)
+```
+
+\pagebreak
+**Somente ACL**  
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+plot_regiao_energia(acl_energy_df, "Sudeste", plot_fit_energy)
+```
+
+
+\pagebreak
+## Região Sul
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 3}
+plot_regiao_energia(total_energy_df, "Sul", plot_fit_energy)
+```
+
+\pagebreak
+**Somente ACL**  
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 3}
+plot_regiao_energia(acl_energy_df, "Sul", plot_fit_energy)
+```
+
+\pagebreak
+## Região Centro-Oeste
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+plot_regiao_energia(total_energy_df, "Centro-Oeste", plot_fit_energy)
+```
+
+\pagebreak
+**Somente ACL**  
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+plot_regiao_energia(acl_energy_df, "Centro-Oeste", plot_fit_energy)
+```
+
+\pagebreak
+## Região Nordeste
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
+plot_regiao_energia(total_energy_df, "Nordeste", plot_fit_energy)
+```
+
+\pagebreak
+**Somente ACL**  
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
+plot_regiao_energia(acl_energy_df, "Nordeste", plot_fit_energy)
+```
+
+\pagebreak
+## Região Norte
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+plot_regiao_energia(total_energy_df, "Norte", plot_fit_energy)
+```
+
+\pagebreak
+**Somente ACL**  
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+plot_regiao_energia(acl_energy_df, "Norte", plot_fit_energy)
+```
+
+# Mudança para o previsto  
+
+## Região Sudeste
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+plot_regiao_energia(total_energy_df, "Sudeste", plot_activity_energy)
+```
+
+\pagebreak
+**Somente ACL**  
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+plot_regiao_energia(acl_energy_df, "Sudeste", plot_activity_energy)
+```
+
+
+\pagebreak
+## Região Sul
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 3}
+plot_regiao_energia(total_energy_df, "Sul", plot_activity_energy)
+```
+
+\pagebreak
+**Somente ACL**  
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 3}
+plot_regiao_energia(acl_energy_df, "Sul", plot_activity_energy)
+```
+
+\pagebreak
+## Região Centro-Oeste
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+plot_regiao_energia(total_energy_df, "Centro-Oeste", plot_activity_energy)
+```
+
+\pagebreak
+**Somente ACL**  
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+plot_regiao_energia(acl_energy_df, "Centro-Oeste", plot_activity_energy)
+```
+
+\pagebreak
+## Região Nordeste
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
+plot_regiao_energia(total_energy_df, "Nordeste", plot_activity_energy)
+```
+
+\pagebreak
+**Somente ACL**  
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
+plot_regiao_energia(acl_energy_df, "Nordeste", plot_activity_energy)
+```
+
+\pagebreak
+## Região Norte
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+plot_regiao_energia(total_energy_df, "Norte", plot_activity_energy)
+```
+
+\pagebreak
+**Somente ACL**  
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+plot_regiao_energia(acl_energy_df, "Norte", plot_activity_energy)
+```
