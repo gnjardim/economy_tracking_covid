@@ -7,6 +7,6 @@ Measuring and tracking Brazil's pandemic economy using mobility and energy data
 - `reports` contains all .Rmd files for generating the reports, and correspondent output files.
 
 ### Code
-- `_proc_functions.R` has all functions needed for processing data.
-- `_plot_functions.R` has all functions needed for ploting data.
-- `0_pre_processing.R` runs functions in data.
+- `_proc_functions.R` has all functions needed for manipulating data.
+- `_plot_functions.R` has all functions needed for plotting data.
+- `0_pre_processing.R` prepares data for reports.
