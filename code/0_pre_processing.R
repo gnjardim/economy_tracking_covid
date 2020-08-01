@@ -17,7 +17,7 @@ energy <- read_csv2("../input/energia_data.csv") %>%
     group_by(data, estado, classe) %>% 
     summarise(consumo = sum(consumo_m_wm))
 
-# https://covid.saude.gov.br/
+# COVID data (https://covid.saude.gov.br/)
 covid <- read_csv2("../input/PAINEL_COVIDBR.csv") %>% 
     filter(!is.na(estado)) %>% 
     mutate(date = as.Date(data, "%d/%m/%Y"))
@@ -57,7 +57,6 @@ brasil <- brasil %>%
     mutate(half_cum_cases  = last_available_confirmed / 2,
            half_cum_deaths = last_available_deaths / 2)
 
-
 doubl_days <- map2(brasil$half_cum_cases, brasil$date, 
                    ~ doubling_days(.x, .y, brasil)) %>% 
     unlist()
@@ -66,7 +65,6 @@ brasil_df <- brasil %>%
     mutate(doubl_days = doubl_days) %>% 
     create_columns() %>% 
     filter(!is.na(mobility))
-
 
 
 # states ------------------------------------------------------------------
@@ -104,7 +102,6 @@ acl_pre_covid <- energy %>%
     filter(estado != "Amapa") %>%   # só tem dados de distribuidor
     pre_covid_df_fun() %>% 
     filter(!is.na(pred))
-
 
 acl_energy_df <- energy %>% 
     filter(classe == "Consumidor Especial" | classe == "Consumidor Livre") %>% 
