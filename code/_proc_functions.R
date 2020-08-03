@@ -97,6 +97,7 @@ pre_covid_df_fun <- function(df) {
         ) %>% 
         ungroup() %>% 
         group_by(estado) %>% 
+        arrange(estado, data) %>% 
         mutate(ma_consumo = rollmean(consumo_diario, 7, na.pad = T, align = "right")) %>% 
         group_split()
     

@@ -73,7 +73,7 @@ plot_energy_mobility <- function(df, reg){
         ggplot(aes(x = ma_consumo, y = smth_mob)) +
         geom_path(color = "steelblue", size = 0.8) +
         facet_wrap(~estado, scales = "free") +
-        geom_point(start,mapping=aes(x=ma_consumo,y=smth_mob), colour="red")+
+        geom_point(start, mapping = aes(x = ma_consumo, y = smth_mob), colour = "red") +
         ylab("Mobility") + xlab("Moving average of Energy Consumption")
     
     return(p)
