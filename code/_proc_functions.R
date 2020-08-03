@@ -95,12 +95,14 @@ pre_covid_df_fun <- function(df) {
                trend2     = trend^2,
                d_feriado  = ifelse(!is.na(feriado), feriado, 0) %>% factor()
         ) %>% 
+        ungroup() %>% 
         group_by(estado) %>% 
+        mutate(ma_consumo = rollmean(consumo_diario, 7, na.pad = T, align = "right")) %>% 
         group_split()
     
     # regressao nas dummies
     mod <- map(list_df,
-               ~ lm(consumo_diario ~ mes + factor(ano) + d_feriado +
+               ~ lm(ma_consumo ~ mes + factor(ano) + d_feriado +
                         factor(dia_semana) + trend + trend2, 
                     data = .x %>% filter(pre_covid == 1)))
     
@@ -127,9 +129,7 @@ energy_df_fun <- function(df, df_pre_cov) {
         filter(estado != "Roraima") %>% 
         group_by(estado) %>% 
         arrange(estado, data) %>% 
-        mutate(ma_consumo = rollmean(consumo_diario, 7, na.pad = T, align = "right"),
-               ma_pred = rollmean(pred, 7, na.pad = T, align = "right"),
-               dif_baseline = (ma_consumo - ma_pred) / ma_pred,
+        mutate(dif_baseline = (ma_consumo - pred) / pred,
                ma_dif_baseline = rollmean(dif_baseline, 7, na.pad = T, align = "right")) %>% 
         fill(regiao) %>% 
         fill(regiao, .direction = "up") 
