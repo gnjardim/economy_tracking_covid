@@ -5,6 +5,7 @@ output: pdf_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, fig.width = 6, fig.height = 3.2)
+knitr::opts_knit$set(root.dir = normalizePath(".."))
 
 library(tidyverse)
 library(lubridate)
@@ -13,11 +14,14 @@ library(modelr)
 library(zoo)
 
 theme_set(theme_bw())
+```
 
+```{r source, include=FALSE}
 # source code
-source("../code/_proc_functions.R", encoding = "UTF-8")
-source("../code/_plot_functions.R", encoding = "UTF-8")
-source("../code/0_pre_processing.R", encoding = "UTF-8")
+source("code/_proc_functions.R", encoding = "UTF-8")
+source("code/_plot_functions.R", encoding = "UTF-8")
+source("code/0_pre_processing.R", encoding = "UTF-8")
+source("code/1_checking_gdp_comp.R", encoding = "UTF-8")
 ```
 
 # Usando dados de mobilidade  
@@ -263,4 +267,11 @@ plot_energy_mobility(total_energy_df, "Norte")
 **Somente ACL**  
 ```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
 plot_energy_mobility(acl_energy_df, "Norte")
+```
+
+
+# Relação entre Consumo de Energia e Composição do PIB?  
+
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+comp_pib
 ```

@@ -1,13 +1,13 @@
 # load data ---------------------------------------------------------------
 # google mobility report
-mobility <- read_csv("../input/Global_Mobility_Report.csv") %>% 
+mobility <- read_csv("input/Global_Mobility_Report.csv") %>% 
     filter(country_region == "Brazil") %>% 
     mutate(sub_region_1    = str_remove_all(sub_region_1, "State of "),
            iso_3166_2_code = str_remove_all(iso_3166_2_code, "BR-")) %>%
     mutate(across(contains("baseline"), ~ 1 + ./100))
 
 # energy data (não tem RR)
-energy <- read_csv2("../input/energia_data.csv") %>% 
+energy <- read_csv2("input/energia_data.csv") %>% 
     rename(ramo = `Ramo de atividade`) %>% 
     mutate(Estado = iconv(Estado, from = "UTF-8", to = "ASCII//TRANSLIT") %>% 
                trimws()) %>% 
@@ -18,12 +18,12 @@ energy <- read_csv2("../input/energia_data.csv") %>%
     summarise(consumo = sum(consumo_m_wm))
 
 # COVID data (https://covid.saude.gov.br/)
-covid <- read_csv2("../input/PAINEL_COVIDBR.csv") %>% 
+covid <- read_csv2("input/PAINEL_COVIDBR.csv") %>% 
     filter(!is.na(estado)) %>% 
     mutate(date = as.Date(data, "%d/%m/%Y"))
 
 # feriados
-feriados <- read_csv2("../input/feriados.csv") %>% 
+feriados <- read_csv2("input/feriados.csv") %>% 
     mutate(data = as.Date(data, "%d/%m/%Y"))
 
 
