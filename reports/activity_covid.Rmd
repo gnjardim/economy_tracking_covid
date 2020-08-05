@@ -28,9 +28,7 @@ source("code/0_pre_processing.R", encoding = "UTF-8")
 source("code/1_checking_gdp_comp.R", encoding = "UTF-8")
 ```
 
-# Usando dados de mobilidade  
-
-## Brasil  
+# Brasil  
 
 ```{r echo = FALSE, warning = FALSE}
 ggplot(brasil_df, aes(x = smth_date, y = activity)) +
@@ -42,40 +40,13 @@ ggplot(brasil_df, aes(x = smth_date, y = activity)) +
 
 
 \pagebreak
-## Região Sudeste
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
-plot_regiao("Sudeste")
-```
-
-\pagebreak
-## Região Sul
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 3}
-plot_regiao("Sul")
-```
-
-\pagebreak
-## Região Centro-Oeste
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
-plot_regiao("Centro-Oeste")
-```
-
-\pagebreak
-## Região Nordeste
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
-plot_regiao("Nordeste")
-```
-
-\pagebreak
-## Região Norte
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
-plot_regiao("Norte")
-```
-
-\pagebreak
-# Usando dados de energia  
-Trocando os dados de mobilidade pela diferença percentual entre o consumo de energia atual e o esperado.
-
-Para definir o contrafactual, fazemos uma regressão para cada estado, com os dados de 08/2018 até 02/2020, da seguinte forma:
+# Usando dados de mobilidade e energia   
+Utilizamos os dados de mobilidade do Google para montar o índice de atividade, de forma que:
+$$
+\text{Atividade} = 0.3886 \cdot \text{Mobilidade} + 0.61
+$$
+  
+Para definir o contrafactual nos dados de energia, fazemos uma regressão para cada estado, com os dados de 08/2018 até 02/2020, da seguinte forma:
 
 \begin{equation}
 \begin{split} \label{reg_energia}
@@ -86,9 +57,9 @@ Para definir o contrafactual, fazemos uma regressão para cada estado, com os da
 
 A partir de \ref{reg_energia}, usamos os valores preditos para os dados a partir de Março de 2020 como o esperado para o consumo de energia. A diferença percentual mostrada nos gráficos abaixo se baseia nesses valores.
 
-# Testando o fit  
+## Testando o fit nos dados de energia  
 
-## Região Sudeste
+### Região Sudeste
 ```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
 plot_regiao_energia(total_energy_df, "Sudeste", plot_fit_energy)
 ```
@@ -99,9 +70,8 @@ plot_regiao_energia(total_energy_df, "Sudeste", plot_fit_energy)
 plot_regiao_energia(acl_energy_df, "Sudeste", plot_fit_energy)
 ```
 
-
 \pagebreak
-## Região Sul
+### Região Sul
 ```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 3}
 plot_regiao_energia(total_energy_df, "Sul", plot_fit_energy)
 ```
@@ -113,7 +83,7 @@ plot_regiao_energia(acl_energy_df, "Sul", plot_fit_energy)
 ```
 
 \pagebreak
-## Região Centro-Oeste
+### Região Centro-Oeste
 ```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
 plot_regiao_energia(total_energy_df, "Centro-Oeste", plot_fit_energy)
 ```
@@ -125,7 +95,7 @@ plot_regiao_energia(acl_energy_df, "Centro-Oeste", plot_fit_energy)
 ```
 
 \pagebreak
-## Região Nordeste
+### Região Nordeste
 ```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
 plot_regiao_energia(total_energy_df, "Nordeste", plot_fit_energy)
 ```
@@ -137,7 +107,7 @@ plot_regiao_energia(acl_energy_df, "Nordeste", plot_fit_energy)
 ```
 
 \pagebreak
-## Região Norte
+### Região Norte
 ```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
 plot_regiao_energia(total_energy_df, "Norte", plot_fit_energy)
 ```
@@ -148,72 +118,68 @@ plot_regiao_energia(total_energy_df, "Norte", plot_fit_energy)
 plot_regiao_energia(acl_energy_df, "Norte", plot_fit_energy)
 ```
 
-# Mudança para o previsto  
-
-## Região Sudeste
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
-plot_regiao_energia(total_energy_df, "Sudeste", plot_activity_energy)
-```
-
 \pagebreak
-**Somente ACL**  
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
-plot_regiao_energia(acl_energy_df, "Sudeste", plot_activity_energy)
-```
+## Atividade x COVID  
 
-
-\pagebreak
-## Região Sul
+### Região Sudeste  
 ```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 3}
-plot_regiao_energia(total_energy_df, "Sul", plot_activity_energy)
-```
+lista_UF <- bases_estados_df %>% 
+    filter(regiao == "Sudeste") %>%
+    pull(estado) %>%
+    unique()
 
+walk(lista_UF, plot_comparacao_estado)
+```
 \pagebreak
-**Somente ACL**  
+
+### Região Sul  
 ```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 3}
-plot_regiao_energia(acl_energy_df, "Sul", plot_activity_energy)
+lista_UF <- bases_estados_df %>% 
+    filter(regiao == "Sul") %>%
+    pull(estado) %>%
+    unique()
+
+walk(lista_UF, plot_comparacao_estado)
+```
+\pagebreak
+
+### Região Centro-Oeste  
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 3}
+lista_UF <- bases_estados_df %>% 
+    filter(regiao =="Centro-Oeste") %>%
+    pull(estado) %>%
+    unique()
+
+walk(lista_UF, plot_comparacao_estado)
 ```
 
 \pagebreak
-## Região Centro-Oeste
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
-plot_regiao_energia(total_energy_df, "Centro-Oeste", plot_activity_energy)
+### Região Nordeste  
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 3}
+lista_UF <- bases_estados_df %>% 
+    filter(regiao == "Nordeste") %>%
+    pull(estado) %>%
+    unique()
+
+walk(lista_UF, plot_comparacao_estado)
 ```
 
 \pagebreak
-**Somente ACL**  
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
-plot_regiao_energia(acl_energy_df, "Centro-Oeste", plot_activity_energy)
+### Região Norte  
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 3}
+lista_UF <- bases_estados_df %>% 
+    filter(regiao == "Norte") %>%
+    pull(estado) %>%
+    unique() %>%
+    as.list()
+
+walk(lista_UF, plot_comparacao_estado)
 ```
 
 \pagebreak
-## Região Nordeste
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
-plot_regiao_energia(total_energy_df, "Nordeste", plot_activity_energy)
-```
+## Relação Mobilidade x Consumo de Energia  
 
-\pagebreak
-**Somente ACL**  
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
-plot_regiao_energia(acl_energy_df, "Nordeste", plot_activity_energy)
-```
-
-\pagebreak
-## Região Norte
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
-plot_regiao_energia(total_energy_df, "Norte", plot_activity_energy)
-```
-
-\pagebreak
-**Somente ACL**  
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
-plot_regiao_energia(acl_energy_df, "Norte", plot_activity_energy)
-```
-
-
-# Relação Mobilidade x Consumo de Energia  
-
-## Região Sudeste
+### Região Sudeste
 ```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
 plot_energy_mobility(total_energy_df, "Sudeste")
 ```
@@ -226,7 +192,7 @@ plot_energy_mobility(acl_energy_df, "Sudeste")
 
 
 \pagebreak
-## Região Sul
+### Região Sul
 ```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 3}
 plot_energy_mobility(total_energy_df, "Sul")
 ```
@@ -238,7 +204,7 @@ plot_energy_mobility(acl_energy_df, "Sul")
 ```
 
 \pagebreak
-## Região Centro-Oeste
+### Região Centro-Oeste
 ```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
 plot_energy_mobility(total_energy_df, "Centro-Oeste")
 ```
@@ -250,7 +216,7 @@ plot_energy_mobility(acl_energy_df, "Centro-Oeste")
 ```
 
 \pagebreak
-## Região Nordeste
+### Região Nordeste
 ```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
 plot_energy_mobility(total_energy_df, "Nordeste")
 ```
@@ -262,7 +228,7 @@ plot_energy_mobility(acl_energy_df, "Nordeste")
 ```
 
 \pagebreak
-## Região Norte
+### Região Norte
 ```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
 plot_energy_mobility(total_energy_df, "Norte")
 ```
@@ -277,64 +243,9 @@ plot_energy_mobility(acl_energy_df, "Norte")
 \pagebreak
 # Relação entre Série de Energia e Composição do PIB?  
 
+
 ```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
 comp_pib
 ```
 
 \pagebreak
-# Comparação entre Índice de Atividade Calculado com Mobilidade e com dados de energia:  
-
-## Região Sudeste  
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 3}
-lista_UF <- bases_estados_df %>% 
-    filter(regiao == "Sudeste") %>%
-    pull(estado) %>%
-    unique()
-
-walk(lista_UF, plot_comparacao_estado)
-```
-\pagebreak
-
-## Região Sul  
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 3}
-lista_UF <- bases_estados_df %>% 
-    filter(regiao == "Sul") %>%
-    pull(estado) %>%
-    unique()
-
-walk(lista_UF, plot_comparacao_estado)
-```
-\pagebreak
-
-## Região Centro-Oeste  
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 3}
-lista_UF <- bases_estados_df %>% 
-    filter(regiao =="Centro-Oeste") %>%
-    pull(estado) %>%
-    unique()
-
-walk(lista_UF, plot_comparacao_estado)
-```
-
-\pagebreak
-## Região Nordeste  
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 3}
-lista_UF <- bases_estados_df %>% 
-    filter(regiao == "Nordeste") %>%
-    pull(estado) %>%
-    unique()
-
-walk(lista_UF, plot_comparacao_estado)
-```
-
-\pagebreak
-## Região Norte  
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 3}
-lista_UF <- bases_estados_df %>% 
-    filter(regiao == "Norte") %>%
-    pull(estado) %>%
-    unique() %>%
-    as.list()
-
-walk(lista_UF, plot_comparacao_estado)
-```
