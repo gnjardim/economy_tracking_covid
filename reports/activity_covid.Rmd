@@ -270,8 +270,9 @@ plot_energy_mobility(acl_energy_df, "Norte")
 ```
 
 
-# Relação entre Consumo de Energia e Composição do PIB?  
+\pagebreak
+# Relação entre Série de Energia e Composição do PIB?  
 
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+```{r echo = FALSE, warning = FALSE, fig.width = 12, fig.height = 6.5}
 comp_pib
 ```
