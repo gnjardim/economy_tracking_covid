@@ -24,7 +24,6 @@ plot_regiao <- function(reg) {
 
 # energia -----------------------------------------------------------------
 plot_activity_energy <- function(df) {
-    
     p <- df %>% 
         ggplot(aes(x = smth_date, y = ma_dif_baseline)) +
         geom_path(color = "steelblue", size = 0.8) +
@@ -32,7 +31,6 @@ plot_activity_energy <- function(df) {
         xlim(0, 40) + 
         facet_wrap(~estado, scales = "free") +
         ylab("Change from predicted in energy consumption") + xlab("Doubling days of confirmed cases")
-    
     return(p)
 }
 
@@ -81,3 +79,63 @@ plot_energy_mobility <- function(df, reg){
     
 }
 
+plot_comparacao_estado <- function(UF){
+##Criando Bases
+    base_UF <- bases_estados_df %>% 
+        filter(estado == UF)
+    
+    total_energy_UF <- total_energy_df%>% 
+        filter(estado == UF)
+    
+    acl_energy_UF <- acl_energy_df%>% 
+        filter(estado == UF)
+##Fazendo ylim:    
+    
+    ymin <- min(min(base_UF$activity,na.rm=TRUE),min(total_energy_UF$ma_dif_baseline,na.rm=TRUE),
+        min(acl_energy_UF$ma_dif_baseline,na.rm=TRUE))
+    
+    ymax <- max(max(base_UF$activity,na.rm=TRUE),max(total_energy_UF$ma_dif_baseline,na.rm=TRUE),
+                max(acl_energy_UF$ma_dif_baseline,na.rm=TRUE))
+    
+##Vendo último dia 
+maxdate <- max(total_energy_UF$data,na.rm=TRUE)
+
+
+##Plotando:
+    plot_mob <- ggplot(base_UF, aes(x = smth_date, y = activity)) +
+        geom_path(color = "steelblue", size = 0.8) +
+        geom_hline(yintercept = 1, color = "red") +
+        xlim(0, 40) +
+        ylim(ymin+1,ymax)+
+        ylab("Activity Index")+
+        theme(axis.title.x = element_blank())
+
+    plot_total <- total_energy_UF %>% 
+        ggplot(aes(x = smth_date, y = ma_dif_baseline)) +
+        geom_path(color = "steelblue", size = 0.8) +
+        geom_hline(yintercept = 0, color = "red") +
+        xlim(0, 40) +
+        ylim(ymin,ymax-1)+
+        ylab("Change from predicted in energy consumption")+
+        theme(axis.title.x = element_blank())
+    
+    
+
+    plot_acl <- acl_energy_UF %>% 
+        ggplot(aes(x = smth_date, y = ma_dif_baseline)) +
+        geom_path(color = "steelblue", size = 0.8) +
+        geom_hline(yintercept = 0, color = "red") +
+        xlim(0, 40) +
+        ylim(ymin,ymax-1)+
+        ylab("Change from predicted in energy consumption") +
+        theme(axis.title.x = element_blank())
+    
+    
+
+ plot<-plot_grid(plot_mob, plot_total,plot_acl, align='h', nrow = 1, ncol = 3, scale = 1)
+ 
+ x.grob <- textGrob("Doubling days of confirmed cases")
+ title.grob<-textGrob(paste0(UF),gp=gpar(fontface="bold"))
+  return(grid.arrange(arrangeGrob(plot,bottom = x.grob, top = title.grob)))
+    
+}

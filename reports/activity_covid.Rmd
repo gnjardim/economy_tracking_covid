@@ -12,6 +12,10 @@ library(lubridate)
 library(janitor)
 library(modelr)
 library(zoo)
+library(cowplot)
+library(grid)
+library(gridExtra)
+
 
 theme_set(theme_bw())
 ```
@@ -275,4 +279,92 @@ plot_energy_mobility(acl_energy_df, "Norte")
 
 ```{r echo = FALSE, warning = FALSE, fig.width = 12, fig.height = 6.5}
 comp_pib
+```
+\pagebreak
+# Comparação entre Índice de Atividade Calculado com Mobilidade e com dados de energia:
+
+## Região Sudeste
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+lista_UF <- bases_estados_df %>% 
+    filter(regiao =="Sudeste")%>%
+    select(estado)%>%
+    unique()%>%
+    as.list()
+
+for(i in lista_UF){
+
+    plot_comparacao_estado(i)
+}
+    
+
+```
+\pagebreak
+
+## Região Sul
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+lista_UF <- bases_estados_df %>% 
+    filter(regiao =="Sul")%>%
+    select(estado)%>%
+    unique()%>%
+    as.list()
+
+for(i in lista_UF){
+
+    plot_comparacao_estado(i)
+}
+    
+
+```
+\pagebreak
+
+## Região Centro-Oeste
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+lista_UF <- bases_estados_df %>% 
+    filter(regiao =="Centro-Oeste")%>%
+    select(estado)%>%
+    unique()%>%
+    as.list()
+
+for(i in lista_UF){
+
+    plot_comparacao_estado(i)
+}
+    
+
+```
+
+\pagebreak
+
+## Região Nordeste
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+lista_UF <- bases_estados_df %>% 
+    filter(regiao =="Nordeste")%>%
+    select(estado)%>%
+    unique()%>%
+    as.list()
+
+for(i in lista_UF){
+
+    plot_comparacao_estado(i)
+}
+    
+
+```
+
+\pagebreak
+
+## Região Norte
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+lista_UF <- bases_estados_df %>% 
+    filter(regiao =="Norte")%>%
+    select(estado)%>%
+    unique()%>%
+    as.list()
+
+for(i in lista_UF){
+
+    plot_comparacao_estado(i)
+}
+    
+
 ```

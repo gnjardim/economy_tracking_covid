@@ -10,11 +10,13 @@ mobility <- read_csv("input/Global_Mobility_Report.csv") %>%
 energy <- read_csv2("input/energia_data.csv") %>% 
     rename(ramo = `Ramo de atividade`) %>% 
     mutate(Estado = iconv(Estado, from = "UTF-8", to = "ASCII//TRANSLIT") %>% 
+               trimws(),
+           ramo = iconv(ramo, from = "UTF-8", to = "ASCII//TRANSLIT") %>% 
                trimws()) %>% 
     clean_names() %>% 
     mutate(data        = as.Date(data, "%d/%m/%Y")) %>% 
     arrange(data, classe, ramo) %>% 
-    group_by(data, estado, classe) %>% 
+    group_by(data, estado, ramo) %>% 
     summarise(consumo = sum(consumo_m_wm))
 
 # COVID data (https://covid.saude.gov.br/)
@@ -98,12 +100,12 @@ total_energy_df <- energy %>%
 
 # consumo acl -------------------------------------------------------------
 acl_pre_covid <- energy %>% 
-    filter(classe == "Consumidor Especial" | classe == "Consumidor Livre") %>% 
+    filter(ramo != "ACR") %>% 
     filter(estado != "Amapa") %>%   # só tem dados de distribuidor
     pre_covid_df_fun() %>% 
     filter(!is.na(pred))
 
 acl_energy_df <- energy %>% 
-    filter(classe == "Consumidor Especial" | classe == "Consumidor Livre") %>% 
+    filter(ramo != "ACR") %>% 
     energy_df_fun(acl_pre_covid) %>% 
     filter(!is.na(pred))
