@@ -277,94 +277,64 @@ plot_energy_mobility(acl_energy_df, "Norte")
 \pagebreak
 # Relação entre Série de Energia e Composição do PIB?  
 
-```{r echo = FALSE, warning = FALSE, fig.width = 12, fig.height = 6.5}
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
 comp_pib
 ```
+
 \pagebreak
-# Comparação entre Índice de Atividade Calculado com Mobilidade e com dados de energia:
+# Comparação entre Índice de Atividade Calculado com Mobilidade e com dados de energia:  
 
-## Região Sudeste
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+## Região Sudeste  
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 3}
 lista_UF <- bases_estados_df %>% 
-    filter(regiao =="Sudeste")%>%
-    select(estado)%>%
-    unique()%>%
-    as.list()
+    filter(regiao == "Sudeste") %>%
+    pull(estado) %>%
+    unique()
 
-for(i in lista_UF){
-
-    plot_comparacao_estado(i)
-}
-    
-
+walk(lista_UF, plot_comparacao_estado)
 ```
 \pagebreak
 
-## Região Sul
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+## Região Sul  
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 3}
 lista_UF <- bases_estados_df %>% 
-    filter(regiao =="Sul")%>%
-    select(estado)%>%
-    unique()%>%
-    as.list()
+    filter(regiao == "Sul") %>%
+    pull(estado) %>%
+    unique()
 
-for(i in lista_UF){
-
-    plot_comparacao_estado(i)
-}
-    
-
+walk(lista_UF, plot_comparacao_estado)
 ```
 \pagebreak
 
-## Região Centro-Oeste
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+## Região Centro-Oeste  
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 3}
 lista_UF <- bases_estados_df %>% 
-    filter(regiao =="Centro-Oeste")%>%
-    select(estado)%>%
-    unique()%>%
-    as.list()
+    filter(regiao =="Centro-Oeste") %>%
+    pull(estado) %>%
+    unique()
 
-for(i in lista_UF){
-
-    plot_comparacao_estado(i)
-}
-    
-
+walk(lista_UF, plot_comparacao_estado)
 ```
 
 \pagebreak
-
-## Região Nordeste
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+## Região Nordeste  
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 3}
 lista_UF <- bases_estados_df %>% 
-    filter(regiao =="Nordeste")%>%
-    select(estado)%>%
-    unique()%>%
-    as.list()
+    filter(regiao == "Nordeste") %>%
+    pull(estado) %>%
+    unique()
 
-for(i in lista_UF){
-
-    plot_comparacao_estado(i)
-}
-    
-
+walk(lista_UF, plot_comparacao_estado)
 ```
 
 \pagebreak
-
-## Região Norte
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+## Região Norte  
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 3}
 lista_UF <- bases_estados_df %>% 
-    filter(regiao =="Norte")%>%
-    select(estado)%>%
-    unique()%>%
+    filter(regiao == "Norte") %>%
+    pull(estado) %>%
+    unique() %>%
     as.list()
 
-for(i in lista_UF){
-
-    plot_comparacao_estado(i)
-}
-    
-
+walk(lista_UF, plot_comparacao_estado)
 ```

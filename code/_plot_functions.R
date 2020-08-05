@@ -30,7 +30,8 @@ plot_activity_energy <- function(df) {
         geom_hline(yintercept = 0, color = "red") +
         xlim(0, 40) + 
         facet_wrap(~estado, scales = "free") +
-        ylab("Change from predicted in energy consumption") + xlab("Doubling days of confirmed cases")
+        ylab("Change in energy consumption") + xlab("Doubling days of confirmed cases")
+    
     return(p)
 }
 
@@ -60,18 +61,19 @@ plot_regiao_energia <- function(df, reg, fplot) {
 
 plot_energy_mobility <- function(df, reg){
     
-    base_regiao     <- df %>% 
+    base_regiao <- df %>% 
         filter(regiao == reg)
     
     start <- base_regiao %>% 
         filter(!is.na(smth_mob) & !is.na(ma_consumo))%>%
         filter(data == min(data))
 
-    p <-base_regiao%>%
+    p <- base_regiao %>%
         ggplot(aes(x = ma_consumo, y = smth_mob)) +
         geom_path(color = "steelblue", size = 0.8) +
         facet_wrap(~estado, scales = "free") +
-        geom_point(start, mapping = aes(x = ma_consumo, y = smth_mob), colour = "red") +
+        geom_point(start, mapping = aes(x = ma_consumo, y = smth_mob), 
+                   colour = "red") +
         ylab("Mobility") + xlab("Moving average of Energy Consumption")
     
     return(p)
@@ -80,33 +82,34 @@ plot_energy_mobility <- function(df, reg){
 }
 
 plot_comparacao_estado <- function(UF){
-##Criando Bases
+  
+    # filtrando por estado
     base_UF <- bases_estados_df %>% 
         filter(estado == UF)
     
-    total_energy_UF <- total_energy_df%>% 
+    total_energy_UF <- total_energy_df %>% 
         filter(estado == UF)
     
-    acl_energy_UF <- acl_energy_df%>% 
+    acl_energy_UF <- acl_energy_df %>% 
         filter(estado == UF)
-##Fazendo ylim:    
-    
-    ymin <- min(min(base_UF$activity,na.rm=TRUE),min(total_energy_UF$ma_dif_baseline,na.rm=TRUE),
-        min(acl_energy_UF$ma_dif_baseline,na.rm=TRUE))
-    
-    ymax <- max(max(base_UF$activity,na.rm=TRUE),max(total_energy_UF$ma_dif_baseline,na.rm=TRUE),
-                max(acl_energy_UF$ma_dif_baseline,na.rm=TRUE))
-    
-##Vendo último dia 
-maxdate <- max(total_energy_UF$data,na.rm=TRUE)
 
+    # definindo limites    
+    ymin <- min(min(base_UF$activity, na.rm = TRUE) - 1,
+                min(total_energy_UF$ma_dif_baseline, na.rm = TRUE),
+                min(acl_energy_UF$ma_dif_baseline, na.rm = TRUE))
+    
+    ymax <- max(max(base_UF$activity, na.rm = TRUE),
+                max(total_energy_UF$ma_dif_baseline, na.rm = TRUE) + 1,
+                max(acl_energy_UF$ma_dif_baseline, na.rm = TRUE) + 1)
+    
 
-##Plotando:
-    plot_mob <- ggplot(base_UF, aes(x = smth_date, y = activity)) +
+    # plots
+    plot_mob <- base_UF %>% 
+        ggplot(aes(x = smth_date, y = activity)) +
         geom_path(color = "steelblue", size = 0.8) +
         geom_hline(yintercept = 1, color = "red") +
         xlim(0, 40) +
-        ylim(ymin+1,ymax)+
+        ylim(ymin+1, ymax)+
         ylab("Activity Index")+
         theme(axis.title.x = element_blank())
 
@@ -115,27 +118,27 @@ maxdate <- max(total_energy_UF$data,na.rm=TRUE)
         geom_path(color = "steelblue", size = 0.8) +
         geom_hline(yintercept = 0, color = "red") +
         xlim(0, 40) +
-        ylim(ymin,ymax-1)+
-        ylab("Change from predicted in energy consumption")+
+        ylim(ymin, ymax-1)+
+        ylab("Change in energy consumption")+
         theme(axis.title.x = element_blank())
     
-    
-
     plot_acl <- acl_energy_UF %>% 
         ggplot(aes(x = smth_date, y = ma_dif_baseline)) +
         geom_path(color = "steelblue", size = 0.8) +
         geom_hline(yintercept = 0, color = "red") +
         xlim(0, 40) +
-        ylim(ymin,ymax-1)+
-        ylab("Change from predicted in energy consumption") +
+        ylim(ymin, ymax-1)+
+        ylab("Change in energy consumption") +
         theme(axis.title.x = element_blank())
     
+    # join plots
+    plot <- plot_grid(plot_mob, 
+                      plot_total,
+                      plot_acl, 
+                      align = 'h', nrow = 1, ncol = 3, scale = 1)
     
-
- plot<-plot_grid(plot_mob, plot_total,plot_acl, align='h', nrow = 1, ncol = 3, scale = 1)
- 
- x.grob <- textGrob("Doubling days of confirmed cases")
- title.grob<-textGrob(paste0(UF),gp=gpar(fontface="bold"))
-  return(grid.arrange(arrangeGrob(plot,bottom = x.grob, top = title.grob)))
+    x.grob <- textGrob("Doubling days of confirmed cases")
+    title.grob <- textGrob(paste0(UF), gp = gpar(fontface = "bold"))
     
+    grid.arrange(arrangeGrob(plot, bottom = x.grob, top = title.grob))
 }

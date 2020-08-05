@@ -10,13 +10,16 @@ pib_estadual <- read_csv2("input/pib_estadual.csv") %>%
     pivot_longer(cols = c(agropecuaria, industria, servicos),
                  names_to = "Componente") %>% 
     mutate(estado = iconv(estado, from = "UTF-8", to = "ASCII//TRANSLIT")) %>% 
-    left_join(owdbr::uflist(), by = c("estado" = "State"))
+    left_join(owdbr::uflist(), by = c("estado" = "State")) %>% 
+    mutate(regiao = factor(regiao, levels = c("Sudeste", "Sul",
+                                              "Centro-Oeste",
+                                              "Nordeste", "Norte")))
     
 
 # plot --------------------------------------------------------------------
 comp_pib <- ggplot(pib_estadual, aes(fill = Componente, y = value, x = estado)) + 
     geom_bar(position = "dodge", stat = "identity") +
-    facet_wrap(~ regiao, scales = "free_x") +
+    facet_wrap(~regiao, scales = "free_x", nrow = 3) +
     xlab("Estado") + ylab("Participação do Valor Adicionado (%)") +
-    scale_x_discrete(guide = guide_axis(n.dodge = 3))
+    scale_x_discrete(guide = guide_axis(n.dodge = 2))
 
