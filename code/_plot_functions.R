@@ -152,16 +152,15 @@ plot_ramo <- function(reg){
     summarize(Media_Consumo_MhW = mean(dif_consumo, na.rm = TRUE),
               Media_Dif_Perc    = mean(dif_baseline, na.rm = TRUE)*100)
            
-  max_lim <- as.integer(ceiling(max(df$Media_Dif_Perc)))
-  min_lim <- as.integer(floor(min(df$Media_Dif_Perc)))
   
   p <- df %>% 
     ggplot(aes(ramo)) +
     geom_col(mapping = aes(y = Media_Dif_Perc), position = "dodge")+ 
     scale_x_discrete(name = "Ramo")+
-    theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))+
-    scale_y_continuous(name = "Média Percentual", limits = c(min_lim, max_lim))+
-    facet_wrap(~estado, scales = "free") 
+    theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5, size =5))+
+    scale_y_continuous(name = "Média Percentual")+
+    geom_hline(yintercept = 0,colour = "red")+
+    facet_wrap(estado ~. , dir = "v") 
   
   return(p)
   
