@@ -81,7 +81,7 @@ create_columns <- function(df) {
 
 
 # energy ------------------------------------------------------------------
-pre_covid_df_fun <- function(df) {
+pre_covid_df_fun <- function(df, trend = FALSE) {
     
     list_df <- df %>% 
         left_join(feriados) %>% 
@@ -99,10 +99,18 @@ pre_covid_df_fun <- function(df) {
         group_split()
     
     # regressao nas dummies
-    mod <- map(list_df,
-               ~ lm(consumo_diario ~ mes + factor(ano) + factor(ramo) + 
-                        factor(pre_covid) + d_feriado + factor(dia_semana), 
-                    data = .x))
+    if(trend) {
+        mod <- map(list_df,
+                   ~ lm(consumo_diario ~ mes + factor(ano) + factor(ramo) + 
+                            factor(pre_covid) + d_feriado + factor(dia_semana), 
+                        data = .x))
+    } else {
+        mod <- map(list_df,
+                   ~ lm(consumo_diario ~ mes + factor(ano) + factor(ramo) + 
+                            factor(pre_covid) + d_feriado + factor(dia_semana) +
+                            trend + trend2, 
+                        data = .x))
+    }
     
     r2 <- tibble(estado = unique(df$estado) %>% sort(),
                  r2 = map(mod, summary) %>% map_dbl("r.squared"))
