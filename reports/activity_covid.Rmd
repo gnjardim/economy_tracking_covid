@@ -252,31 +252,31 @@ comp_pib
 # Alteração do nível de consumo por Ramo  
 
 ### Região Sudeste  
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
+```{r echo = FALSE, message = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
 plot_ramo("Sudeste")
 ```
 
 \pagebreak
 ### Região Sul  
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
+```{r echo = FALSE, message = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
 plot_ramo("Sul")
 ```
 
 \pagebreak
 ### Região Centro-Oeste  
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
+```{r echo = FALSE, message = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
 plot_ramo("Centro-Oeste")
 ```
 
 \pagebreak
 ### Região Nordeste  
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
+```{r echo = FALSE, message = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
 plot_ramo("Nordeste")
 ```
 
 \pagebreak
 ### Região Norte  
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
+```{r echo = FALSE, message = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
 plot_ramo("Norte")
 ```
 \pagebreak
