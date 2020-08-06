@@ -85,7 +85,7 @@ pre_covid_df_fun <- function(df) {
     
     list_df <- df %>% 
         left_join(feriados) %>% 
-        group_by(data, estado, feriado) %>% 
+        group_by(data, estado, ramo, feriado) %>% 
         summarise(consumo_diario = sum(consumo)) %>% 
         mutate(pre_covid  = ifelse(data <= as.Date("2020-02-25"), 1, 0),
                mes        = month(data) %>% factor(),
@@ -94,18 +94,16 @@ pre_covid_df_fun <- function(df) {
                trend      = as.numeric(data) - as.numeric(as.Date("2018-08-01")),
                trend2     = trend^2,
                d_feriado  = ifelse(!is.na(feriado), feriado, 0) %>% factor()
-        ) %>% 
-        ungroup() %>% 
+        ) %>%
         group_by(estado) %>% 
-        arrange(estado, data) %>% 
-        mutate(ma_consumo = rollmean(consumo_diario, 7, na.pad = T, align = "right")) %>% 
         group_split()
     
     # regressao nas dummies
     mod <- map(list_df,
-               ~ lm(ma_consumo ~ mes + factor(ano) + d_feriado +
-                        factor(dia_semana) + trend + trend2, 
-                    data = .x %>% filter(pre_covid == 1)))
+               ~ lm(consumo_diario ~ mes + factor(ano) + factor(ramo) + 
+                        factor(pre_covid) + d_feriado + factor(dia_semana) + 
+                        trend + trend2, 
+                    data = .x))
     
     r2 <- tibble(estado = unique(df$estado) %>% sort(),
                  r2 = map(mod, summary) %>% map_dbl("r.squared"))
@@ -113,7 +111,7 @@ pre_covid_df_fun <- function(df) {
     
     # adicionar coluna de predito
     pred_df <- map2(.x = list_df, .y = mod, 
-                    ~ add_predictions(.x, .y)) %>% 
+                    ~ add_predictions(.x %>% mutate(pre_covid = 1), .y)) %>% 
         bind_rows()
     
     return(pred_df)
@@ -123,14 +121,19 @@ pre_covid_df_fun <- function(df) {
 energy_df_fun <- function(df, df_pre_cov) {
     
     post_df <- df %>% 
-        group_by(data, estado) %>% 
+        group_by(data, estado, ramo) %>% 
         summarise(consumo_diario = sum(consumo)) %>% 
         left_join(df_pre_cov) %>% 
+        group_by(data, estado) %>% 
+        summarise(consumo_diario = sum(consumo_diario),
+                  pred           = sum(pred)) %>% 
         full_join(bases_estados_df, by = c("data" = "date", "estado" = "estado")) %>%
         filter(estado != "Roraima") %>% 
         group_by(estado) %>% 
         arrange(estado, data) %>% 
-        mutate(dif_baseline = (ma_consumo - pred) / pred,
+        mutate(ma_consumo = rollmean(consumo_diario, 7, na.pad = T, align = "right"),
+               ma_pred = rollmean(pred, 7, na.pad = T, align = "right"),
+               dif_baseline = (ma_consumo - ma_pred) / ma_pred,
                ma_dif_baseline = rollmean(dif_baseline, 7, na.pad = T, align = "right")) %>% 
         fill(regiao) %>% 
         fill(regiao, .direction = "up") 

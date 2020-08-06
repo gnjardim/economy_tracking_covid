@@ -40,7 +40,7 @@ plot_fit_energy <- function(df) {
     p <- df %>% 
         ggplot(aes(x = data)) +
         geom_line(aes(y = ma_consumo), color = "black", size = 0.8) +
-        geom_line(aes(y = pred), color = "steelblue", size = 0.8) +
+        geom_line(aes(y = ma_pred), color = "steelblue", size = 0.8) +
         facet_wrap(~estado, scales = "free") +
         ylab("7-days Moving Average of Energy Consumption") + 
         xlab("Time") +
