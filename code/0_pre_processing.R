@@ -99,6 +99,9 @@ pre_covid <- energy %>%
 total_energy_df <- energy %>% 
     energy_df_fun(pre_covid)
 
+##Por ramo
+total_energy_ramo <- energy %>% 
+    energy_df_ramo_fun(pre_covid)
 
 # consumo acl -------------------------------------------------------------
 acl_pre_covid <- energy %>% 
