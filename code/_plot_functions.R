@@ -157,10 +157,10 @@ plot_ramo <- function(reg){
     ggplot(aes(ramo)) +
     geom_col(mapping = aes(y = Media_Dif_Perc), position = "dodge")+ 
     scale_x_discrete(name = "Ramo")+
-    theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5, size =5))+
+    theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5, size =10))+
     scale_y_continuous(name = "Média Percentual")+
     geom_hline(yintercept = 0,colour = "red")+
-    facet_wrap(estado ~. , dir = "v") 
+    facet_wrap(estado ~. , dir = "v",scales = "free_y") 
   
   return(p)
   
