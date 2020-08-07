@@ -81,39 +81,48 @@ create_columns <- function(df) {
 
 
 # energy ------------------------------------------------------------------
-pre_covid_df_fun <- function(df, trend = FALSE) {
+pre_covid_df_fun <- function(df, trend = TRUE) {
     
     list_df <- df %>% 
         left_join(feriados) %>% 
         group_by(data, estado, ramo, feriado) %>% 
         summarise(consumo_diario = sum(consumo)) %>% 
         mutate(pre_covid  = ifelse(data <= as.Date("2020-02-25"), 1, 0),
-               mes        = month(data) %>% factor(),
+               mes        = month(data),
                ano        = year(data),
                dia_semana = wday(data),
                trend      = as.numeric(data) - as.numeric(as.Date("2018-08-01")),
-               trend2     = trend^2,
-               d_feriado  = ifelse(!is.na(feriado), feriado, 0) %>% factor()
+               d_feriado  = ifelse(!is.na(feriado), feriado, "0")
         ) %>%
-        group_by(estado) %>% 
+        group_by(estado, ramo) %>% 
         group_split()
     
     # regressao nas dummies
     if(trend) {
-        mod <- map(list_df,
-                   ~ lm(consumo_diario ~ mes + factor(ano) + factor(ramo) + 
-                            factor(pre_covid) + d_feriado + factor(dia_semana) +
-                            trend + trend2, 
-                        data = .x))
+        reg <- function(df) {
+            lm(consumo_diario ~ factor(mes) + factor(d_feriado) + trend + 
+                                factor(pre_covid) + factor(dia_semana), 
+               data = df)
+        }
+        
     } else {
-        mod <- map(list_df,
-                   ~ lm(consumo_diario ~ mes + factor(ano) + factor(ramo) + 
-                            factor(pre_covid) + d_feriado + factor(dia_semana), 
-                        data = .x))
+        reg <- function(df) {
+            lm(consumo_diario ~ factor(mes) + factor(d_feriado) +
+                                factor(pre_covid) + factor(dia_semana), 
+               data = df)
+        }
     }
     
-    r2 <- tibble(estado = unique(df$estado) %>% sort(),
-                 r2 = map(mod, summary) %>% map_dbl("r.squared"))
+    # alguns ramos só aparecem em 2020 e geram erros
+    mod <- map(list_df, possibly(reg, NULL))
+    err <- which(map(mod, length) == 0)
+    
+    # remover ramos problematicos
+    mod <- mod[-err]
+    df_prob <- list_df[err]
+    list_df <- list_df[-err]
+    
+    r2 <- tibble(r2 = map(mod, summary) %>% map_dbl("r.squared"))
     
     
     # adicionar coluna de predito
@@ -121,7 +130,13 @@ pre_covid_df_fun <- function(df, trend = FALSE) {
                     ~ add_predictions(.x %>% mutate(pre_covid = 1), .y)) %>% 
         bind_rows()
     
-    return(pred_df)
+    # juntar com dfs problematicos
+    df_prob <- map(df_prob, ~.x %>% mutate(pred = 0)) %>% 
+        bind_rows()
+    
+    df_f <- rbind(df_prob, pred_df)
+    
+    return(df_f)
     
 }
 

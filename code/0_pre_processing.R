@@ -103,6 +103,7 @@ total_energy_df <- energy %>%
 total_energy_ramo <- energy %>% 
     energy_df_ramo_fun(pre_covid)
 
+
 # consumo acl -------------------------------------------------------------
 acl_pre_covid <- energy %>% 
     filter(ramo != "ACR") %>% 
