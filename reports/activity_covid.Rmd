@@ -51,7 +51,7 @@ Para definir o contrafactual nos dados de energia, fazemos uma regressão para c
 \begin{equation}
 \begin{split} \label{reg_energia}
 \text{Consumo Diario}_{t} = \beta_0 & + \sum_{i=2}^{12} \delta_i D_{\text{mês}_{it}} + \sum_{i=2}^{7} \lambda_i D_{\text{dia da semana}_{it}} + \\
-&\quad + \sum_{i=2}^{k} + \sum_{i=2}^{k} \theta_i D_{\text{feriado}_{it}} + \phi t + \epsilon_t
+&\quad + \sum_{i=2}^{k} \theta_i D_{\text{feriado}_{it}} + \phi t + \epsilon_t
 \end{split}
 \end{equation}
 
@@ -239,15 +239,6 @@ plot_energy_mobility(total_energy_df, "Norte")
 plot_energy_mobility(acl_energy_df, "Norte")
 ```
 
-
-\pagebreak
-# Relação entre Série de Energia e Composição do PIB?  
-
-```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
-comp_pib
-```
-
-
 \pagebreak
 # Alteração do nível de consumo por Ramo  
 
@@ -279,4 +270,45 @@ plot_ramo("Nordeste")
 ```{r echo = FALSE, message = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
 plot_ramo("Norte")
 ```
+
 \pagebreak
+# Alteração do nível de consumo por Ramo, ponderado por proporção do consumo  
+
+### Região Sudeste  
+```{r echo = FALSE, message = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
+plot_ramo("Sudeste", pond = TRUE)
+```
+
+\pagebreak
+### Região Sul  
+```{r echo = FALSE, message = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
+plot_ramo("Sul", pond = TRUE)
+```
+
+\pagebreak
+### Região Centro-Oeste  
+```{r echo = FALSE, message = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
+plot_ramo("Centro-Oeste", pond = TRUE)
+```
+
+\pagebreak
+### Região Nordeste  
+```{r echo = FALSE, message = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
+plot_ramo("Nordeste", pond = TRUE)
+```
+
+\pagebreak
+### Região Norte  
+```{r echo = FALSE, message = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
+plot_ramo("Norte", pond = TRUE)
+```
+
+
+\pagebreak
+# Relação entre Série de Energia e Composição do PIB?  
+
+```{r echo = FALSE, warning = FALSE, fig.width = 9, fig.height = 9}
+comp_pib
+```
+
+

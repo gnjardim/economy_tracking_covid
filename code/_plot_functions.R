@@ -128,7 +128,7 @@ plot_comparacao_estado <- function(UF){
         geom_hline(yintercept = 0, color = "red") +
         xlim(0, 40) +
         ylim(ymin, ymax-1)+
-        ylab("Change in energy consumption") +
+        ylab("Change in energy consumption (ACL)") +
         theme(axis.title.x = element_blank())
     
     # join plots
@@ -144,10 +144,10 @@ plot_comparacao_estado <- function(UF){
 }
 
 
-plot_ramo <- function(reg, pond = TRUE){
+plot_ramo <- function(reg, pond = FALSE){
   
     df <- total_energy_ramo %>%
-      filter(data <= as.Date("2020-02-25") & regiao == reg) %>%
+      filter(data >= as.Date("2020-02-25") & regiao == reg & !is.na(ramo)) %>%
       group_by(ramo, estado) %>%
       summarize(Media_Consumo_MhW = mean(dif_consumo, na.rm = TRUE),
                 Media_Dif_Perc    = mean(dif_baseline, na.rm = TRUE)*100,
@@ -158,7 +158,7 @@ plot_ramo <- function(reg, pond = TRUE){
       ggplot(aes(ramo)) +
       scale_x_discrete(name = "Ramo") +
       theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5, size = 10))+
-      geom_hline(yintercept = 0,colour = "red")+
+      geom_hline(yintercept = 0, colour = "red")+
       facet_wrap(estado ~ ., dir = "v", scales = "free_y") 
   
   if(pond) {
