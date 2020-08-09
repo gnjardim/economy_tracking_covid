@@ -37,31 +37,106 @@ plot_activity_energy <- function(df) {
 }
 
 
-plot_fit_energy <- function(df) {
+plot_fit_energy <- function(df, plotly = FALSE) {
     
-    df <- df %>% 
-        ungroup() %>% 
-        select(data, Observado = ma_consumo, Predito = ma_pred) %>% 
-        pivot_longer(cols = c(Observado, Predito))
-  
-    p <- df %>% 
-        ggplot(aes(x = data)) +
-        geom_line(aes(y = value, color = name), size = 0.8) +
-        ylab("Média móvel de 7 dias do Consumo de Energia") + 
-        xlab("Data") +
-        scale_color_manual(values = c("black", "steelblue")) +
-        theme(legend.title = element_blank())
+    if(plotly) {
+        total <- df %>% 
+          ungroup() %>% 
+          select(data, Observado = ma_consumo, Predito = ma_pred) %>% 
+          pivot_longer(cols = c(Observado, Predito))
+        
+        df_acl <- df %>% 
+          ungroup() %>% 
+          select(data, Observado = ma_consumo_acl, Predito = ma_pred_acl) %>% 
+          pivot_longer(cols = c(Observado, Predito))
+        
+        # plot 1
+        p1 <- total %>% 
+          ggplot(aes(x = data)) +
+          geom_line(aes(y = value, color = name), size = 0.8) +
+          ylab("Média móvel de 7 dias do Consumo de Energia") + 
+          xlab("Data") +
+          scale_color_manual(values = c("black", "steelblue")) +
+          theme(legend.title = element_blank())
+        
+        p1 <- p1 %>% 
+          ggplotly(height = 600, width = 1000) %>% 
+          layout(annotations = list(text = "Energia Total",
+                                    xref = "paper",
+                                    yref = "paper",
+                                    yanchor = "bottom",
+                                    xanchor = "center",
+                                    align = "center",
+                                    x = 0.5,
+                                    y = 1,
+                                    showarrow = FALSE))
+        
+        # plot 2
+        p2 <- df_acl %>% 
+          ggplot(aes(x = data)) +
+          geom_line(aes(y = value, color = name), size = 0.8) +
+          ylab("Média móvel de 7 dias do Consumo de Energia") + 
+          xlab("Data") +
+          scale_color_manual(values = c("black", "steelblue")) +
+          theme(legend.title = element_blank())
+        
+        p2 <- p2 %>% ggplotly(height = 600, width = 1000) %>% 
+          layout(annotations = list(text = "Energia (apenas ACL)",
+                                    xref = "paper",
+                                    yref = "paper",
+                                    yanchor = "bottom",
+                                    xanchor = "center",
+                                    align = "center",
+                                    x = 0.5,
+                                    y = 1,
+                                    showarrow = FALSE))
+        
+        # join plots
+        p <- subplot(list(style(p1, showlegend = F), p2), nrows = 2, 
+                     shareY = TRUE, titleY = TRUE,
+                     titleX = TRUE, margin = 0.1) %>% 
+            layout(xaxis  = list(title = ""),
+                   xaxis2 = list(title = ""),
+                   yaxis  = list(title = ""),
+                   yaxis2 = list(title = ""),
+                   annotations = list(
+                     list(x = -0.09,
+                          text = "Média móvel de 7 dias do Consumo de Energia",
+                          textangle = 270,
+                          showarrow = F, xref='paper', yref='paper', size=48)
+                   ))
+          
+        
+    } else {
+        df <- df %>% 
+          ungroup() %>% 
+          select(data, Observado = ma_consumo, Predito = ma_pred) %>% 
+          pivot_longer(cols = c(Observado, Predito))
+        
+        p <- df %>% 
+          ggplot(aes(x = data)) +
+          geom_line(aes(y = value, color = name), size = 0.8) +
+          ylab("Média móvel de 7 dias do Consumo de Energia") + 
+          xlab("Data") +
+          scale_color_manual(values = c("black", "steelblue")) +
+          theme(legend.title = element_blank())
+    }
+    
     
     return(p)
 }
 
 
-plot_uf_energia <- function(df, UF) {
+plot_uf_energia <- function(UF) {
   
-  base_regiao <- df %>% 
-    filter(estado == UF)
+  if (UF == "Brasil") {
+    base_regiao <- brasil
+  } else {
+    base_regiao <- estados %>% 
+      filter(estado == UF)
+  }
   
-  return(plot_fit_energy(base_regiao)) 
+  return(plot_fit_energy(base_regiao, plotly = TRUE)) 
 }
 
 
@@ -80,7 +155,7 @@ plot_energy_mobility <- function(df, reg){
         filter(regiao == reg)
     
     start <- base_regiao %>% 
-        filter(!is.na(smth_mob) & !is.na(ma_consumo))%>%
+        filter(!is.na(smth_mob) & !is.na(ma_consumo)) %>%
         filter(data == min(data))
 
     p <- base_regiao %>%
@@ -95,11 +170,14 @@ plot_energy_mobility <- function(df, reg){
 }
 
 
-plot_comparacao_estado <- function(df, UF){
+plot_comparacao_estado <- function(UF, plotly = FALSE) {
   
-    # filtrando por estado
-    base_UF <- df %>% 
+    if (UF == "Brasil") {
+      base_UF <- brasil
+    } else {
+      base_UF <- estados %>% 
         filter(estado == UF)
+    }
     
     # PET phase
     phases <- base_UF %>% 
@@ -157,18 +235,67 @@ plot_comparacao_estado <- function(df, UF){
         ylim(ymin, ymax-1) +
         ylab("Mudança no consumo de energia") +
         theme(axis.title.x = element_blank()) +
-        ggtitle("Apenas ACL")
+        ggtitle("Energia (apenas ACL)")
     
     # join plots
-    plot <- plot_grid(plot_mob, 
-                      plot_total,
-                      plot_acl, 
-                      align = 'h', nrow = 1, ncol = 3, scale = 1)
+    if(plotly) {
+        
+        # plotly options
+        plot_mob <- ggplotly(plot_mob) %>% 
+            layout(annotations = list(text = "Atividade",
+                                      xref = "paper",
+                                      yref = "paper",
+                                      yanchor = "bottom",
+                                      xanchor = "center",
+                                      align = "center",
+                                      x = 0.5,
+                                      y = 1,
+                                      showarrow = FALSE))
+        
+        plot_total <- ggplotly(plot_total) %>% 
+            layout(annotations = list(text = "Energia Total",
+                                      xref = "paper",
+                                      yref = "paper",
+                                      yanchor = "bottom",
+                                      xanchor = "center",
+                                      align = "center",
+                                      x = 0.5,
+                                      y = 1,
+                                      showarrow = FALSE))
+        
+        plot_acl <- ggplotly(plot_acl) %>% 
+            layout(annotations = list(text = "Energia (apenas ACL)",
+                                      xref = "paper",
+                                      yref = "paper",
+                                      yanchor = "bottom",
+                                      xanchor = "center",
+                                      align = "center",
+                                      x = 0.5,
+                                      y = 1,
+                                      showarrow = FALSE))
+      
+        # join plots
+        plot <- subplot(list(plot_mob, plot_total, plot_acl), 
+                        titleX = TRUE, titleY = TRUE, 
+                        widths = c(0.3, 0.35, 0.3), margin = 0.05,
+                        which_layout = FALSE) %>% 
+            layout(xaxis  = list(title = ""),
+                   xaxis2 = list(title = "Dias Necessários para dobrar os casos"),
+                   xaxis3 = list(title = ""),
+                   height = 500, width = 1000)
+        
+    } else {
+        plot <- plot_grid(plot_mob, 
+                          plot_total,
+                          plot_acl, 
+                          align = 'h', nrow = 1, ncol = 3, scale = 1)
+        
+        x.grob <- textGrob("Doubling days of confirmed cases")
+        title.grob <- textGrob(paste0(UF), gp = gpar(fontface = "bold"))
+        
+        grid.arrange(arrangeGrob(plot, bottom = x.grob, top = title.grob))
+    }
     
-    x.grob <- textGrob("Doubling days of confirmed cases")
-    title.grob <- textGrob(paste0(UF), gp = gpar(fontface = "bold"))
-    
-    grid.arrange(arrangeGrob(plot, bottom = x.grob, top = title.grob))
 }
 
 
@@ -201,4 +328,18 @@ plot_ramo <- function(reg, pond = FALSE){
   
   return(p)
 }
+
+
+# shiny function ----------------------------------------------------------
+plot_shiny <- function(UF, tipo) {
+    if(tipo == "atividade") {
+        p <- plot_comparacao_estado(UF, plotly = TRUE)
+    } else {
+        p <- plot_uf_energia(UF) %>% ggplotly()
+    }
+  
+  plot <- p %>% 
+      style(hoverinfo = "y")
+}
+
 

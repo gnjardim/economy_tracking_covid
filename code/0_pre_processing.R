@@ -140,8 +140,10 @@ acl_energy_df <- energy %>%
 # aggregate all country ---------------------------------------------------
 brasil_energy <- total_energy_df %>% 
     group_by(data) %>% 
-    summarise(consumo_diario = sum(consumo_diario),
-              pred           = sum(pred)) %>% 
+    summarise(consumo_diario = sum(consumo_diario, na.rm = TRUE),
+              pred           = sum(pred, na.rm = TRUE)) %>% 
+    mutate(consumo_diario = ifelse(consumo_diario == 0, NA, consumo_diario),
+           pred           = ifelse(consumo_diario == 0, NA, pred)) %>% 
     mutate(ma_consumo = rollmean(consumo_diario, 7, na.pad = T, align = "right"),
            ma_pred = rollmean(pred, 7, na.pad = T, align = "right"),
            dif_baseline = (ma_consumo - ma_pred) / ma_pred,
@@ -151,8 +153,10 @@ brasil_energy <- total_energy_df %>%
 
 brasil_energy_acl <- acl_energy_df %>% 
     group_by(data) %>% 
-    summarise(consumo_diario_acl = sum(consumo_diario_acl),
-              pred_acl           = sum(pred_acl)) %>% 
+    summarise(consumo_diario_acl = sum(consumo_diario_acl, na.rm = TRUE),
+              pred_acl           = sum(pred_acl, na.rm = TRUE)) %>% 
+    mutate(consumo_diario_acl = ifelse(consumo_diario_acl == 0, NA, consumo_diario_acl),
+           pred_acl           = ifelse(consumo_diario_acl == 0, NA, pred_acl)) %>% 
     mutate(ma_consumo_acl = rollmean(consumo_diario_acl, 7, na.pad = T, align = "right"),
            ma_pred_acl = rollmean(pred_acl, 7, na.pad = T, align = "right"),
            dif_baseline_acl = (ma_consumo_acl - ma_pred_acl) / ma_pred_acl,
@@ -164,7 +168,7 @@ brasil_energy_acl <- acl_energy_df %>%
 brasil <- brasil_energy %>% 
     left_join(brasil_energy_acl) %>% 
     full_join(brasil_df, by = c("data" = "date")) %>% 
-    select(1:15, 29:33, PET_Phase)
+    select(1:15, 29:34, PET_Phase)
     
 estados <- total_energy_df %>% 
     left_join(acl_energy_df)

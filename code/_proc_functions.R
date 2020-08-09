@@ -150,7 +150,6 @@ energy_df_fun <- function(df, df_pre_cov) {
         summarise(consumo_diario = sum(consumo_diario),
                   pred           = sum(pred)) %>% 
         full_join(bases_estados_df, by = c("data" = "date", "estado" = "estado")) %>%
-        filter(estado != "Roraima") %>% 
         group_by(estado) %>% 
         arrange(estado, data) %>% 
         mutate(ma_consumo = rollmean(consumo_diario, 7, na.pad = T, align = "right"),
