@@ -110,7 +110,7 @@ pre_covid <- energy %>%
 
 total_energy_df <- energy %>% 
     energy_df_fun(pre_covid) %>% 
-    select(1:4, regiao, 19:27, PET_Phase)
+    select(1:4, regiao, 19:28, PET_Phase)
 
 # por ramo
 total_energy_ramo <- energy %>% 
@@ -128,7 +128,7 @@ acl_energy_df <- energy %>%
     filter(ramo != "ACR") %>% 
     energy_df_fun(acl_pre_covid) %>% 
     filter(!is.na(pred)) %>% 
-    select(1:4, regiao, 19:27, PET_Phase) %>% 
+    select(1:4, regiao, 19:28, PET_Phase) %>% 
     rename(consumo_diario_acl  = consumo_diario ,
            pred_acl            = pred           ,
            ma_consumo_acl      = ma_consumo     ,

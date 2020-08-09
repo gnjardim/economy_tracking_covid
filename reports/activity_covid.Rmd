@@ -128,7 +128,7 @@ lista_UF <- bases_estados_df %>%
     pull(estado) %>%
     unique()
 
-walk(lista_UF, plot_comparacao_estado)
+walk(lista_UF, ~plot_comparacao_estado(estados, .x))
 ```
 \pagebreak
 
@@ -139,7 +139,7 @@ lista_UF <- bases_estados_df %>%
     pull(estado) %>%
     unique()
 
-walk(lista_UF, plot_comparacao_estado)
+walk(lista_UF, ~plot_comparacao_estado(estados, .x))
 ```
 \pagebreak
 
@@ -150,7 +150,7 @@ lista_UF <- bases_estados_df %>%
     pull(estado) %>%
     unique()
 
-walk(lista_UF, plot_comparacao_estado)
+walk(lista_UF, ~plot_comparacao_estado(estados, .x))
 ```
 
 \pagebreak
@@ -161,7 +161,7 @@ lista_UF <- bases_estados_df %>%
     pull(estado) %>%
     unique()
 
-walk(lista_UF, plot_comparacao_estado)
+walk(lista_UF, ~plot_comparacao_estado(estados, .x))
 ```
 
 \pagebreak
@@ -173,7 +173,7 @@ lista_UF <- bases_estados_df %>%
     unique() %>%
     as.list()
 
-walk(lista_UF, plot_comparacao_estado)
+walk(lista_UF, ~plot_comparacao_estado(estados, .x))
 ```
 
 \pagebreak

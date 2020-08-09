@@ -30,7 +30,6 @@ plot_activity_energy <- function(df) {
         geom_path(color = "steelblue", size = 0.8) +
         geom_hline(yintercept = 0, color = "red") +
         xlim(0, 40) + 
-        facet_wrap(~estado, scales = "free") +
         ylab("Mudança no consumo de energia") + 
         xlab("Dias Necessários para dobrar os casos")
     
@@ -40,17 +39,29 @@ plot_activity_energy <- function(df) {
 
 plot_fit_energy <- function(df) {
     
+    df <- df %>% 
+        ungroup() %>% 
+        select(data, Observado = ma_consumo, Predito = ma_pred) %>% 
+        pivot_longer(cols = c(Observado, Predito))
+  
     p <- df %>% 
         ggplot(aes(x = data)) +
-        geom_line(aes(y = ma_consumo), color = "black", size = 0.8) +
-        geom_line(aes(y = ma_pred), color = "steelblue", size = 0.8) +
-        facet_wrap(~estado, scales = "free") +
+        geom_line(aes(y = value, color = name), size = 0.8) +
         ylab("Média móvel de 7 dias do Consumo de Energia") + 
         xlab("Data") +
-        scale_color_manual(values = c("black", "steelblue"), 
-                           labels = c("Actual", "Fitted"), name = "")
+        scale_color_manual(values = c("black", "steelblue")) +
+        theme(legend.title = element_blank())
     
     return(p)
+}
+
+
+plot_uf_energia <- function(df, UF) {
+  
+  base_regiao <- df %>% 
+    filter(estado == UF)
+  
+  return(plot_fit_energy(base_regiao)) 
 }
 
 
@@ -59,7 +70,7 @@ plot_regiao_energia <- function(df, reg, fplot) {
     base_regiao <- df %>% 
         filter(regiao == reg)
     
-    return(fplot(base_regiao)) 
+    return(fplot(base_regiao) + facet_wrap(~estado, scales = "free")) 
 }
 
 
@@ -84,27 +95,37 @@ plot_energy_mobility <- function(df, reg){
 }
 
 
-# energia detalhado -------------------------------------------------------
-plot_comparacao_estado <- function(UF){
+plot_comparacao_estado <- function(df, UF){
   
     # filtrando por estado
-    base_UF <- bases_estados_df %>% 
+    base_UF <- df %>% 
         filter(estado == UF)
     
-    total_energy_UF <- total_energy_df %>% 
-        filter(estado == UF)
+    # PET phase
+    phases <- base_UF %>% 
+        group_by(PET_Phase) %>% 
+        summarise(data = min(data)) %>% 
+        filter(!is.na(PET_Phase))
     
-    acl_energy_UF <- acl_energy_df %>% 
-        filter(estado == UF)
-
+    # total days
+    total_days_mob <- max(base_UF %>% filter(!is.na(mobility)) %>% pull(data)) - 
+        phases %>% 
+        filter(PET_Phase == "Response") %>% 
+        pull(data)
+    
+    total_days_energy <- max(base_UF %>% filter(!is.na(consumo_diario)) %>% pull(data)) - 
+        phases %>% 
+        filter(PET_Phase == "Response") %>% 
+        pull(data)
+    
     # definindo limites    
     ymin <- min(min(base_UF$activity, na.rm = TRUE) - 1,
-                min(total_energy_UF$ma_dif_baseline, na.rm = TRUE),
-                min(acl_energy_UF$ma_dif_baseline, na.rm = TRUE))
+                min(base_UF$ma_dif_baseline, na.rm = TRUE),
+                min(base_UF$ma_dif_baseline_acl, na.rm = TRUE))
     
     ymax <- max(max(base_UF$activity, na.rm = TRUE),
-                max(total_energy_UF$ma_dif_baseline, na.rm = TRUE) + 1,
-                max(acl_energy_UF$ma_dif_baseline, na.rm = TRUE) + 1)
+                max(base_UF$ma_dif_baseline, na.rm = TRUE) + 1,
+                max(base_UF$ma_dif_baseline_acl, na.rm = TRUE) + 1)
     
 
     # plots
@@ -113,27 +134,30 @@ plot_comparacao_estado <- function(UF){
         geom_path(color = "steelblue", size = 0.8) +
         geom_hline(yintercept = 1, color = "red") +
         xlim(0, 40) +
-        ylim(ymin+1, ymax)+
-        ylab("Activity Index")+
-        theme(axis.title.x = element_blank())
+        ylim(ymin+1, ymax) +
+        ylab("Índice de Atividade") +
+        theme(axis.title.x = element_blank()) +
+        ggtitle("Atividade")
 
-    plot_total <- total_energy_UF %>% 
+    plot_total <- base_UF %>% 
         ggplot(aes(x = smth_date, y = ma_dif_baseline)) +
         geom_path(color = "steelblue", size = 0.8) +
         geom_hline(yintercept = 0, color = "red") +
         xlim(0, 40) +
-        ylim(ymin, ymax-1)+
-        ylab("Change in energy consumption")+
-        theme(axis.title.x = element_blank())
+        ylim(ymin, ymax-1) +
+        ylab("Mudança no consumo de energia") +
+        theme(axis.title.x = element_blank()) +
+        ggtitle("Energia Total")
     
-    plot_acl <- acl_energy_UF %>% 
-        ggplot(aes(x = smth_date, y = ma_dif_baseline)) +
+    plot_acl <- base_UF %>% 
+        ggplot(aes(x = smth_date, y = ma_dif_baseline_acl)) +
         geom_path(color = "steelblue", size = 0.8) +
         geom_hline(yintercept = 0, color = "red") +
         xlim(0, 40) +
-        ylim(ymin, ymax-1)+
-        ylab("Change in energy consumption (ACL)") +
-        theme(axis.title.x = element_blank())
+        ylim(ymin, ymax-1) +
+        ylab("Mudança no consumo de energia") +
+        theme(axis.title.x = element_blank()) +
+        ggtitle("Apenas ACL")
     
     # join plots
     plot <- plot_grid(plot_mob, 
@@ -148,6 +172,7 @@ plot_comparacao_estado <- function(UF){
 }
 
 
+# energia detalhado -------------------------------------------------------
 plot_ramo <- function(reg, pond = FALSE){
   
     df <- total_energy_ramo %>%
