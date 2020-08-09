@@ -18,19 +18,10 @@ library(plotly)
 
 
 # source ------------------------------------------------------------------
-source('code/_plot_functions.R', encoding = 'UTF-8')
-
-
-# load data ---------------------------------------------------------------
-brasil  <- read_csv("tmp/brasil.csv")
-estados <- read_csv("tmp/estados.csv")
-
-choices <- c("Brasil", unique(estados %>% pull(estado)))
+source('load.R', encoding = 'UTF-8')
 
 
 # app ---------------------------------------------------------------------
-theme_set(theme_bw())
-
 # Define UI for application
 ui <- fluidPage(
     
@@ -68,9 +59,9 @@ server <- function(input, output) {
     output$plot <- renderPlotly({
         plot_shiny(UF   = input$UF, 
                    tipo = input$tipo)
-        }
-    )
+    })
 }
+
 
 # Run the application 
 shinyApp(ui, server)

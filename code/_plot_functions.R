@@ -60,7 +60,7 @@ plot_fit_energy <- function(df, plotly = FALSE) {
           theme(legend.title = element_blank())
         
         p1 <- p1 %>% 
-          ggplotly(height = 600, width = 1000) %>% 
+          ggplotly() %>% 
           layout(annotations = list(text = "Energia Total",
                                     xref = "paper",
                                     yref = "paper",
@@ -80,7 +80,8 @@ plot_fit_energy <- function(df, plotly = FALSE) {
           scale_color_manual(values = c("black", "steelblue")) +
           theme(legend.title = element_blank())
         
-        p2 <- p2 %>% ggplotly(height = 600, width = 1000) %>% 
+        p2 <- p2 %>% 
+          ggplotly() %>% 
           layout(annotations = list(text = "Energia (apenas ACL)",
                                     xref = "paper",
                                     yref = "paper",
@@ -103,8 +104,8 @@ plot_fit_energy <- function(df, plotly = FALSE) {
                      list(x = -0.09,
                           text = "Média móvel de 7 dias do Consumo de Energia",
                           textangle = 270,
-                          showarrow = F, xref='paper', yref='paper', size=48)
-                   ))
+                          showarrow = F, xref='paper', yref='paper', size=48)),
+                   height = 600, width = 870)
           
         
     } else {
@@ -239,7 +240,10 @@ plot_comparacao_estado <- function(UF, plotly = FALSE) {
     
     # join plots
     if(plotly) {
-        
+        h <- 520
+        w <- 1030
+          
+          
         # plotly options
         plot_mob <- ggplotly(plot_mob) %>% 
             layout(annotations = list(text = "Atividade",
@@ -282,7 +286,7 @@ plot_comparacao_estado <- function(UF, plotly = FALSE) {
             layout(xaxis  = list(title = ""),
                    xaxis2 = list(title = "Dias Necessários para dobrar os casos"),
                    xaxis3 = list(title = ""),
-                   height = 500, width = 1000)
+                   height = h, width = w)
         
     } else {
         plot <- plot_grid(plot_mob, 

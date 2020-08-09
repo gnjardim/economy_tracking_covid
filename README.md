@@ -12,5 +12,5 @@ Measuring and tracking Brazil's pandemic economy using mobility and energy data
 - `code/0_pre_processing.R` prepares data for reports.
 
 ### Shiny app
-- `/tmp` contains all files needed for running the app.
-- `app.R` contains the ui and server code.
+- `shiny/data` contains all files needed for running the app.
+- `shiny/app.R` contains the ui and server code.
