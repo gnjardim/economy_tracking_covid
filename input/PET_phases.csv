@@ -1,0 +1,4313 @@
+Date;State;PET_Phase
+2020-02-25;State of Rondônia;Preparation
+2020-02-26;State of Rondônia;Preparation
+2020-02-27;State of Rondônia;Preparation
+2020-02-28;State of Rondônia;Preparation
+2020-02-29;State of Rondônia;Preparation
+2020-03-01;State of Rondônia;Preparation
+2020-03-02;State of Rondônia;Preparation
+2020-03-03;State of Rondônia;Preparation
+2020-03-04;State of Rondônia;Preparation
+2020-03-05;State of Rondônia;Preparation
+2020-03-06;State of Rondônia;Preparation
+2020-03-07;State of Rondônia;Preparation
+2020-03-08;State of Rondônia;Preparation
+2020-03-09;State of Rondônia;Preparation
+2020-03-10;State of Rondônia;Preparation
+2020-03-11;State of Rondônia;Preparation
+2020-03-12;State of Rondônia;Preparation
+2020-03-13;State of Rondônia;Preparation
+2020-03-14;State of Rondônia;Preparation
+2020-03-15;State of Rondônia;Preparation
+2020-03-16;State of Rondônia;Preparation
+2020-03-17;State of Rondônia;Preparation
+2020-03-18;State of Rondônia;Preparation
+2020-03-19;State of Rondônia;Preparation
+2020-03-20;State of Rondônia;Preparation
+2020-03-21;State of Rondônia;Response
+2020-03-22;State of Rondônia;Response
+2020-03-23;State of Rondônia;Response
+2020-03-24;State of Rondônia;Response
+2020-03-25;State of Rondônia;Response
+2020-03-26;State of Rondônia;Response
+2020-03-27;State of Rondônia;Response
+2020-03-28;State of Rondônia;Trough
+2020-03-29;State of Rondônia;Trough
+2020-03-30;State of Rondônia;Trough
+2020-03-31;State of Rondônia;Trough
+2020-04-01;State of Rondônia;Trough
+2020-04-02;State of Rondônia;Trough
+2020-04-03;State of Rondônia;Trough
+2020-04-04;State of Rondônia;Trough
+2020-04-05;State of Rondônia;Trough
+2020-04-06;State of Rondônia;Trough
+2020-04-07;State of Rondônia;Trough
+2020-04-08;State of Rondônia;Trough
+2020-04-09;State of Rondônia;Trough
+2020-04-10;State of Rondônia;Trough
+2020-04-11;State of Rondônia;Trough
+2020-04-12;State of Rondônia;Trough
+2020-04-13;State of Rondônia;Trough
+2020-04-14;State of Rondônia;Trough
+2020-04-15;State of Rondônia;Trough
+2020-04-16;State of Rondônia;Trough
+2020-04-17;State of Rondônia;Trough
+2020-04-18;State of Rondônia;Trough
+2020-04-19;State of Rondônia;Trough
+2020-04-20;State of Rondônia;Trough
+2020-04-21;State of Rondônia;Trough
+2020-04-22;State of Rondônia;Trough
+2020-04-23;State of Rondônia;Trough
+2020-04-24;State of Rondônia;Trough
+2020-04-25;State of Rondônia;Trough
+2020-04-26;State of Rondônia;Trough
+2020-04-27;State of Rondônia;Trough
+2020-04-28;State of Rondônia;Trough
+2020-04-29;State of Rondônia;Trough
+2020-04-30;State of Rondônia;Trough
+2020-05-01;State of Rondônia;Trough
+2020-05-02;State of Rondônia;Trough
+2020-05-03;State of Rondônia;Trough
+2020-05-04;State of Rondônia;Trough
+2020-05-05;State of Rondônia;Trough
+2020-05-06;State of Rondônia;Trough
+2020-05-07;State of Rondônia;Trough
+2020-05-08;State of Rondônia;Trough
+2020-05-09;State of Rondônia;Trough
+2020-05-10;State of Rondônia;Trough
+2020-05-11;State of Rondônia;Trough
+2020-05-12;State of Rondônia;Trough
+2020-05-13;State of Rondônia;Trough
+2020-05-14;State of Rondônia;Trough
+2020-05-15;State of Rondônia;Trough
+2020-05-16;State of Rondônia;Trough
+2020-05-17;State of Rondônia;Trough
+2020-05-18;State of Rondônia;Trough
+2020-05-19;State of Rondônia;Trough
+2020-05-20;State of Rondônia;Trough
+2020-05-21;State of Rondônia;Trough
+2020-05-22;State of Rondônia;Trough
+2020-05-23;State of Rondônia;Trough
+2020-05-24;State of Rondônia;Trough
+2020-05-25;State of Rondônia;Trough
+2020-05-26;State of Rondônia;Trough
+2020-05-27;State of Rondônia;Trough
+2020-05-28;State of Rondônia;Trough
+2020-05-29;State of Rondônia;Trough
+2020-05-30;State of Rondônia;Trough
+2020-05-31;State of Rondônia;Trough
+2020-06-01;State of Rondônia;Trough
+2020-06-02;State of Rondônia;Trough
+2020-06-03;State of Rondônia;Trough
+2020-06-04;State of Rondônia;Trough
+2020-06-05;State of Rondônia;Trough
+2020-06-06;State of Rondônia;Trough
+2020-06-07;State of Rondônia;Trough
+2020-06-08;State of Rondônia;Trough
+2020-06-09;State of Rondônia;Trough
+2020-06-10;State of Rondônia;Trough
+2020-06-11;State of Rondônia;Trough
+2020-06-12;State of Rondônia;Trough
+2020-06-13;State of Rondônia;Trough
+2020-06-14;State of Rondônia;Trough
+2020-06-15;State of Rondônia;Trough
+2020-06-16;State of Rondônia;Trough
+2020-06-17;State of Rondônia;Trough
+2020-06-18;State of Rondônia;Trough
+2020-06-19;State of Rondônia;Trough
+2020-06-20;State of Rondônia;Trough
+2020-06-21;State of Rondônia;Trough
+2020-06-22;State of Rondônia;Trough
+2020-06-23;State of Rondônia;Trough
+2020-06-24;State of Rondônia;Trough
+2020-06-25;State of Rondônia;Trough
+2020-06-26;State of Rondônia;Trough
+2020-06-27;State of Rondônia;Trough
+2020-06-28;State of Rondônia;Trough
+2020-06-29;State of Rondônia;Trough
+2020-06-30;State of Rondônia;Trough
+2020-07-01;State of Rondônia;Trough
+2020-07-02;State of Rondônia;Trough
+2020-07-03;State of Rondônia;Trough
+2020-07-04;State of Rondônia;Trough
+2020-07-05;State of Rondônia;Trough
+2020-07-06;State of Rondônia;Trough
+2020-07-07;State of Rondônia;Trough
+2020-07-08;State of Rondônia;Trough
+2020-07-09;State of Rondônia;Trough
+2020-07-10;State of Rondônia;Trough
+2020-07-11;State of Rondônia;Trough
+2020-07-12;State of Rondônia;Trough
+2020-07-13;State of Rondônia;Trough
+2020-07-14;State of Rondônia;Trough
+2020-07-15;State of Rondônia;Trough
+2020-07-16;State of Rondônia;Trough
+2020-07-17;State of Rondônia;Trough
+2020-07-18;State of Rondônia;Trough
+2020-07-19;State of Rondônia;Trough
+2020-07-20;State of Rondônia;Trough
+2020-07-21;State of Rondônia;Trough
+2020-07-22;State of Rondônia;Trough
+2020-07-23;State of Rondônia;Trough
+2020-07-24;State of Rondônia;Trough
+2020-07-25;State of Rondônia;Trough
+2020-07-26;;Trough
+2020-07-27;;Trough
+2020-02-25;State of Acre;Preparation
+2020-02-26;State of Acre;Preparation
+2020-02-27;State of Acre;Preparation
+2020-02-28;State of Acre;Preparation
+2020-02-29;State of Acre;Preparation
+2020-03-01;State of Acre;Preparation
+2020-03-02;State of Acre;Preparation
+2020-03-03;State of Acre;Preparation
+2020-03-04;State of Acre;Preparation
+2020-03-05;State of Acre;Preparation
+2020-03-06;State of Acre;Preparation
+2020-03-07;State of Acre;Preparation
+2020-03-08;State of Acre;Preparation
+2020-03-09;State of Acre;Preparation
+2020-03-10;State of Acre;Preparation
+2020-03-11;State of Acre;Preparation
+2020-03-12;State of Acre;Preparation
+2020-03-13;State of Acre;Preparation
+2020-03-14;State of Acre;Preparation
+2020-03-15;State of Acre;Preparation
+2020-03-16;State of Acre;Preparation
+2020-03-17;State of Acre;Preparation
+2020-03-18;State of Acre;Preparation
+2020-03-19;State of Acre;Preparation
+2020-03-20;State of Acre;Response
+2020-03-21;State of Acre;Response
+2020-03-22;State of Acre;Response
+2020-03-23;State of Acre;Response
+2020-03-24;State of Acre;Response
+2020-03-25;State of Acre;Response
+2020-03-26;State of Acre;Response
+2020-03-27;State of Acre;Response
+2020-03-28;State of Acre;Trough
+2020-03-29;State of Acre;Trough
+2020-03-30;State of Acre;Trough
+2020-03-31;State of Acre;Trough
+2020-04-01;State of Acre;Trough
+2020-04-02;State of Acre;Trough
+2020-04-03;State of Acre;Trough
+2020-04-04;State of Acre;Trough
+2020-04-05;State of Acre;Trough
+2020-04-06;State of Acre;Trough
+2020-04-07;State of Acre;Trough
+2020-04-08;State of Acre;Trough
+2020-04-09;State of Acre;Trough
+2020-04-10;State of Acre;Trough
+2020-04-11;State of Acre;Trough
+2020-04-12;State of Acre;Trough
+2020-04-13;State of Acre;Trough
+2020-04-14;State of Acre;Trough
+2020-04-15;State of Acre;Trough
+2020-04-16;State of Acre;Trough
+2020-04-17;State of Acre;Trough
+2020-04-18;State of Acre;Trough
+2020-04-19;State of Acre;Trough
+2020-04-20;State of Acre;Trough
+2020-04-21;State of Acre;Trough
+2020-04-22;State of Acre;Trough
+2020-04-23;State of Acre;Trough
+2020-04-24;State of Acre;Trough
+2020-04-25;State of Acre;Trough
+2020-04-26;State of Acre;Trough
+2020-04-27;State of Acre;Trough
+2020-04-28;State of Acre;Trough
+2020-04-29;State of Acre;Trough
+2020-04-30;State of Acre;Trough
+2020-05-01;State of Acre;Trough
+2020-05-02;State of Acre;Trough
+2020-05-03;State of Acre;Trough
+2020-05-04;State of Acre;Trough
+2020-05-05;State of Acre;Trough
+2020-05-06;State of Acre;Trough
+2020-05-07;State of Acre;Trough
+2020-05-08;State of Acre;Trough
+2020-05-09;State of Acre;Trough
+2020-05-10;State of Acre;Trough
+2020-05-11;State of Acre;Trough
+2020-05-12;State of Acre;Trough
+2020-05-13;State of Acre;Trough
+2020-05-14;State of Acre;Trough
+2020-05-15;State of Acre;Trough
+2020-05-16;State of Acre;Trough
+2020-05-17;State of Acre;Trough
+2020-05-18;State of Acre;Trough
+2020-05-19;State of Acre;Trough
+2020-05-20;State of Acre;Trough
+2020-05-21;State of Acre;Trough
+2020-05-22;State of Acre;Trough
+2020-05-23;State of Acre;Trough
+2020-05-24;State of Acre;Trough
+2020-05-25;State of Acre;Trough
+2020-05-26;State of Acre;Trough
+2020-05-27;State of Acre;Trough
+2020-05-28;State of Acre;Trough
+2020-05-29;State of Acre;Trough
+2020-05-30;State of Acre;Trough
+2020-05-31;State of Acre;Trough
+2020-06-01;State of Acre;Trough
+2020-06-02;State of Acre;Trough
+2020-06-03;State of Acre;Trough
+2020-06-04;State of Acre;Trough
+2020-06-05;State of Acre;Trough
+2020-06-06;State of Acre;Trough
+2020-06-07;State of Acre;Trough
+2020-06-08;State of Acre;Trough
+2020-06-09;State of Acre;Trough
+2020-06-10;State of Acre;Trough
+2020-06-11;State of Acre;Trough
+2020-06-12;State of Acre;Trough
+2020-06-13;State of Acre;Trough
+2020-06-14;State of Acre;Trough
+2020-06-15;State of Acre;Trough
+2020-06-16;State of Acre;Trough
+2020-06-17;State of Acre;Trough
+2020-06-18;State of Acre;Trough
+2020-06-19;State of Acre;Trough
+2020-06-20;State of Acre;Trough
+2020-06-21;State of Acre;Trough
+2020-06-22;State of Acre;Trough
+2020-06-23;State of Acre;Trough
+2020-06-24;State of Acre;Trough
+2020-06-25;State of Acre;Trough
+2020-06-26;State of Acre;Trough
+2020-06-27;State of Acre;Trough
+2020-06-28;State of Acre;Trough
+2020-06-29;State of Acre;Trough
+2020-06-30;State of Acre;Trough
+2020-07-01;State of Acre;Trough
+2020-07-02;State of Acre;Trough
+2020-07-03;State of Acre;Trough
+2020-07-04;State of Acre;Trough
+2020-07-05;State of Acre;Trough
+2020-07-06;State of Acre;Trough
+2020-07-07;State of Acre;Trough
+2020-07-08;State of Acre;Trough
+2020-07-09;State of Acre;Trough
+2020-07-10;State of Acre;Trough
+2020-07-11;State of Acre;Trough
+2020-07-12;State of Acre;Trough
+2020-07-13;State of Acre;Trough
+2020-07-14;State of Acre;Trough
+2020-07-15;State of Acre;Trough
+2020-07-16;State of Acre;Trough
+2020-07-17;State of Acre;Trough
+2020-07-18;State of Acre;Trough
+2020-07-19;State of Acre;Trough
+2020-07-20;State of Acre;Trough
+2020-07-21;State of Acre;Trough
+2020-07-22;State of Acre;Trough
+2020-07-23;State of Acre;Trough
+2020-07-24;State of Acre;Trough
+2020-07-25;State of Acre;Trough
+2020-07-26;;Trough
+2020-07-27;;Trough
+2020-02-25;State of Amazonas;Preparation
+2020-02-26;State of Amazonas;Preparation
+2020-02-27;State of Amazonas;Preparation
+2020-02-28;State of Amazonas;Preparation
+2020-02-29;State of Amazonas;Preparation
+2020-03-01;State of Amazonas;Preparation
+2020-03-02;State of Amazonas;Preparation
+2020-03-03;State of Amazonas;Preparation
+2020-03-04;State of Amazonas;Preparation
+2020-03-05;State of Amazonas;Preparation
+2020-03-06;State of Amazonas;Preparation
+2020-03-07;State of Amazonas;Preparation
+2020-03-08;State of Amazonas;Preparation
+2020-03-09;State of Amazonas;Preparation
+2020-03-10;State of Amazonas;Preparation
+2020-03-11;State of Amazonas;Preparation
+2020-03-12;State of Amazonas;Preparation
+2020-03-13;State of Amazonas;Preparation
+2020-03-14;State of Amazonas;Preparation
+2020-03-15;State of Amazonas;Preparation
+2020-03-16;State of Amazonas;Preparation
+2020-03-17;State of Amazonas;Preparation
+2020-03-18;State of Amazonas;Preparation
+2020-03-19;State of Amazonas;Response
+2020-03-20;State of Amazonas;Response
+2020-03-21;State of Amazonas;Response
+2020-03-22;State of Amazonas;Response
+2020-03-23;State of Amazonas;Response
+2020-03-24;State of Amazonas;Response
+2020-03-25;State of Amazonas;Response
+2020-03-26;State of Amazonas;Response
+2020-03-27;State of Amazonas;Response
+2020-03-28;State of Amazonas;Response
+2020-03-29;State of Amazonas;Response
+2020-03-30;State of Amazonas;Response
+2020-03-31;State of Amazonas;Trough
+2020-04-01;State of Amazonas;Trough
+2020-04-02;State of Amazonas;Trough
+2020-04-03;State of Amazonas;Trough
+2020-04-04;State of Amazonas;Trough
+2020-04-05;State of Amazonas;Trough
+2020-04-06;State of Amazonas;Trough
+2020-04-07;State of Amazonas;Trough
+2020-04-08;State of Amazonas;Trough
+2020-04-09;State of Amazonas;Trough
+2020-04-10;State of Amazonas;Trough
+2020-04-11;State of Amazonas;Trough
+2020-04-12;State of Amazonas;Trough
+2020-04-13;State of Amazonas;Trough
+2020-04-14;State of Amazonas;Trough
+2020-04-15;State of Amazonas;Trough
+2020-04-16;State of Amazonas;Trough
+2020-04-17;State of Amazonas;Trough
+2020-04-18;State of Amazonas;Trough
+2020-04-19;State of Amazonas;Trough
+2020-04-20;State of Amazonas;Trough
+2020-04-21;State of Amazonas;Trough
+2020-04-22;State of Amazonas;Trough
+2020-04-23;State of Amazonas;Trough
+2020-04-24;State of Amazonas;Trough
+2020-04-25;State of Amazonas;Trough
+2020-04-26;State of Amazonas;Trough
+2020-04-27;State of Amazonas;Trough
+2020-04-28;State of Amazonas;Trough
+2020-04-29;State of Amazonas;Trough
+2020-04-30;State of Amazonas;Trough
+2020-05-01;State of Amazonas;Trough
+2020-05-02;State of Amazonas;Trough
+2020-05-03;State of Amazonas;Trough
+2020-05-04;State of Amazonas;Trough
+2020-05-05;State of Amazonas;Trough
+2020-05-06;State of Amazonas;Trough
+2020-05-07;State of Amazonas;Trough
+2020-05-08;State of Amazonas;Trough
+2020-05-09;State of Amazonas;Trough
+2020-05-10;State of Amazonas;Trough
+2020-05-11;State of Amazonas;Trough
+2020-05-12;State of Amazonas;Trough
+2020-05-13;State of Amazonas;Trough
+2020-05-14;State of Amazonas;Trough
+2020-05-15;State of Amazonas;Trough
+2020-05-16;State of Amazonas;Trough
+2020-05-17;State of Amazonas;Trough
+2020-05-18;State of Amazonas;Trough
+2020-05-19;State of Amazonas;Trough
+2020-05-20;State of Amazonas;Trough
+2020-05-21;State of Amazonas;Trough
+2020-05-22;State of Amazonas;Trough
+2020-05-23;State of Amazonas;Trough
+2020-05-24;State of Amazonas;Trough
+2020-05-25;State of Amazonas;Trough
+2020-05-26;State of Amazonas;Trough
+2020-05-27;State of Amazonas;Trough
+2020-05-28;State of Amazonas;Trough
+2020-05-29;State of Amazonas;Trough
+2020-05-30;State of Amazonas;Trough
+2020-05-31;State of Amazonas;Trough
+2020-06-01;State of Amazonas;Trough
+2020-06-02;State of Amazonas;Trough
+2020-06-03;State of Amazonas;Trough
+2020-06-04;State of Amazonas;Trough
+2020-06-05;State of Amazonas;Trough
+2020-06-06;State of Amazonas;Trough
+2020-06-07;State of Amazonas;Trough
+2020-06-08;State of Amazonas;Trough
+2020-06-09;State of Amazonas;Trough
+2020-06-10;State of Amazonas;Trough
+2020-06-11;State of Amazonas;Trough
+2020-06-12;State of Amazonas;Trough
+2020-06-13;State of Amazonas;Trough
+2020-06-14;State of Amazonas;Trough
+2020-06-15;State of Amazonas;Trough
+2020-06-16;State of Amazonas;Trough
+2020-06-17;State of Amazonas;Trough
+2020-06-18;State of Amazonas;Trough
+2020-06-19;State of Amazonas;Trough
+2020-06-20;State of Amazonas;Trough
+2020-06-21;State of Amazonas;Trough
+2020-06-22;State of Amazonas;Trough
+2020-06-23;State of Amazonas;Trough
+2020-06-24;State of Amazonas;Trough
+2020-06-25;State of Amazonas;Trough
+2020-06-26;State of Amazonas;Trough
+2020-06-27;State of Amazonas;Trough
+2020-06-28;State of Amazonas;Trough
+2020-06-29;State of Amazonas;Trough
+2020-06-30;State of Amazonas;Trough
+2020-07-01;State of Amazonas;Trough
+2020-07-02;State of Amazonas;Trough
+2020-07-03;State of Amazonas;Trough
+2020-07-04;State of Amazonas;Trough
+2020-07-05;State of Amazonas;Trough
+2020-07-06;State of Amazonas;Trough
+2020-07-07;State of Amazonas;Trough
+2020-07-08;State of Amazonas;Trough
+2020-07-09;State of Amazonas;Trough
+2020-07-10;State of Amazonas;Trough
+2020-07-11;State of Amazonas;Trough
+2020-07-12;State of Amazonas;Trough
+2020-07-13;State of Amazonas;Trough
+2020-07-14;State of Amazonas;Trough
+2020-07-15;State of Amazonas;Trough
+2020-07-16;State of Amazonas;Trough
+2020-07-17;State of Amazonas;Trough
+2020-07-18;State of Amazonas;Trough
+2020-07-19;State of Amazonas;Trough
+2020-07-20;State of Amazonas;Trough
+2020-07-21;State of Amazonas;Trough
+2020-07-22;State of Amazonas;Trough
+2020-07-23;State of Amazonas;Trough
+2020-07-24;State of Amazonas;Trough
+2020-07-25;State of Amazonas;Trough
+2020-07-26;;Trough
+2020-07-27;;Trough
+2020-02-25;State of Roraima;Preparation
+2020-02-26;State of Roraima;Preparation
+2020-02-27;State of Roraima;Preparation
+2020-02-28;State of Roraima;Preparation
+2020-02-29;State of Roraima;Preparation
+2020-03-01;State of Roraima;Preparation
+2020-03-02;State of Roraima;Preparation
+2020-03-03;State of Roraima;Preparation
+2020-03-04;State of Roraima;Preparation
+2020-03-05;State of Roraima;Preparation
+2020-03-06;State of Roraima;Preparation
+2020-03-07;State of Roraima;Preparation
+2020-03-08;State of Roraima;Preparation
+2020-03-09;State of Roraima;Preparation
+2020-03-10;State of Roraima;Preparation
+2020-03-11;State of Roraima;Preparation
+2020-03-12;State of Roraima;Preparation
+2020-03-13;State of Roraima;Preparation
+2020-03-14;State of Roraima;Preparation
+2020-03-15;State of Roraima;Preparation
+2020-03-16;State of Roraima;Preparation
+2020-03-17;State of Roraima;Preparation
+2020-03-18;State of Roraima;Preparation
+2020-03-19;State of Roraima;Preparation
+2020-03-20;State of Roraima;Response
+2020-03-21;State of Roraima;Response
+2020-03-22;State of Roraima;Response
+2020-03-23;State of Roraima;Response
+2020-03-24;State of Roraima;Response
+2020-03-25;State of Roraima;Response
+2020-03-26;State of Roraima;Response
+2020-03-27;State of Roraima;Response
+2020-03-28;State of Roraima;Response
+2020-03-29;State of Roraima;Response
+2020-03-30;State of Roraima;Trough
+2020-03-31;State of Roraima;Trough
+2020-04-01;State of Roraima;Trough
+2020-04-02;State of Roraima;Trough
+2020-04-03;State of Roraima;Trough
+2020-04-04;State of Roraima;Trough
+2020-04-05;State of Roraima;Trough
+2020-04-06;State of Roraima;Trough
+2020-04-07;State of Roraima;Trough
+2020-04-08;State of Roraima;Trough
+2020-04-09;State of Roraima;Trough
+2020-04-10;State of Roraima;Trough
+2020-04-11;State of Roraima;Trough
+2020-04-12;State of Roraima;Trough
+2020-04-13;State of Roraima;Trough
+2020-04-14;State of Roraima;Trough
+2020-04-15;State of Roraima;Trough
+2020-04-16;State of Roraima;Trough
+2020-04-17;State of Roraima;Trough
+2020-04-18;State of Roraima;Trough
+2020-04-19;State of Roraima;Trough
+2020-04-20;State of Roraima;Trough
+2020-04-21;State of Roraima;Trough
+2020-04-22;State of Roraima;Trough
+2020-04-23;State of Roraima;Trough
+2020-04-24;State of Roraima;Trough
+2020-04-25;State of Roraima;Trough
+2020-04-26;State of Roraima;Trough
+2020-04-27;State of Roraima;Trough
+2020-04-28;State of Roraima;Trough
+2020-04-29;State of Roraima;Trough
+2020-04-30;State of Roraima;Trough
+2020-05-01;State of Roraima;Trough
+2020-05-02;State of Roraima;Trough
+2020-05-03;State of Roraima;Trough
+2020-05-04;State of Roraima;Trough
+2020-05-05;State of Roraima;Trough
+2020-05-06;State of Roraima;Trough
+2020-05-07;State of Roraima;Trough
+2020-05-08;State of Roraima;Trough
+2020-05-09;State of Roraima;Trough
+2020-05-10;State of Roraima;Trough
+2020-05-11;State of Roraima;Trough
+2020-05-12;State of Roraima;Trough
+2020-05-13;State of Roraima;Trough
+2020-05-14;State of Roraima;Trough
+2020-05-15;State of Roraima;Trough
+2020-05-16;State of Roraima;Trough
+2020-05-17;State of Roraima;Trough
+2020-05-18;State of Roraima;Trough
+2020-05-19;State of Roraima;Trough
+2020-05-20;State of Roraima;Trough
+2020-05-21;State of Roraima;Trough
+2020-05-22;State of Roraima;Trough
+2020-05-23;State of Roraima;Trough
+2020-05-24;State of Roraima;Trough
+2020-05-25;State of Roraima;Trough
+2020-05-26;State of Roraima;Trough
+2020-05-27;State of Roraima;Trough
+2020-05-28;State of Roraima;Trough
+2020-05-29;State of Roraima;Trough
+2020-05-30;State of Roraima;Trough
+2020-05-31;State of Roraima;Trough
+2020-06-01;State of Roraima;Trough
+2020-06-02;State of Roraima;Trough
+2020-06-03;State of Roraima;Trough
+2020-06-04;State of Roraima;Trough
+2020-06-05;State of Roraima;Trough
+2020-06-06;State of Roraima;Trough
+2020-06-07;State of Roraima;Trough
+2020-06-08;State of Roraima;Trough
+2020-06-09;State of Roraima;Trough
+2020-06-10;State of Roraima;Trough
+2020-06-11;State of Roraima;Trough
+2020-06-12;State of Roraima;Trough
+2020-06-13;State of Roraima;Trough
+2020-06-14;State of Roraima;Trough
+2020-06-15;State of Roraima;Trough
+2020-06-16;State of Roraima;Trough
+2020-06-17;State of Roraima;Trough
+2020-06-18;State of Roraima;Trough
+2020-06-19;State of Roraima;Trough
+2020-06-20;State of Roraima;Trough
+2020-06-21;State of Roraima;Trough
+2020-06-22;State of Roraima;Trough
+2020-06-23;State of Roraima;Trough
+2020-06-24;State of Roraima;Trough
+2020-06-25;State of Roraima;Trough
+2020-06-26;State of Roraima;Trough
+2020-06-27;State of Roraima;Trough
+2020-06-28;State of Roraima;Trough
+2020-06-29;State of Roraima;Trough
+2020-06-30;State of Roraima;Trough
+2020-07-01;State of Roraima;Trough
+2020-07-02;State of Roraima;Trough
+2020-07-03;State of Roraima;Trough
+2020-07-04;State of Roraima;Trough
+2020-07-05;State of Roraima;Trough
+2020-07-06;State of Roraima;Trough
+2020-07-07;State of Roraima;Trough
+2020-07-08;State of Roraima;Trough
+2020-07-09;State of Roraima;Trough
+2020-07-10;State of Roraima;Trough
+2020-07-11;State of Roraima;Trough
+2020-07-12;State of Roraima;Trough
+2020-07-13;State of Roraima;Trough
+2020-07-14;State of Roraima;Trough
+2020-07-15;State of Roraima;Trough
+2020-07-16;State of Roraima;Trough
+2020-07-17;State of Roraima;Trough
+2020-07-18;State of Roraima;Trough
+2020-07-19;State of Roraima;Trough
+2020-07-20;State of Roraima;Trough
+2020-07-21;State of Roraima;Trough
+2020-07-22;State of Roraima;Trough
+2020-07-23;State of Roraima;Trough
+2020-07-24;State of Roraima;Trough
+2020-07-25;State of Roraima;Trough
+2020-07-26;;Trough
+2020-07-27;;Trough
+2020-02-25;State of Pará;Preparation
+2020-02-26;State of Pará;Preparation
+2020-02-27;State of Pará;Preparation
+2020-02-28;State of Pará;Preparation
+2020-02-29;State of Pará;Preparation
+2020-03-01;State of Pará;Preparation
+2020-03-02;State of Pará;Preparation
+2020-03-03;State of Pará;Preparation
+2020-03-04;State of Pará;Preparation
+2020-03-05;State of Pará;Preparation
+2020-03-06;State of Pará;Preparation
+2020-03-07;State of Pará;Preparation
+2020-03-08;State of Pará;Preparation
+2020-03-09;State of Pará;Preparation
+2020-03-10;State of Pará;Preparation
+2020-03-11;State of Pará;Preparation
+2020-03-12;State of Pará;Preparation
+2020-03-13;State of Pará;Preparation
+2020-03-14;State of Pará;Preparation
+2020-03-15;State of Pará;Preparation
+2020-03-16;State of Pará;Preparation
+2020-03-17;State of Pará;Preparation
+2020-03-18;State of Pará;Preparation
+2020-03-19;State of Pará;Preparation
+2020-03-20;State of Pará;Response
+2020-03-21;State of Pará;Response
+2020-03-22;State of Pará;Response
+2020-03-23;State of Pará;Response
+2020-03-24;State of Pará;Response
+2020-03-25;State of Pará;Response
+2020-03-26;State of Pará;Response
+2020-03-27;State of Pará;Response
+2020-03-28;State of Pará;Trough
+2020-03-29;State of Pará;Trough
+2020-03-30;State of Pará;Trough
+2020-03-31;State of Pará;Trough
+2020-04-01;State of Pará;Trough
+2020-04-02;State of Pará;Trough
+2020-04-03;State of Pará;Trough
+2020-04-04;State of Pará;Trough
+2020-04-05;State of Pará;Trough
+2020-04-06;State of Pará;Trough
+2020-04-07;State of Pará;Trough
+2020-04-08;State of Pará;Trough
+2020-04-09;State of Pará;Trough
+2020-04-10;State of Pará;Trough
+2020-04-11;State of Pará;Trough
+2020-04-12;State of Pará;Trough
+2020-04-13;State of Pará;Trough
+2020-04-14;State of Pará;Trough
+2020-04-15;State of Pará;Trough
+2020-04-16;State of Pará;Trough
+2020-04-17;State of Pará;Trough
+2020-04-18;State of Pará;Trough
+2020-04-19;State of Pará;Trough
+2020-04-20;State of Pará;Trough
+2020-04-21;State of Pará;Trough
+2020-04-22;State of Pará;Trough
+2020-04-23;State of Pará;Trough
+2020-04-24;State of Pará;Trough
+2020-04-25;State of Pará;Trough
+2020-04-26;State of Pará;Trough
+2020-04-27;State of Pará;Trough
+2020-04-28;State of Pará;Trough
+2020-04-29;State of Pará;Trough
+2020-04-30;State of Pará;Trough
+2020-05-01;State of Pará;Trough
+2020-05-02;State of Pará;Trough
+2020-05-03;State of Pará;Trough
+2020-05-04;State of Pará;Trough
+2020-05-05;State of Pará;Trough
+2020-05-06;State of Pará;Trough
+2020-05-07;State of Pará;Trough
+2020-05-08;State of Pará;Trough
+2020-05-09;State of Pará;Trough
+2020-05-10;State of Pará;Trough
+2020-05-11;State of Pará;Trough
+2020-05-12;State of Pará;Trough
+2020-05-13;State of Pará;Trough
+2020-05-14;State of Pará;Trough
+2020-05-15;State of Pará;Trough
+2020-05-16;State of Pará;Trough
+2020-05-17;State of Pará;Trough
+2020-05-18;State of Pará;Trough
+2020-05-19;State of Pará;Trough
+2020-05-20;State of Pará;Trough
+2020-05-21;State of Pará;Trough
+2020-05-22;State of Pará;Trough
+2020-05-23;State of Pará;Trough
+2020-05-24;State of Pará;Trough
+2020-05-25;State of Pará;Trough
+2020-05-26;State of Pará;Trough
+2020-05-27;State of Pará;Trough
+2020-05-28;State of Pará;Trough
+2020-05-29;State of Pará;Trough
+2020-05-30;State of Pará;Trough
+2020-05-31;State of Pará;Trough
+2020-06-01;State of Pará;Trough
+2020-06-02;State of Pará;Trough
+2020-06-03;State of Pará;Trough
+2020-06-04;State of Pará;Trough
+2020-06-05;State of Pará;Trough
+2020-06-06;State of Pará;Trough
+2020-06-07;State of Pará;Trough
+2020-06-08;State of Pará;Trough
+2020-06-09;State of Pará;Trough
+2020-06-10;State of Pará;Trough
+2020-06-11;State of Pará;Trough
+2020-06-12;State of Pará;Trough
+2020-06-13;State of Pará;Trough
+2020-06-14;State of Pará;Trough
+2020-06-15;State of Pará;Trough
+2020-06-16;State of Pará;Trough
+2020-06-17;State of Pará;Trough
+2020-06-18;State of Pará;Trough
+2020-06-19;State of Pará;Trough
+2020-06-20;State of Pará;Trough
+2020-06-21;State of Pará;Trough
+2020-06-22;State of Pará;Trough
+2020-06-23;State of Pará;Trough
+2020-06-24;State of Pará;Trough
+2020-06-25;State of Pará;Trough
+2020-06-26;State of Pará;Trough
+2020-06-27;State of Pará;Trough
+2020-06-28;State of Pará;Trough
+2020-06-29;State of Pará;Trough
+2020-06-30;State of Pará;Trough
+2020-07-01;State of Pará;Trough
+2020-07-02;State of Pará;Trough
+2020-07-03;State of Pará;Trough
+2020-07-04;State of Pará;Trough
+2020-07-05;State of Pará;Trough
+2020-07-06;State of Pará;Trough
+2020-07-07;State of Pará;Trough
+2020-07-08;State of Pará;Trough
+2020-07-09;State of Pará;Trough
+2020-07-10;State of Pará;Trough
+2020-07-11;State of Pará;Trough
+2020-07-12;State of Pará;Trough
+2020-07-13;State of Pará;Trough
+2020-07-14;State of Pará;Trough
+2020-07-15;State of Pará;Trough
+2020-07-16;State of Pará;Trough
+2020-07-17;State of Pará;Trough
+2020-07-18;State of Pará;Trough
+2020-07-19;State of Pará;Trough
+2020-07-20;State of Pará;Trough
+2020-07-21;State of Pará;Trough
+2020-07-22;State of Pará;Trough
+2020-07-23;State of Pará;Trough
+2020-07-24;State of Pará;Trough
+2020-07-25;State of Pará;Trough
+2020-07-26;;Trough
+2020-07-27;;Trough
+2020-02-25;State of Amapá;Preparation
+2020-02-26;State of Amapá;Preparation
+2020-02-27;State of Amapá;Preparation
+2020-02-28;State of Amapá;Preparation
+2020-02-29;State of Amapá;Preparation
+2020-03-01;State of Amapá;Preparation
+2020-03-02;State of Amapá;Preparation
+2020-03-03;State of Amapá;Preparation
+2020-03-04;State of Amapá;Preparation
+2020-03-05;State of Amapá;Preparation
+2020-03-06;State of Amapá;Preparation
+2020-03-07;State of Amapá;Preparation
+2020-03-08;State of Amapá;Preparation
+2020-03-09;State of Amapá;Preparation
+2020-03-10;State of Amapá;Preparation
+2020-03-11;State of Amapá;Preparation
+2020-03-12;State of Amapá;Preparation
+2020-03-13;State of Amapá;Preparation
+2020-03-14;State of Amapá;Preparation
+2020-03-15;State of Amapá;Preparation
+2020-03-16;State of Amapá;Preparation
+2020-03-17;State of Amapá;Preparation
+2020-03-18;State of Amapá;Preparation
+2020-03-19;State of Amapá;Response
+2020-03-20;State of Amapá;Response
+2020-03-21;State of Amapá;Response
+2020-03-22;State of Amapá;Response
+2020-03-23;State of Amapá;Response
+2020-03-24;State of Amapá;Response
+2020-03-25;State of Amapá;Response
+2020-03-26;State of Amapá;Response
+2020-03-27;State of Amapá;Response
+2020-03-28;State of Amapá;Trough
+2020-03-29;State of Amapá;Trough
+2020-03-30;State of Amapá;Trough
+2020-03-31;State of Amapá;Trough
+2020-04-01;State of Amapá;Trough
+2020-04-02;State of Amapá;Trough
+2020-04-03;State of Amapá;Trough
+2020-04-04;State of Amapá;Trough
+2020-04-05;State of Amapá;Trough
+2020-04-06;State of Amapá;Trough
+2020-04-07;State of Amapá;Trough
+2020-04-08;State of Amapá;Trough
+2020-04-09;State of Amapá;Trough
+2020-04-10;State of Amapá;Trough
+2020-04-11;State of Amapá;Trough
+2020-04-12;State of Amapá;Trough
+2020-04-13;State of Amapá;Trough
+2020-04-14;State of Amapá;Trough
+2020-04-15;State of Amapá;Trough
+2020-04-16;State of Amapá;Trough
+2020-04-17;State of Amapá;Trough
+2020-04-18;State of Amapá;Trough
+2020-04-19;State of Amapá;Trough
+2020-04-20;State of Amapá;Trough
+2020-04-21;State of Amapá;Trough
+2020-04-22;State of Amapá;Trough
+2020-04-23;State of Amapá;Trough
+2020-04-24;State of Amapá;Trough
+2020-04-25;State of Amapá;Trough
+2020-04-26;State of Amapá;Trough
+2020-04-27;State of Amapá;Trough
+2020-04-28;State of Amapá;Trough
+2020-04-29;State of Amapá;Trough
+2020-04-30;State of Amapá;Trough
+2020-05-01;State of Amapá;Trough
+2020-05-02;State of Amapá;Trough
+2020-05-03;State of Amapá;Trough
+2020-05-04;State of Amapá;Trough
+2020-05-05;State of Amapá;Trough
+2020-05-06;State of Amapá;Trough
+2020-05-07;State of Amapá;Trough
+2020-05-08;State of Amapá;Trough
+2020-05-09;State of Amapá;Trough
+2020-05-10;State of Amapá;Trough
+2020-05-11;State of Amapá;Trough
+2020-05-12;State of Amapá;Trough
+2020-05-13;State of Amapá;Trough
+2020-05-14;State of Amapá;Trough
+2020-05-15;State of Amapá;Trough
+2020-05-16;State of Amapá;Trough
+2020-05-17;State of Amapá;Trough
+2020-05-18;State of Amapá;Trough
+2020-05-19;State of Amapá;Trough
+2020-05-20;State of Amapá;Trough
+2020-05-21;State of Amapá;Trough
+2020-05-22;State of Amapá;Trough
+2020-05-23;State of Amapá;Trough
+2020-05-24;State of Amapá;Trough
+2020-05-25;State of Amapá;Trough
+2020-05-26;State of Amapá;Trough
+2020-05-27;State of Amapá;Trough
+2020-05-28;State of Amapá;Trough
+2020-05-29;State of Amapá;Trough
+2020-05-30;State of Amapá;Trough
+2020-05-31;State of Amapá;Trough
+2020-06-01;State of Amapá;Trough
+2020-06-02;State of Amapá;Trough
+2020-06-03;State of Amapá;Trough
+2020-06-04;State of Amapá;Trough
+2020-06-05;State of Amapá;Trough
+2020-06-06;State of Amapá;Trough
+2020-06-07;State of Amapá;Trough
+2020-06-08;State of Amapá;Trough
+2020-06-09;State of Amapá;Trough
+2020-06-10;State of Amapá;Trough
+2020-06-11;State of Amapá;Trough
+2020-06-12;State of Amapá;Trough
+2020-06-13;State of Amapá;Trough
+2020-06-14;State of Amapá;Trough
+2020-06-15;State of Amapá;Trough
+2020-06-16;State of Amapá;Trough
+2020-06-17;State of Amapá;Trough
+2020-06-18;State of Amapá;Trough
+2020-06-19;State of Amapá;Trough
+2020-06-20;State of Amapá;Trough
+2020-06-21;State of Amapá;Trough
+2020-06-22;State of Amapá;Trough
+2020-06-23;State of Amapá;Trough
+2020-06-24;State of Amapá;Trough
+2020-06-25;State of Amapá;Trough
+2020-06-26;State of Amapá;Trough
+2020-06-27;State of Amapá;Trough
+2020-06-28;State of Amapá;Trough
+2020-06-29;State of Amapá;Trough
+2020-06-30;State of Amapá;Trough
+2020-07-01;State of Amapá;Trough
+2020-07-02;State of Amapá;Trough
+2020-07-03;State of Amapá;Trough
+2020-07-04;State of Amapá;Trough
+2020-07-05;State of Amapá;Trough
+2020-07-06;State of Amapá;Trough
+2020-07-07;State of Amapá;Trough
+2020-07-08;State of Amapá;Trough
+2020-07-09;State of Amapá;Trough
+2020-07-10;State of Amapá;Trough
+2020-07-11;State of Amapá;Trough
+2020-07-12;State of Amapá;Trough
+2020-07-13;State of Amapá;Trough
+2020-07-14;State of Amapá;Trough
+2020-07-15;State of Amapá;Trough
+2020-07-16;State of Amapá;Trough
+2020-07-17;State of Amapá;Trough
+2020-07-18;State of Amapá;Trough
+2020-07-19;State of Amapá;Trough
+2020-07-20;State of Amapá;Trough
+2020-07-21;State of Amapá;Trough
+2020-07-22;State of Amapá;Trough
+2020-07-23;State of Amapá;Trough
+2020-07-24;State of Amapá;Trough
+2020-07-25;State of Amapá;Trough
+2020-07-26;;Trough
+2020-07-27;;Trough
+2020-02-25;State of Tocantins;Preparation
+2020-02-26;State of Tocantins;Preparation
+2020-02-27;State of Tocantins;Preparation
+2020-02-28;State of Tocantins;Preparation
+2020-02-29;State of Tocantins;Preparation
+2020-03-01;State of Tocantins;Preparation
+2020-03-02;State of Tocantins;Preparation
+2020-03-03;State of Tocantins;Preparation
+2020-03-04;State of Tocantins;Preparation
+2020-03-05;State of Tocantins;Preparation
+2020-03-06;State of Tocantins;Preparation
+2020-03-07;State of Tocantins;Preparation
+2020-03-08;State of Tocantins;Preparation
+2020-03-09;State of Tocantins;Preparation
+2020-03-10;State of Tocantins;Preparation
+2020-03-11;State of Tocantins;Preparation
+2020-03-12;State of Tocantins;Preparation
+2020-03-13;State of Tocantins;Preparation
+2020-03-14;State of Tocantins;Preparation
+2020-03-15;State of Tocantins;Preparation
+2020-03-16;State of Tocantins;Preparation
+2020-03-17;State of Tocantins;Preparation
+2020-03-18;State of Tocantins;Preparation
+2020-03-19;State of Tocantins;Response
+2020-03-20;State of Tocantins;Response
+2020-03-21;State of Tocantins;Response
+2020-03-22;State of Tocantins;Response
+2020-03-23;State of Tocantins;Response
+2020-03-24;State of Tocantins;Response
+2020-03-25;State of Tocantins;Response
+2020-03-26;State of Tocantins;Response
+2020-03-27;State of Tocantins;Response
+2020-03-28;State of Tocantins;Trough
+2020-03-29;State of Tocantins;Trough
+2020-03-30;State of Tocantins;Trough
+2020-03-31;State of Tocantins;Trough
+2020-04-01;State of Tocantins;Trough
+2020-04-02;State of Tocantins;Trough
+2020-04-03;State of Tocantins;Trough
+2020-04-04;State of Tocantins;Trough
+2020-04-05;State of Tocantins;Trough
+2020-04-06;State of Tocantins;Trough
+2020-04-07;State of Tocantins;Trough
+2020-04-08;State of Tocantins;Trough
+2020-04-09;State of Tocantins;Trough
+2020-04-10;State of Tocantins;Trough
+2020-04-11;State of Tocantins;Trough
+2020-04-12;State of Tocantins;Trough
+2020-04-13;State of Tocantins;Trough
+2020-04-14;State of Tocantins;Trough
+2020-04-15;State of Tocantins;Trough
+2020-04-16;State of Tocantins;Trough
+2020-04-17;State of Tocantins;Trough
+2020-04-18;State of Tocantins;Trough
+2020-04-19;State of Tocantins;Trough
+2020-04-20;State of Tocantins;Trough
+2020-04-21;State of Tocantins;Trough
+2020-04-22;State of Tocantins;Trough
+2020-04-23;State of Tocantins;Trough
+2020-04-24;State of Tocantins;Trough
+2020-04-25;State of Tocantins;Trough
+2020-04-26;State of Tocantins;Trough
+2020-04-27;State of Tocantins;Trough
+2020-04-28;State of Tocantins;Trough
+2020-04-29;State of Tocantins;Trough
+2020-04-30;State of Tocantins;Trough
+2020-05-01;State of Tocantins;Trough
+2020-05-02;State of Tocantins;Trough
+2020-05-03;State of Tocantins;Trough
+2020-05-04;State of Tocantins;Trough
+2020-05-05;State of Tocantins;Trough
+2020-05-06;State of Tocantins;Trough
+2020-05-07;State of Tocantins;Trough
+2020-05-08;State of Tocantins;Trough
+2020-05-09;State of Tocantins;Trough
+2020-05-10;State of Tocantins;Trough
+2020-05-11;State of Tocantins;Trough
+2020-05-12;State of Tocantins;Trough
+2020-05-13;State of Tocantins;Trough
+2020-05-14;State of Tocantins;Trough
+2020-05-15;State of Tocantins;Trough
+2020-05-16;State of Tocantins;Trough
+2020-05-17;State of Tocantins;Trough
+2020-05-18;State of Tocantins;Trough
+2020-05-19;State of Tocantins;Trough
+2020-05-20;State of Tocantins;Trough
+2020-05-21;State of Tocantins;Trough
+2020-05-22;State of Tocantins;Trough
+2020-05-23;State of Tocantins;Trough
+2020-05-24;State of Tocantins;Trough
+2020-05-25;State of Tocantins;Trough
+2020-05-26;State of Tocantins;Trough
+2020-05-27;State of Tocantins;Trough
+2020-05-28;State of Tocantins;Trough
+2020-05-29;State of Tocantins;Trough
+2020-05-30;State of Tocantins;Trough
+2020-05-31;State of Tocantins;Trough
+2020-06-01;State of Tocantins;Trough
+2020-06-02;State of Tocantins;Trough
+2020-06-03;State of Tocantins;Trough
+2020-06-04;State of Tocantins;Trough
+2020-06-05;State of Tocantins;Trough
+2020-06-06;State of Tocantins;Trough
+2020-06-07;State of Tocantins;Trough
+2020-06-08;State of Tocantins;Trough
+2020-06-09;State of Tocantins;Trough
+2020-06-10;State of Tocantins;Trough
+2020-06-11;State of Tocantins;Trough
+2020-06-12;State of Tocantins;Trough
+2020-06-13;State of Tocantins;Trough
+2020-06-14;State of Tocantins;Trough
+2020-06-15;State of Tocantins;Trough
+2020-06-16;State of Tocantins;Trough
+2020-06-17;State of Tocantins;Trough
+2020-06-18;State of Tocantins;Trough
+2020-06-19;State of Tocantins;Trough
+2020-06-20;State of Tocantins;Trough
+2020-06-21;State of Tocantins;Trough
+2020-06-22;State of Tocantins;Trough
+2020-06-23;State of Tocantins;Trough
+2020-06-24;State of Tocantins;Trough
+2020-06-25;State of Tocantins;Trough
+2020-06-26;State of Tocantins;Trough
+2020-06-27;State of Tocantins;Trough
+2020-06-28;State of Tocantins;Trough
+2020-06-29;State of Tocantins;Trough
+2020-06-30;State of Tocantins;Trough
+2020-07-01;State of Tocantins;Trough
+2020-07-02;State of Tocantins;Trough
+2020-07-03;State of Tocantins;Trough
+2020-07-04;State of Tocantins;Trough
+2020-07-05;State of Tocantins;Trough
+2020-07-06;State of Tocantins;Trough
+2020-07-07;State of Tocantins;Trough
+2020-07-08;State of Tocantins;Trough
+2020-07-09;State of Tocantins;Trough
+2020-07-10;State of Tocantins;Trough
+2020-07-11;State of Tocantins;Trough
+2020-07-12;State of Tocantins;Trough
+2020-07-13;State of Tocantins;Trough
+2020-07-14;State of Tocantins;Trough
+2020-07-15;State of Tocantins;Trough
+2020-07-16;State of Tocantins;Trough
+2020-07-17;State of Tocantins;Trough
+2020-07-18;State of Tocantins;Trough
+2020-07-19;State of Tocantins;Trough
+2020-07-20;State of Tocantins;Trough
+2020-07-21;State of Tocantins;Trough
+2020-07-22;State of Tocantins;Trough
+2020-07-23;State of Tocantins;Trough
+2020-07-24;State of Tocantins;Trough
+2020-07-25;State of Tocantins;Trough
+2020-07-26;;Trough
+2020-07-27;;Trough
+2020-02-25;State of Maranhão;Preparation
+2020-02-26;State of Maranhão;Preparation
+2020-02-27;State of Maranhão;Preparation
+2020-02-28;State of Maranhão;Preparation
+2020-02-29;State of Maranhão;Preparation
+2020-03-01;State of Maranhão;Preparation
+2020-03-02;State of Maranhão;Preparation
+2020-03-03;State of Maranhão;Preparation
+2020-03-04;State of Maranhão;Preparation
+2020-03-05;State of Maranhão;Preparation
+2020-03-06;State of Maranhão;Preparation
+2020-03-07;State of Maranhão;Preparation
+2020-03-08;State of Maranhão;Preparation
+2020-03-09;State of Maranhão;Preparation
+2020-03-10;State of Maranhão;Preparation
+2020-03-11;State of Maranhão;Preparation
+2020-03-12;State of Maranhão;Preparation
+2020-03-13;State of Maranhão;Preparation
+2020-03-14;State of Maranhão;Preparation
+2020-03-15;State of Maranhão;Preparation
+2020-03-16;State of Maranhão;Preparation
+2020-03-17;State of Maranhão;Preparation
+2020-03-18;State of Maranhão;Preparation
+2020-03-19;State of Maranhão;Response
+2020-03-20;State of Maranhão;Response
+2020-03-21;State of Maranhão;Response
+2020-03-22;State of Maranhão;Response
+2020-03-23;State of Maranhão;Response
+2020-03-24;State of Maranhão;Response
+2020-03-25;State of Maranhão;Response
+2020-03-26;State of Maranhão;Response
+2020-03-27;State of Maranhão;Response
+2020-03-28;State of Maranhão;Response
+2020-03-29;State of Maranhão;Trough
+2020-03-30;State of Maranhão;Trough
+2020-03-31;State of Maranhão;Trough
+2020-04-01;State of Maranhão;Trough
+2020-04-02;State of Maranhão;Trough
+2020-04-03;State of Maranhão;Trough
+2020-04-04;State of Maranhão;Trough
+2020-04-05;State of Maranhão;Trough
+2020-04-06;State of Maranhão;Trough
+2020-04-07;State of Maranhão;Trough
+2020-04-08;State of Maranhão;Trough
+2020-04-09;State of Maranhão;Trough
+2020-04-10;State of Maranhão;Trough
+2020-04-11;State of Maranhão;Trough
+2020-04-12;State of Maranhão;Trough
+2020-04-13;State of Maranhão;Trough
+2020-04-14;State of Maranhão;Trough
+2020-04-15;State of Maranhão;Trough
+2020-04-16;State of Maranhão;Trough
+2020-04-17;State of Maranhão;Trough
+2020-04-18;State of Maranhão;Trough
+2020-04-19;State of Maranhão;Trough
+2020-04-20;State of Maranhão;Trough
+2020-04-21;State of Maranhão;Trough
+2020-04-22;State of Maranhão;Trough
+2020-04-23;State of Maranhão;Trough
+2020-04-24;State of Maranhão;Trough
+2020-04-25;State of Maranhão;Trough
+2020-04-26;State of Maranhão;Trough
+2020-04-27;State of Maranhão;Trough
+2020-04-28;State of Maranhão;Trough
+2020-04-29;State of Maranhão;Trough
+2020-04-30;State of Maranhão;Trough
+2020-05-01;State of Maranhão;Trough
+2020-05-02;State of Maranhão;Trough
+2020-05-03;State of Maranhão;Trough
+2020-05-04;State of Maranhão;Trough
+2020-05-05;State of Maranhão;Trough
+2020-05-06;State of Maranhão;Trough
+2020-05-07;State of Maranhão;Trough
+2020-05-08;State of Maranhão;Trough
+2020-05-09;State of Maranhão;Trough
+2020-05-10;State of Maranhão;Trough
+2020-05-11;State of Maranhão;Trough
+2020-05-12;State of Maranhão;Trough
+2020-05-13;State of Maranhão;Trough
+2020-05-14;State of Maranhão;Trough
+2020-05-15;State of Maranhão;Trough
+2020-05-16;State of Maranhão;Trough
+2020-05-17;State of Maranhão;Trough
+2020-05-18;State of Maranhão;Trough
+2020-05-19;State of Maranhão;Trough
+2020-05-20;State of Maranhão;Trough
+2020-05-21;State of Maranhão;Trough
+2020-05-22;State of Maranhão;Trough
+2020-05-23;State of Maranhão;Trough
+2020-05-24;State of Maranhão;Trough
+2020-05-25;State of Maranhão;Trough
+2020-05-26;State of Maranhão;Trough
+2020-05-27;State of Maranhão;Trough
+2020-05-28;State of Maranhão;Trough
+2020-05-29;State of Maranhão;Trough
+2020-05-30;State of Maranhão;Trough
+2020-05-31;State of Maranhão;Trough
+2020-06-01;State of Maranhão;Trough
+2020-06-02;State of Maranhão;Trough
+2020-06-03;State of Maranhão;Trough
+2020-06-04;State of Maranhão;Trough
+2020-06-05;State of Maranhão;Trough
+2020-06-06;State of Maranhão;Trough
+2020-06-07;State of Maranhão;Trough
+2020-06-08;State of Maranhão;Trough
+2020-06-09;State of Maranhão;Trough
+2020-06-10;State of Maranhão;Trough
+2020-06-11;State of Maranhão;Trough
+2020-06-12;State of Maranhão;Trough
+2020-06-13;State of Maranhão;Trough
+2020-06-14;State of Maranhão;Trough
+2020-06-15;State of Maranhão;Trough
+2020-06-16;State of Maranhão;Trough
+2020-06-17;State of Maranhão;Trough
+2020-06-18;State of Maranhão;Trough
+2020-06-19;State of Maranhão;Trough
+2020-06-20;State of Maranhão;Trough
+2020-06-21;State of Maranhão;Trough
+2020-06-22;State of Maranhão;Trough
+2020-06-23;State of Maranhão;Trough
+2020-06-24;State of Maranhão;Trough
+2020-06-25;State of Maranhão;Trough
+2020-06-26;State of Maranhão;Trough
+2020-06-27;State of Maranhão;Trough
+2020-06-28;State of Maranhão;Trough
+2020-06-29;State of Maranhão;Trough
+2020-06-30;State of Maranhão;Trough
+2020-07-01;State of Maranhão;Trough
+2020-07-02;State of Maranhão;Trough
+2020-07-03;State of Maranhão;Trough
+2020-07-04;State of Maranhão;Trough
+2020-07-05;State of Maranhão;Trough
+2020-07-06;State of Maranhão;Trough
+2020-07-07;State of Maranhão;Trough
+2020-07-08;State of Maranhão;Trough
+2020-07-09;State of Maranhão;Trough
+2020-07-10;State of Maranhão;Trough
+2020-07-11;State of Maranhão;Trough
+2020-07-12;State of Maranhão;Trough
+2020-07-13;State of Maranhão;Trough
+2020-07-14;State of Maranhão;Trough
+2020-07-15;State of Maranhão;Trough
+2020-07-16;State of Maranhão;Trough
+2020-07-17;State of Maranhão;Trough
+2020-07-18;State of Maranhão;Trough
+2020-07-19;State of Maranhão;Trough
+2020-07-20;State of Maranhão;Trough
+2020-07-21;State of Maranhão;Trough
+2020-07-22;State of Maranhão;Trough
+2020-07-23;State of Maranhão;Trough
+2020-07-24;State of Maranhão;Trough
+2020-07-25;State of Maranhão;Trough
+2020-07-26;;Trough
+2020-07-27;;Trough
+2020-02-25;State of Piauí;Preparation
+2020-02-26;State of Piauí;Preparation
+2020-02-27;State of Piauí;Preparation
+2020-02-28;State of Piauí;Preparation
+2020-02-29;State of Piauí;Preparation
+2020-03-01;State of Piauí;Preparation
+2020-03-02;State of Piauí;Preparation
+2020-03-03;State of Piauí;Preparation
+2020-03-04;State of Piauí;Preparation
+2020-03-05;State of Piauí;Preparation
+2020-03-06;State of Piauí;Preparation
+2020-03-07;State of Piauí;Preparation
+2020-03-08;State of Piauí;Preparation
+2020-03-09;State of Piauí;Preparation
+2020-03-10;State of Piauí;Preparation
+2020-03-11;State of Piauí;Preparation
+2020-03-12;State of Piauí;Preparation
+2020-03-13;State of Piauí;Preparation
+2020-03-14;State of Piauí;Preparation
+2020-03-15;State of Piauí;Preparation
+2020-03-16;State of Piauí;Preparation
+2020-03-17;State of Piauí;Preparation
+2020-03-18;State of Piauí;Response
+2020-03-19;State of Piauí;Response
+2020-03-20;State of Piauí;Response
+2020-03-21;State of Piauí;Response
+2020-03-22;State of Piauí;Response
+2020-03-23;State of Piauí;Response
+2020-03-24;State of Piauí;Response
+2020-03-25;State of Piauí;Response
+2020-03-26;State of Piauí;Response
+2020-03-27;State of Piauí;Response
+2020-03-28;State of Piauí;Trough
+2020-03-29;State of Piauí;Trough
+2020-03-30;State of Piauí;Trough
+2020-03-31;State of Piauí;Trough
+2020-04-01;State of Piauí;Trough
+2020-04-02;State of Piauí;Trough
+2020-04-03;State of Piauí;Trough
+2020-04-04;State of Piauí;Trough
+2020-04-05;State of Piauí;Trough
+2020-04-06;State of Piauí;Trough
+2020-04-07;State of Piauí;Trough
+2020-04-08;State of Piauí;Trough
+2020-04-09;State of Piauí;Trough
+2020-04-10;State of Piauí;Trough
+2020-04-11;State of Piauí;Trough
+2020-04-12;State of Piauí;Trough
+2020-04-13;State of Piauí;Trough
+2020-04-14;State of Piauí;Trough
+2020-04-15;State of Piauí;Trough
+2020-04-16;State of Piauí;Trough
+2020-04-17;State of Piauí;Trough
+2020-04-18;State of Piauí;Trough
+2020-04-19;State of Piauí;Trough
+2020-04-20;State of Piauí;Trough
+2020-04-21;State of Piauí;Trough
+2020-04-22;State of Piauí;Trough
+2020-04-23;State of Piauí;Trough
+2020-04-24;State of Piauí;Trough
+2020-04-25;State of Piauí;Trough
+2020-04-26;State of Piauí;Trough
+2020-04-27;State of Piauí;Trough
+2020-04-28;State of Piauí;Trough
+2020-04-29;State of Piauí;Trough
+2020-04-30;State of Piauí;Trough
+2020-05-01;State of Piauí;Trough
+2020-05-02;State of Piauí;Trough
+2020-05-03;State of Piauí;Trough
+2020-05-04;State of Piauí;Trough
+2020-05-05;State of Piauí;Trough
+2020-05-06;State of Piauí;Trough
+2020-05-07;State of Piauí;Trough
+2020-05-08;State of Piauí;Trough
+2020-05-09;State of Piauí;Trough
+2020-05-10;State of Piauí;Trough
+2020-05-11;State of Piauí;Trough
+2020-05-12;State of Piauí;Trough
+2020-05-13;State of Piauí;Trough
+2020-05-14;State of Piauí;Trough
+2020-05-15;State of Piauí;Trough
+2020-05-16;State of Piauí;Trough
+2020-05-17;State of Piauí;Trough
+2020-05-18;State of Piauí;Trough
+2020-05-19;State of Piauí;Trough
+2020-05-20;State of Piauí;Trough
+2020-05-21;State of Piauí;Trough
+2020-05-22;State of Piauí;Trough
+2020-05-23;State of Piauí;Trough
+2020-05-24;State of Piauí;Trough
+2020-05-25;State of Piauí;Trough
+2020-05-26;State of Piauí;Trough
+2020-05-27;State of Piauí;Trough
+2020-05-28;State of Piauí;Trough
+2020-05-29;State of Piauí;Trough
+2020-05-30;State of Piauí;Trough
+2020-05-31;State of Piauí;Trough
+2020-06-01;State of Piauí;Trough
+2020-06-02;State of Piauí;Trough
+2020-06-03;State of Piauí;Trough
+2020-06-04;State of Piauí;Trough
+2020-06-05;State of Piauí;Trough
+2020-06-06;State of Piauí;Trough
+2020-06-07;State of Piauí;Trough
+2020-06-08;State of Piauí;Trough
+2020-06-09;State of Piauí;Trough
+2020-06-10;State of Piauí;Trough
+2020-06-11;State of Piauí;Trough
+2020-06-12;State of Piauí;Trough
+2020-06-13;State of Piauí;Trough
+2020-06-14;State of Piauí;Trough
+2020-06-15;State of Piauí;Trough
+2020-06-16;State of Piauí;Trough
+2020-06-17;State of Piauí;Trough
+2020-06-18;State of Piauí;Trough
+2020-06-19;State of Piauí;Trough
+2020-06-20;State of Piauí;Trough
+2020-06-21;State of Piauí;Trough
+2020-06-22;State of Piauí;Trough
+2020-06-23;State of Piauí;Trough
+2020-06-24;State of Piauí;Trough
+2020-06-25;State of Piauí;Trough
+2020-06-26;State of Piauí;Trough
+2020-06-27;State of Piauí;Trough
+2020-06-28;State of Piauí;Trough
+2020-06-29;State of Piauí;Trough
+2020-06-30;State of Piauí;Trough
+2020-07-01;State of Piauí;Trough
+2020-07-02;State of Piauí;Trough
+2020-07-03;State of Piauí;Trough
+2020-07-04;State of Piauí;Trough
+2020-07-05;State of Piauí;Trough
+2020-07-06;State of Piauí;Trough
+2020-07-07;State of Piauí;Trough
+2020-07-08;State of Piauí;Trough
+2020-07-09;State of Piauí;Trough
+2020-07-10;State of Piauí;Trough
+2020-07-11;State of Piauí;Trough
+2020-07-12;State of Piauí;Trough
+2020-07-13;State of Piauí;Trough
+2020-07-14;State of Piauí;Trough
+2020-07-15;State of Piauí;Trough
+2020-07-16;State of Piauí;Trough
+2020-07-17;State of Piauí;Trough
+2020-07-18;State of Piauí;Trough
+2020-07-19;State of Piauí;Trough
+2020-07-20;State of Piauí;Trough
+2020-07-21;State of Piauí;Trough
+2020-07-22;State of Piauí;Trough
+2020-07-23;State of Piauí;Trough
+2020-07-24;State of Piauí;Trough
+2020-07-25;State of Piauí;Trough
+2020-07-26;;Trough
+2020-07-27;;Trough
+2020-02-25;State of Ceará;Preparation
+2020-02-26;State of Ceará;Preparation
+2020-02-27;State of Ceará;Preparation
+2020-02-28;State of Ceará;Preparation
+2020-02-29;State of Ceará;Preparation
+2020-03-01;State of Ceará;Preparation
+2020-03-02;State of Ceará;Preparation
+2020-03-03;State of Ceará;Preparation
+2020-03-04;State of Ceará;Preparation
+2020-03-05;State of Ceará;Preparation
+2020-03-06;State of Ceará;Preparation
+2020-03-07;State of Ceará;Preparation
+2020-03-08;State of Ceará;Preparation
+2020-03-09;State of Ceará;Preparation
+2020-03-10;State of Ceará;Preparation
+2020-03-11;State of Ceará;Preparation
+2020-03-12;State of Ceará;Preparation
+2020-03-13;State of Ceará;Preparation
+2020-03-14;State of Ceará;Preparation
+2020-03-15;State of Ceará;Preparation
+2020-03-16;State of Ceará;Preparation
+2020-03-17;State of Ceará;Response
+2020-03-18;State of Ceará;Response
+2020-03-19;State of Ceará;Response
+2020-03-20;State of Ceará;Response
+2020-03-21;State of Ceará;Response
+2020-03-22;State of Ceará;Response
+2020-03-23;State of Ceará;Response
+2020-03-24;State of Ceará;Response
+2020-03-25;State of Ceará;Response
+2020-03-26;State of Ceará;Response
+2020-03-27;State of Ceará;Response
+2020-03-28;State of Ceará;Trough
+2020-03-29;State of Ceará;Trough
+2020-03-30;State of Ceará;Trough
+2020-03-31;State of Ceará;Trough
+2020-04-01;State of Ceará;Trough
+2020-04-02;State of Ceará;Trough
+2020-04-03;State of Ceará;Trough
+2020-04-04;State of Ceará;Trough
+2020-04-05;State of Ceará;Trough
+2020-04-06;State of Ceará;Trough
+2020-04-07;State of Ceará;Trough
+2020-04-08;State of Ceará;Trough
+2020-04-09;State of Ceará;Trough
+2020-04-10;State of Ceará;Trough
+2020-04-11;State of Ceará;Trough
+2020-04-12;State of Ceará;Trough
+2020-04-13;State of Ceará;Trough
+2020-04-14;State of Ceará;Trough
+2020-04-15;State of Ceará;Trough
+2020-04-16;State of Ceará;Trough
+2020-04-17;State of Ceará;Trough
+2020-04-18;State of Ceará;Trough
+2020-04-19;State of Ceará;Trough
+2020-04-20;State of Ceará;Trough
+2020-04-21;State of Ceará;Trough
+2020-04-22;State of Ceará;Trough
+2020-04-23;State of Ceará;Trough
+2020-04-24;State of Ceará;Trough
+2020-04-25;State of Ceará;Trough
+2020-04-26;State of Ceará;Trough
+2020-04-27;State of Ceará;Trough
+2020-04-28;State of Ceará;Trough
+2020-04-29;State of Ceará;Trough
+2020-04-30;State of Ceará;Trough
+2020-05-01;State of Ceará;Trough
+2020-05-02;State of Ceará;Trough
+2020-05-03;State of Ceará;Trough
+2020-05-04;State of Ceará;Trough
+2020-05-05;State of Ceará;Trough
+2020-05-06;State of Ceará;Trough
+2020-05-07;State of Ceará;Trough
+2020-05-08;State of Ceará;Trough
+2020-05-09;State of Ceará;Trough
+2020-05-10;State of Ceará;Trough
+2020-05-11;State of Ceará;Trough
+2020-05-12;State of Ceará;Trough
+2020-05-13;State of Ceará;Trough
+2020-05-14;State of Ceará;Trough
+2020-05-15;State of Ceará;Trough
+2020-05-16;State of Ceará;Trough
+2020-05-17;State of Ceará;Trough
+2020-05-18;State of Ceará;Trough
+2020-05-19;State of Ceará;Trough
+2020-05-20;State of Ceará;Trough
+2020-05-21;State of Ceará;Trough
+2020-05-22;State of Ceará;Trough
+2020-05-23;State of Ceará;Trough
+2020-05-24;State of Ceará;Trough
+2020-05-25;State of Ceará;Trough
+2020-05-26;State of Ceará;Trough
+2020-05-27;State of Ceará;Trough
+2020-05-28;State of Ceará;Trough
+2020-05-29;State of Ceará;Trough
+2020-05-30;State of Ceará;Trough
+2020-05-31;State of Ceará;Trough
+2020-06-01;State of Ceará;Trough
+2020-06-02;State of Ceará;Trough
+2020-06-03;State of Ceará;Trough
+2020-06-04;State of Ceará;Trough
+2020-06-05;State of Ceará;Trough
+2020-06-06;State of Ceará;Trough
+2020-06-07;State of Ceará;Trough
+2020-06-08;State of Ceará;Trough
+2020-06-09;State of Ceará;Trough
+2020-06-10;State of Ceará;Trough
+2020-06-11;State of Ceará;Trough
+2020-06-12;State of Ceará;Trough
+2020-06-13;State of Ceará;Trough
+2020-06-14;State of Ceará;Trough
+2020-06-15;State of Ceará;Trough
+2020-06-16;State of Ceará;Trough
+2020-06-17;State of Ceará;Trough
+2020-06-18;State of Ceará;Trough
+2020-06-19;State of Ceará;Trough
+2020-06-20;State of Ceará;Trough
+2020-06-21;State of Ceará;Trough
+2020-06-22;State of Ceará;Trough
+2020-06-23;State of Ceará;Trough
+2020-06-24;State of Ceará;Trough
+2020-06-25;State of Ceará;Trough
+2020-06-26;State of Ceará;Trough
+2020-06-27;State of Ceará;Trough
+2020-06-28;State of Ceará;Trough
+2020-06-29;State of Ceará;Trough
+2020-06-30;State of Ceará;Trough
+2020-07-01;State of Ceará;Trough
+2020-07-02;State of Ceará;Trough
+2020-07-03;State of Ceará;Trough
+2020-07-04;State of Ceará;Trough
+2020-07-05;State of Ceará;Trough
+2020-07-06;State of Ceará;Trough
+2020-07-07;State of Ceará;Trough
+2020-07-08;State of Ceará;Trough
+2020-07-09;State of Ceará;Trough
+2020-07-10;State of Ceará;Trough
+2020-07-11;State of Ceará;Trough
+2020-07-12;State of Ceará;Trough
+2020-07-13;State of Ceará;Trough
+2020-07-14;State of Ceará;Trough
+2020-07-15;State of Ceará;Trough
+2020-07-16;State of Ceará;Trough
+2020-07-17;State of Ceará;Trough
+2020-07-18;State of Ceará;Trough
+2020-07-19;State of Ceará;Trough
+2020-07-20;State of Ceará;Trough
+2020-07-21;State of Ceará;Trough
+2020-07-22;State of Ceará;Trough
+2020-07-23;State of Ceará;Trough
+2020-07-24;State of Ceará;Trough
+2020-07-25;State of Ceará;Trough
+2020-07-26;;Trough
+2020-07-27;;Trough
+2020-02-25;State of Rio Grande do Norte;Preparation
+2020-02-26;State of Rio Grande do Norte;Preparation
+2020-02-27;State of Rio Grande do Norte;Preparation
+2020-02-28;State of Rio Grande do Norte;Preparation
+2020-02-29;State of Rio Grande do Norte;Preparation
+2020-03-01;State of Rio Grande do Norte;Preparation
+2020-03-02;State of Rio Grande do Norte;Preparation
+2020-03-03;State of Rio Grande do Norte;Preparation
+2020-03-04;State of Rio Grande do Norte;Preparation
+2020-03-05;State of Rio Grande do Norte;Preparation
+2020-03-06;State of Rio Grande do Norte;Preparation
+2020-03-07;State of Rio Grande do Norte;Preparation
+2020-03-08;State of Rio Grande do Norte;Preparation
+2020-03-09;State of Rio Grande do Norte;Preparation
+2020-03-10;State of Rio Grande do Norte;Preparation
+2020-03-11;State of Rio Grande do Norte;Preparation
+2020-03-12;State of Rio Grande do Norte;Preparation
+2020-03-13;State of Rio Grande do Norte;Preparation
+2020-03-14;State of Rio Grande do Norte;Preparation
+2020-03-15;State of Rio Grande do Norte;Preparation
+2020-03-16;State of Rio Grande do Norte;Preparation
+2020-03-17;State of Rio Grande do Norte;Preparation
+2020-03-18;State of Rio Grande do Norte;Preparation
+2020-03-19;State of Rio Grande do Norte;Response
+2020-03-20;State of Rio Grande do Norte;Response
+2020-03-21;State of Rio Grande do Norte;Response
+2020-03-22;State of Rio Grande do Norte;Response
+2020-03-23;State of Rio Grande do Norte;Response
+2020-03-24;State of Rio Grande do Norte;Response
+2020-03-25;State of Rio Grande do Norte;Response
+2020-03-26;State of Rio Grande do Norte;Response
+2020-03-27;State of Rio Grande do Norte;Response
+2020-03-28;State of Rio Grande do Norte;Response
+2020-03-29;State of Rio Grande do Norte;Trough
+2020-03-30;State of Rio Grande do Norte;Trough
+2020-03-31;State of Rio Grande do Norte;Trough
+2020-04-01;State of Rio Grande do Norte;Trough
+2020-04-02;State of Rio Grande do Norte;Trough
+2020-04-03;State of Rio Grande do Norte;Trough
+2020-04-04;State of Rio Grande do Norte;Trough
+2020-04-05;State of Rio Grande do Norte;Trough
+2020-04-06;State of Rio Grande do Norte;Trough
+2020-04-07;State of Rio Grande do Norte;Trough
+2020-04-08;State of Rio Grande do Norte;Trough
+2020-04-09;State of Rio Grande do Norte;Trough
+2020-04-10;State of Rio Grande do Norte;Trough
+2020-04-11;State of Rio Grande do Norte;Trough
+2020-04-12;State of Rio Grande do Norte;Trough
+2020-04-13;State of Rio Grande do Norte;Trough
+2020-04-14;State of Rio Grande do Norte;Trough
+2020-04-15;State of Rio Grande do Norte;Trough
+2020-04-16;State of Rio Grande do Norte;Trough
+2020-04-17;State of Rio Grande do Norte;Trough
+2020-04-18;State of Rio Grande do Norte;Trough
+2020-04-19;State of Rio Grande do Norte;Trough
+2020-04-20;State of Rio Grande do Norte;Trough
+2020-04-21;State of Rio Grande do Norte;Trough
+2020-04-22;State of Rio Grande do Norte;Trough
+2020-04-23;State of Rio Grande do Norte;Trough
+2020-04-24;State of Rio Grande do Norte;Trough
+2020-04-25;State of Rio Grande do Norte;Trough
+2020-04-26;State of Rio Grande do Norte;Trough
+2020-04-27;State of Rio Grande do Norte;Trough
+2020-04-28;State of Rio Grande do Norte;Trough
+2020-04-29;State of Rio Grande do Norte;Trough
+2020-04-30;State of Rio Grande do Norte;Trough
+2020-05-01;State of Rio Grande do Norte;Trough
+2020-05-02;State of Rio Grande do Norte;Trough
+2020-05-03;State of Rio Grande do Norte;Trough
+2020-05-04;State of Rio Grande do Norte;Trough
+2020-05-05;State of Rio Grande do Norte;Trough
+2020-05-06;State of Rio Grande do Norte;Trough
+2020-05-07;State of Rio Grande do Norte;Trough
+2020-05-08;State of Rio Grande do Norte;Trough
+2020-05-09;State of Rio Grande do Norte;Trough
+2020-05-10;State of Rio Grande do Norte;Trough
+2020-05-11;State of Rio Grande do Norte;Trough
+2020-05-12;State of Rio Grande do Norte;Trough
+2020-05-13;State of Rio Grande do Norte;Trough
+2020-05-14;State of Rio Grande do Norte;Trough
+2020-05-15;State of Rio Grande do Norte;Trough
+2020-05-16;State of Rio Grande do Norte;Trough
+2020-05-17;State of Rio Grande do Norte;Trough
+2020-05-18;State of Rio Grande do Norte;Trough
+2020-05-19;State of Rio Grande do Norte;Trough
+2020-05-20;State of Rio Grande do Norte;Trough
+2020-05-21;State of Rio Grande do Norte;Trough
+2020-05-22;State of Rio Grande do Norte;Trough
+2020-05-23;State of Rio Grande do Norte;Trough
+2020-05-24;State of Rio Grande do Norte;Trough
+2020-05-25;State of Rio Grande do Norte;Trough
+2020-05-26;State of Rio Grande do Norte;Trough
+2020-05-27;State of Rio Grande do Norte;Trough
+2020-05-28;State of Rio Grande do Norte;Trough
+2020-05-29;State of Rio Grande do Norte;Trough
+2020-05-30;State of Rio Grande do Norte;Trough
+2020-05-31;State of Rio Grande do Norte;Trough
+2020-06-01;State of Rio Grande do Norte;Trough
+2020-06-02;State of Rio Grande do Norte;Trough
+2020-06-03;State of Rio Grande do Norte;Trough
+2020-06-04;State of Rio Grande do Norte;Trough
+2020-06-05;State of Rio Grande do Norte;Trough
+2020-06-06;State of Rio Grande do Norte;Trough
+2020-06-07;State of Rio Grande do Norte;Trough
+2020-06-08;State of Rio Grande do Norte;Trough
+2020-06-09;State of Rio Grande do Norte;Trough
+2020-06-10;State of Rio Grande do Norte;Trough
+2020-06-11;State of Rio Grande do Norte;Trough
+2020-06-12;State of Rio Grande do Norte;Trough
+2020-06-13;State of Rio Grande do Norte;Trough
+2020-06-14;State of Rio Grande do Norte;Trough
+2020-06-15;State of Rio Grande do Norte;Trough
+2020-06-16;State of Rio Grande do Norte;Trough
+2020-06-17;State of Rio Grande do Norte;Trough
+2020-06-18;State of Rio Grande do Norte;Trough
+2020-06-19;State of Rio Grande do Norte;Trough
+2020-06-20;State of Rio Grande do Norte;Trough
+2020-06-21;State of Rio Grande do Norte;Trough
+2020-06-22;State of Rio Grande do Norte;Trough
+2020-06-23;State of Rio Grande do Norte;Trough
+2020-06-24;State of Rio Grande do Norte;Trough
+2020-06-25;State of Rio Grande do Norte;Trough
+2020-06-26;State of Rio Grande do Norte;Trough
+2020-06-27;State of Rio Grande do Norte;Trough
+2020-06-28;State of Rio Grande do Norte;Trough
+2020-06-29;State of Rio Grande do Norte;Trough
+2020-06-30;State of Rio Grande do Norte;Trough
+2020-07-01;State of Rio Grande do Norte;Trough
+2020-07-02;State of Rio Grande do Norte;Trough
+2020-07-03;State of Rio Grande do Norte;Trough
+2020-07-04;State of Rio Grande do Norte;Trough
+2020-07-05;State of Rio Grande do Norte;Trough
+2020-07-06;State of Rio Grande do Norte;Trough
+2020-07-07;State of Rio Grande do Norte;Trough
+2020-07-08;State of Rio Grande do Norte;Trough
+2020-07-09;State of Rio Grande do Norte;Trough
+2020-07-10;State of Rio Grande do Norte;Trough
+2020-07-11;State of Rio Grande do Norte;Trough
+2020-07-12;State of Rio Grande do Norte;Trough
+2020-07-13;State of Rio Grande do Norte;Trough
+2020-07-14;State of Rio Grande do Norte;Trough
+2020-07-15;State of Rio Grande do Norte;Trough
+2020-07-16;State of Rio Grande do Norte;Trough
+2020-07-17;State of Rio Grande do Norte;Trough
+2020-07-18;State of Rio Grande do Norte;Trough
+2020-07-19;State of Rio Grande do Norte;Trough
+2020-07-20;State of Rio Grande do Norte;Trough
+2020-07-21;State of Rio Grande do Norte;Trough
+2020-07-22;State of Rio Grande do Norte;Trough
+2020-07-23;State of Rio Grande do Norte;Trough
+2020-07-24;State of Rio Grande do Norte;Trough
+2020-07-25;State of Rio Grande do Norte;Trough
+2020-07-26;;Trough
+2020-07-27;;Trough
+2020-02-25;State of Paraíba;Preparation
+2020-02-26;State of Paraíba;Preparation
+2020-02-27;State of Paraíba;Preparation
+2020-02-28;State of Paraíba;Preparation
+2020-02-29;State of Paraíba;Preparation
+2020-03-01;State of Paraíba;Preparation
+2020-03-02;State of Paraíba;Preparation
+2020-03-03;State of Paraíba;Preparation
+2020-03-04;State of Paraíba;Preparation
+2020-03-05;State of Paraíba;Preparation
+2020-03-06;State of Paraíba;Preparation
+2020-03-07;State of Paraíba;Preparation
+2020-03-08;State of Paraíba;Preparation
+2020-03-09;State of Paraíba;Preparation
+2020-03-10;State of Paraíba;Preparation
+2020-03-11;State of Paraíba;Preparation
+2020-03-12;State of Paraíba;Preparation
+2020-03-13;State of Paraíba;Preparation
+2020-03-14;State of Paraíba;Preparation
+2020-03-15;State of Paraíba;Preparation
+2020-03-16;State of Paraíba;Preparation
+2020-03-17;State of Paraíba;Preparation
+2020-03-18;State of Paraíba;Preparation
+2020-03-19;State of Paraíba;Response
+2020-03-20;State of Paraíba;Response
+2020-03-21;State of Paraíba;Response
+2020-03-22;State of Paraíba;Response
+2020-03-23;State of Paraíba;Response
+2020-03-24;State of Paraíba;Response
+2020-03-25;State of Paraíba;Response
+2020-03-26;State of Paraíba;Response
+2020-03-27;State of Paraíba;Response
+2020-03-28;State of Paraíba;Response
+2020-03-29;State of Paraíba;Trough
+2020-03-30;State of Paraíba;Trough
+2020-03-31;State of Paraíba;Trough
+2020-04-01;State of Paraíba;Trough
+2020-04-02;State of Paraíba;Trough
+2020-04-03;State of Paraíba;Trough
+2020-04-04;State of Paraíba;Trough
+2020-04-05;State of Paraíba;Trough
+2020-04-06;State of Paraíba;Trough
+2020-04-07;State of Paraíba;Trough
+2020-04-08;State of Paraíba;Trough
+2020-04-09;State of Paraíba;Trough
+2020-04-10;State of Paraíba;Trough
+2020-04-11;State of Paraíba;Trough
+2020-04-12;State of Paraíba;Trough
+2020-04-13;State of Paraíba;Trough
+2020-04-14;State of Paraíba;Trough
+2020-04-15;State of Paraíba;Trough
+2020-04-16;State of Paraíba;Trough
+2020-04-17;State of Paraíba;Trough
+2020-04-18;State of Paraíba;Trough
+2020-04-19;State of Paraíba;Trough
+2020-04-20;State of Paraíba;Trough
+2020-04-21;State of Paraíba;Trough
+2020-04-22;State of Paraíba;Trough
+2020-04-23;State of Paraíba;Trough
+2020-04-24;State of Paraíba;Trough
+2020-04-25;State of Paraíba;Trough
+2020-04-26;State of Paraíba;Trough
+2020-04-27;State of Paraíba;Trough
+2020-04-28;State of Paraíba;Trough
+2020-04-29;State of Paraíba;Trough
+2020-04-30;State of Paraíba;Trough
+2020-05-01;State of Paraíba;Trough
+2020-05-02;State of Paraíba;Trough
+2020-05-03;State of Paraíba;Trough
+2020-05-04;State of Paraíba;Trough
+2020-05-05;State of Paraíba;Trough
+2020-05-06;State of Paraíba;Trough
+2020-05-07;State of Paraíba;Trough
+2020-05-08;State of Paraíba;Trough
+2020-05-09;State of Paraíba;Trough
+2020-05-10;State of Paraíba;Trough
+2020-05-11;State of Paraíba;Trough
+2020-05-12;State of Paraíba;Trough
+2020-05-13;State of Paraíba;Trough
+2020-05-14;State of Paraíba;Trough
+2020-05-15;State of Paraíba;Trough
+2020-05-16;State of Paraíba;Trough
+2020-05-17;State of Paraíba;Trough
+2020-05-18;State of Paraíba;Trough
+2020-05-19;State of Paraíba;Trough
+2020-05-20;State of Paraíba;Trough
+2020-05-21;State of Paraíba;Trough
+2020-05-22;State of Paraíba;Trough
+2020-05-23;State of Paraíba;Trough
+2020-05-24;State of Paraíba;Trough
+2020-05-25;State of Paraíba;Trough
+2020-05-26;State of Paraíba;Trough
+2020-05-27;State of Paraíba;Trough
+2020-05-28;State of Paraíba;Trough
+2020-05-29;State of Paraíba;Trough
+2020-05-30;State of Paraíba;Trough
+2020-05-31;State of Paraíba;Trough
+2020-06-01;State of Paraíba;Trough
+2020-06-02;State of Paraíba;Trough
+2020-06-03;State of Paraíba;Trough
+2020-06-04;State of Paraíba;Trough
+2020-06-05;State of Paraíba;Trough
+2020-06-06;State of Paraíba;Trough
+2020-06-07;State of Paraíba;Trough
+2020-06-08;State of Paraíba;Trough
+2020-06-09;State of Paraíba;Trough
+2020-06-10;State of Paraíba;Trough
+2020-06-11;State of Paraíba;Trough
+2020-06-12;State of Paraíba;Trough
+2020-06-13;State of Paraíba;Trough
+2020-06-14;State of Paraíba;Trough
+2020-06-15;State of Paraíba;Trough
+2020-06-16;State of Paraíba;Trough
+2020-06-17;State of Paraíba;Trough
+2020-06-18;State of Paraíba;Trough
+2020-06-19;State of Paraíba;Trough
+2020-06-20;State of Paraíba;Trough
+2020-06-21;State of Paraíba;Trough
+2020-06-22;State of Paraíba;Trough
+2020-06-23;State of Paraíba;Trough
+2020-06-24;State of Paraíba;Trough
+2020-06-25;State of Paraíba;Trough
+2020-06-26;State of Paraíba;Trough
+2020-06-27;State of Paraíba;Trough
+2020-06-28;State of Paraíba;Trough
+2020-06-29;State of Paraíba;Trough
+2020-06-30;State of Paraíba;Trough
+2020-07-01;State of Paraíba;Trough
+2020-07-02;State of Paraíba;Trough
+2020-07-03;State of Paraíba;Trough
+2020-07-04;State of Paraíba;Trough
+2020-07-05;State of Paraíba;Trough
+2020-07-06;State of Paraíba;Trough
+2020-07-07;State of Paraíba;Trough
+2020-07-08;State of Paraíba;Trough
+2020-07-09;State of Paraíba;Trough
+2020-07-10;State of Paraíba;Trough
+2020-07-11;State of Paraíba;Trough
+2020-07-12;State of Paraíba;Trough
+2020-07-13;State of Paraíba;Trough
+2020-07-14;State of Paraíba;Trough
+2020-07-15;State of Paraíba;Trough
+2020-07-16;State of Paraíba;Trough
+2020-07-17;State of Paraíba;Trough
+2020-07-18;State of Paraíba;Trough
+2020-07-19;State of Paraíba;Trough
+2020-07-20;State of Paraíba;Trough
+2020-07-21;State of Paraíba;Trough
+2020-07-22;State of Paraíba;Trough
+2020-07-23;State of Paraíba;Trough
+2020-07-24;State of Paraíba;Trough
+2020-07-25;State of Paraíba;Trough
+2020-07-26;;Trough
+2020-07-27;;Trough
+2020-02-25;State of Pernambuco;Preparation
+2020-02-26;State of Pernambuco;Preparation
+2020-02-27;State of Pernambuco;Preparation
+2020-02-28;State of Pernambuco;Preparation
+2020-02-29;State of Pernambuco;Preparation
+2020-03-01;State of Pernambuco;Preparation
+2020-03-02;State of Pernambuco;Preparation
+2020-03-03;State of Pernambuco;Preparation
+2020-03-04;State of Pernambuco;Preparation
+2020-03-05;State of Pernambuco;Preparation
+2020-03-06;State of Pernambuco;Preparation
+2020-03-07;State of Pernambuco;Preparation
+2020-03-08;State of Pernambuco;Preparation
+2020-03-09;State of Pernambuco;Preparation
+2020-03-10;State of Pernambuco;Preparation
+2020-03-11;State of Pernambuco;Preparation
+2020-03-12;State of Pernambuco;Preparation
+2020-03-13;State of Pernambuco;Preparation
+2020-03-14;State of Pernambuco;Preparation
+2020-03-15;State of Pernambuco;Preparation
+2020-03-16;State of Pernambuco;Preparation
+2020-03-17;State of Pernambuco;Preparation
+2020-03-18;State of Pernambuco;Response
+2020-03-19;State of Pernambuco;Response
+2020-03-20;State of Pernambuco;Response
+2020-03-21;State of Pernambuco;Response
+2020-03-22;State of Pernambuco;Response
+2020-03-23;State of Pernambuco;Response
+2020-03-24;State of Pernambuco;Response
+2020-03-25;State of Pernambuco;Response
+2020-03-26;State of Pernambuco;Response
+2020-03-27;State of Pernambuco;Response
+2020-03-28;State of Pernambuco;Trough
+2020-03-29;State of Pernambuco;Trough
+2020-03-30;State of Pernambuco;Trough
+2020-03-31;State of Pernambuco;Trough
+2020-04-01;State of Pernambuco;Trough
+2020-04-02;State of Pernambuco;Trough
+2020-04-03;State of Pernambuco;Trough
+2020-04-04;State of Pernambuco;Trough
+2020-04-05;State of Pernambuco;Trough
+2020-04-06;State of Pernambuco;Trough
+2020-04-07;State of Pernambuco;Trough
+2020-04-08;State of Pernambuco;Trough
+2020-04-09;State of Pernambuco;Trough
+2020-04-10;State of Pernambuco;Trough
+2020-04-11;State of Pernambuco;Trough
+2020-04-12;State of Pernambuco;Trough
+2020-04-13;State of Pernambuco;Trough
+2020-04-14;State of Pernambuco;Trough
+2020-04-15;State of Pernambuco;Trough
+2020-04-16;State of Pernambuco;Trough
+2020-04-17;State of Pernambuco;Trough
+2020-04-18;State of Pernambuco;Trough
+2020-04-19;State of Pernambuco;Trough
+2020-04-20;State of Pernambuco;Trough
+2020-04-21;State of Pernambuco;Trough
+2020-04-22;State of Pernambuco;Trough
+2020-04-23;State of Pernambuco;Trough
+2020-04-24;State of Pernambuco;Trough
+2020-04-25;State of Pernambuco;Trough
+2020-04-26;State of Pernambuco;Trough
+2020-04-27;State of Pernambuco;Trough
+2020-04-28;State of Pernambuco;Trough
+2020-04-29;State of Pernambuco;Trough
+2020-04-30;State of Pernambuco;Trough
+2020-05-01;State of Pernambuco;Trough
+2020-05-02;State of Pernambuco;Trough
+2020-05-03;State of Pernambuco;Trough
+2020-05-04;State of Pernambuco;Trough
+2020-05-05;State of Pernambuco;Trough
+2020-05-06;State of Pernambuco;Trough
+2020-05-07;State of Pernambuco;Trough
+2020-05-08;State of Pernambuco;Trough
+2020-05-09;State of Pernambuco;Trough
+2020-05-10;State of Pernambuco;Trough
+2020-05-11;State of Pernambuco;Trough
+2020-05-12;State of Pernambuco;Trough
+2020-05-13;State of Pernambuco;Trough
+2020-05-14;State of Pernambuco;Trough
+2020-05-15;State of Pernambuco;Trough
+2020-05-16;State of Pernambuco;Trough
+2020-05-17;State of Pernambuco;Trough
+2020-05-18;State of Pernambuco;Trough
+2020-05-19;State of Pernambuco;Trough
+2020-05-20;State of Pernambuco;Trough
+2020-05-21;State of Pernambuco;Trough
+2020-05-22;State of Pernambuco;Trough
+2020-05-23;State of Pernambuco;Trough
+2020-05-24;State of Pernambuco;Trough
+2020-05-25;State of Pernambuco;Trough
+2020-05-26;State of Pernambuco;Trough
+2020-05-27;State of Pernambuco;Trough
+2020-05-28;State of Pernambuco;Trough
+2020-05-29;State of Pernambuco;Trough
+2020-05-30;State of Pernambuco;Trough
+2020-05-31;State of Pernambuco;Trough
+2020-06-01;State of Pernambuco;Trough
+2020-06-02;State of Pernambuco;Trough
+2020-06-03;State of Pernambuco;Trough
+2020-06-04;State of Pernambuco;Trough
+2020-06-05;State of Pernambuco;Trough
+2020-06-06;State of Pernambuco;Trough
+2020-06-07;State of Pernambuco;Trough
+2020-06-08;State of Pernambuco;Trough
+2020-06-09;State of Pernambuco;Trough
+2020-06-10;State of Pernambuco;Trough
+2020-06-11;State of Pernambuco;Trough
+2020-06-12;State of Pernambuco;Trough
+2020-06-13;State of Pernambuco;Trough
+2020-06-14;State of Pernambuco;Trough
+2020-06-15;State of Pernambuco;Trough
+2020-06-16;State of Pernambuco;Trough
+2020-06-17;State of Pernambuco;Trough
+2020-06-18;State of Pernambuco;Trough
+2020-06-19;State of Pernambuco;Trough
+2020-06-20;State of Pernambuco;Trough
+2020-06-21;State of Pernambuco;Trough
+2020-06-22;State of Pernambuco;Trough
+2020-06-23;State of Pernambuco;Trough
+2020-06-24;State of Pernambuco;Trough
+2020-06-25;State of Pernambuco;Trough
+2020-06-26;State of Pernambuco;Trough
+2020-06-27;State of Pernambuco;Trough
+2020-06-28;State of Pernambuco;Trough
+2020-06-29;State of Pernambuco;Trough
+2020-06-30;State of Pernambuco;Trough
+2020-07-01;State of Pernambuco;Trough
+2020-07-02;State of Pernambuco;Trough
+2020-07-03;State of Pernambuco;Trough
+2020-07-04;State of Pernambuco;Trough
+2020-07-05;State of Pernambuco;Trough
+2020-07-06;State of Pernambuco;Trough
+2020-07-07;State of Pernambuco;Trough
+2020-07-08;State of Pernambuco;Trough
+2020-07-09;State of Pernambuco;Trough
+2020-07-10;State of Pernambuco;Trough
+2020-07-11;State of Pernambuco;Trough
+2020-07-12;State of Pernambuco;Trough
+2020-07-13;State of Pernambuco;Trough
+2020-07-14;State of Pernambuco;Trough
+2020-07-15;State of Pernambuco;Trough
+2020-07-16;State of Pernambuco;Trough
+2020-07-17;State of Pernambuco;Trough
+2020-07-18;State of Pernambuco;Trough
+2020-07-19;State of Pernambuco;Trough
+2020-07-20;State of Pernambuco;Trough
+2020-07-21;State of Pernambuco;Trough
+2020-07-22;State of Pernambuco;Trough
+2020-07-23;State of Pernambuco;Trough
+2020-07-24;State of Pernambuco;Trough
+2020-07-25;State of Pernambuco;Trough
+2020-07-26;;Trough
+2020-07-27;;Trough
+2020-02-25;State of Alagoas;Preparation
+2020-02-26;State of Alagoas;Preparation
+2020-02-27;State of Alagoas;Preparation
+2020-02-28;State of Alagoas;Preparation
+2020-02-29;State of Alagoas;Preparation
+2020-03-01;State of Alagoas;Preparation
+2020-03-02;State of Alagoas;Preparation
+2020-03-03;State of Alagoas;Preparation
+2020-03-04;State of Alagoas;Preparation
+2020-03-05;State of Alagoas;Preparation
+2020-03-06;State of Alagoas;Preparation
+2020-03-07;State of Alagoas;Preparation
+2020-03-08;State of Alagoas;Preparation
+2020-03-09;State of Alagoas;Preparation
+2020-03-10;State of Alagoas;Preparation
+2020-03-11;State of Alagoas;Preparation
+2020-03-12;State of Alagoas;Preparation
+2020-03-13;State of Alagoas;Preparation
+2020-03-14;State of Alagoas;Preparation
+2020-03-15;State of Alagoas;Preparation
+2020-03-16;State of Alagoas;Preparation
+2020-03-17;State of Alagoas;Preparation
+2020-03-18;State of Alagoas;Response
+2020-03-19;State of Alagoas;Response
+2020-03-20;State of Alagoas;Response
+2020-03-21;State of Alagoas;Response
+2020-03-22;State of Alagoas;Response
+2020-03-23;State of Alagoas;Response
+2020-03-24;State of Alagoas;Response
+2020-03-25;State of Alagoas;Response
+2020-03-26;State of Alagoas;Response
+2020-03-27;State of Alagoas;Response
+2020-03-28;State of Alagoas;Response
+2020-03-29;State of Alagoas;Trough
+2020-03-30;State of Alagoas;Trough
+2020-03-31;State of Alagoas;Trough
+2020-04-01;State of Alagoas;Trough
+2020-04-02;State of Alagoas;Trough
+2020-04-03;State of Alagoas;Trough
+2020-04-04;State of Alagoas;Trough
+2020-04-05;State of Alagoas;Trough
+2020-04-06;State of Alagoas;Trough
+2020-04-07;State of Alagoas;Trough
+2020-04-08;State of Alagoas;Trough
+2020-04-09;State of Alagoas;Trough
+2020-04-10;State of Alagoas;Trough
+2020-04-11;State of Alagoas;Trough
+2020-04-12;State of Alagoas;Trough
+2020-04-13;State of Alagoas;Trough
+2020-04-14;State of Alagoas;Trough
+2020-04-15;State of Alagoas;Trough
+2020-04-16;State of Alagoas;Trough
+2020-04-17;State of Alagoas;Trough
+2020-04-18;State of Alagoas;Trough
+2020-04-19;State of Alagoas;Trough
+2020-04-20;State of Alagoas;Trough
+2020-04-21;State of Alagoas;Trough
+2020-04-22;State of Alagoas;Trough
+2020-04-23;State of Alagoas;Trough
+2020-04-24;State of Alagoas;Trough
+2020-04-25;State of Alagoas;Trough
+2020-04-26;State of Alagoas;Trough
+2020-04-27;State of Alagoas;Trough
+2020-04-28;State of Alagoas;Trough
+2020-04-29;State of Alagoas;Trough
+2020-04-30;State of Alagoas;Trough
+2020-05-01;State of Alagoas;Trough
+2020-05-02;State of Alagoas;Trough
+2020-05-03;State of Alagoas;Trough
+2020-05-04;State of Alagoas;Trough
+2020-05-05;State of Alagoas;Trough
+2020-05-06;State of Alagoas;Trough
+2020-05-07;State of Alagoas;Trough
+2020-05-08;State of Alagoas;Trough
+2020-05-09;State of Alagoas;Trough
+2020-05-10;State of Alagoas;Trough
+2020-05-11;State of Alagoas;Trough
+2020-05-12;State of Alagoas;Trough
+2020-05-13;State of Alagoas;Trough
+2020-05-14;State of Alagoas;Trough
+2020-05-15;State of Alagoas;Trough
+2020-05-16;State of Alagoas;Trough
+2020-05-17;State of Alagoas;Trough
+2020-05-18;State of Alagoas;Trough
+2020-05-19;State of Alagoas;Trough
+2020-05-20;State of Alagoas;Trough
+2020-05-21;State of Alagoas;Trough
+2020-05-22;State of Alagoas;Trough
+2020-05-23;State of Alagoas;Trough
+2020-05-24;State of Alagoas;Trough
+2020-05-25;State of Alagoas;Trough
+2020-05-26;State of Alagoas;Trough
+2020-05-27;State of Alagoas;Trough
+2020-05-28;State of Alagoas;Trough
+2020-05-29;State of Alagoas;Trough
+2020-05-30;State of Alagoas;Trough
+2020-05-31;State of Alagoas;Trough
+2020-06-01;State of Alagoas;Trough
+2020-06-02;State of Alagoas;Trough
+2020-06-03;State of Alagoas;Trough
+2020-06-04;State of Alagoas;Trough
+2020-06-05;State of Alagoas;Trough
+2020-06-06;State of Alagoas;Trough
+2020-06-07;State of Alagoas;Trough
+2020-06-08;State of Alagoas;Trough
+2020-06-09;State of Alagoas;Trough
+2020-06-10;State of Alagoas;Trough
+2020-06-11;State of Alagoas;Trough
+2020-06-12;State of Alagoas;Trough
+2020-06-13;State of Alagoas;Trough
+2020-06-14;State of Alagoas;Trough
+2020-06-15;State of Alagoas;Trough
+2020-06-16;State of Alagoas;Trough
+2020-06-17;State of Alagoas;Trough
+2020-06-18;State of Alagoas;Trough
+2020-06-19;State of Alagoas;Trough
+2020-06-20;State of Alagoas;Trough
+2020-06-21;State of Alagoas;Trough
+2020-06-22;State of Alagoas;Trough
+2020-06-23;State of Alagoas;Trough
+2020-06-24;State of Alagoas;Trough
+2020-06-25;State of Alagoas;Trough
+2020-06-26;State of Alagoas;Trough
+2020-06-27;State of Alagoas;Trough
+2020-06-28;State of Alagoas;Trough
+2020-06-29;State of Alagoas;Trough
+2020-06-30;State of Alagoas;Trough
+2020-07-01;State of Alagoas;Trough
+2020-07-02;State of Alagoas;Trough
+2020-07-03;State of Alagoas;Trough
+2020-07-04;State of Alagoas;Trough
+2020-07-05;State of Alagoas;Trough
+2020-07-06;State of Alagoas;Trough
+2020-07-07;State of Alagoas;Trough
+2020-07-08;State of Alagoas;Trough
+2020-07-09;State of Alagoas;Trough
+2020-07-10;State of Alagoas;Trough
+2020-07-11;State of Alagoas;Trough
+2020-07-12;State of Alagoas;Trough
+2020-07-13;State of Alagoas;Trough
+2020-07-14;State of Alagoas;Trough
+2020-07-15;State of Alagoas;Trough
+2020-07-16;State of Alagoas;Trough
+2020-07-17;State of Alagoas;Trough
+2020-07-18;State of Alagoas;Trough
+2020-07-19;State of Alagoas;Trough
+2020-07-20;State of Alagoas;Trough
+2020-07-21;State of Alagoas;Trough
+2020-07-22;State of Alagoas;Trough
+2020-07-23;State of Alagoas;Trough
+2020-07-24;State of Alagoas;Trough
+2020-07-25;State of Alagoas;Trough
+2020-07-26;;Trough
+2020-07-27;;Trough
+2020-02-25;State of Sergipe;Preparation
+2020-02-26;State of Sergipe;Preparation
+2020-02-27;State of Sergipe;Preparation
+2020-02-28;State of Sergipe;Preparation
+2020-02-29;State of Sergipe;Preparation
+2020-03-01;State of Sergipe;Preparation
+2020-03-02;State of Sergipe;Preparation
+2020-03-03;State of Sergipe;Preparation
+2020-03-04;State of Sergipe;Preparation
+2020-03-05;State of Sergipe;Preparation
+2020-03-06;State of Sergipe;Preparation
+2020-03-07;State of Sergipe;Preparation
+2020-03-08;State of Sergipe;Preparation
+2020-03-09;State of Sergipe;Preparation
+2020-03-10;State of Sergipe;Preparation
+2020-03-11;State of Sergipe;Preparation
+2020-03-12;State of Sergipe;Preparation
+2020-03-13;State of Sergipe;Preparation
+2020-03-14;State of Sergipe;Preparation
+2020-03-15;State of Sergipe;Preparation
+2020-03-16;State of Sergipe;Preparation
+2020-03-17;State of Sergipe;Response
+2020-03-18;State of Sergipe;Response
+2020-03-19;State of Sergipe;Response
+2020-03-20;State of Sergipe;Response
+2020-03-21;State of Sergipe;Response
+2020-03-22;State of Sergipe;Response
+2020-03-23;State of Sergipe;Response
+2020-03-24;State of Sergipe;Response
+2020-03-25;State of Sergipe;Response
+2020-03-26;State of Sergipe;Response
+2020-03-27;State of Sergipe;Response
+2020-03-28;State of Sergipe;Response
+2020-03-29;State of Sergipe;Trough
+2020-03-30;State of Sergipe;Trough
+2020-03-31;State of Sergipe;Trough
+2020-04-01;State of Sergipe;Trough
+2020-04-02;State of Sergipe;Trough
+2020-04-03;State of Sergipe;Trough
+2020-04-04;State of Sergipe;Trough
+2020-04-05;State of Sergipe;Trough
+2020-04-06;State of Sergipe;Trough
+2020-04-07;State of Sergipe;Trough
+2020-04-08;State of Sergipe;Trough
+2020-04-09;State of Sergipe;Trough
+2020-04-10;State of Sergipe;Trough
+2020-04-11;State of Sergipe;Trough
+2020-04-12;State of Sergipe;Trough
+2020-04-13;State of Sergipe;Trough
+2020-04-14;State of Sergipe;Trough
+2020-04-15;State of Sergipe;Trough
+2020-04-16;State of Sergipe;Trough
+2020-04-17;State of Sergipe;Trough
+2020-04-18;State of Sergipe;Trough
+2020-04-19;State of Sergipe;Trough
+2020-04-20;State of Sergipe;Trough
+2020-04-21;State of Sergipe;Trough
+2020-04-22;State of Sergipe;Trough
+2020-04-23;State of Sergipe;Trough
+2020-04-24;State of Sergipe;Trough
+2020-04-25;State of Sergipe;Trough
+2020-04-26;State of Sergipe;Trough
+2020-04-27;State of Sergipe;Trough
+2020-04-28;State of Sergipe;Trough
+2020-04-29;State of Sergipe;Trough
+2020-04-30;State of Sergipe;Trough
+2020-05-01;State of Sergipe;Trough
+2020-05-02;State of Sergipe;Trough
+2020-05-03;State of Sergipe;Trough
+2020-05-04;State of Sergipe;Trough
+2020-05-05;State of Sergipe;Trough
+2020-05-06;State of Sergipe;Trough
+2020-05-07;State of Sergipe;Trough
+2020-05-08;State of Sergipe;Trough
+2020-05-09;State of Sergipe;Trough
+2020-05-10;State of Sergipe;Trough
+2020-05-11;State of Sergipe;Trough
+2020-05-12;State of Sergipe;Trough
+2020-05-13;State of Sergipe;Trough
+2020-05-14;State of Sergipe;Trough
+2020-05-15;State of Sergipe;Trough
+2020-05-16;State of Sergipe;Trough
+2020-05-17;State of Sergipe;Trough
+2020-05-18;State of Sergipe;Trough
+2020-05-19;State of Sergipe;Trough
+2020-05-20;State of Sergipe;Trough
+2020-05-21;State of Sergipe;Trough
+2020-05-22;State of Sergipe;Trough
+2020-05-23;State of Sergipe;Trough
+2020-05-24;State of Sergipe;Trough
+2020-05-25;State of Sergipe;Trough
+2020-05-26;State of Sergipe;Trough
+2020-05-27;State of Sergipe;Trough
+2020-05-28;State of Sergipe;Trough
+2020-05-29;State of Sergipe;Trough
+2020-05-30;State of Sergipe;Trough
+2020-05-31;State of Sergipe;Trough
+2020-06-01;State of Sergipe;Trough
+2020-06-02;State of Sergipe;Trough
+2020-06-03;State of Sergipe;Trough
+2020-06-04;State of Sergipe;Trough
+2020-06-05;State of Sergipe;Trough
+2020-06-06;State of Sergipe;Trough
+2020-06-07;State of Sergipe;Trough
+2020-06-08;State of Sergipe;Trough
+2020-06-09;State of Sergipe;Trough
+2020-06-10;State of Sergipe;Trough
+2020-06-11;State of Sergipe;Trough
+2020-06-12;State of Sergipe;Trough
+2020-06-13;State of Sergipe;Trough
+2020-06-14;State of Sergipe;Trough
+2020-06-15;State of Sergipe;Trough
+2020-06-16;State of Sergipe;Trough
+2020-06-17;State of Sergipe;Trough
+2020-06-18;State of Sergipe;Trough
+2020-06-19;State of Sergipe;Trough
+2020-06-20;State of Sergipe;Trough
+2020-06-21;State of Sergipe;Trough
+2020-06-22;State of Sergipe;Trough
+2020-06-23;State of Sergipe;Trough
+2020-06-24;State of Sergipe;Trough
+2020-06-25;State of Sergipe;Trough
+2020-06-26;State of Sergipe;Trough
+2020-06-27;State of Sergipe;Trough
+2020-06-28;State of Sergipe;Trough
+2020-06-29;State of Sergipe;Trough
+2020-06-30;State of Sergipe;Trough
+2020-07-01;State of Sergipe;Trough
+2020-07-02;State of Sergipe;Trough
+2020-07-03;State of Sergipe;Trough
+2020-07-04;State of Sergipe;Trough
+2020-07-05;State of Sergipe;Trough
+2020-07-06;State of Sergipe;Trough
+2020-07-07;State of Sergipe;Trough
+2020-07-08;State of Sergipe;Trough
+2020-07-09;State of Sergipe;Trough
+2020-07-10;State of Sergipe;Trough
+2020-07-11;State of Sergipe;Trough
+2020-07-12;State of Sergipe;Trough
+2020-07-13;State of Sergipe;Trough
+2020-07-14;State of Sergipe;Trough
+2020-07-15;State of Sergipe;Trough
+2020-07-16;State of Sergipe;Trough
+2020-07-17;State of Sergipe;Trough
+2020-07-18;State of Sergipe;Trough
+2020-07-19;State of Sergipe;Trough
+2020-07-20;State of Sergipe;Trough
+2020-07-21;State of Sergipe;Trough
+2020-07-22;State of Sergipe;Trough
+2020-07-23;State of Sergipe;Trough
+2020-07-24;State of Sergipe;Trough
+2020-07-25;State of Sergipe;Trough
+2020-07-26;;Trough
+2020-07-27;;Trough
+2020-02-25;State of Bahia;Preparation
+2020-02-26;State of Bahia;Preparation
+2020-02-27;State of Bahia;Preparation
+2020-02-28;State of Bahia;Preparation
+2020-02-29;State of Bahia;Preparation
+2020-03-01;State of Bahia;Preparation
+2020-03-02;State of Bahia;Preparation
+2020-03-03;State of Bahia;Preparation
+2020-03-04;State of Bahia;Preparation
+2020-03-05;State of Bahia;Preparation
+2020-03-06;State of Bahia;Preparation
+2020-03-07;State of Bahia;Preparation
+2020-03-08;State of Bahia;Preparation
+2020-03-09;State of Bahia;Preparation
+2020-03-10;State of Bahia;Preparation
+2020-03-11;State of Bahia;Preparation
+2020-03-12;State of Bahia;Preparation
+2020-03-13;State of Bahia;Preparation
+2020-03-14;State of Bahia;Preparation
+2020-03-15;State of Bahia;Preparation
+2020-03-16;State of Bahia;Preparation
+2020-03-17;State of Bahia;Preparation
+2020-03-18;State of Bahia;Preparation
+2020-03-19;State of Bahia;Response
+2020-03-20;State of Bahia;Response
+2020-03-21;State of Bahia;Response
+2020-03-22;State of Bahia;Response
+2020-03-23;State of Bahia;Response
+2020-03-24;State of Bahia;Response
+2020-03-25;State of Bahia;Response
+2020-03-26;State of Bahia;Response
+2020-03-27;State of Bahia;Response
+2020-03-28;State of Bahia;Response
+2020-03-29;State of Bahia;Trough
+2020-03-30;State of Bahia;Trough
+2020-03-31;State of Bahia;Trough
+2020-04-01;State of Bahia;Trough
+2020-04-02;State of Bahia;Trough
+2020-04-03;State of Bahia;Trough
+2020-04-04;State of Bahia;Trough
+2020-04-05;State of Bahia;Trough
+2020-04-06;State of Bahia;Trough
+2020-04-07;State of Bahia;Trough
+2020-04-08;State of Bahia;Trough
+2020-04-09;State of Bahia;Trough
+2020-04-10;State of Bahia;Trough
+2020-04-11;State of Bahia;Trough
+2020-04-12;State of Bahia;Trough
+2020-04-13;State of Bahia;Trough
+2020-04-14;State of Bahia;Trough
+2020-04-15;State of Bahia;Trough
+2020-04-16;State of Bahia;Trough
+2020-04-17;State of Bahia;Trough
+2020-04-18;State of Bahia;Trough
+2020-04-19;State of Bahia;Trough
+2020-04-20;State of Bahia;Trough
+2020-04-21;State of Bahia;Trough
+2020-04-22;State of Bahia;Trough
+2020-04-23;State of Bahia;Trough
+2020-04-24;State of Bahia;Trough
+2020-04-25;State of Bahia;Trough
+2020-04-26;State of Bahia;Trough
+2020-04-27;State of Bahia;Trough
+2020-04-28;State of Bahia;Trough
+2020-04-29;State of Bahia;Trough
+2020-04-30;State of Bahia;Trough
+2020-05-01;State of Bahia;Trough
+2020-05-02;State of Bahia;Trough
+2020-05-03;State of Bahia;Trough
+2020-05-04;State of Bahia;Trough
+2020-05-05;State of Bahia;Trough
+2020-05-06;State of Bahia;Trough
+2020-05-07;State of Bahia;Trough
+2020-05-08;State of Bahia;Trough
+2020-05-09;State of Bahia;Trough
+2020-05-10;State of Bahia;Trough
+2020-05-11;State of Bahia;Trough
+2020-05-12;State of Bahia;Trough
+2020-05-13;State of Bahia;Trough
+2020-05-14;State of Bahia;Trough
+2020-05-15;State of Bahia;Trough
+2020-05-16;State of Bahia;Trough
+2020-05-17;State of Bahia;Trough
+2020-05-18;State of Bahia;Trough
+2020-05-19;State of Bahia;Trough
+2020-05-20;State of Bahia;Trough
+2020-05-21;State of Bahia;Trough
+2020-05-22;State of Bahia;Trough
+2020-05-23;State of Bahia;Trough
+2020-05-24;State of Bahia;Trough
+2020-05-25;State of Bahia;Trough
+2020-05-26;State of Bahia;Trough
+2020-05-27;State of Bahia;Trough
+2020-05-28;State of Bahia;Trough
+2020-05-29;State of Bahia;Trough
+2020-05-30;State of Bahia;Trough
+2020-05-31;State of Bahia;Trough
+2020-06-01;State of Bahia;Trough
+2020-06-02;State of Bahia;Trough
+2020-06-03;State of Bahia;Trough
+2020-06-04;State of Bahia;Trough
+2020-06-05;State of Bahia;Trough
+2020-06-06;State of Bahia;Trough
+2020-06-07;State of Bahia;Trough
+2020-06-08;State of Bahia;Trough
+2020-06-09;State of Bahia;Trough
+2020-06-10;State of Bahia;Trough
+2020-06-11;State of Bahia;Trough
+2020-06-12;State of Bahia;Trough
+2020-06-13;State of Bahia;Trough
+2020-06-14;State of Bahia;Trough
+2020-06-15;State of Bahia;Trough
+2020-06-16;State of Bahia;Trough
+2020-06-17;State of Bahia;Trough
+2020-06-18;State of Bahia;Trough
+2020-06-19;State of Bahia;Trough
+2020-06-20;State of Bahia;Trough
+2020-06-21;State of Bahia;Trough
+2020-06-22;State of Bahia;Trough
+2020-06-23;State of Bahia;Trough
+2020-06-24;State of Bahia;Trough
+2020-06-25;State of Bahia;Trough
+2020-06-26;State of Bahia;Trough
+2020-06-27;State of Bahia;Trough
+2020-06-28;State of Bahia;Trough
+2020-06-29;State of Bahia;Trough
+2020-06-30;State of Bahia;Trough
+2020-07-01;State of Bahia;Trough
+2020-07-02;State of Bahia;Trough
+2020-07-03;State of Bahia;Trough
+2020-07-04;State of Bahia;Trough
+2020-07-05;State of Bahia;Trough
+2020-07-06;State of Bahia;Trough
+2020-07-07;State of Bahia;Trough
+2020-07-08;State of Bahia;Trough
+2020-07-09;State of Bahia;Trough
+2020-07-10;State of Bahia;Trough
+2020-07-11;State of Bahia;Trough
+2020-07-12;State of Bahia;Trough
+2020-07-13;State of Bahia;Trough
+2020-07-14;State of Bahia;Trough
+2020-07-15;State of Bahia;Trough
+2020-07-16;State of Bahia;Trough
+2020-07-17;State of Bahia;Trough
+2020-07-18;State of Bahia;Trough
+2020-07-19;State of Bahia;Trough
+2020-07-20;State of Bahia;Trough
+2020-07-21;State of Bahia;Trough
+2020-07-22;State of Bahia;Trough
+2020-07-23;State of Bahia;Trough
+2020-07-24;State of Bahia;Trough
+2020-07-25;State of Bahia;Trough
+2020-07-26;;Trough
+2020-07-27;;Trough
+2020-02-25;State of Minas Gerais;Preparation
+2020-02-26;State of Minas Gerais;Preparation
+2020-02-27;State of Minas Gerais;Preparation
+2020-02-28;State of Minas Gerais;Preparation
+2020-02-29;State of Minas Gerais;Preparation
+2020-03-01;State of Minas Gerais;Preparation
+2020-03-02;State of Minas Gerais;Preparation
+2020-03-03;State of Minas Gerais;Preparation
+2020-03-04;State of Minas Gerais;Preparation
+2020-03-05;State of Minas Gerais;Preparation
+2020-03-06;State of Minas Gerais;Preparation
+2020-03-07;State of Minas Gerais;Preparation
+2020-03-08;State of Minas Gerais;Preparation
+2020-03-09;State of Minas Gerais;Preparation
+2020-03-10;State of Minas Gerais;Preparation
+2020-03-11;State of Minas Gerais;Preparation
+2020-03-12;State of Minas Gerais;Preparation
+2020-03-13;State of Minas Gerais;Preparation
+2020-03-14;State of Minas Gerais;Preparation
+2020-03-15;State of Minas Gerais;Preparation
+2020-03-16;State of Minas Gerais;Preparation
+2020-03-17;State of Minas Gerais;Preparation
+2020-03-18;State of Minas Gerais;Preparation
+2020-03-19;State of Minas Gerais;Preparation
+2020-03-20;State of Minas Gerais;Response
+2020-03-21;State of Minas Gerais;Response
+2020-03-22;State of Minas Gerais;Response
+2020-03-23;State of Minas Gerais;Response
+2020-03-24;State of Minas Gerais;Response
+2020-03-25;State of Minas Gerais;Response
+2020-03-26;State of Minas Gerais;Response
+2020-03-27;State of Minas Gerais;Response
+2020-03-28;State of Minas Gerais;Trough
+2020-03-29;State of Minas Gerais;Trough
+2020-03-30;State of Minas Gerais;Trough
+2020-03-31;State of Minas Gerais;Trough
+2020-04-01;State of Minas Gerais;Trough
+2020-04-02;State of Minas Gerais;Trough
+2020-04-03;State of Minas Gerais;Trough
+2020-04-04;State of Minas Gerais;Trough
+2020-04-05;State of Minas Gerais;Trough
+2020-04-06;State of Minas Gerais;Trough
+2020-04-07;State of Minas Gerais;Trough
+2020-04-08;State of Minas Gerais;Trough
+2020-04-09;State of Minas Gerais;Trough
+2020-04-10;State of Minas Gerais;Trough
+2020-04-11;State of Minas Gerais;Trough
+2020-04-12;State of Minas Gerais;Trough
+2020-04-13;State of Minas Gerais;Trough
+2020-04-14;State of Minas Gerais;Trough
+2020-04-15;State of Minas Gerais;Trough
+2020-04-16;State of Minas Gerais;Trough
+2020-04-17;State of Minas Gerais;Trough
+2020-04-18;State of Minas Gerais;Trough
+2020-04-19;State of Minas Gerais;Trough
+2020-04-20;State of Minas Gerais;Trough
+2020-04-21;State of Minas Gerais;Trough
+2020-04-22;State of Minas Gerais;Trough
+2020-04-23;State of Minas Gerais;Trough
+2020-04-24;State of Minas Gerais;Trough
+2020-04-25;State of Minas Gerais;Trough
+2020-04-26;State of Minas Gerais;Trough
+2020-04-27;State of Minas Gerais;Trough
+2020-04-28;State of Minas Gerais;Trough
+2020-04-29;State of Minas Gerais;Trough
+2020-04-30;State of Minas Gerais;Trough
+2020-05-01;State of Minas Gerais;Trough
+2020-05-02;State of Minas Gerais;Trough
+2020-05-03;State of Minas Gerais;Trough
+2020-05-04;State of Minas Gerais;Trough
+2020-05-05;State of Minas Gerais;Trough
+2020-05-06;State of Minas Gerais;Trough
+2020-05-07;State of Minas Gerais;Trough
+2020-05-08;State of Minas Gerais;Trough
+2020-05-09;State of Minas Gerais;Trough
+2020-05-10;State of Minas Gerais;Trough
+2020-05-11;State of Minas Gerais;Trough
+2020-05-12;State of Minas Gerais;Trough
+2020-05-13;State of Minas Gerais;Trough
+2020-05-14;State of Minas Gerais;Trough
+2020-05-15;State of Minas Gerais;Trough
+2020-05-16;State of Minas Gerais;Trough
+2020-05-17;State of Minas Gerais;Trough
+2020-05-18;State of Minas Gerais;Trough
+2020-05-19;State of Minas Gerais;Trough
+2020-05-20;State of Minas Gerais;Trough
+2020-05-21;State of Minas Gerais;Trough
+2020-05-22;State of Minas Gerais;Trough
+2020-05-23;State of Minas Gerais;Trough
+2020-05-24;State of Minas Gerais;Trough
+2020-05-25;State of Minas Gerais;Trough
+2020-05-26;State of Minas Gerais;Trough
+2020-05-27;State of Minas Gerais;Trough
+2020-05-28;State of Minas Gerais;Trough
+2020-05-29;State of Minas Gerais;Trough
+2020-05-30;State of Minas Gerais;Trough
+2020-05-31;State of Minas Gerais;Trough
+2020-06-01;State of Minas Gerais;Trough
+2020-06-02;State of Minas Gerais;Trough
+2020-06-03;State of Minas Gerais;Trough
+2020-06-04;State of Minas Gerais;Trough
+2020-06-05;State of Minas Gerais;Trough
+2020-06-06;State of Minas Gerais;Trough
+2020-06-07;State of Minas Gerais;Trough
+2020-06-08;State of Minas Gerais;Trough
+2020-06-09;State of Minas Gerais;Trough
+2020-06-10;State of Minas Gerais;Trough
+2020-06-11;State of Minas Gerais;Trough
+2020-06-12;State of Minas Gerais;Trough
+2020-06-13;State of Minas Gerais;Trough
+2020-06-14;State of Minas Gerais;Trough
+2020-06-15;State of Minas Gerais;Trough
+2020-06-16;State of Minas Gerais;Trough
+2020-06-17;State of Minas Gerais;Trough
+2020-06-18;State of Minas Gerais;Trough
+2020-06-19;State of Minas Gerais;Trough
+2020-06-20;State of Minas Gerais;Trough
+2020-06-21;State of Minas Gerais;Trough
+2020-06-22;State of Minas Gerais;Trough
+2020-06-23;State of Minas Gerais;Trough
+2020-06-24;State of Minas Gerais;Trough
+2020-06-25;State of Minas Gerais;Trough
+2020-06-26;State of Minas Gerais;Trough
+2020-06-27;State of Minas Gerais;Trough
+2020-06-28;State of Minas Gerais;Trough
+2020-06-29;State of Minas Gerais;Trough
+2020-06-30;State of Minas Gerais;Trough
+2020-07-01;State of Minas Gerais;Trough
+2020-07-02;State of Minas Gerais;Trough
+2020-07-03;State of Minas Gerais;Trough
+2020-07-04;State of Minas Gerais;Trough
+2020-07-05;State of Minas Gerais;Trough
+2020-07-06;State of Minas Gerais;Trough
+2020-07-07;State of Minas Gerais;Trough
+2020-07-08;State of Minas Gerais;Trough
+2020-07-09;State of Minas Gerais;Trough
+2020-07-10;State of Minas Gerais;Trough
+2020-07-11;State of Minas Gerais;Trough
+2020-07-12;State of Minas Gerais;Trough
+2020-07-13;State of Minas Gerais;Trough
+2020-07-14;State of Minas Gerais;Trough
+2020-07-15;State of Minas Gerais;Trough
+2020-07-16;State of Minas Gerais;Trough
+2020-07-17;State of Minas Gerais;Trough
+2020-07-18;State of Minas Gerais;Trough
+2020-07-19;State of Minas Gerais;Trough
+2020-07-20;State of Minas Gerais;Trough
+2020-07-21;State of Minas Gerais;Trough
+2020-07-22;State of Minas Gerais;Trough
+2020-07-23;State of Minas Gerais;Trough
+2020-07-24;State of Minas Gerais;Trough
+2020-07-25;State of Minas Gerais;Trough
+2020-07-26;;Trough
+2020-07-27;;Trough
+2020-02-25;State of Espírito Santo;Preparation
+2020-02-26;State of Espírito Santo;Preparation
+2020-02-27;State of Espírito Santo;Preparation
+2020-02-28;State of Espírito Santo;Preparation
+2020-02-29;State of Espírito Santo;Preparation
+2020-03-01;State of Espírito Santo;Preparation
+2020-03-02;State of Espírito Santo;Preparation
+2020-03-03;State of Espírito Santo;Preparation
+2020-03-04;State of Espírito Santo;Preparation
+2020-03-05;State of Espírito Santo;Preparation
+2020-03-06;State of Espírito Santo;Preparation
+2020-03-07;State of Espírito Santo;Preparation
+2020-03-08;State of Espírito Santo;Preparation
+2020-03-09;State of Espírito Santo;Preparation
+2020-03-10;State of Espírito Santo;Preparation
+2020-03-11;State of Espírito Santo;Preparation
+2020-03-12;State of Espírito Santo;Preparation
+2020-03-13;State of Espírito Santo;Preparation
+2020-03-14;State of Espírito Santo;Preparation
+2020-03-15;State of Espírito Santo;Preparation
+2020-03-16;State of Espírito Santo;Preparation
+2020-03-17;State of Espírito Santo;Preparation
+2020-03-18;State of Espírito Santo;Preparation
+2020-03-19;State of Espírito Santo;Preparation
+2020-03-20;State of Espírito Santo;Response
+2020-03-21;State of Espírito Santo;Response
+2020-03-22;State of Espírito Santo;Response
+2020-03-23;State of Espírito Santo;Response
+2020-03-24;State of Espírito Santo;Response
+2020-03-25;State of Espírito Santo;Response
+2020-03-26;State of Espírito Santo;Response
+2020-03-27;State of Espírito Santo;Response
+2020-03-28;State of Espírito Santo;Trough
+2020-03-29;State of Espírito Santo;Trough
+2020-03-30;State of Espírito Santo;Trough
+2020-03-31;State of Espírito Santo;Trough
+2020-04-01;State of Espírito Santo;Trough
+2020-04-02;State of Espírito Santo;Trough
+2020-04-03;State of Espírito Santo;Trough
+2020-04-04;State of Espírito Santo;Trough
+2020-04-05;State of Espírito Santo;Trough
+2020-04-06;State of Espírito Santo;Trough
+2020-04-07;State of Espírito Santo;Trough
+2020-04-08;State of Espírito Santo;Trough
+2020-04-09;State of Espírito Santo;Trough
+2020-04-10;State of Espírito Santo;Trough
+2020-04-11;State of Espírito Santo;Trough
+2020-04-12;State of Espírito Santo;Trough
+2020-04-13;State of Espírito Santo;Trough
+2020-04-14;State of Espírito Santo;Trough
+2020-04-15;State of Espírito Santo;Trough
+2020-04-16;State of Espírito Santo;Trough
+2020-04-17;State of Espírito Santo;Trough
+2020-04-18;State of Espírito Santo;Trough
+2020-04-19;State of Espírito Santo;Trough
+2020-04-20;State of Espírito Santo;Trough
+2020-04-21;State of Espírito Santo;Trough
+2020-04-22;State of Espírito Santo;Trough
+2020-04-23;State of Espírito Santo;Trough
+2020-04-24;State of Espírito Santo;Trough
+2020-04-25;State of Espírito Santo;Trough
+2020-04-26;State of Espírito Santo;Trough
+2020-04-27;State of Espírito Santo;Trough
+2020-04-28;State of Espírito Santo;Trough
+2020-04-29;State of Espírito Santo;Trough
+2020-04-30;State of Espírito Santo;Trough
+2020-05-01;State of Espírito Santo;Trough
+2020-05-02;State of Espírito Santo;Trough
+2020-05-03;State of Espírito Santo;Trough
+2020-05-04;State of Espírito Santo;Trough
+2020-05-05;State of Espírito Santo;Trough
+2020-05-06;State of Espírito Santo;Trough
+2020-05-07;State of Espírito Santo;Trough
+2020-05-08;State of Espírito Santo;Trough
+2020-05-09;State of Espírito Santo;Trough
+2020-05-10;State of Espírito Santo;Trough
+2020-05-11;State of Espírito Santo;Trough
+2020-05-12;State of Espírito Santo;Trough
+2020-05-13;State of Espírito Santo;Trough
+2020-05-14;State of Espírito Santo;Trough
+2020-05-15;State of Espírito Santo;Trough
+2020-05-16;State of Espírito Santo;Trough
+2020-05-17;State of Espírito Santo;Trough
+2020-05-18;State of Espírito Santo;Trough
+2020-05-19;State of Espírito Santo;Trough
+2020-05-20;State of Espírito Santo;Trough
+2020-05-21;State of Espírito Santo;Trough
+2020-05-22;State of Espírito Santo;Trough
+2020-05-23;State of Espírito Santo;Trough
+2020-05-24;State of Espírito Santo;Trough
+2020-05-25;State of Espírito Santo;Trough
+2020-05-26;State of Espírito Santo;Trough
+2020-05-27;State of Espírito Santo;Trough
+2020-05-28;State of Espírito Santo;Trough
+2020-05-29;State of Espírito Santo;Trough
+2020-05-30;State of Espírito Santo;Trough
+2020-05-31;State of Espírito Santo;Trough
+2020-06-01;State of Espírito Santo;Trough
+2020-06-02;State of Espírito Santo;Trough
+2020-06-03;State of Espírito Santo;Trough
+2020-06-04;State of Espírito Santo;Trough
+2020-06-05;State of Espírito Santo;Trough
+2020-06-06;State of Espírito Santo;Trough
+2020-06-07;State of Espírito Santo;Trough
+2020-06-08;State of Espírito Santo;Trough
+2020-06-09;State of Espírito Santo;Trough
+2020-06-10;State of Espírito Santo;Trough
+2020-06-11;State of Espírito Santo;Trough
+2020-06-12;State of Espírito Santo;Trough
+2020-06-13;State of Espírito Santo;Trough
+2020-06-14;State of Espírito Santo;Trough
+2020-06-15;State of Espírito Santo;Trough
+2020-06-16;State of Espírito Santo;Trough
+2020-06-17;State of Espírito Santo;Trough
+2020-06-18;State of Espírito Santo;Trough
+2020-06-19;State of Espírito Santo;Trough
+2020-06-20;State of Espírito Santo;Trough
+2020-06-21;State of Espírito Santo;Trough
+2020-06-22;State of Espírito Santo;Trough
+2020-06-23;State of Espírito Santo;Trough
+2020-06-24;State of Espírito Santo;Trough
+2020-06-25;State of Espírito Santo;Trough
+2020-06-26;State of Espírito Santo;Trough
+2020-06-27;State of Espírito Santo;Trough
+2020-06-28;State of Espírito Santo;Trough
+2020-06-29;State of Espírito Santo;Trough
+2020-06-30;State of Espírito Santo;Trough
+2020-07-01;State of Espírito Santo;Trough
+2020-07-02;State of Espírito Santo;Trough
+2020-07-03;State of Espírito Santo;Trough
+2020-07-04;State of Espírito Santo;Trough
+2020-07-05;State of Espírito Santo;Trough
+2020-07-06;State of Espírito Santo;Trough
+2020-07-07;State of Espírito Santo;Trough
+2020-07-08;State of Espírito Santo;Trough
+2020-07-09;State of Espírito Santo;Trough
+2020-07-10;State of Espírito Santo;Trough
+2020-07-11;State of Espírito Santo;Trough
+2020-07-12;State of Espírito Santo;Trough
+2020-07-13;State of Espírito Santo;Trough
+2020-07-14;State of Espírito Santo;Trough
+2020-07-15;State of Espírito Santo;Trough
+2020-07-16;State of Espírito Santo;Trough
+2020-07-17;State of Espírito Santo;Trough
+2020-07-18;State of Espírito Santo;Trough
+2020-07-19;State of Espírito Santo;Trough
+2020-07-20;State of Espírito Santo;Trough
+2020-07-21;State of Espírito Santo;Trough
+2020-07-22;State of Espírito Santo;Trough
+2020-07-23;State of Espírito Santo;Trough
+2020-07-24;State of Espírito Santo;Trough
+2020-07-25;State of Espírito Santo;Trough
+2020-07-26;;Trough
+2020-07-27;;Trough
+2020-02-25;State of Rio de Janeiro;Preparation
+2020-02-26;State of Rio de Janeiro;Preparation
+2020-02-27;State of Rio de Janeiro;Preparation
+2020-02-28;State of Rio de Janeiro;Preparation
+2020-02-29;State of Rio de Janeiro;Preparation
+2020-03-01;State of Rio de Janeiro;Preparation
+2020-03-02;State of Rio de Janeiro;Preparation
+2020-03-03;State of Rio de Janeiro;Preparation
+2020-03-04;State of Rio de Janeiro;Preparation
+2020-03-05;State of Rio de Janeiro;Preparation
+2020-03-06;State of Rio de Janeiro;Preparation
+2020-03-07;State of Rio de Janeiro;Preparation
+2020-03-08;State of Rio de Janeiro;Preparation
+2020-03-09;State of Rio de Janeiro;Preparation
+2020-03-10;State of Rio de Janeiro;Preparation
+2020-03-11;State of Rio de Janeiro;Preparation
+2020-03-12;State of Rio de Janeiro;Preparation
+2020-03-13;State of Rio de Janeiro;Preparation
+2020-03-14;State of Rio de Janeiro;Preparation
+2020-03-15;State of Rio de Janeiro;Preparation
+2020-03-16;State of Rio de Janeiro;Preparation
+2020-03-17;State of Rio de Janeiro;Preparation
+2020-03-18;State of Rio de Janeiro;Response
+2020-03-19;State of Rio de Janeiro;Response
+2020-03-20;State of Rio de Janeiro;Response
+2020-03-21;State of Rio de Janeiro;Response
+2020-03-22;State of Rio de Janeiro;Response
+2020-03-23;State of Rio de Janeiro;Response
+2020-03-24;State of Rio de Janeiro;Response
+2020-03-25;State of Rio de Janeiro;Response
+2020-03-26;State of Rio de Janeiro;Response
+2020-03-27;State of Rio de Janeiro;Response
+2020-03-28;State of Rio de Janeiro;Response
+2020-03-29;State of Rio de Janeiro;Response
+2020-03-30;State of Rio de Janeiro;Trough
+2020-03-31;State of Rio de Janeiro;Trough
+2020-04-01;State of Rio de Janeiro;Trough
+2020-04-02;State of Rio de Janeiro;Trough
+2020-04-03;State of Rio de Janeiro;Trough
+2020-04-04;State of Rio de Janeiro;Trough
+2020-04-05;State of Rio de Janeiro;Trough
+2020-04-06;State of Rio de Janeiro;Trough
+2020-04-07;State of Rio de Janeiro;Trough
+2020-04-08;State of Rio de Janeiro;Trough
+2020-04-09;State of Rio de Janeiro;Trough
+2020-04-10;State of Rio de Janeiro;Trough
+2020-04-11;State of Rio de Janeiro;Trough
+2020-04-12;State of Rio de Janeiro;Trough
+2020-04-13;State of Rio de Janeiro;Trough
+2020-04-14;State of Rio de Janeiro;Trough
+2020-04-15;State of Rio de Janeiro;Trough
+2020-04-16;State of Rio de Janeiro;Trough
+2020-04-17;State of Rio de Janeiro;Trough
+2020-04-18;State of Rio de Janeiro;Trough
+2020-04-19;State of Rio de Janeiro;Trough
+2020-04-20;State of Rio de Janeiro;Trough
+2020-04-21;State of Rio de Janeiro;Trough
+2020-04-22;State of Rio de Janeiro;Trough
+2020-04-23;State of Rio de Janeiro;Trough
+2020-04-24;State of Rio de Janeiro;Trough
+2020-04-25;State of Rio de Janeiro;Trough
+2020-04-26;State of Rio de Janeiro;Trough
+2020-04-27;State of Rio de Janeiro;Trough
+2020-04-28;State of Rio de Janeiro;Trough
+2020-04-29;State of Rio de Janeiro;Trough
+2020-04-30;State of Rio de Janeiro;Trough
+2020-05-01;State of Rio de Janeiro;Trough
+2020-05-02;State of Rio de Janeiro;Trough
+2020-05-03;State of Rio de Janeiro;Trough
+2020-05-04;State of Rio de Janeiro;Trough
+2020-05-05;State of Rio de Janeiro;Trough
+2020-05-06;State of Rio de Janeiro;Trough
+2020-05-07;State of Rio de Janeiro;Trough
+2020-05-08;State of Rio de Janeiro;Trough
+2020-05-09;State of Rio de Janeiro;Trough
+2020-05-10;State of Rio de Janeiro;Trough
+2020-05-11;State of Rio de Janeiro;Trough
+2020-05-12;State of Rio de Janeiro;Trough
+2020-05-13;State of Rio de Janeiro;Trough
+2020-05-14;State of Rio de Janeiro;Trough
+2020-05-15;State of Rio de Janeiro;Trough
+2020-05-16;State of Rio de Janeiro;Trough
+2020-05-17;State of Rio de Janeiro;Trough
+2020-05-18;State of Rio de Janeiro;Trough
+2020-05-19;State of Rio de Janeiro;Trough
+2020-05-20;State of Rio de Janeiro;Trough
+2020-05-21;State of Rio de Janeiro;Trough
+2020-05-22;State of Rio de Janeiro;Trough
+2020-05-23;State of Rio de Janeiro;Trough
+2020-05-24;State of Rio de Janeiro;Trough
+2020-05-25;State of Rio de Janeiro;Trough
+2020-05-26;State of Rio de Janeiro;Trough
+2020-05-27;State of Rio de Janeiro;Trough
+2020-05-28;State of Rio de Janeiro;Trough
+2020-05-29;State of Rio de Janeiro;Trough
+2020-05-30;State of Rio de Janeiro;Trough
+2020-05-31;State of Rio de Janeiro;Trough
+2020-06-01;State of Rio de Janeiro;Trough
+2020-06-02;State of Rio de Janeiro;Trough
+2020-06-03;State of Rio de Janeiro;Trough
+2020-06-04;State of Rio de Janeiro;Trough
+2020-06-05;State of Rio de Janeiro;Trough
+2020-06-06;State of Rio de Janeiro;Trough
+2020-06-07;State of Rio de Janeiro;Trough
+2020-06-08;State of Rio de Janeiro;Trough
+2020-06-09;State of Rio de Janeiro;Trough
+2020-06-10;State of Rio de Janeiro;Trough
+2020-06-11;State of Rio de Janeiro;Trough
+2020-06-12;State of Rio de Janeiro;Trough
+2020-06-13;State of Rio de Janeiro;Trough
+2020-06-14;State of Rio de Janeiro;Trough
+2020-06-15;State of Rio de Janeiro;Trough
+2020-06-16;State of Rio de Janeiro;Trough
+2020-06-17;State of Rio de Janeiro;Trough
+2020-06-18;State of Rio de Janeiro;Trough
+2020-06-19;State of Rio de Janeiro;Trough
+2020-06-20;State of Rio de Janeiro;Trough
+2020-06-21;State of Rio de Janeiro;Trough
+2020-06-22;State of Rio de Janeiro;Trough
+2020-06-23;State of Rio de Janeiro;Trough
+2020-06-24;State of Rio de Janeiro;Trough
+2020-06-25;State of Rio de Janeiro;Trough
+2020-06-26;State of Rio de Janeiro;Trough
+2020-06-27;State of Rio de Janeiro;Trough
+2020-06-28;State of Rio de Janeiro;Trough
+2020-06-29;State of Rio de Janeiro;Trough
+2020-06-30;State of Rio de Janeiro;Trough
+2020-07-01;State of Rio de Janeiro;Trough
+2020-07-02;State of Rio de Janeiro;Trough
+2020-07-03;State of Rio de Janeiro;Trough
+2020-07-04;State of Rio de Janeiro;Trough
+2020-07-05;State of Rio de Janeiro;Trough
+2020-07-06;State of Rio de Janeiro;Trough
+2020-07-07;State of Rio de Janeiro;Trough
+2020-07-08;State of Rio de Janeiro;Trough
+2020-07-09;State of Rio de Janeiro;Trough
+2020-07-10;State of Rio de Janeiro;Trough
+2020-07-11;State of Rio de Janeiro;Trough
+2020-07-12;State of Rio de Janeiro;Trough
+2020-07-13;State of Rio de Janeiro;Trough
+2020-07-14;State of Rio de Janeiro;Trough
+2020-07-15;State of Rio de Janeiro;Trough
+2020-07-16;State of Rio de Janeiro;Trough
+2020-07-17;State of Rio de Janeiro;Trough
+2020-07-18;State of Rio de Janeiro;Trough
+2020-07-19;State of Rio de Janeiro;Trough
+2020-07-20;State of Rio de Janeiro;Trough
+2020-07-21;State of Rio de Janeiro;Trough
+2020-07-22;State of Rio de Janeiro;Trough
+2020-07-23;State of Rio de Janeiro;Trough
+2020-07-24;State of Rio de Janeiro;Trough
+2020-07-25;State of Rio de Janeiro;Trough
+2020-07-26;;Trough
+2020-07-27;;Trough
+2020-02-25;State of São Paulo;Preparation
+2020-02-26;State of São Paulo;Preparation
+2020-02-27;State of São Paulo;Preparation
+2020-02-28;State of São Paulo;Preparation
+2020-02-29;State of São Paulo;Preparation
+2020-03-01;State of São Paulo;Preparation
+2020-03-02;State of São Paulo;Preparation
+2020-03-03;State of São Paulo;Preparation
+2020-03-04;State of São Paulo;Preparation
+2020-03-05;State of São Paulo;Preparation
+2020-03-06;State of São Paulo;Preparation
+2020-03-07;State of São Paulo;Preparation
+2020-03-08;State of São Paulo;Preparation
+2020-03-09;State of São Paulo;Preparation
+2020-03-10;State of São Paulo;Preparation
+2020-03-11;State of São Paulo;Preparation
+2020-03-12;State of São Paulo;Preparation
+2020-03-13;State of São Paulo;Preparation
+2020-03-14;State of São Paulo;Preparation
+2020-03-15;State of São Paulo;Preparation
+2020-03-16;State of São Paulo;Preparation
+2020-03-17;State of São Paulo;Preparation
+2020-03-18;State of São Paulo;Preparation
+2020-03-19;State of São Paulo;Preparation
+2020-03-20;State of São Paulo;Response
+2020-03-21;State of São Paulo;Response
+2020-03-22;State of São Paulo;Response
+2020-03-23;State of São Paulo;Response
+2020-03-24;State of São Paulo;Response
+2020-03-25;State of São Paulo;Response
+2020-03-26;State of São Paulo;Response
+2020-03-27;State of São Paulo;Response
+2020-03-28;State of São Paulo;Response
+2020-03-29;State of São Paulo;Response
+2020-03-30;State of São Paulo;Trough
+2020-03-31;State of São Paulo;Trough
+2020-04-01;State of São Paulo;Trough
+2020-04-02;State of São Paulo;Trough
+2020-04-03;State of São Paulo;Trough
+2020-04-04;State of São Paulo;Trough
+2020-04-05;State of São Paulo;Trough
+2020-04-06;State of São Paulo;Trough
+2020-04-07;State of São Paulo;Trough
+2020-04-08;State of São Paulo;Trough
+2020-04-09;State of São Paulo;Trough
+2020-04-10;State of São Paulo;Trough
+2020-04-11;State of São Paulo;Trough
+2020-04-12;State of São Paulo;Trough
+2020-04-13;State of São Paulo;Trough
+2020-04-14;State of São Paulo;Trough
+2020-04-15;State of São Paulo;Trough
+2020-04-16;State of São Paulo;Trough
+2020-04-17;State of São Paulo;Trough
+2020-04-18;State of São Paulo;Trough
+2020-04-19;State of São Paulo;Trough
+2020-04-20;State of São Paulo;Trough
+2020-04-21;State of São Paulo;Trough
+2020-04-22;State of São Paulo;Trough
+2020-04-23;State of São Paulo;Trough
+2020-04-24;State of São Paulo;Trough
+2020-04-25;State of São Paulo;Trough
+2020-04-26;State of São Paulo;Trough
+2020-04-27;State of São Paulo;Trough
+2020-04-28;State of São Paulo;Trough
+2020-04-29;State of São Paulo;Trough
+2020-04-30;State of São Paulo;Trough
+2020-05-01;State of São Paulo;Trough
+2020-05-02;State of São Paulo;Trough
+2020-05-03;State of São Paulo;Trough
+2020-05-04;State of São Paulo;Trough
+2020-05-05;State of São Paulo;Trough
+2020-05-06;State of São Paulo;Trough
+2020-05-07;State of São Paulo;Trough
+2020-05-08;State of São Paulo;Trough
+2020-05-09;State of São Paulo;Trough
+2020-05-10;State of São Paulo;Trough
+2020-05-11;State of São Paulo;Trough
+2020-05-12;State of São Paulo;Trough
+2020-05-13;State of São Paulo;Trough
+2020-05-14;State of São Paulo;Trough
+2020-05-15;State of São Paulo;Trough
+2020-05-16;State of São Paulo;Trough
+2020-05-17;State of São Paulo;Trough
+2020-05-18;State of São Paulo;Trough
+2020-05-19;State of São Paulo;Trough
+2020-05-20;State of São Paulo;Trough
+2020-05-21;State of São Paulo;Trough
+2020-05-22;State of São Paulo;Trough
+2020-05-23;State of São Paulo;Trough
+2020-05-24;State of São Paulo;Trough
+2020-05-25;State of São Paulo;Trough
+2020-05-26;State of São Paulo;Trough
+2020-05-27;State of São Paulo;Trough
+2020-05-28;State of São Paulo;Trough
+2020-05-29;State of São Paulo;Trough
+2020-05-30;State of São Paulo;Trough
+2020-05-31;State of São Paulo;Trough
+2020-06-01;State of São Paulo;Trough
+2020-06-02;State of São Paulo;Trough
+2020-06-03;State of São Paulo;Trough
+2020-06-04;State of São Paulo;Trough
+2020-06-05;State of São Paulo;Trough
+2020-06-06;State of São Paulo;Trough
+2020-06-07;State of São Paulo;Trough
+2020-06-08;State of São Paulo;Trough
+2020-06-09;State of São Paulo;Trough
+2020-06-10;State of São Paulo;Trough
+2020-06-11;State of São Paulo;Trough
+2020-06-12;State of São Paulo;Trough
+2020-06-13;State of São Paulo;Trough
+2020-06-14;State of São Paulo;Trough
+2020-06-15;State of São Paulo;Trough
+2020-06-16;State of São Paulo;Trough
+2020-06-17;State of São Paulo;Trough
+2020-06-18;State of São Paulo;Trough
+2020-06-19;State of São Paulo;Trough
+2020-06-20;State of São Paulo;Trough
+2020-06-21;State of São Paulo;Trough
+2020-06-22;State of São Paulo;Trough
+2020-06-23;State of São Paulo;Trough
+2020-06-24;State of São Paulo;Trough
+2020-06-25;State of São Paulo;Trough
+2020-06-26;State of São Paulo;Trough
+2020-06-27;State of São Paulo;Trough
+2020-06-28;State of São Paulo;Trough
+2020-06-29;State of São Paulo;Trough
+2020-06-30;State of São Paulo;Trough
+2020-07-01;State of São Paulo;Trough
+2020-07-02;State of São Paulo;Trough
+2020-07-03;State of São Paulo;Trough
+2020-07-04;State of São Paulo;Trough
+2020-07-05;State of São Paulo;Trough
+2020-07-06;State of São Paulo;Trough
+2020-07-07;State of São Paulo;Trough
+2020-07-08;State of São Paulo;Trough
+2020-07-09;State of São Paulo;Trough
+2020-07-10;State of São Paulo;Trough
+2020-07-11;State of São Paulo;Trough
+2020-07-12;State of São Paulo;Trough
+2020-07-13;State of São Paulo;Trough
+2020-07-14;State of São Paulo;Trough
+2020-07-15;State of São Paulo;Trough
+2020-07-16;State of São Paulo;Trough
+2020-07-17;State of São Paulo;Trough
+2020-07-18;State of São Paulo;Trough
+2020-07-19;State of São Paulo;Trough
+2020-07-20;State of São Paulo;Trough
+2020-07-21;State of São Paulo;Trough
+2020-07-22;State of São Paulo;Trough
+2020-07-23;State of São Paulo;Trough
+2020-07-24;State of São Paulo;Trough
+2020-07-25;State of São Paulo;Trough
+2020-07-26;;Trough
+2020-07-27;;Trough
+2020-02-25;State of Paraná;Preparation
+2020-02-26;State of Paraná;Preparation
+2020-02-27;State of Paraná;Preparation
+2020-02-28;State of Paraná;Preparation
+2020-02-29;State of Paraná;Preparation
+2020-03-01;State of Paraná;Preparation
+2020-03-02;State of Paraná;Preparation
+2020-03-03;State of Paraná;Preparation
+2020-03-04;State of Paraná;Preparation
+2020-03-05;State of Paraná;Preparation
+2020-03-06;State of Paraná;Preparation
+2020-03-07;State of Paraná;Preparation
+2020-03-08;State of Paraná;Preparation
+2020-03-09;State of Paraná;Preparation
+2020-03-10;State of Paraná;Preparation
+2020-03-11;State of Paraná;Preparation
+2020-03-12;State of Paraná;Preparation
+2020-03-13;State of Paraná;Preparation
+2020-03-14;State of Paraná;Preparation
+2020-03-15;State of Paraná;Preparation
+2020-03-16;State of Paraná;Preparation
+2020-03-17;State of Paraná;Preparation
+2020-03-18;State of Paraná;Preparation
+2020-03-19;State of Paraná;Preparation
+2020-03-20;State of Paraná;Response
+2020-03-21;State of Paraná;Response
+2020-03-22;State of Paraná;Response
+2020-03-23;State of Paraná;Response
+2020-03-24;State of Paraná;Response
+2020-03-25;State of Paraná;Response
+2020-03-26;State of Paraná;Response
+2020-03-27;State of Paraná;Response
+2020-03-28;State of Paraná;Trough
+2020-03-29;State of Paraná;Trough
+2020-03-30;State of Paraná;Trough
+2020-03-31;State of Paraná;Trough
+2020-04-01;State of Paraná;Trough
+2020-04-02;State of Paraná;Trough
+2020-04-03;State of Paraná;Trough
+2020-04-04;State of Paraná;Trough
+2020-04-05;State of Paraná;Trough
+2020-04-06;State of Paraná;Trough
+2020-04-07;State of Paraná;Trough
+2020-04-08;State of Paraná;Trough
+2020-04-09;State of Paraná;Trough
+2020-04-10;State of Paraná;Trough
+2020-04-11;State of Paraná;Trough
+2020-04-12;State of Paraná;Trough
+2020-04-13;State of Paraná;Trough
+2020-04-14;State of Paraná;Trough
+2020-04-15;State of Paraná;Trough
+2020-04-16;State of Paraná;Trough
+2020-04-17;State of Paraná;Trough
+2020-04-18;State of Paraná;Trough
+2020-04-19;State of Paraná;Trough
+2020-04-20;State of Paraná;Trough
+2020-04-21;State of Paraná;Trough
+2020-04-22;State of Paraná;Trough
+2020-04-23;State of Paraná;Trough
+2020-04-24;State of Paraná;Trough
+2020-04-25;State of Paraná;Trough
+2020-04-26;State of Paraná;Trough
+2020-04-27;State of Paraná;Trough
+2020-04-28;State of Paraná;Trough
+2020-04-29;State of Paraná;Trough
+2020-04-30;State of Paraná;Trough
+2020-05-01;State of Paraná;Trough
+2020-05-02;State of Paraná;Trough
+2020-05-03;State of Paraná;Trough
+2020-05-04;State of Paraná;Trough
+2020-05-05;State of Paraná;Trough
+2020-05-06;State of Paraná;Trough
+2020-05-07;State of Paraná;Trough
+2020-05-08;State of Paraná;Trough
+2020-05-09;State of Paraná;Trough
+2020-05-10;State of Paraná;Trough
+2020-05-11;State of Paraná;Trough
+2020-05-12;State of Paraná;Trough
+2020-05-13;State of Paraná;Trough
+2020-05-14;State of Paraná;Trough
+2020-05-15;State of Paraná;Trough
+2020-05-16;State of Paraná;Trough
+2020-05-17;State of Paraná;Trough
+2020-05-18;State of Paraná;Trough
+2020-05-19;State of Paraná;Trough
+2020-05-20;State of Paraná;Trough
+2020-05-21;State of Paraná;Trough
+2020-05-22;State of Paraná;Trough
+2020-05-23;State of Paraná;Trough
+2020-05-24;State of Paraná;Trough
+2020-05-25;State of Paraná;Trough
+2020-05-26;State of Paraná;Trough
+2020-05-27;State of Paraná;Trough
+2020-05-28;State of Paraná;Trough
+2020-05-29;State of Paraná;Trough
+2020-05-30;State of Paraná;Trough
+2020-05-31;State of Paraná;Trough
+2020-06-01;State of Paraná;Trough
+2020-06-02;State of Paraná;Trough
+2020-06-03;State of Paraná;Trough
+2020-06-04;State of Paraná;Trough
+2020-06-05;State of Paraná;Trough
+2020-06-06;State of Paraná;Trough
+2020-06-07;State of Paraná;Trough
+2020-06-08;State of Paraná;Trough
+2020-06-09;State of Paraná;Trough
+2020-06-10;State of Paraná;Trough
+2020-06-11;State of Paraná;Trough
+2020-06-12;State of Paraná;Trough
+2020-06-13;State of Paraná;Trough
+2020-06-14;State of Paraná;Trough
+2020-06-15;State of Paraná;Trough
+2020-06-16;State of Paraná;Trough
+2020-06-17;State of Paraná;Trough
+2020-06-18;State of Paraná;Trough
+2020-06-19;State of Paraná;Trough
+2020-06-20;State of Paraná;Trough
+2020-06-21;State of Paraná;Trough
+2020-06-22;State of Paraná;Trough
+2020-06-23;State of Paraná;Trough
+2020-06-24;State of Paraná;Trough
+2020-06-25;State of Paraná;Trough
+2020-06-26;State of Paraná;Trough
+2020-06-27;State of Paraná;Trough
+2020-06-28;State of Paraná;Trough
+2020-06-29;State of Paraná;Trough
+2020-06-30;State of Paraná;Trough
+2020-07-01;State of Paraná;Trough
+2020-07-02;State of Paraná;Trough
+2020-07-03;State of Paraná;Trough
+2020-07-04;State of Paraná;Trough
+2020-07-05;State of Paraná;Trough
+2020-07-06;State of Paraná;Trough
+2020-07-07;State of Paraná;Trough
+2020-07-08;State of Paraná;Trough
+2020-07-09;State of Paraná;Trough
+2020-07-10;State of Paraná;Trough
+2020-07-11;State of Paraná;Trough
+2020-07-12;State of Paraná;Trough
+2020-07-13;State of Paraná;Trough
+2020-07-14;State of Paraná;Trough
+2020-07-15;State of Paraná;Trough
+2020-07-16;State of Paraná;Trough
+2020-07-17;State of Paraná;Trough
+2020-07-18;State of Paraná;Trough
+2020-07-19;State of Paraná;Trough
+2020-07-20;State of Paraná;Trough
+2020-07-21;State of Paraná;Trough
+2020-07-22;State of Paraná;Trough
+2020-07-23;State of Paraná;Trough
+2020-07-24;State of Paraná;Trough
+2020-07-25;State of Paraná;Trough
+2020-07-26;;Trough
+2020-07-27;;Trough
+2020-02-25;State of Santa Catarina;Preparation
+2020-02-26;State of Santa Catarina;Preparation
+2020-02-27;State of Santa Catarina;Preparation
+2020-02-28;State of Santa Catarina;Preparation
+2020-02-29;State of Santa Catarina;Preparation
+2020-03-01;State of Santa Catarina;Preparation
+2020-03-02;State of Santa Catarina;Preparation
+2020-03-03;State of Santa Catarina;Preparation
+2020-03-04;State of Santa Catarina;Preparation
+2020-03-05;State of Santa Catarina;Preparation
+2020-03-06;State of Santa Catarina;Preparation
+2020-03-07;State of Santa Catarina;Preparation
+2020-03-08;State of Santa Catarina;Preparation
+2020-03-09;State of Santa Catarina;Preparation
+2020-03-10;State of Santa Catarina;Preparation
+2020-03-11;State of Santa Catarina;Preparation
+2020-03-12;State of Santa Catarina;Preparation
+2020-03-13;State of Santa Catarina;Preparation
+2020-03-14;State of Santa Catarina;Preparation
+2020-03-15;State of Santa Catarina;Preparation
+2020-03-16;State of Santa Catarina;Preparation
+2020-03-17;State of Santa Catarina;Preparation
+2020-03-18;State of Santa Catarina;Preparation
+2020-03-19;State of Santa Catarina;Response
+2020-03-20;State of Santa Catarina;Response
+2020-03-21;State of Santa Catarina;Response
+2020-03-22;State of Santa Catarina;Response
+2020-03-23;State of Santa Catarina;Response
+2020-03-24;State of Santa Catarina;Response
+2020-03-25;State of Santa Catarina;Response
+2020-03-26;State of Santa Catarina;Response
+2020-03-27;State of Santa Catarina;Response
+2020-03-28;State of Santa Catarina;Trough
+2020-03-29;State of Santa Catarina;Trough
+2020-03-30;State of Santa Catarina;Trough
+2020-03-31;State of Santa Catarina;Trough
+2020-04-01;State of Santa Catarina;Trough
+2020-04-02;State of Santa Catarina;Trough
+2020-04-03;State of Santa Catarina;Trough
+2020-04-04;State of Santa Catarina;Trough
+2020-04-05;State of Santa Catarina;Trough
+2020-04-06;State of Santa Catarina;Trough
+2020-04-07;State of Santa Catarina;Trough
+2020-04-08;State of Santa Catarina;Trough
+2020-04-09;State of Santa Catarina;Trough
+2020-04-10;State of Santa Catarina;Trough
+2020-04-11;State of Santa Catarina;Trough
+2020-04-12;State of Santa Catarina;Trough
+2020-04-13;State of Santa Catarina;Trough
+2020-04-14;State of Santa Catarina;Trough
+2020-04-15;State of Santa Catarina;Trough
+2020-04-16;State of Santa Catarina;Trough
+2020-04-17;State of Santa Catarina;Trough
+2020-04-18;State of Santa Catarina;Trough
+2020-04-19;State of Santa Catarina;Trough
+2020-04-20;State of Santa Catarina;Trough
+2020-04-21;State of Santa Catarina;Trough
+2020-04-22;State of Santa Catarina;Trough
+2020-04-23;State of Santa Catarina;Trough
+2020-04-24;State of Santa Catarina;Trough
+2020-04-25;State of Santa Catarina;Trough
+2020-04-26;State of Santa Catarina;Trough
+2020-04-27;State of Santa Catarina;Trough
+2020-04-28;State of Santa Catarina;Trough
+2020-04-29;State of Santa Catarina;Trough
+2020-04-30;State of Santa Catarina;Trough
+2020-05-01;State of Santa Catarina;Trough
+2020-05-02;State of Santa Catarina;Trough
+2020-05-03;State of Santa Catarina;Trough
+2020-05-04;State of Santa Catarina;Trough
+2020-05-05;State of Santa Catarina;Trough
+2020-05-06;State of Santa Catarina;Trough
+2020-05-07;State of Santa Catarina;Trough
+2020-05-08;State of Santa Catarina;Trough
+2020-05-09;State of Santa Catarina;Trough
+2020-05-10;State of Santa Catarina;Trough
+2020-05-11;State of Santa Catarina;Trough
+2020-05-12;State of Santa Catarina;Trough
+2020-05-13;State of Santa Catarina;Trough
+2020-05-14;State of Santa Catarina;Trough
+2020-05-15;State of Santa Catarina;Trough
+2020-05-16;State of Santa Catarina;Trough
+2020-05-17;State of Santa Catarina;Trough
+2020-05-18;State of Santa Catarina;Trough
+2020-05-19;State of Santa Catarina;Trough
+2020-05-20;State of Santa Catarina;Trough
+2020-05-21;State of Santa Catarina;Trough
+2020-05-22;State of Santa Catarina;Trough
+2020-05-23;State of Santa Catarina;Trough
+2020-05-24;State of Santa Catarina;Trough
+2020-05-25;State of Santa Catarina;Trough
+2020-05-26;State of Santa Catarina;Trough
+2020-05-27;State of Santa Catarina;Trough
+2020-05-28;State of Santa Catarina;Trough
+2020-05-29;State of Santa Catarina;Trough
+2020-05-30;State of Santa Catarina;Trough
+2020-05-31;State of Santa Catarina;Trough
+2020-06-01;State of Santa Catarina;Trough
+2020-06-02;State of Santa Catarina;Trough
+2020-06-03;State of Santa Catarina;Trough
+2020-06-04;State of Santa Catarina;Trough
+2020-06-05;State of Santa Catarina;Trough
+2020-06-06;State of Santa Catarina;Trough
+2020-06-07;State of Santa Catarina;Trough
+2020-06-08;State of Santa Catarina;Trough
+2020-06-09;State of Santa Catarina;Trough
+2020-06-10;State of Santa Catarina;Trough
+2020-06-11;State of Santa Catarina;Trough
+2020-06-12;State of Santa Catarina;Trough
+2020-06-13;State of Santa Catarina;Trough
+2020-06-14;State of Santa Catarina;Trough
+2020-06-15;State of Santa Catarina;Trough
+2020-06-16;State of Santa Catarina;Trough
+2020-06-17;State of Santa Catarina;Trough
+2020-06-18;State of Santa Catarina;Trough
+2020-06-19;State of Santa Catarina;Trough
+2020-06-20;State of Santa Catarina;Trough
+2020-06-21;State of Santa Catarina;Trough
+2020-06-22;State of Santa Catarina;Trough
+2020-06-23;State of Santa Catarina;Trough
+2020-06-24;State of Santa Catarina;Trough
+2020-06-25;State of Santa Catarina;Trough
+2020-06-26;State of Santa Catarina;Trough
+2020-06-27;State of Santa Catarina;Trough
+2020-06-28;State of Santa Catarina;Trough
+2020-06-29;State of Santa Catarina;Trough
+2020-06-30;State of Santa Catarina;Trough
+2020-07-01;State of Santa Catarina;Trough
+2020-07-02;State of Santa Catarina;Trough
+2020-07-03;State of Santa Catarina;Trough
+2020-07-04;State of Santa Catarina;Trough
+2020-07-05;State of Santa Catarina;Trough
+2020-07-06;State of Santa Catarina;Trough
+2020-07-07;State of Santa Catarina;Trough
+2020-07-08;State of Santa Catarina;Trough
+2020-07-09;State of Santa Catarina;Trough
+2020-07-10;State of Santa Catarina;Trough
+2020-07-11;State of Santa Catarina;Trough
+2020-07-12;State of Santa Catarina;Trough
+2020-07-13;State of Santa Catarina;Trough
+2020-07-14;State of Santa Catarina;Trough
+2020-07-15;State of Santa Catarina;Trough
+2020-07-16;State of Santa Catarina;Trough
+2020-07-17;State of Santa Catarina;Trough
+2020-07-18;State of Santa Catarina;Trough
+2020-07-19;State of Santa Catarina;Trough
+2020-07-20;State of Santa Catarina;Trough
+2020-07-21;State of Santa Catarina;Trough
+2020-07-22;State of Santa Catarina;Trough
+2020-07-23;State of Santa Catarina;Trough
+2020-07-24;State of Santa Catarina;Trough
+2020-07-25;State of Santa Catarina;Trough
+2020-07-26;;Trough
+2020-07-27;;Trough
+2020-02-25;State of Rio Grande do Sul;Preparation
+2020-02-26;State of Rio Grande do Sul;Preparation
+2020-02-27;State of Rio Grande do Sul;Preparation
+2020-02-28;State of Rio Grande do Sul;Preparation
+2020-02-29;State of Rio Grande do Sul;Preparation
+2020-03-01;State of Rio Grande do Sul;Preparation
+2020-03-02;State of Rio Grande do Sul;Preparation
+2020-03-03;State of Rio Grande do Sul;Preparation
+2020-03-04;State of Rio Grande do Sul;Preparation
+2020-03-05;State of Rio Grande do Sul;Preparation
+2020-03-06;State of Rio Grande do Sul;Preparation
+2020-03-07;State of Rio Grande do Sul;Preparation
+2020-03-08;State of Rio Grande do Sul;Preparation
+2020-03-09;State of Rio Grande do Sul;Preparation
+2020-03-10;State of Rio Grande do Sul;Preparation
+2020-03-11;State of Rio Grande do Sul;Preparation
+2020-03-12;State of Rio Grande do Sul;Preparation
+2020-03-13;State of Rio Grande do Sul;Preparation
+2020-03-14;State of Rio Grande do Sul;Preparation
+2020-03-15;State of Rio Grande do Sul;Preparation
+2020-03-16;State of Rio Grande do Sul;Preparation
+2020-03-17;State of Rio Grande do Sul;Preparation
+2020-03-18;State of Rio Grande do Sul;Preparation
+2020-03-19;State of Rio Grande do Sul;Preparation
+2020-03-20;State of Rio Grande do Sul;Response
+2020-03-21;State of Rio Grande do Sul;Response
+2020-03-22;State of Rio Grande do Sul;Response
+2020-03-23;State of Rio Grande do Sul;Response
+2020-03-24;State of Rio Grande do Sul;Response
+2020-03-25;State of Rio Grande do Sul;Response
+2020-03-26;State of Rio Grande do Sul;Response
+2020-03-27;State of Rio Grande do Sul;Response
+2020-03-28;State of Rio Grande do Sul;Trough
+2020-03-29;State of Rio Grande do Sul;Trough
+2020-03-30;State of Rio Grande do Sul;Trough
+2020-03-31;State of Rio Grande do Sul;Trough
+2020-04-01;State of Rio Grande do Sul;Trough
+2020-04-02;State of Rio Grande do Sul;Trough
+2020-04-03;State of Rio Grande do Sul;Trough
+2020-04-04;State of Rio Grande do Sul;Trough
+2020-04-05;State of Rio Grande do Sul;Trough
+2020-04-06;State of Rio Grande do Sul;Trough
+2020-04-07;State of Rio Grande do Sul;Trough
+2020-04-08;State of Rio Grande do Sul;Trough
+2020-04-09;State of Rio Grande do Sul;Trough
+2020-04-10;State of Rio Grande do Sul;Trough
+2020-04-11;State of Rio Grande do Sul;Trough
+2020-04-12;State of Rio Grande do Sul;Trough
+2020-04-13;State of Rio Grande do Sul;Trough
+2020-04-14;State of Rio Grande do Sul;Trough
+2020-04-15;State of Rio Grande do Sul;Trough
+2020-04-16;State of Rio Grande do Sul;Trough
+2020-04-17;State of Rio Grande do Sul;Trough
+2020-04-18;State of Rio Grande do Sul;Trough
+2020-04-19;State of Rio Grande do Sul;Trough
+2020-04-20;State of Rio Grande do Sul;Trough
+2020-04-21;State of Rio Grande do Sul;Trough
+2020-04-22;State of Rio Grande do Sul;Trough
+2020-04-23;State of Rio Grande do Sul;Trough
+2020-04-24;State of Rio Grande do Sul;Trough
+2020-04-25;State of Rio Grande do Sul;Trough
+2020-04-26;State of Rio Grande do Sul;Trough
+2020-04-27;State of Rio Grande do Sul;Trough
+2020-04-28;State of Rio Grande do Sul;Trough
+2020-04-29;State of Rio Grande do Sul;Trough
+2020-04-30;State of Rio Grande do Sul;Trough
+2020-05-01;State of Rio Grande do Sul;Trough
+2020-05-02;State of Rio Grande do Sul;Trough
+2020-05-03;State of Rio Grande do Sul;Trough
+2020-05-04;State of Rio Grande do Sul;Trough
+2020-05-05;State of Rio Grande do Sul;Trough
+2020-05-06;State of Rio Grande do Sul;Trough
+2020-05-07;State of Rio Grande do Sul;Trough
+2020-05-08;State of Rio Grande do Sul;Trough
+2020-05-09;State of Rio Grande do Sul;Trough
+2020-05-10;State of Rio Grande do Sul;Trough
+2020-05-11;State of Rio Grande do Sul;Trough
+2020-05-12;State of Rio Grande do Sul;Trough
+2020-05-13;State of Rio Grande do Sul;Trough
+2020-05-14;State of Rio Grande do Sul;Trough
+2020-05-15;State of Rio Grande do Sul;Trough
+2020-05-16;State of Rio Grande do Sul;Trough
+2020-05-17;State of Rio Grande do Sul;Trough
+2020-05-18;State of Rio Grande do Sul;Trough
+2020-05-19;State of Rio Grande do Sul;Trough
+2020-05-20;State of Rio Grande do Sul;Trough
+2020-05-21;State of Rio Grande do Sul;Trough
+2020-05-22;State of Rio Grande do Sul;Trough
+2020-05-23;State of Rio Grande do Sul;Trough
+2020-05-24;State of Rio Grande do Sul;Trough
+2020-05-25;State of Rio Grande do Sul;Trough
+2020-05-26;State of Rio Grande do Sul;Trough
+2020-05-27;State of Rio Grande do Sul;Trough
+2020-05-28;State of Rio Grande do Sul;Trough
+2020-05-29;State of Rio Grande do Sul;Trough
+2020-05-30;State of Rio Grande do Sul;Trough
+2020-05-31;State of Rio Grande do Sul;Trough
+2020-06-01;State of Rio Grande do Sul;Trough
+2020-06-02;State of Rio Grande do Sul;Trough
+2020-06-03;State of Rio Grande do Sul;Trough
+2020-06-04;State of Rio Grande do Sul;Trough
+2020-06-05;State of Rio Grande do Sul;Trough
+2020-06-06;State of Rio Grande do Sul;Trough
+2020-06-07;State of Rio Grande do Sul;Trough
+2020-06-08;State of Rio Grande do Sul;Trough
+2020-06-09;State of Rio Grande do Sul;Trough
+2020-06-10;State of Rio Grande do Sul;Trough
+2020-06-11;State of Rio Grande do Sul;Trough
+2020-06-12;State of Rio Grande do Sul;Trough
+2020-06-13;State of Rio Grande do Sul;Trough
+2020-06-14;State of Rio Grande do Sul;Trough
+2020-06-15;State of Rio Grande do Sul;Trough
+2020-06-16;State of Rio Grande do Sul;Trough
+2020-06-17;State of Rio Grande do Sul;Trough
+2020-06-18;State of Rio Grande do Sul;Trough
+2020-06-19;State of Rio Grande do Sul;Trough
+2020-06-20;State of Rio Grande do Sul;Trough
+2020-06-21;State of Rio Grande do Sul;Trough
+2020-06-22;State of Rio Grande do Sul;Trough
+2020-06-23;State of Rio Grande do Sul;Trough
+2020-06-24;State of Rio Grande do Sul;Trough
+2020-06-25;State of Rio Grande do Sul;Trough
+2020-06-26;State of Rio Grande do Sul;Trough
+2020-06-27;State of Rio Grande do Sul;Trough
+2020-06-28;State of Rio Grande do Sul;Trough
+2020-06-29;State of Rio Grande do Sul;Trough
+2020-06-30;State of Rio Grande do Sul;Trough
+2020-07-01;State of Rio Grande do Sul;Trough
+2020-07-02;State of Rio Grande do Sul;Trough
+2020-07-03;State of Rio Grande do Sul;Trough
+2020-07-04;State of Rio Grande do Sul;Trough
+2020-07-05;State of Rio Grande do Sul;Trough
+2020-07-06;State of Rio Grande do Sul;Trough
+2020-07-07;State of Rio Grande do Sul;Trough
+2020-07-08;State of Rio Grande do Sul;Trough
+2020-07-09;State of Rio Grande do Sul;Trough
+2020-07-10;State of Rio Grande do Sul;Trough
+2020-07-11;State of Rio Grande do Sul;Trough
+2020-07-12;State of Rio Grande do Sul;Trough
+2020-07-13;State of Rio Grande do Sul;Trough
+2020-07-14;State of Rio Grande do Sul;Trough
+2020-07-15;State of Rio Grande do Sul;Trough
+2020-07-16;State of Rio Grande do Sul;Trough
+2020-07-17;State of Rio Grande do Sul;Trough
+2020-07-18;State of Rio Grande do Sul;Trough
+2020-07-19;State of Rio Grande do Sul;Trough
+2020-07-20;State of Rio Grande do Sul;Trough
+2020-07-21;State of Rio Grande do Sul;Trough
+2020-07-22;State of Rio Grande do Sul;Trough
+2020-07-23;State of Rio Grande do Sul;Trough
+2020-07-24;State of Rio Grande do Sul;Trough
+2020-07-25;State of Rio Grande do Sul;Trough
+2020-07-26;;Trough
+2020-07-27;;Trough
+2020-02-25;State of Mato Grosso do Sul;Preparation
+2020-02-26;State of Mato Grosso do Sul;Preparation
+2020-02-27;State of Mato Grosso do Sul;Preparation
+2020-02-28;State of Mato Grosso do Sul;Preparation
+2020-02-29;State of Mato Grosso do Sul;Preparation
+2020-03-01;State of Mato Grosso do Sul;Preparation
+2020-03-02;State of Mato Grosso do Sul;Preparation
+2020-03-03;State of Mato Grosso do Sul;Preparation
+2020-03-04;State of Mato Grosso do Sul;Preparation
+2020-03-05;State of Mato Grosso do Sul;Preparation
+2020-03-06;State of Mato Grosso do Sul;Preparation
+2020-03-07;State of Mato Grosso do Sul;Preparation
+2020-03-08;State of Mato Grosso do Sul;Preparation
+2020-03-09;State of Mato Grosso do Sul;Preparation
+2020-03-10;State of Mato Grosso do Sul;Preparation
+2020-03-11;State of Mato Grosso do Sul;Preparation
+2020-03-12;State of Mato Grosso do Sul;Preparation
+2020-03-13;State of Mato Grosso do Sul;Preparation
+2020-03-14;State of Mato Grosso do Sul;Preparation
+2020-03-15;State of Mato Grosso do Sul;Preparation
+2020-03-16;State of Mato Grosso do Sul;Preparation
+2020-03-17;State of Mato Grosso do Sul;Preparation
+2020-03-18;State of Mato Grosso do Sul;Preparation
+2020-03-19;State of Mato Grosso do Sul;Preparation
+2020-03-20;State of Mato Grosso do Sul;Preparation
+2020-03-21;State of Mato Grosso do Sul;Response
+2020-03-22;State of Mato Grosso do Sul;Response
+2020-03-23;State of Mato Grosso do Sul;Response
+2020-03-24;State of Mato Grosso do Sul;Response
+2020-03-25;State of Mato Grosso do Sul;Response
+2020-03-26;State of Mato Grosso do Sul;Response
+2020-03-27;State of Mato Grosso do Sul;Response
+2020-03-28;State of Mato Grosso do Sul;Trough
+2020-03-29;State of Mato Grosso do Sul;Trough
+2020-03-30;State of Mato Grosso do Sul;Trough
+2020-03-31;State of Mato Grosso do Sul;Trough
+2020-04-01;State of Mato Grosso do Sul;Trough
+2020-04-02;State of Mato Grosso do Sul;Trough
+2020-04-03;State of Mato Grosso do Sul;Trough
+2020-04-04;State of Mato Grosso do Sul;Trough
+2020-04-05;State of Mato Grosso do Sul;Trough
+2020-04-06;State of Mato Grosso do Sul;Trough
+2020-04-07;State of Mato Grosso do Sul;Trough
+2020-04-08;State of Mato Grosso do Sul;Trough
+2020-04-09;State of Mato Grosso do Sul;Trough
+2020-04-10;State of Mato Grosso do Sul;Trough
+2020-04-11;State of Mato Grosso do Sul;Trough
+2020-04-12;State of Mato Grosso do Sul;Trough
+2020-04-13;State of Mato Grosso do Sul;Trough
+2020-04-14;State of Mato Grosso do Sul;Trough
+2020-04-15;State of Mato Grosso do Sul;Trough
+2020-04-16;State of Mato Grosso do Sul;Trough
+2020-04-17;State of Mato Grosso do Sul;Trough
+2020-04-18;State of Mato Grosso do Sul;Trough
+2020-04-19;State of Mato Grosso do Sul;Trough
+2020-04-20;State of Mato Grosso do Sul;Trough
+2020-04-21;State of Mato Grosso do Sul;Trough
+2020-04-22;State of Mato Grosso do Sul;Trough
+2020-04-23;State of Mato Grosso do Sul;Trough
+2020-04-24;State of Mato Grosso do Sul;Trough
+2020-04-25;State of Mato Grosso do Sul;Trough
+2020-04-26;State of Mato Grosso do Sul;Trough
+2020-04-27;State of Mato Grosso do Sul;Trough
+2020-04-28;State of Mato Grosso do Sul;Trough
+2020-04-29;State of Mato Grosso do Sul;Trough
+2020-04-30;State of Mato Grosso do Sul;Trough
+2020-05-01;State of Mato Grosso do Sul;Trough
+2020-05-02;State of Mato Grosso do Sul;Trough
+2020-05-03;State of Mato Grosso do Sul;Trough
+2020-05-04;State of Mato Grosso do Sul;Trough
+2020-05-05;State of Mato Grosso do Sul;Trough
+2020-05-06;State of Mato Grosso do Sul;Trough
+2020-05-07;State of Mato Grosso do Sul;Trough
+2020-05-08;State of Mato Grosso do Sul;Trough
+2020-05-09;State of Mato Grosso do Sul;Trough
+2020-05-10;State of Mato Grosso do Sul;Trough
+2020-05-11;State of Mato Grosso do Sul;Trough
+2020-05-12;State of Mato Grosso do Sul;Trough
+2020-05-13;State of Mato Grosso do Sul;Trough
+2020-05-14;State of Mato Grosso do Sul;Trough
+2020-05-15;State of Mato Grosso do Sul;Trough
+2020-05-16;State of Mato Grosso do Sul;Trough
+2020-05-17;State of Mato Grosso do Sul;Trough
+2020-05-18;State of Mato Grosso do Sul;Trough
+2020-05-19;State of Mato Grosso do Sul;Trough
+2020-05-20;State of Mato Grosso do Sul;Trough
+2020-05-21;State of Mato Grosso do Sul;Trough
+2020-05-22;State of Mato Grosso do Sul;Trough
+2020-05-23;State of Mato Grosso do Sul;Trough
+2020-05-24;State of Mato Grosso do Sul;Trough
+2020-05-25;State of Mato Grosso do Sul;Trough
+2020-05-26;State of Mato Grosso do Sul;Trough
+2020-05-27;State of Mato Grosso do Sul;Trough
+2020-05-28;State of Mato Grosso do Sul;Trough
+2020-05-29;State of Mato Grosso do Sul;Trough
+2020-05-30;State of Mato Grosso do Sul;Trough
+2020-05-31;State of Mato Grosso do Sul;Trough
+2020-06-01;State of Mato Grosso do Sul;Trough
+2020-06-02;State of Mato Grosso do Sul;Trough
+2020-06-03;State of Mato Grosso do Sul;Trough
+2020-06-04;State of Mato Grosso do Sul;Trough
+2020-06-05;State of Mato Grosso do Sul;Trough
+2020-06-06;State of Mato Grosso do Sul;Trough
+2020-06-07;State of Mato Grosso do Sul;Trough
+2020-06-08;State of Mato Grosso do Sul;Trough
+2020-06-09;State of Mato Grosso do Sul;Trough
+2020-06-10;State of Mato Grosso do Sul;Trough
+2020-06-11;State of Mato Grosso do Sul;Trough
+2020-06-12;State of Mato Grosso do Sul;Trough
+2020-06-13;State of Mato Grosso do Sul;Trough
+2020-06-14;State of Mato Grosso do Sul;Trough
+2020-06-15;State of Mato Grosso do Sul;Trough
+2020-06-16;State of Mato Grosso do Sul;Trough
+2020-06-17;State of Mato Grosso do Sul;Trough
+2020-06-18;State of Mato Grosso do Sul;Trough
+2020-06-19;State of Mato Grosso do Sul;Trough
+2020-06-20;State of Mato Grosso do Sul;Trough
+2020-06-21;State of Mato Grosso do Sul;Trough
+2020-06-22;State of Mato Grosso do Sul;Trough
+2020-06-23;State of Mato Grosso do Sul;Trough
+2020-06-24;State of Mato Grosso do Sul;Trough
+2020-06-25;State of Mato Grosso do Sul;Trough
+2020-06-26;State of Mato Grosso do Sul;Trough
+2020-06-27;State of Mato Grosso do Sul;Trough
+2020-06-28;State of Mato Grosso do Sul;Trough
+2020-06-29;State of Mato Grosso do Sul;Trough
+2020-06-30;State of Mato Grosso do Sul;Trough
+2020-07-01;State of Mato Grosso do Sul;Trough
+2020-07-02;State of Mato Grosso do Sul;Trough
+2020-07-03;State of Mato Grosso do Sul;Trough
+2020-07-04;State of Mato Grosso do Sul;Trough
+2020-07-05;State of Mato Grosso do Sul;Trough
+2020-07-06;State of Mato Grosso do Sul;Trough
+2020-07-07;State of Mato Grosso do Sul;Trough
+2020-07-08;State of Mato Grosso do Sul;Trough
+2020-07-09;State of Mato Grosso do Sul;Trough
+2020-07-10;State of Mato Grosso do Sul;Trough
+2020-07-11;State of Mato Grosso do Sul;Trough
+2020-07-12;State of Mato Grosso do Sul;Trough
+2020-07-13;State of Mato Grosso do Sul;Trough
+2020-07-14;State of Mato Grosso do Sul;Trough
+2020-07-15;State of Mato Grosso do Sul;Trough
+2020-07-16;State of Mato Grosso do Sul;Trough
+2020-07-17;State of Mato Grosso do Sul;Trough
+2020-07-18;State of Mato Grosso do Sul;Trough
+2020-07-19;State of Mato Grosso do Sul;Trough
+2020-07-20;State of Mato Grosso do Sul;Trough
+2020-07-21;State of Mato Grosso do Sul;Trough
+2020-07-22;State of Mato Grosso do Sul;Trough
+2020-07-23;State of Mato Grosso do Sul;Trough
+2020-07-24;State of Mato Grosso do Sul;Trough
+2020-07-25;State of Mato Grosso do Sul;Trough
+2020-07-26;;Trough
+2020-07-27;;Trough
+2020-02-25;State of Mato Grosso;Preparation
+2020-02-26;State of Mato Grosso;Preparation
+2020-02-27;State of Mato Grosso;Preparation
+2020-02-28;State of Mato Grosso;Preparation
+2020-02-29;State of Mato Grosso;Preparation
+2020-03-01;State of Mato Grosso;Preparation
+2020-03-02;State of Mato Grosso;Preparation
+2020-03-03;State of Mato Grosso;Preparation
+2020-03-04;State of Mato Grosso;Preparation
+2020-03-05;State of Mato Grosso;Preparation
+2020-03-06;State of Mato Grosso;Preparation
+2020-03-07;State of Mato Grosso;Preparation
+2020-03-08;State of Mato Grosso;Preparation
+2020-03-09;State of Mato Grosso;Preparation
+2020-03-10;State of Mato Grosso;Preparation
+2020-03-11;State of Mato Grosso;Preparation
+2020-03-12;State of Mato Grosso;Preparation
+2020-03-13;State of Mato Grosso;Preparation
+2020-03-14;State of Mato Grosso;Preparation
+2020-03-15;State of Mato Grosso;Preparation
+2020-03-16;State of Mato Grosso;Preparation
+2020-03-17;State of Mato Grosso;Preparation
+2020-03-18;State of Mato Grosso;Preparation
+2020-03-19;State of Mato Grosso;Preparation
+2020-03-20;State of Mato Grosso;Response
+2020-03-21;State of Mato Grosso;Response
+2020-03-22;State of Mato Grosso;Response
+2020-03-23;State of Mato Grosso;Response
+2020-03-24;State of Mato Grosso;Response
+2020-03-25;State of Mato Grosso;Response
+2020-03-26;State of Mato Grosso;Response
+2020-03-27;State of Mato Grosso;Response
+2020-03-28;State of Mato Grosso;Trough
+2020-03-29;State of Mato Grosso;Trough
+2020-03-30;State of Mato Grosso;Trough
+2020-03-31;State of Mato Grosso;Trough
+2020-04-01;State of Mato Grosso;Trough
+2020-04-02;State of Mato Grosso;Trough
+2020-04-03;State of Mato Grosso;Trough
+2020-04-04;State of Mato Grosso;Trough
+2020-04-05;State of Mato Grosso;Trough
+2020-04-06;State of Mato Grosso;Trough
+2020-04-07;State of Mato Grosso;Trough
+2020-04-08;State of Mato Grosso;Trough
+2020-04-09;State of Mato Grosso;Trough
+2020-04-10;State of Mato Grosso;Trough
+2020-04-11;State of Mato Grosso;Trough
+2020-04-12;State of Mato Grosso;Trough
+2020-04-13;State of Mato Grosso;Trough
+2020-04-14;State of Mato Grosso;Trough
+2020-04-15;State of Mato Grosso;Trough
+2020-04-16;State of Mato Grosso;Trough
+2020-04-17;State of Mato Grosso;Trough
+2020-04-18;State of Mato Grosso;Trough
+2020-04-19;State of Mato Grosso;Trough
+2020-04-20;State of Mato Grosso;Trough
+2020-04-21;State of Mato Grosso;Trough
+2020-04-22;State of Mato Grosso;Trough
+2020-04-23;State of Mato Grosso;Trough
+2020-04-24;State of Mato Grosso;Trough
+2020-04-25;State of Mato Grosso;Trough
+2020-04-26;State of Mato Grosso;Trough
+2020-04-27;State of Mato Grosso;Trough
+2020-04-28;State of Mato Grosso;Trough
+2020-04-29;State of Mato Grosso;Trough
+2020-04-30;State of Mato Grosso;Trough
+2020-05-01;State of Mato Grosso;Trough
+2020-05-02;State of Mato Grosso;Trough
+2020-05-03;State of Mato Grosso;Trough
+2020-05-04;State of Mato Grosso;Trough
+2020-05-05;State of Mato Grosso;Trough
+2020-05-06;State of Mato Grosso;Trough
+2020-05-07;State of Mato Grosso;Trough
+2020-05-08;State of Mato Grosso;Trough
+2020-05-09;State of Mato Grosso;Trough
+2020-05-10;State of Mato Grosso;Trough
+2020-05-11;State of Mato Grosso;Trough
+2020-05-12;State of Mato Grosso;Trough
+2020-05-13;State of Mato Grosso;Trough
+2020-05-14;State of Mato Grosso;Trough
+2020-05-15;State of Mato Grosso;Trough
+2020-05-16;State of Mato Grosso;Trough
+2020-05-17;State of Mato Grosso;Trough
+2020-05-18;State of Mato Grosso;Trough
+2020-05-19;State of Mato Grosso;Trough
+2020-05-20;State of Mato Grosso;Trough
+2020-05-21;State of Mato Grosso;Trough
+2020-05-22;State of Mato Grosso;Trough
+2020-05-23;State of Mato Grosso;Trough
+2020-05-24;State of Mato Grosso;Trough
+2020-05-25;State of Mato Grosso;Trough
+2020-05-26;State of Mato Grosso;Trough
+2020-05-27;State of Mato Grosso;Trough
+2020-05-28;State of Mato Grosso;Trough
+2020-05-29;State of Mato Grosso;Trough
+2020-05-30;State of Mato Grosso;Trough
+2020-05-31;State of Mato Grosso;Trough
+2020-06-01;State of Mato Grosso;Trough
+2020-06-02;State of Mato Grosso;Trough
+2020-06-03;State of Mato Grosso;Trough
+2020-06-04;State of Mato Grosso;Trough
+2020-06-05;State of Mato Grosso;Trough
+2020-06-06;State of Mato Grosso;Trough
+2020-06-07;State of Mato Grosso;Trough
+2020-06-08;State of Mato Grosso;Trough
+2020-06-09;State of Mato Grosso;Trough
+2020-06-10;State of Mato Grosso;Trough
+2020-06-11;State of Mato Grosso;Trough
+2020-06-12;State of Mato Grosso;Trough
+2020-06-13;State of Mato Grosso;Trough
+2020-06-14;State of Mato Grosso;Trough
+2020-06-15;State of Mato Grosso;Trough
+2020-06-16;State of Mato Grosso;Trough
+2020-06-17;State of Mato Grosso;Trough
+2020-06-18;State of Mato Grosso;Trough
+2020-06-19;State of Mato Grosso;Trough
+2020-06-20;State of Mato Grosso;Trough
+2020-06-21;State of Mato Grosso;Trough
+2020-06-22;State of Mato Grosso;Trough
+2020-06-23;State of Mato Grosso;Trough
+2020-06-24;State of Mato Grosso;Trough
+2020-06-25;State of Mato Grosso;Trough
+2020-06-26;State of Mato Grosso;Trough
+2020-06-27;State of Mato Grosso;Trough
+2020-06-28;State of Mato Grosso;Trough
+2020-06-29;State of Mato Grosso;Trough
+2020-06-30;State of Mato Grosso;Trough
+2020-07-01;State of Mato Grosso;Trough
+2020-07-02;State of Mato Grosso;Trough
+2020-07-03;State of Mato Grosso;Trough
+2020-07-04;State of Mato Grosso;Trough
+2020-07-05;State of Mato Grosso;Trough
+2020-07-06;State of Mato Grosso;Trough
+2020-07-07;State of Mato Grosso;Trough
+2020-07-08;State of Mato Grosso;Trough
+2020-07-09;State of Mato Grosso;Trough
+2020-07-10;State of Mato Grosso;Trough
+2020-07-11;State of Mato Grosso;Trough
+2020-07-12;State of Mato Grosso;Trough
+2020-07-13;State of Mato Grosso;Trough
+2020-07-14;State of Mato Grosso;Trough
+2020-07-15;State of Mato Grosso;Trough
+2020-07-16;State of Mato Grosso;Trough
+2020-07-17;State of Mato Grosso;Trough
+2020-07-18;State of Mato Grosso;Trough
+2020-07-19;State of Mato Grosso;Trough
+2020-07-20;State of Mato Grosso;Trough
+2020-07-21;State of Mato Grosso;Trough
+2020-07-22;State of Mato Grosso;Trough
+2020-07-23;State of Mato Grosso;Trough
+2020-07-24;State of Mato Grosso;Trough
+2020-07-25;State of Mato Grosso;Trough
+2020-07-26;;Trough
+2020-07-27;;Trough
+2020-02-25;State of Goiás;Preparation
+2020-02-26;State of Goiás;Preparation
+2020-02-27;State of Goiás;Preparation
+2020-02-28;State of Goiás;Preparation
+2020-02-29;State of Goiás;Preparation
+2020-03-01;State of Goiás;Preparation
+2020-03-02;State of Goiás;Preparation
+2020-03-03;State of Goiás;Preparation
+2020-03-04;State of Goiás;Preparation
+2020-03-05;State of Goiás;Preparation
+2020-03-06;State of Goiás;Preparation
+2020-03-07;State of Goiás;Preparation
+2020-03-08;State of Goiás;Preparation
+2020-03-09;State of Goiás;Preparation
+2020-03-10;State of Goiás;Preparation
+2020-03-11;State of Goiás;Preparation
+2020-03-12;State of Goiás;Preparation
+2020-03-13;State of Goiás;Preparation
+2020-03-14;State of Goiás;Preparation
+2020-03-15;State of Goiás;Preparation
+2020-03-16;State of Goiás;Preparation
+2020-03-17;State of Goiás;Preparation
+2020-03-18;State of Goiás;Preparation
+2020-03-19;State of Goiás;Response
+2020-03-20;State of Goiás;Response
+2020-03-21;State of Goiás;Response
+2020-03-22;State of Goiás;Response
+2020-03-23;State of Goiás;Response
+2020-03-24;State of Goiás;Response
+2020-03-25;State of Goiás;Response
+2020-03-26;State of Goiás;Response
+2020-03-27;State of Goiás;Response
+2020-03-28;State of Goiás;Trough
+2020-03-29;State of Goiás;Trough
+2020-03-30;State of Goiás;Trough
+2020-03-31;State of Goiás;Trough
+2020-04-01;State of Goiás;Trough
+2020-04-02;State of Goiás;Trough
+2020-04-03;State of Goiás;Trough
+2020-04-04;State of Goiás;Trough
+2020-04-05;State of Goiás;Trough
+2020-04-06;State of Goiás;Trough
+2020-04-07;State of Goiás;Trough
+2020-04-08;State of Goiás;Trough
+2020-04-09;State of Goiás;Trough
+2020-04-10;State of Goiás;Trough
+2020-04-11;State of Goiás;Trough
+2020-04-12;State of Goiás;Trough
+2020-04-13;State of Goiás;Trough
+2020-04-14;State of Goiás;Trough
+2020-04-15;State of Goiás;Trough
+2020-04-16;State of Goiás;Trough
+2020-04-17;State of Goiás;Trough
+2020-04-18;State of Goiás;Trough
+2020-04-19;State of Goiás;Trough
+2020-04-20;State of Goiás;Trough
+2020-04-21;State of Goiás;Trough
+2020-04-22;State of Goiás;Trough
+2020-04-23;State of Goiás;Trough
+2020-04-24;State of Goiás;Trough
+2020-04-25;State of Goiás;Trough
+2020-04-26;State of Goiás;Trough
+2020-04-27;State of Goiás;Trough
+2020-04-28;State of Goiás;Trough
+2020-04-29;State of Goiás;Trough
+2020-04-30;State of Goiás;Trough
+2020-05-01;State of Goiás;Trough
+2020-05-02;State of Goiás;Trough
+2020-05-03;State of Goiás;Trough
+2020-05-04;State of Goiás;Trough
+2020-05-05;State of Goiás;Trough
+2020-05-06;State of Goiás;Trough
+2020-05-07;State of Goiás;Trough
+2020-05-08;State of Goiás;Trough
+2020-05-09;State of Goiás;Trough
+2020-05-10;State of Goiás;Trough
+2020-05-11;State of Goiás;Trough
+2020-05-12;State of Goiás;Trough
+2020-05-13;State of Goiás;Trough
+2020-05-14;State of Goiás;Trough
+2020-05-15;State of Goiás;Trough
+2020-05-16;State of Goiás;Trough
+2020-05-17;State of Goiás;Trough
+2020-05-18;State of Goiás;Trough
+2020-05-19;State of Goiás;Trough
+2020-05-20;State of Goiás;Trough
+2020-05-21;State of Goiás;Trough
+2020-05-22;State of Goiás;Trough
+2020-05-23;State of Goiás;Trough
+2020-05-24;State of Goiás;Trough
+2020-05-25;State of Goiás;Trough
+2020-05-26;State of Goiás;Trough
+2020-05-27;State of Goiás;Trough
+2020-05-28;State of Goiás;Trough
+2020-05-29;State of Goiás;Trough
+2020-05-30;State of Goiás;Trough
+2020-05-31;State of Goiás;Trough
+2020-06-01;State of Goiás;Trough
+2020-06-02;State of Goiás;Trough
+2020-06-03;State of Goiás;Trough
+2020-06-04;State of Goiás;Trough
+2020-06-05;State of Goiás;Trough
+2020-06-06;State of Goiás;Trough
+2020-06-07;State of Goiás;Trough
+2020-06-08;State of Goiás;Trough
+2020-06-09;State of Goiás;Trough
+2020-06-10;State of Goiás;Trough
+2020-06-11;State of Goiás;Trough
+2020-06-12;State of Goiás;Trough
+2020-06-13;State of Goiás;Trough
+2020-06-14;State of Goiás;Trough
+2020-06-15;State of Goiás;Trough
+2020-06-16;State of Goiás;Trough
+2020-06-17;State of Goiás;Trough
+2020-06-18;State of Goiás;Trough
+2020-06-19;State of Goiás;Trough
+2020-06-20;State of Goiás;Trough
+2020-06-21;State of Goiás;Trough
+2020-06-22;State of Goiás;Trough
+2020-06-23;State of Goiás;Trough
+2020-06-24;State of Goiás;Trough
+2020-06-25;State of Goiás;Trough
+2020-06-26;State of Goiás;Trough
+2020-06-27;State of Goiás;Trough
+2020-06-28;State of Goiás;Trough
+2020-06-29;State of Goiás;Trough
+2020-06-30;State of Goiás;Trough
+2020-07-01;State of Goiás;Trough
+2020-07-02;State of Goiás;Trough
+2020-07-03;State of Goiás;Trough
+2020-07-04;State of Goiás;Trough
+2020-07-05;State of Goiás;Trough
+2020-07-06;State of Goiás;Trough
+2020-07-07;State of Goiás;Trough
+2020-07-08;State of Goiás;Trough
+2020-07-09;State of Goiás;Trough
+2020-07-10;State of Goiás;Trough
+2020-07-11;State of Goiás;Trough
+2020-07-12;State of Goiás;Trough
+2020-07-13;State of Goiás;Trough
+2020-07-14;State of Goiás;Trough
+2020-07-15;State of Goiás;Trough
+2020-07-16;State of Goiás;Trough
+2020-07-17;State of Goiás;Trough
+2020-07-18;State of Goiás;Trough
+2020-07-19;State of Goiás;Trough
+2020-07-20;State of Goiás;Trough
+2020-07-21;State of Goiás;Trough
+2020-07-22;State of Goiás;Trough
+2020-07-23;State of Goiás;Trough
+2020-07-24;State of Goiás;Trough
+2020-07-25;State of Goiás;Trough
+2020-07-26;;Trough
+2020-07-27;;Trough
+2020-02-25;Federal District;Preparation
+2020-02-26;Federal District;Preparation
+2020-02-27;Federal District;Preparation
+2020-02-28;Federal District;Preparation
+2020-02-29;Federal District;Preparation
+2020-03-01;Federal District;Preparation
+2020-03-02;Federal District;Preparation
+2020-03-03;Federal District;Preparation
+2020-03-04;Federal District;Preparation
+2020-03-05;Federal District;Preparation
+2020-03-06;Federal District;Preparation
+2020-03-07;Federal District;Preparation
+2020-03-08;Federal District;Preparation
+2020-03-09;Federal District;Preparation
+2020-03-10;Federal District;Preparation
+2020-03-11;Federal District;Preparation
+2020-03-12;Federal District;Preparation
+2020-03-13;Federal District;Preparation
+2020-03-14;Federal District;Preparation
+2020-03-15;Federal District;Preparation
+2020-03-16;Federal District;Preparation
+2020-03-17;Federal District;Preparation
+2020-03-18;Federal District;Preparation
+2020-03-19;Federal District;Response
+2020-03-20;Federal District;Response
+2020-03-21;Federal District;Response
+2020-03-22;Federal District;Response
+2020-03-23;Federal District;Response
+2020-03-24;Federal District;Response
+2020-03-25;Federal District;Response
+2020-03-26;Federal District;Response
+2020-03-27;Federal District;Response
+2020-03-28;Federal District;Trough
+2020-03-29;Federal District;Trough
+2020-03-30;Federal District;Trough
+2020-03-31;Federal District;Trough
+2020-04-01;Federal District;Trough
+2020-04-02;Federal District;Trough
+2020-04-03;Federal District;Trough
+2020-04-04;Federal District;Trough
+2020-04-05;Federal District;Trough
+2020-04-06;Federal District;Trough
+2020-04-07;Federal District;Trough
+2020-04-08;Federal District;Trough
+2020-04-09;Federal District;Trough
+2020-04-10;Federal District;Trough
+2020-04-11;Federal District;Trough
+2020-04-12;Federal District;Trough
+2020-04-13;Federal District;Trough
+2020-04-14;Federal District;Trough
+2020-04-15;Federal District;Trough
+2020-04-16;Federal District;Trough
+2020-04-17;Federal District;Trough
+2020-04-18;Federal District;Trough
+2020-04-19;Federal District;Trough
+2020-04-20;Federal District;Trough
+2020-04-21;Federal District;Trough
+2020-04-22;Federal District;Trough
+2020-04-23;Federal District;Trough
+2020-04-24;Federal District;Trough
+2020-04-25;Federal District;Trough
+2020-04-26;Federal District;Trough
+2020-04-27;Federal District;Trough
+2020-04-28;Federal District;Trough
+2020-04-29;Federal District;Trough
+2020-04-30;Federal District;Trough
+2020-05-01;Federal District;Trough
+2020-05-02;Federal District;Trough
+2020-05-03;Federal District;Trough
+2020-05-04;Federal District;Trough
+2020-05-05;Federal District;Trough
+2020-05-06;Federal District;Trough
+2020-05-07;Federal District;Trough
+2020-05-08;Federal District;Trough
+2020-05-09;Federal District;Trough
+2020-05-10;Federal District;Trough
+2020-05-11;Federal District;Trough
+2020-05-12;Federal District;Trough
+2020-05-13;Federal District;Trough
+2020-05-14;Federal District;Trough
+2020-05-15;Federal District;Trough
+2020-05-16;Federal District;Trough
+2020-05-17;Federal District;Trough
+2020-05-18;Federal District;Trough
+2020-05-19;Federal District;Trough
+2020-05-20;Federal District;Trough
+2020-05-21;Federal District;Trough
+2020-05-22;Federal District;Trough
+2020-05-23;Federal District;Trough
+2020-05-24;Federal District;Trough
+2020-05-25;Federal District;Trough
+2020-05-26;Federal District;Trough
+2020-05-27;Federal District;Trough
+2020-05-28;Federal District;Trough
+2020-05-29;Federal District;Trough
+2020-05-30;Federal District;Trough
+2020-05-31;Federal District;Trough
+2020-06-01;Federal District;Trough
+2020-06-02;Federal District;Trough
+2020-06-03;Federal District;Trough
+2020-06-04;Federal District;Trough
+2020-06-05;Federal District;Trough
+2020-06-06;Federal District;Trough
+2020-06-07;Federal District;Trough
+2020-06-08;Federal District;Trough
+2020-06-09;Federal District;Trough
+2020-06-10;Federal District;Trough
+2020-06-11;Federal District;Trough
+2020-06-12;Federal District;Trough
+2020-06-13;Federal District;Trough
+2020-06-14;Federal District;Trough
+2020-06-15;Federal District;Trough
+2020-06-16;Federal District;Trough
+2020-06-17;Federal District;Trough
+2020-06-18;Federal District;Trough
+2020-06-19;Federal District;Trough
+2020-06-20;Federal District;Trough
+2020-06-21;Federal District;Trough
+2020-06-22;Federal District;Trough
+2020-06-23;Federal District;Trough
+2020-06-24;Federal District;Trough
+2020-06-25;Federal District;Trough
+2020-06-26;Federal District;Trough
+2020-06-27;Federal District;Trough
+2020-06-28;Federal District;Trough
+2020-06-29;Federal District;Trough
+2020-06-30;Federal District;Trough
+2020-07-01;Federal District;Trough
+2020-07-02;Federal District;Trough
+2020-07-03;Federal District;Trough
+2020-07-04;Federal District;Trough
+2020-07-05;Federal District;Trough
+2020-07-06;Federal District;Trough
+2020-07-07;Federal District;Trough
+2020-07-08;Federal District;Trough
+2020-07-09;Federal District;Trough
+2020-07-10;Federal District;Trough
+2020-07-11;Federal District;Trough
+2020-07-12;Federal District;Trough
+2020-07-13;Federal District;Trough
+2020-07-14;Federal District;Trough
+2020-07-15;Federal District;Trough
+2020-07-16;Federal District;Trough
+2020-07-17;Federal District;Trough
+2020-07-18;Federal District;Trough
+2020-07-19;Federal District;Trough
+2020-07-20;Federal District;Trough
+2020-07-21;Federal District;Trough
+2020-07-22;Federal District;Trough
+2020-07-23;Federal District;Trough
+2020-07-24;Federal District;Trough
+2020-07-25;Federal District;Trough
+2020-07-26;;Trough
+2020-07-27;;Trough
+2020-02-25;Brasil;Preparation
+2020-02-26;Brasil;Preparation
+2020-02-27;Brasil;Preparation
+2020-02-28;Brasil;Preparation
+2020-02-29;Brasil;Preparation
+2020-03-01;Brasil;Preparation
+2020-03-02;Brasil;Preparation
+2020-03-03;Brasil;Preparation
+2020-03-04;Brasil;Preparation
+2020-03-05;Brasil;Preparation
+2020-03-06;Brasil;Preparation
+2020-03-07;Brasil;Preparation
+2020-03-08;Brasil;Preparation
+2020-03-09;Brasil;Preparation
+2020-03-10;Brasil;Response
+2020-03-11;Brasil;Response
+2020-03-12;Brasil;Response
+2020-03-13;Brasil;Response
+2020-03-14;Brasil;Response
+2020-03-15;Brasil;Response
+2020-03-16;Brasil;Response
+2020-03-17;Brasil;Response
+2020-03-18;Brasil;Response
+2020-03-19;Brasil;Response
+2020-03-20;Brasil;Response
+2020-03-21;Brasil;Response
+2020-03-22;Brasil;Response
+2020-03-23;Brasil;Response
+2020-03-24;Brasil;Response
+2020-03-25;Brasil;Response
+2020-03-26;Brasil;Response
+2020-03-27;Brasil;Response
+2020-03-28;Brasil;Response
+2020-03-29;Brasil;Trough
+2020-03-30;Brasil;Trough
+2020-03-31;Brasil;Trough
+2020-04-01;Brasil;Trough
+2020-04-02;Brasil;Trough
+2020-04-03;Brasil;Trough
+2020-04-04;Brasil;Trough
+2020-04-05;Brasil;Trough
+2020-04-06;Brasil;Trough
+2020-04-07;Brasil;Trough
+2020-04-08;Brasil;Trough
+2020-04-09;Brasil;Trough
+2020-04-10;Brasil;Trough
+2020-04-11;Brasil;Trough
+2020-04-12;Brasil;Trough
+2020-04-13;Brasil;Trough
+2020-04-14;Brasil;Trough
+2020-04-15;Brasil;Trough
+2020-04-16;Brasil;Trough
+2020-04-17;Brasil;Trough
+2020-04-18;Brasil;Trough
+2020-04-19;Brasil;Trough
+2020-04-20;Brasil;Trough
+2020-04-21;Brasil;Trough
+2020-04-22;Brasil;Trough
+2020-04-23;Brasil;Trough
+2020-04-24;Brasil;Trough
+2020-04-25;Brasil;Trough
+2020-04-26;Brasil;Trough
+2020-04-27;Brasil;Trough
+2020-04-28;Brasil;Trough
+2020-04-29;Brasil;Trough
+2020-04-30;Brasil;Trough
+2020-05-01;Brasil;Trough
+2020-05-02;Brasil;Trough
+2020-05-03;Brasil;Trough
+2020-05-04;Brasil;Trough
+2020-05-05;Brasil;Trough
+2020-05-06;Brasil;Trough
+2020-05-07;Brasil;Trough
+2020-05-08;Brasil;Trough
+2020-05-09;Brasil;Trough
+2020-05-10;Brasil;Trough
+2020-05-11;Brasil;Trough
+2020-05-12;Brasil;Trough
+2020-05-13;Brasil;Trough
+2020-05-14;Brasil;Trough
+2020-05-15;Brasil;Trough
+2020-05-16;Brasil;Trough
+2020-05-17;Brasil;Trough
+2020-05-18;Brasil;Trough
+2020-05-19;Brasil;Trough
+2020-05-20;Brasil;Trough
+2020-05-21;Brasil;Trough
+2020-05-22;Brasil;Trough
+2020-05-23;Brasil;Trough
+2020-05-24;Brasil;Trough
+2020-05-25;Brasil;Trough
+2020-05-26;Brasil;Trough
+2020-05-27;Brasil;Trough
+2020-05-28;Brasil;Trough
+2020-05-29;Brasil;Trough
+2020-05-30;Brasil;Trough
+2020-05-31;Brasil;Trough
+2020-06-01;Brasil;Trough
+2020-06-02;Brasil;Trough
+2020-06-03;Brasil;Trough
+2020-06-04;Brasil;Trough
+2020-06-05;Brasil;Trough
+2020-06-06;Brasil;Trough
+2020-06-07;Brasil;Trough
+2020-06-08;Brasil;Trough
+2020-06-09;Brasil;Trough
+2020-06-10;Brasil;Trough
+2020-06-11;Brasil;Trough
+2020-06-12;Brasil;Trough
+2020-06-13;Brasil;Trough
+2020-06-14;Brasil;Trough
+2020-06-15;Brasil;Trough
+2020-06-16;Brasil;Trough
+2020-06-17;Brasil;Trough
+2020-06-18;Brasil;Trough
+2020-06-19;Brasil;Trough
+2020-06-20;Brasil;Trough
+2020-06-21;Brasil;Trough
+2020-06-22;Brasil;Trough
+2020-06-23;Brasil;Trough
+2020-06-24;Brasil;Trough
+2020-06-25;Brasil;Trough
+2020-06-26;Brasil;Trough
+2020-06-27;Brasil;Trough
+2020-06-28;Brasil;Trough
+2020-06-29;Brasil;Trough
+2020-06-30;Brasil;Trough
+2020-07-01;Brasil;Trough
+2020-07-02;Brasil;Trough
+2020-07-03;Brasil;Trough
+2020-07-04;Brasil;Trough
+2020-07-05;Brasil;Trough
+2020-07-06;Brasil;Trough
+2020-07-07;Brasil;Trough
+2020-07-08;Brasil;Trough
+2020-07-09;Brasil;Trough
+2020-07-10;Brasil;Trough
+2020-07-11;Brasil;Trough
+2020-07-12;Brasil;Trough
+2020-07-13;Brasil;Trough
+2020-07-14;Brasil;Trough
+2020-07-15;Brasil;Trough
+2020-07-16;Brasil;Trough
+2020-07-17;Brasil;Trough
+2020-07-18;Brasil;Trough
+2020-07-19;Brasil;Trough
+2020-07-20;Brasil;Trough
+2020-07-21;Brasil;Trough
+2020-07-22;Brasil;Trough
+2020-07-23;Brasil;Trough
+2020-07-24;Brasil;Trough
+2020-07-25;Brasil;Trough
+2020-07-26;;Trough
+2020-07-27;;Trough

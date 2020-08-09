@@ -7,7 +7,8 @@ plot_activity_mobility <- function(df) {
         geom_hline(yintercept = 1, color = "red") +
         xlim(0, 40) + 
         facet_wrap(~ state) +
-        ylab("Activity Index") + xlab("Doubling days of confirmed cases")
+        ylab("Índice de Atividade") + 
+        xlab("Dias Necessários para dobrar os casos")
     
     return(p)
 }
@@ -30,10 +31,12 @@ plot_activity_energy <- function(df) {
         geom_hline(yintercept = 0, color = "red") +
         xlim(0, 40) + 
         facet_wrap(~estado, scales = "free") +
-        ylab("Change in energy consumption") + xlab("Doubling days of confirmed cases")
+        ylab("Mudança no consumo de energia") + 
+        xlab("Dias Necessários para dobrar os casos")
     
     return(p)
 }
+
 
 plot_fit_energy <- function(df) {
     
@@ -42,8 +45,8 @@ plot_fit_energy <- function(df) {
         geom_line(aes(y = ma_consumo), color = "black", size = 0.8) +
         geom_line(aes(y = ma_pred), color = "steelblue", size = 0.8) +
         facet_wrap(~estado, scales = "free") +
-        ylab("7-days Moving Average of Energy Consumption") + 
-        xlab("Time") +
+        ylab("Média móvel de 7 dias do Consumo de Energia") + 
+        xlab("Data") +
         scale_color_manual(values = c("black", "steelblue"), 
                            labels = c("Actual", "Fitted"), name = "")
     
@@ -58,6 +61,7 @@ plot_regiao_energia <- function(df, reg, fplot) {
     
     return(fplot(base_regiao)) 
 }
+
 
 plot_energy_mobility <- function(df, reg){
     
@@ -74,13 +78,13 @@ plot_energy_mobility <- function(df, reg){
         facet_wrap(~estado, scales = "free") +
         geom_point(start, mapping = aes(x = ma_consumo, y = smth_mob), 
                    colour = "red") +
-        ylab("Mobility") + xlab("Moving average of Energy Consumption")
+        ylab("Mobilidade") + xlab("Média móvel de 7 dias do Consumo de Energia")
     
     return(p)
-    
-    
 }
 
+
+# energia detalhado -------------------------------------------------------
 plot_comparacao_estado <- function(UF){
   
     # filtrando por estado
@@ -157,8 +161,9 @@ plot_ramo <- function(reg, pond = FALSE){
     p <- df %>% 
       ggplot(aes(ramo)) +
       scale_x_discrete(name = "Ramo") +
-      theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5, size = 10))+
-      geom_hline(yintercept = 0, colour = "red")+
+      theme(axis.text.x = element_text(angle = 90, hjust = 1, 
+                                       vjust = 0.5, size = 10)) +
+      geom_hline(yintercept = 0, colour = "red") +
       facet_wrap(estado ~ ., dir = "v", scales = "free_y") 
   
   if(pond) {
@@ -171,3 +176,4 @@ plot_ramo <- function(reg, pond = FALSE){
   
   return(p)
 }
+
