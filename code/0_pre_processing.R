@@ -12,9 +12,9 @@ mobility <- read_csv("input/Global_Mobility_Report.csv") %>%
 energy <- read_csv2("input/energia_data.csv") %>% 
     rename(ramo = `Ramo de atividade`) %>% 
     mutate(Estado = iconv(Estado, from = "UTF-8", to = "ASCII//TRANSLIT") %>% 
-               trimws(),
+                    trimws(),
            ramo = iconv(ramo, from = "UTF-8", to = "ASCII//TRANSLIT") %>% 
-               trimws()) %>% 
+                  trimws()) %>% 
     clean_names() %>% 
     mutate(data = as.Date(data, "%d/%m/%Y")) %>% 
     arrange(data, classe, ramo) %>% 
@@ -60,7 +60,9 @@ estados <- covid %>%
     rename(state = estado) %>% 
     full_join(mobility %>% filter(!is.na(sub_region_1)),
               by = c("state" = "iso_3166_2_code", "date" = "date")) %>%
-    select(-starts_with("country_region"), -starts_with("sub_region"),  -starts_with("census_fips")) %>% 
+    select(-starts_with("country_region"), 
+           -starts_with("sub_region"), 
+           -starts_with("census_fips")) %>% 
     left_join(uf_estado, by = c("state" = "UF")) %>%
     left_join(phases, by = c("State" = "State", "date" = "Date")) %>%
     rename(estado = State) %>% 
@@ -175,6 +177,6 @@ estados <- total_energy_df %>%
     
 
 # export data -------------------------------------------------------------
-write_csv(brasil, "tmp/brasil.csv")
-write_csv(estados, "tmp/estados.csv")
+write_csv(brasil, "shiny/data/brasil.csv")
+write_csv(estados, "shiny/data/estados.csv")
 

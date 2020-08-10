@@ -69,13 +69,17 @@ doubl_dates_st <- function(df) {
 create_columns <- function(df) {
     
     post_df <- df %>% 
-        mutate(mobility    = ((retail_and_recreation_percent_change_from_baseline + 
-                                   grocery_and_pharmacy_percent_change_from_baseline) / 2 +  
-                                  workplaces_percent_change_from_baseline) / 2,
-               smth_date   = rollmean(doubl_days, 7, na.pad = T, align = "right"),
-               smth_mob    = rollmean(mobility, 7, na.pad = T, align = "right"),
-               activity    = relation_eq(smth_mob)
-        )
+        mutate(mobility  = ((retail_and_recreation_percent_change_from_baseline + 
+                             grocery_and_pharmacy_percent_change_from_baseline) / 2 +  
+                                workplaces_percent_change_from_baseline) / 2,
+               smth_date = rollmean(doubl_days, 7, na.pad = T, align = "right"),
+               smth_date = ifelse(half_cum_deaths == 0 & 
+                                  PET_Phase != "Preparation" &
+                                  is.na(smth_date), 
+                                  0, smth_date),
+               smth_mob  = rollmean(mobility, 7, na.pad = T, align = "right"),
+               activity  = relation_eq(smth_mob)
+              )
     
 }
 

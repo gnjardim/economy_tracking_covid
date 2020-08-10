@@ -25,11 +25,10 @@ source('load.R', encoding = 'UTF-8')
 # Define UI for application
 ui <- fluidPage(
     
-    
     # Application title
     titlePanel("Atividade x COVID"),
     
-    # Sidebar with inputs for number of bins 
+    # Sidebar with inputs
     sidebarLayout(
         sidebarPanel(
             selectInput(inputId  = "UF",
