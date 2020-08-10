@@ -170,7 +170,7 @@ plot_energy_mobility <- function(df, reg){
     return(p)
 }
 
-
+UF<- "Brasil"
 plot_comparacao_estado <- function(UF, plotly = FALSE) {
   
     if (UF == "Brasil") {
@@ -186,16 +186,24 @@ plot_comparacao_estado <- function(UF, plotly = FALSE) {
         summarise(data = min(data)) %>% 
         filter(!is.na(PET_Phase))
     
+    start_response <- phases[phases$PET_Phase == "Response",]$data
+    
+    start_trough <- phases[phases$PET_Phase == "Trough",]$data
+    
+    start_rescovery <- phases[phases$PET_Phase == "Recovery",]$data
+    
+    
     # total days
     total_days_mob <- max(base_UF %>% filter(!is.na(mobility)) %>% pull(data)) - 
         phases %>% 
         filter(PET_Phase == "Response") %>% 
         pull(data)
     
-    total_days_energy <- max(base_UF %>% filter(!is.na(consumo_diario)) %>% pull(data)) - 
-        phases %>% 
-        filter(PET_Phase == "Response") %>% 
-        pull(data)
+    
+    #total_days_energy <- max(base_UF %>% filter(!is.na(consumo_diario)) %>% pull(data)) - 
+        #phases %>% 
+        #filter(PET_Phase == "Response") %>% 
+        #pull(data)
     
     # definindo limites    
     ymin <- min(min(base_UF$activity, na.rm = TRUE) - 1,
@@ -206,16 +214,27 @@ plot_comparacao_estado <- function(UF, plotly = FALSE) {
                 max(base_UF$ma_dif_baseline, na.rm = TRUE) + 1,
                 max(base_UF$ma_dif_baseline_acl, na.rm = TRUE) + 1)
     
-
+    if(length(start_rescovery)==0){
     # plots
-    plot_mob <- base_UF %>% 
+    shapes  <- c("s1" = 1, "s2" = 0)
+      
+    plot_mob <- base_UF%>%
         ggplot(aes(x = smth_date, y = activity)) +
         geom_path(color = "steelblue", size = 0.8) +
+        geom_point(base_UF[base_UF$data == start_response,], mapping = aes(x = smth_date, y = activity,
+                   shape= "s1"), size =3)+
+        geom_point(base_UF[base_UF$data == start_trough,],mapping = aes(x = smth_date, y = activity,
+                 shape ="s2"),size =2.75)+
         geom_hline(yintercept = 1, color = "red") +
         xlim(0, 40) +
         ylim(ymin+1, ymax) +
+        scale_shape_manual(name = "Phases", 
+                         breaks = c("s1", "s2"),
+                         values = shapes,
+                         labels = c("Response", "Trough"))+
         ylab("Índice de Atividade") +
-        theme(axis.title.x = element_blank()) +
+        theme(axis.title.x = element_blank(),
+              legend.position="top") +
         ggtitle("Atividade")
 
     plot_total <- base_UF %>% 
@@ -223,21 +242,94 @@ plot_comparacao_estado <- function(UF, plotly = FALSE) {
         geom_path(color = "steelblue", size = 0.8) +
         geom_hline(yintercept = 0, color = "red") +
         xlim(0, 40) +
-        ylim(ymin, ymax-1) +
+           geom_point(base_UF[base_UF$data == start_response,], 
+                      mapping = aes(x = smth_date, y = ma_dif_baseline,
+                                                                         shape= "s1"), size =3)+
+        geom_point(base_UF[base_UF$data == start_trough,],
+                   mapping = aes(x = smth_date, y = ma_dif_baseline,
+                                                                      shape ="s2"),size =2.75)+
+      ylim(ymin, ymax-1) +
         ylab("Mudança no consumo de energia") +
-        theme(axis.title.x = element_blank()) +
+       scale_shape_manual(name = "Phases", 
+                         breaks = c("s1", "s2"),
+                         values = shapes,
+                         labels = c("Response", "Trough"))+
+      theme(axis.title.x = element_blank(),
+            legend.position="top") +
         ggtitle("Energia Total")
     
     plot_acl <- base_UF %>% 
         ggplot(aes(x = smth_date, y = ma_dif_baseline_acl)) +
         geom_path(color = "steelblue", size = 0.8) +
         geom_hline(yintercept = 0, color = "red") +
+      geom_point(base_UF[base_UF$data == start_response,], 
+                 mapping = aes(x = smth_date, y = ma_dif_baseline_acl,
+      shape= "s1"), size =3)+
+      geom_point(base_UF[base_UF$data == start_trough,],
+                 mapping = aes(x = smth_date, y = ma_dif_baseline_acl,
+      shape ="s2"),size =2.75)+
+      xlim(0, 40) +
+        ylim(ymin, ymax-1) +
+        ylab("Mudança no consumo de energia")  +
+      scale_shape_manual(name = "Phases", 
+                         breaks = c("s1", "s2"),
+                         values = shapes,
+                         labels = c("Response", "Trough"))+
+      theme(axis.title.x = element_blank(),
+            legend.position="top") +
+        ggtitle("Energia (apenas ACL)")
+    
+    }else{
+      plot_mob <- base_UF%>%
+        ggplot(aes(x = smth_date, y = activity)) +
+        geom_path(color = "steelblue", size = 0.8) +
+        geom_point(base_UF[base_UF$data == start_response,], mapping = aes(x = smth_date, y = activity,
+                                                                           shape= "s1"), size =3)+
+        geom_point(base_UF[base_UF$data == start_trough,],mapping = aes(x = smth_date, y = activity,
+                                                                        shape ="s2"),size =2.75)+
+        geom_point(base_UF[base_UF$data == start_trough,],mapping = aes(x = smth_date, y = activity),
+                   shape =0, size =2.75)+
+        geom_hline(yintercept = 1, color = "red") +
+        xlim(0, 40) +
+        ylim(ymin+1, ymax) +
+        ylab("Índice de Atividade") +
+        theme(axis.title.x = element_blank()) +
+        ggtitle("Atividade")
+      
+      plot_total <- base_UF %>% 
+        ggplot(aes(x = smth_date, y = ma_dif_baseline)) +
+        geom_path(color = "steelblue", size = 0.8) +
+        geom_hline(yintercept = 0, color = "red") +
+        xlim(0, 40) +
+        geom_point(base_UF[base_UF$data == start_response,], mapping = aes(x = smth_date, y = activity,
+                                                                           shape= "s1"), size =3)+
+        geom_point(base_UF[base_UF$data == start_trough,],mapping = aes(x = smth_date, y = activity,
+                                                                        shape ="s2"),size =2.75)+
+        geom_point(base_UF[base_UF$data == start_trough,],mapping = aes(x = smth_date, y = activity),
+                   shape =0, size =2.75)+
+        ylim(ymin, ymax-1) +
+        ylab("Mudança no consumo de energia") +
+        theme(axis.title.x = element_blank()) +
+        ggtitle("Energia Total")
+      
+      plot_acl <- base_UF %>% 
+        ggplot(aes(x = smth_date, y = ma_dif_baseline_acl)) +
+        geom_path(color = "steelblue", size = 0.8) +
+        geom_hline(yintercept = 0, color = "red") +
+        geom_point(base_UF[base_UF$data == start_response,], mapping = aes(x = smth_date, y = activity,
+                                                                           shape= "s1"), size =3)+
+        geom_point(base_UF[base_UF$data == start_trough,],mapping = aes(x = smth_date, y = activity,
+                                                                        shape ="s2"),size =2.75)+
+        geom_point(base_UF[base_UF$data == start_trough,],mapping = aes(x = smth_date, y = activity),
+                   shape =0, size =2.75)+
         xlim(0, 40) +
         ylim(ymin, ymax-1) +
         ylab("Mudança no consumo de energia") +
         theme(axis.title.x = element_blank()) +
         ggtitle("Energia (apenas ACL)")
-    
+      
+      
+    }
     # join plots
     if(plotly) {
         h <- 520
