@@ -111,7 +111,7 @@ plot_fit_energy <- function(df, plotly = FALSE) {
       
         df <- df %>% 
           ungroup() %>% 
-          select(data, Observado = ma_consumo, Predito = ma_pred) %>% 
+          select(data, estado, regiao, Observado = ma_consumo, Predito = ma_pred) %>% 
           pivot_longer(cols = c(Observado, Predito))
         
         p <- df %>% 
@@ -195,7 +195,6 @@ plot_comparacao_estado <- function(UF, plotly = FALSE) {
         phases %>% 
         filter(PET_Phase == "Response") %>% 
         pull(data)
-    
     
     #total_days_energy <- max(base_UF %>% filter(!is.na(consumo_diario)) %>% pull(data)) - 
         #phases %>% 
@@ -349,7 +348,8 @@ plot_comparacao_estado <- function(UF, plotly = FALSE) {
         plot <- plot_grid(plot_mob, 
                           plot_total,
                           plot_acl, 
-                          align = 'h', nrow = 1, ncol = 3, scale = 1)
+                          align = 'h', nrow = 1, ncol = 3, scale = 1,
+                          rel_widths = c(0.3, 0.3, 0.4))
         
         x.grob <- textGrob("Doubling days of confirmed cases")
         title.grob <- textGrob(paste0(UF), gp = gpar(fontface = "bold"))

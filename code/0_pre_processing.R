@@ -130,13 +130,7 @@ acl_energy_df <- energy %>%
     filter(ramo != "ACR") %>% 
     energy_df_fun(acl_pre_covid) %>% 
     filter(!is.na(pred)) %>% 
-    select(1:4, regiao, 19:28, PET_Phase) %>% 
-    rename(consumo_diario_acl  = consumo_diario ,
-           pred_acl            = pred           ,
-           ma_consumo_acl      = ma_consumo     ,
-           ma_pred_acl         = ma_pred        ,
-           dif_baseline_acl    = dif_baseline   ,
-           ma_dif_baseline_acl = ma_dif_baseline)
+    select(1:4, regiao, 19:28, PET_Phase)
 
 
 # aggregate all country ---------------------------------------------------
@@ -154,6 +148,12 @@ brasil_energy <- total_energy_df %>%
     
 
 brasil_energy_acl <- acl_energy_df %>% 
+    rename(consumo_diario_acl  = consumo_diario ,
+           pred_acl            = pred           ,
+           ma_consumo_acl      = ma_consumo     ,
+           ma_pred_acl         = ma_pred        ,
+           dif_baseline_acl    = dif_baseline   ,
+           ma_dif_baseline_acl = ma_dif_baseline) %>% 
     group_by(data) %>% 
     summarise(consumo_diario_acl = sum(consumo_diario_acl, na.rm = TRUE),
               pred_acl           = sum(pred_acl, na.rm = TRUE)) %>% 
@@ -173,7 +173,13 @@ brasil <- brasil_energy %>%
     select(1:15, 29:34, PET_Phase)
     
 estados <- total_energy_df %>% 
-    left_join(acl_energy_df)
+    left_join(acl_energy_df %>% 
+                  rename(consumo_diario_acl  = consumo_diario ,
+                         pred_acl            = pred           ,
+                         ma_consumo_acl      = ma_consumo     ,
+                         ma_pred_acl         = ma_pred        ,
+                         dif_baseline_acl    = dif_baseline   ,
+                         ma_dif_baseline_acl = ma_dif_baseline))
     
 
 # export data -------------------------------------------------------------
