@@ -224,14 +224,14 @@ plot_comparacao_estado <- function(UF, plotly = FALSE) {
                    size = 2.75)+
         geom_hline(yintercept = 1, color = "red") +
         ylim(ymin+1, ymax) +
-        ylab("Índice de Atividade") +
+        ylab("Índice de Mobilidade") +
         scale_shape_manual(name = "", 
                            breaks = c("Response", "Trough"),
                            values = shapes,
                            labels = c("Response", "Trough"))+
         theme(axis.title.x = element_blank(),
               legend.position = "none") +
-        ggtitle("Atividade")
+        ggtitle("Mobilidade")
 
     plot_total <- base_UF %>% 
         ggplot(aes(x = smth_date, y = ma_dif_baseline, group = 1,
@@ -307,7 +307,7 @@ plot_comparacao_estado <- function(UF, plotly = FALSE) {
         
         # plotly options
           plot_mob <- ggplotly(plot_mob, tooltip = "text") %>% 
-            layout(annotations = list(text = "Atividade",
+            layout(annotations = list(text = "Mobilidade",
                                       xref = "paper",
                                       yref = "paper",
                                       yanchor = "bottom",
