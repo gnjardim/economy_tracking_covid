@@ -5,7 +5,6 @@ plot_activity_mobility <- function(df) {
         #geom_vline(xintercept = 19, linetype = "dotted", size = 0.8) +
         #geom_point(data = brasil_mob_b, shape = 22, fill = "white") +
         geom_hline(yintercept = 1, color = "red") +
-        xlim(0, 40) + 
         facet_wrap(~ state) +
         ylab("Índice de Atividade") + 
         xlab("Dias Necessários para dobrar os casos")
@@ -29,7 +28,6 @@ plot_activity_energy <- function(df) {
         ggplot(aes(x = smth_date, y = ma_dif_baseline)) +
         geom_path(color = "steelblue", size = 0.8) +
         geom_hline(yintercept = 0, color = "red") +
-        xlim(0, 40) + 
         ylab("Mudança no consumo de energia") + 
         xlab("Dias Necessários para dobrar os casos")
     
@@ -52,7 +50,9 @@ plot_fit_energy <- function(df, plotly = FALSE) {
         
         # plot 1
         p1 <- total %>% 
-          ggplot(aes(x = data)) +
+          ggplot(aes(x = data, group = 1,
+                     text = paste('Média móvel de 7 dias do Consumo de Energia:', round(value, 2),
+                                  '<br>Data:', data))) +
           geom_line(aes(y = value, color = name), size = 0.8) +
           ylab("Média móvel de 7 dias do Consumo de Energia") + 
           xlab("Data") +
@@ -60,7 +60,7 @@ plot_fit_energy <- function(df, plotly = FALSE) {
           theme(legend.title = element_blank())
         
         p1 <- p1 %>% 
-          ggplotly() %>% 
+          ggplotly(tooltip = "text") %>% 
           layout(annotations = list(text = "Energia Total",
                                     xref = "paper",
                                     yref = "paper",
@@ -73,7 +73,9 @@ plot_fit_energy <- function(df, plotly = FALSE) {
         
         # plot 2
         p2 <- df_acl %>% 
-          ggplot(aes(x = data)) +
+          ggplot(aes(x = data, group = 1,
+                     text = paste('Média móvel de 7 dias do Consumo de Energia:', round(value, 2),
+                                  '<br>Data:', data))) +
           geom_line(aes(y = value, color = name), size = 0.8) +
           ylab("Média móvel de 7 dias do Consumo de Energia") + 
           xlab("Data") +
@@ -81,7 +83,7 @@ plot_fit_energy <- function(df, plotly = FALSE) {
           theme(legend.title = element_blank())
         
         p2 <- p2 %>% 
-          ggplotly() %>% 
+          ggplotly(tooltip = "text") %>% 
           layout(annotations = list(text = "Energia (apenas ACL)",
                                     xref = "paper",
                                     yref = "paper",
@@ -186,19 +188,13 @@ plot_comparacao_estado <- function(UF, plotly = FALSE) {
     
     # start of each phase
     start_response <- phases[phases$PET_Phase == "Response", ]$data
-    start_trough <- phases[phases$PET_Phase == "Trough", ]$data
+    start_trough   <- phases[phases$PET_Phase == "Trough", ]$data
     start_recovery <- phases[phases$PET_Phase == "Recovery", ]$data
     
     # total days
-    total_days_mob <- max(base_UF %>% filter(!is.na(mobility)) %>% pull(data)) - 
-        phases %>% 
-        filter(PET_Phase == "Response") %>% 
-        pull(data)
+    base_UF <- base_UF %>% 
+      mutate(pos_response = data - start_response)
     
-    #total_days_energy <- max(base_UF %>% filter(!is.na(consumo_diario)) %>% pull(data)) - 
-        #phases %>% 
-        #filter(PET_Phase == "Response") %>% 
-        #pull(data)
     
     # definindo limites    
     ymin <- min(min(base_UF$activity, na.rm = TRUE) - 1,
@@ -213,7 +209,12 @@ plot_comparacao_estado <- function(UF, plotly = FALSE) {
     shapes <- c("Response" = 1, "Trough" = 0)
   
     plot_mob <- base_UF %>%
-        ggplot(aes(x = smth_date, y = activity)) +
+        ggplot(aes(x = smth_date, y = activity, group = 1,
+                   text = paste('Índice de Atividade:', round(activity, 2),
+                                '<br>Dias necessários para dobrar os casos:', round(smth_date, 2),
+                                '<br>Dias após a fase de "Response":', pos_response,
+                                '<br>Data:', data))
+              ) +
         geom_path(color = "steelblue", size = 0.8) +
         geom_point(data = base_UF[base_UF$data == start_response, ],
                    mapping = aes(x = smth_date, y = activity, shape = "Response"), 
@@ -222,10 +223,9 @@ plot_comparacao_estado <- function(UF, plotly = FALSE) {
                    mapping = aes(x = smth_date, y = activity, shape = "Trough"),
                    size = 2.75)+
         geom_hline(yintercept = 1, color = "red") +
-        xlim(0, 40) +
         ylim(ymin+1, ymax) +
         ylab("Índice de Atividade") +
-        scale_shape_manual(name = "Phases", 
+        scale_shape_manual(name = "", 
                            breaks = c("Response", "Trough"),
                            values = shapes,
                            labels = c("Response", "Trough"))+
@@ -234,10 +234,14 @@ plot_comparacao_estado <- function(UF, plotly = FALSE) {
         ggtitle("Atividade")
 
     plot_total <- base_UF %>% 
-        ggplot(aes(x = smth_date, y = ma_dif_baseline)) +
+        ggplot(aes(x = smth_date, y = ma_dif_baseline, group = 1,
+                   text = paste('Mudança no Consumo de Energia:', round(ma_dif_baseline, 2),
+                                '<br>Dias necessários para dobrar os casos:', round(smth_date, 2),
+                                '<br>Dias após a fase de "Response":', pos_response,
+                                '<br>Data:', data))
+              ) +
         geom_path(color = "steelblue", size = 0.8) +
         geom_hline(yintercept = 0, color = "red") +
-        xlim(0, 40) +
         geom_point(data = base_UF[base_UF$data == start_response, ], 
                    mapping = aes(x = smth_date, y = ma_dif_baseline, shape = "Response"), 
                    size = 3) +
@@ -246,7 +250,7 @@ plot_comparacao_estado <- function(UF, plotly = FALSE) {
                    size = 2.75) +
         ylim(ymin, ymax-1) +
         ylab("Mudança no consumo de energia") +
-        scale_shape_manual(name = "Phases", 
+        scale_shape_manual(name = "", 
                            breaks = c("Response", "Trough"),
                            values = shapes,
                            labels = c("Response", "Trough"))+
@@ -255,7 +259,12 @@ plot_comparacao_estado <- function(UF, plotly = FALSE) {
         ggtitle("Energia Total")
     
     plot_acl <- base_UF %>% 
-        ggplot(aes(x = smth_date, y = ma_dif_baseline_acl)) +
+        ggplot(aes(x = smth_date, y = ma_dif_baseline_acl, group = 1,
+                   text = paste('Mudança no Consumo de Energia:', round(ma_dif_baseline_acl, 2) ,
+                                '<br>Dias necessários para dobrar os casos:', round(smth_date, 2),
+                                '<br>Dias após a fase de "Response":', pos_response,
+                                '<br>Data:', data))
+              ) +
         geom_path(color = "steelblue", size = 0.8) +
         geom_hline(yintercept = 0, color = "red") +
         geom_point(data = base_UF[base_UF$data == start_response, ], 
@@ -264,10 +273,9 @@ plot_comparacao_estado <- function(UF, plotly = FALSE) {
         geom_point(data = base_UF[base_UF$data == start_trough, ],
                    mapping = aes(x = smth_date, y = ma_dif_baseline_acl, shape = "Trough"),
                    size = 2.75)+
-        xlim(0, 40) +
         ylim(ymin, ymax-1) +
         ylab("Mudança no consumo de energia")  +
-        scale_shape_manual(name = "Phases", 
+        scale_shape_manual(name = "", 
                            breaks = c("Response", "Trough"),
                            values = shapes,
                            labels = c("Response", "Trough"))+
@@ -296,10 +304,9 @@ plot_comparacao_estado <- function(UF, plotly = FALSE) {
     if(plotly) {
         h <- 520
         w <- 1030
-      #  =  paste('Índice de Atividade: ', activity ,
-      #           '<br>Dias necessários para dobrar os casos: ', smth_date))
-         # plotly options
-        plot_mob <- ggplotly(plot_mob,tooltip = c('x','y')) %>% 
+        
+        # plotly options
+          plot_mob <- ggplotly(plot_mob, tooltip = "text") %>% 
             layout(annotations = list(text = "Atividade",
                                       xref = "paper",
                                       yref = "paper",
@@ -310,7 +317,7 @@ plot_comparacao_estado <- function(UF, plotly = FALSE) {
                                       y = 1,
                                       showarrow = FALSE))
         
-        plot_total <- ggplotly(plot_total) %>% 
+        plot_total <- ggplotly(plot_total, tooltip = "text") %>% 
             layout(annotations = list(text = "Energia Total",
                                       xref = "paper",
                                       yref = "paper",
@@ -321,7 +328,7 @@ plot_comparacao_estado <- function(UF, plotly = FALSE) {
                                       y = 1,
                                       showarrow = FALSE))
         
-        plot_acl <- ggplotly(plot_acl) %>% 
+        plot_acl <- ggplotly(plot_acl, tooltip = "text") %>% 
             layout(annotations = list(text = "Energia (apenas ACL)",
                                       xref = "paper",
                                       yref = "paper",
@@ -342,7 +349,8 @@ plot_comparacao_estado <- function(UF, plotly = FALSE) {
             layout(xaxis  = list(title = ""),
                    xaxis2 = list(title = "Dias Necessários para dobrar os casos"),
                    xaxis3 = list(title = ""),
-                   height = h, width = w)
+                   height = h, width = w,
+                   legend = list(title=list(text='<b> Fase </b>')))
         
     } else {
         plot <- plot_grid(plot_mob, 
@@ -393,14 +401,15 @@ plot_ramo <- function(reg, pond = FALSE){
 
 # shiny function ----------------------------------------------------------
 plot_shiny <- function(UF, tipo) {
+    UF <- UF %>% iconv(from = "UTF-8", to = "ASCII//TRANSLIT")
+  
     if(tipo == "atividade") {
         p <- plot_comparacao_estado(UF, plotly = TRUE)
     } else {
-        p <- plot_uf_energia(UF) %>% ggplotly()
+        p <- plot_uf_energia(UF)
     }
   
-  plot <- p %>% 
-      style(hoverinfo = "y")
+  return(p)
 }
 
 
