@@ -104,7 +104,7 @@ plot_fit_energy <- function(df, plotly = FALSE) {
                      list(x = -0.09,
                           text = "Média móvel de 7 dias do Consumo de Energia",
                           textangle = 270,
-                          showarrow = F, xref='paper', yref='paper', size=48)),
+                          showarrow = F, xref='paper', yref='paper', size=46)),
                    height = 600, width = 870)
 
     } else {
@@ -168,7 +168,6 @@ plot_energy_mobility <- function(df, reg){
     
     return(p)
 }
-
 
 plot_comparacao_estado <- function(UF, plotly = FALSE) {
   
@@ -297,9 +296,10 @@ plot_comparacao_estado <- function(UF, plotly = FALSE) {
     if(plotly) {
         h <- 520
         w <- 1030
-          
-        # plotly options
-        plot_mob <- ggplotly(plot_mob) %>% 
+      #  =  paste('Índice de Atividade: ', activity ,
+      #           '<br>Dias necessários para dobrar os casos: ', smth_date))
+         # plotly options
+        plot_mob <- ggplotly(plot_mob,tooltip = c('x','y')) %>% 
             layout(annotations = list(text = "Atividade",
                                       xref = "paper",
                                       yref = "paper",
