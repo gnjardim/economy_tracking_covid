@@ -54,6 +54,8 @@ plot_fit_energy <- function(df, plotly = FALSE) {
                      text = paste('Média móvel de 7 dias do Consumo de Energia:', round(value, 2),
                                   '<br>Data:', data))) +
           geom_line(aes(y = value, color = name), size = 0.8) +
+          geom_vline(xintercept = as.numeric(lubridate::ymd("2020-02-25")), 
+                     linetype = "dashed", color = "red") +
           ylab("Média móvel de 7 dias do Consumo de Energia") + 
           xlab("Data") +
           scale_color_manual(values = c("black", "steelblue")) +
@@ -77,6 +79,8 @@ plot_fit_energy <- function(df, plotly = FALSE) {
                      text = paste('Média móvel de 7 dias do Consumo de Energia:', round(value, 2),
                                   '<br>Data:', data))) +
           geom_line(aes(y = value, color = name), size = 0.8) +
+          geom_vline(xintercept = as.numeric(lubridate::ymd("2020-02-25")), 
+                     linetype = "dashed", color = "red") +
           ylab("Média móvel de 7 dias do Consumo de Energia") + 
           xlab("Data") +
           scale_color_manual(values = c("black", "steelblue")) +
@@ -119,6 +123,7 @@ plot_fit_energy <- function(df, plotly = FALSE) {
         p <- df %>% 
           ggplot(aes(x = data)) +
           geom_line(aes(y = value, color = name), size = 0.8) +
+          geom_vline(xintercept = as.Date("2020-02-25"), linetype = "dashed", color = "red") +
           ylab("Média móvel de 7 dias do Consumo de Energia") + 
           xlab("Data") +
           scale_color_manual(values = c("black", "steelblue")) +
