@@ -197,11 +197,11 @@ plot_comparacao_estado <- function(UF, plotly = FALSE) {
     
     
     # definindo limites    
-    ymin <- min(min(base_UF$activity, na.rm = TRUE) - 1,
+    ymin <- min(min(base_UF$smth_mob, na.rm = TRUE) - 1,
                 min(base_UF$ma_dif_baseline, na.rm = TRUE),
                 min(base_UF$ma_dif_baseline_acl, na.rm = TRUE))
     
-    ymax <- max(max(base_UF$activity, na.rm = TRUE),
+    ymax <- max(max(base_UF$smth_mob, na.rm = TRUE),
                 max(base_UF$ma_dif_baseline, na.rm = TRUE) + 1,
                 max(base_UF$ma_dif_baseline_acl, na.rm = TRUE) + 1)
     
@@ -209,21 +209,21 @@ plot_comparacao_estado <- function(UF, plotly = FALSE) {
     shapes <- c("Response" = 1, "Trough" = 0)
   
     plot_mob <- base_UF %>%
-        ggplot(aes(x = smth_date, y = activity, group = 1,
-                   text = paste('Índice de Atividade:', round(activity, 2),
+        ggplot(aes(x = smth_date, y = smth_mob, group = 1,
+                   text = paste('Índice de Mobilidade:', round(smth_mob, 2),
                                 '<br>Dias necessários para dobrar os casos:', round(smth_date, 2),
                                 '<br>Dias após a fase de "Response":', pos_response,
                                 '<br>Data:', data))
               ) +
         geom_path(color = "steelblue", size = 0.8) +
         geom_point(data = base_UF[base_UF$data == start_response, ],
-                   mapping = aes(x = smth_date, y = activity, shape = "Response"), 
+                   mapping = aes(x = smth_date, y = smth_mob, shape = "Response"), 
                    size = 3) +
         geom_point(data = base_UF[base_UF$data == start_trough, ],
-                   mapping = aes(x = smth_date, y = activity, shape = "Trough"),
+                   mapping = aes(x = smth_date, y = smth_mob, shape = "Trough"),
                    size = 2.75)+
         geom_hline(yintercept = 1, color = "red") +
-        ylim(ymin+1, ymax) +
+        ylim(ymin+0.99, ymax) +
         ylab("Índice de Mobilidade") +
         scale_shape_manual(name = "", 
                            breaks = c("Response", "Trough"),
@@ -286,7 +286,7 @@ plot_comparacao_estado <- function(UF, plotly = FALSE) {
     if(length(start_recovery) != 0) {
       plot_mob <- plot_mob +
         geom_point(data = base_UF[base_UF$data == start_recovery, ],
-                   mapping = aes(x = smth_date, y = activity),
+                   mapping = aes(x = smth_date, y = smth_mob),
                    shape = 0, size = 2.75)
       
       plot_total <- plot_total +
