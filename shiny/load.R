@@ -3,7 +3,326 @@ theme_set(theme_bw())
 
 
 # functions ---------------------------------------------------------------
-source("../code/_plot_functions.R", encoding = "UTF-8")
+plot_fit_energy <- function(df, plotly = FALSE) {
+    
+    if(plotly) {
+        total <- df %>% 
+            ungroup() %>% 
+            select(data, Observado = ma_consumo, Predito = ma_pred) %>% 
+            pivot_longer(cols = c(Observado, Predito))
+        
+        df_acl <- df %>% 
+            ungroup() %>% 
+            select(data, Observado = ma_consumo_acl, Predito = ma_pred_acl) %>% 
+            pivot_longer(cols = c(Observado, Predito))
+        
+        # plot 1
+        p1 <- total %>% 
+            ggplot(aes(x = data, group = 1,
+                       text = paste('Média móvel de 7 dias do Consumo de Energia:', round(value, 2),
+                                    '<br>Data:', data))) +
+            geom_line(aes(y = value, color = name), size = 0.8) +
+            geom_vline(xintercept = as.numeric(lubridate::ymd("2020-02-25")), 
+                       linetype = "dashed", color = "red") +
+            ylab("Média móvel de 7 dias do Consumo de Energia") + 
+            xlab("Data") +
+            scale_color_manual(values = c("black", "steelblue")) +
+            theme(legend.title = element_blank())
+        
+        p1 <- p1 %>% 
+            ggplotly(tooltip = "text") %>% 
+            layout(annotations = list(text = "Energia Total",
+                                      xref = "paper",
+                                      yref = "paper",
+                                      yanchor = "bottom",
+                                      xanchor = "center",
+                                      align = "center",
+                                      x = 0.5,
+                                      y = 1,
+                                      showarrow = FALSE))
+        
+        # plot 2
+        p2 <- df_acl %>% 
+            ggplot(aes(x = data, group = 1,
+                       text = paste('Média móvel de 7 dias do Consumo de Energia:', round(value, 2),
+                                    '<br>Data:', data))) +
+            geom_line(aes(y = value, color = name), size = 0.8) +
+            geom_vline(xintercept = as.numeric(lubridate::ymd("2020-02-25")), 
+                       linetype = "dashed", color = "red") +
+            ylab("Média móvel de 7 dias do Consumo de Energia") + 
+            xlab("Data") +
+            scale_color_manual(values = c("black", "steelblue")) +
+            theme(legend.title = element_blank())
+        
+        p2 <- p2 %>% 
+            ggplotly(tooltip = "text") %>% 
+            layout(annotations = list(text = "Energia (apenas ACL)",
+                                      xref = "paper",
+                                      yref = "paper",
+                                      yanchor = "bottom",
+                                      xanchor = "center",
+                                      align = "center",
+                                      x = 0.5,
+                                      y = 1,
+                                      showarrow = FALSE))
+        
+        # join plots
+        p <- subplot(list(style(p1, showlegend = FALSE), p2), nrows = 2, 
+                     shareY = TRUE, titleY = TRUE,
+                     titleX = TRUE, margin = 0.1) %>% 
+            layout(xaxis  = list(title = ""),
+                   xaxis2 = list(title = ""),
+                   yaxis  = list(title = ""),
+                   yaxis2 = list(title = ""),
+                   annotations = list(
+                       list(x = -0.09,
+                            text = "Média móvel de 7 dias do Consumo de Energia",
+                            textangle = 270,
+                            showarrow = F, xref='paper', yref='paper', size=46)),
+                   height = 600, width = 870)
+        
+    } else {
+        
+        df <- df %>% 
+            ungroup() %>% 
+            select(data, estado, regiao, Observado = ma_consumo, Predito = ma_pred) %>% 
+            pivot_longer(cols = c(Observado, Predito))
+        
+        p <- df %>% 
+            ggplot(aes(x = data)) +
+            geom_line(aes(y = value, color = name), size = 0.8) +
+            geom_vline(xintercept = as.Date("2020-02-25"), linetype = "dashed", color = "red") +
+            ylab("Média móvel de 7 dias do Consumo de Energia") + 
+            xlab("Data") +
+            scale_color_manual(values = c("black", "steelblue")) +
+            theme(legend.title = element_blank())
+    }
+    
+    return(p)
+}
+
+
+plot_uf_energia <- function(UF) {
+    
+    if (UF == "Brasil") {
+        base_regiao <- brasil
+    } else {
+        base_regiao <- estados %>% 
+            filter(estado == UF)
+    }
+    
+    return(plot_fit_energy(base_regiao, plotly = TRUE)) 
+}
+
+
+plot_comparacao_estado <- function(UF, plotly = FALSE) {
+    
+    if (UF == "Brasil") {
+        base_UF <- brasil
+    } else {
+        base_UF <- estados %>% 
+            filter(estado == UF)
+    }
+    
+    # PET phase
+    phases <- base_UF %>% 
+        group_by(PET_Phase) %>% 
+        summarise(data = min(data)) %>% 
+        filter(!is.na(PET_Phase))
+    
+    # start of each phase
+    start_response <- phases[phases$PET_Phase == "Response", ]$data
+    start_trough   <- phases[phases$PET_Phase == "Trough", ]$data
+    start_recovery <- phases[phases$PET_Phase == "Recovery", ]$data
+    
+    # total days
+    base_UF <- base_UF %>% 
+        mutate(pos_response = data - start_response)
+    
+    
+    # definindo limites    
+    ymin <- min(min(base_UF$smth_mob, na.rm = TRUE) - 1,
+                min(base_UF$ma_dif_baseline, na.rm = TRUE),
+                min(base_UF$ma_dif_baseline_acl, na.rm = TRUE))
+    
+    ymax <- max(max(base_UF$smth_mob, na.rm = TRUE),
+                max(base_UF$ma_dif_baseline, na.rm = TRUE) + 1,
+                max(base_UF$ma_dif_baseline_acl, na.rm = TRUE) + 1)
+    
+    # plots
+    shapes <- c("Response" = 1, "Trough" = 0)
+    
+    plot_mob <- base_UF %>%
+        ggplot(aes(x = smth_date, y = smth_mob, group = 1,
+                   text = paste('Índice de Mobilidade:', round(smth_mob, 2),
+                                '<br>Dias necessários para dobrar os casos:', round(smth_date, 2),
+                                '<br>Dias após a fase de "Response":', pos_response,
+                                '<br>Data:', data))
+        ) +
+        geom_path(color = "steelblue", size = 0.8) +
+        geom_point(data = base_UF[base_UF$data == start_response, ],
+                   mapping = aes(x = smth_date, y = smth_mob, shape = "Response"), 
+                   size = 3) +
+        geom_point(data = base_UF[base_UF$data == start_trough, ],
+                   mapping = aes(x = smth_date, y = smth_mob, shape = "Trough"),
+                   size = 2.75)+
+        geom_hline(yintercept = 1, color = "red") +
+        ylim(ymin+0.99, ymax) +
+        ylab("Índice de Mobilidade") +
+        scale_shape_manual(name = "", 
+                           breaks = c("Response", "Trough"),
+                           values = shapes,
+                           labels = c("Response", "Trough"))+
+        theme(axis.title.x = element_blank(),
+              legend.position = "none") +
+        ggtitle("Mobilidade")
+    
+    plot_total <- base_UF %>% 
+        ggplot(aes(x = smth_date, y = ma_dif_baseline, group = 1,
+                   text = paste('Mudança no Consumo de Energia:', round(ma_dif_baseline, 2),
+                                '<br>Dias necessários para dobrar os casos:', round(smth_date, 2),
+                                '<br>Dias após a fase de "Response":', pos_response,
+                                '<br>Data:', data))
+        ) +
+        geom_path(color = "steelblue", size = 0.8) +
+        geom_hline(yintercept = 0, color = "red") +
+        geom_point(data = base_UF[base_UF$data == start_response, ], 
+                   mapping = aes(x = smth_date, y = ma_dif_baseline, shape = "Response"), 
+                   size = 3) +
+        geom_point(base_UF[base_UF$data == start_trough, ],
+                   mapping = aes(x = smth_date, y = ma_dif_baseline, shape = "Trough"),
+                   size = 2.75) +
+        ylim(ymin, ymax-1) +
+        ylab("Mudança no consumo de energia") +
+        scale_shape_manual(name = "", 
+                           breaks = c("Response", "Trough"),
+                           values = shapes,
+                           labels = c("Response", "Trough"))+
+        theme(axis.title.x = element_blank(),
+              legend.position = "none") +
+        ggtitle("Energia Total")
+    
+    plot_acl <- base_UF %>% 
+        ggplot(aes(x = smth_date, y = ma_dif_baseline_acl, group = 1,
+                   text = paste('Mudança no Consumo de Energia:', round(ma_dif_baseline_acl, 2) ,
+                                '<br>Dias necessários para dobrar os casos:', round(smth_date, 2),
+                                '<br>Dias após a fase de "Response":', pos_response,
+                                '<br>Data:', data))
+        ) +
+        geom_path(color = "steelblue", size = 0.8) +
+        geom_hline(yintercept = 0, color = "red") +
+        geom_point(data = base_UF[base_UF$data == start_response, ], 
+                   mapping = aes(x = smth_date, y = ma_dif_baseline_acl, shape = "Response"), 
+                   size = 3) +
+        geom_point(data = base_UF[base_UF$data == start_trough, ],
+                   mapping = aes(x = smth_date, y = ma_dif_baseline_acl, shape = "Trough"),
+                   size = 2.75)+
+        ylim(ymin, ymax-1) +
+        ylab("Mudança no consumo de energia")  +
+        scale_shape_manual(name = "", 
+                           breaks = c("Response", "Trough"),
+                           values = shapes,
+                           labels = c("Response", "Trough"))+
+        theme(axis.title.x = element_blank()) +
+        ggtitle("Energia (apenas ACL)")
+    
+    
+    if(length(start_recovery) != 0) {
+        plot_mob <- plot_mob +
+            geom_point(data = base_UF[base_UF$data == start_recovery, ],
+                       mapping = aes(x = smth_date, y = smth_mob),
+                       shape = 0, size = 2.75)
+        
+        plot_total <- plot_total +
+            geom_point(data = base_UF[base_UF$data == start_recovery, ],
+                       mapping = aes(x = smth_date, y = ma_dif_baseline),
+                       shape = 0, size = 2.75)
+        
+        plot_acl <- plot_acl +
+            geom_point(data = base_UF[base_UF$data == start_recovery, ],
+                       mapping = aes(x = smth_date, y = ma_dif_baseline_acl),
+                       shape = 0, size = 2.75)
+    }
+    
+    # join plots
+    if(plotly) {
+        h <- 520
+        w <- 1030
+        
+        # plotly options
+        plot_mob <- ggplotly(plot_mob, tooltip = "text") %>% 
+            layout(annotations = list(text = "Mobilidade",
+                                      xref = "paper",
+                                      yref = "paper",
+                                      yanchor = "bottom",
+                                      xanchor = "center",
+                                      align = "center",
+                                      x = 0.5,
+                                      y = 1,
+                                      showarrow = FALSE))
+        
+        plot_total <- ggplotly(plot_total, tooltip = "text") %>% 
+            layout(annotations = list(text = "Energia Total",
+                                      xref = "paper",
+                                      yref = "paper",
+                                      yanchor = "bottom",
+                                      xanchor = "center",
+                                      align = "center",
+                                      x = 0.5,
+                                      y = 1,
+                                      showarrow = FALSE))
+        
+        plot_acl <- ggplotly(plot_acl, tooltip = "text") %>% 
+            layout(annotations = list(text = "Energia (apenas ACL)",
+                                      xref = "paper",
+                                      yref = "paper",
+                                      yanchor = "bottom",
+                                      xanchor = "center",
+                                      align = "center",
+                                      x = 0.5,
+                                      y = 1,
+                                      showarrow = FALSE))
+        
+        # join plots
+        plot <- subplot(list(style(plot_mob, showlegend = FALSE), 
+                             style(plot_total, showlegend = FALSE), 
+                             plot_acl), 
+                        titleX = TRUE, titleY = TRUE, 
+                        widths = c(0.3, 0.35, 0.3), margin = 0.05,
+                        which_layout = FALSE) %>% 
+            layout(xaxis  = list(title = ""),
+                   xaxis2 = list(title = "Dias Necessários para dobrar os casos"),
+                   xaxis3 = list(title = ""),
+                   height = h, width = w,
+                   legend = list(title=list(text='<b> Fase </b>')))
+        
+    } else {
+        plot <- plot_grid(plot_mob, 
+                          plot_total,
+                          plot_acl, 
+                          align = 'h', nrow = 1, ncol = 3, scale = 1,
+                          rel_widths = c(0.3, 0.3, 0.4))
+        
+        x.grob <- textGrob("Doubling days of confirmed cases")
+        title.grob <- textGrob(paste0(UF), gp = gpar(fontface = "bold"))
+        
+        grid.arrange(arrangeGrob(plot, bottom = x.grob, top = title.grob))
+    }
+    
+}
+
+
+plot_shiny <- function(UF, tipo) {
+    UF <- UF %>% iconv(from = "UTF-8", to = "ASCII//TRANSLIT")
+    
+    if(tipo == "atividade") {
+        p <- plot_comparacao_estado(UF, plotly = TRUE)
+    } else {
+        p <- plot_uf_energia(UF)
+    }
+    
+    return(p)
+}
 
 
 # load data ---------------------------------------------------------------

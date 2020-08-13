@@ -1,0 +1,12 @@
+name: appatividade
+title: appatividade
+username:
+account: insightdataanalysis
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2667361
+bundleId: 3511897
+url: https://insightdataanalysis.shinyapps.io/appatividade/
+when: 1597338344.50773
+asMultiple: FALSE
+asStatic: FALSE
