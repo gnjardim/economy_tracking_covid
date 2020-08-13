@@ -161,10 +161,10 @@ plot_comparacao_estado <- function(UF, plotly = FALSE) {
                                 '<br>Dias após a fase de "Response":', pos_response,
                                 '<br>Data:', data))
         ) +
+        geom_hline(yintercept = 1, color = "red") +
         geom_path(color = "steelblue", size = 0.8) +
         ylab("Índice de Mobilidade") +
         ggtitle("Mobilidade") +
-        geom_hline(yintercept = 1, color = "red") +
         ylim(ymin+0.99, ymax) +
         theme(axis.title.x = element_blank(),
               legend.position = "none") +
@@ -186,10 +186,10 @@ plot_comparacao_estado <- function(UF, plotly = FALSE) {
                                 '<br>Dias após a fase de "Response":', pos_response,
                                 '<br>Data:', data))
         ) +
+        geom_hline(yintercept = 1, color = "red") +
         geom_path(color = "steelblue", size = 0.8) +
         ylab("Índice de Atividade") +
         ggtitle("Atividade/Mobilidade") +
-        geom_hline(yintercept = 1, color = "red") +
         ylim(ymin+0.99, ymax) +
         theme(axis.title.x = element_blank(),
               legend.position = "none") +
@@ -211,8 +211,8 @@ plot_comparacao_estado <- function(UF, plotly = FALSE) {
                                 '<br>Dias necessários para dobrar os casos:', round(smth_date, 2),
                                 '<br>Data:', data))
         ) +
-        geom_path(color = "steelblue", size = 0.8) +
         geom_hline(yintercept = 0, color = "red") +
+        geom_path(color = "steelblue", size = 0.8) +
         #geom_point(data = base_UF[base_UF$data == start_response, ], 
         #           mapping = aes(shape = "Response"), 
         #           size = 3) +
@@ -235,8 +235,8 @@ plot_comparacao_estado <- function(UF, plotly = FALSE) {
                                 '<br>Dias necessários para dobrar os casos:', round(smth_date, 2),
                                 '<br>Data:', data))
         ) +
-        geom_path(color = "steelblue", size = 0.8) +
         geom_hline(yintercept = 0, color = "red") +
+        geom_path(color = "steelblue", size = 0.8) +
         geom_point(data = base_UF[base_UF$data == start_response, ], 
                    mapping = aes(y = 10000, shape = "Response"), 
                    size = 3) +
