@@ -335,7 +335,7 @@ choices <- c("Brasil", unique(estados %>% pull(estado))) %>%
     str_replace("Espirito Santo", "Espírito Santo") %>% 
     str_replace("Goias", "Goiás") %>% 
     str_replace("Maranhao", "Maranhão") %>% 
-    str_replace("Para", "Pará") %>% 
+    str_replace("^Para$", "Pará") %>% 
     str_replace("Paraiba", "Paraíba") %>% 
     str_replace("Parana", "Paraná") %>% 
     str_replace("Piaui", "Piauí") %>% 
