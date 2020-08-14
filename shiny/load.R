@@ -272,8 +272,8 @@ plot_comparacao_estado <- function(UF, plotly = FALSE) {
     
     # join plots
     if(plotly) {
-        h <- 820
-        w <- 1030
+        h <- 800
+        w <- 890
         
         # plotly options
         plot_mob <- ggplotly(plot_mob, tooltip = "text") %>% 
