@@ -36,21 +36,24 @@ ui <- fluidPage(
     # Sidebar
     sidebarLayout(
         sidebarPanel(
-            actionButton(inputId='ab1', label="Ir para o Painel de Previsões",
+            # buttons
+            actionButton(inputId = 'ab1', label = "Ir para o Painel de Previsões",
                          icon = icon("th"),
-                         onclick ="location.href='https://insightdataanalysis.shinyapps.io/covidforecast/'",
-                         style="color: #fff; background-color: #337ab7; border-color: #2e6da4"),
+                         onclick = "location.href='https://insightdataanalysis.shinyapps.io/covidforecast/'",
+                         style = "color: #fff; background-color: #337ab7; border-color: #2e6da4"),
             p(),
-            actionButton(inputId='ab1', label="Ir para o Painel de Subnotificação",
+            actionButton(inputId = 'ab1', label = "Ir para o Painel de Subnotificação",
                          icon = icon("th"),
-                         onclick ="location.href='https://insightdataanalysis.shinyapps.io/reportacao/'",
-                         style="color: #fff; background-color: #337ab7; border-color: #2e6da4"),
+                         onclick = "location.href='https://insightdataanalysis.shinyapps.io/reportacao/'",
+                         style = "color: #fff; background-color: #337ab7; border-color: #2e6da4"),
             p(),
-            actionButton(inputId='ab2', label="Ir para o Painel de Regiões de Saúde",
+            actionButton(inputId = 'ab2', label = "Ir para o Painel de Regiões de Saúde",
                          icon = icon("th"),
-                         onclick ="location.href='https://insightdataanalysis.shinyapps.io/Rt_RS/'",
-                         style="color: #fff; background-color: #337ab7; border-color: #2e6da4"),
+                         onclick = "location.href='https://insightdataanalysis.shinyapps.io/Rt_RS/'",
+                         style = "color: #fff; background-color: #337ab7; border-color: #2e6da4"),
             p(),
+            
+            # input
             selectInput(inputId  = "UF",
                         label    = "Região",
                         choices  = choices,
@@ -77,6 +80,7 @@ ui <- fluidPage(
                                  
                                  withSpinner(plotlyOutput("plot_atividade"))
                                  ),
+                        
                         tabPanel("Observado x Predito",
                                  box(width = NULL, collapsible = TRUE, collapsed = FALSE,
                                      title = 'Informações - clique no "-" para colapsar',
@@ -88,7 +92,8 @@ ui <- fluidPage(
                                      p('A partir do dia 25/02/2020 (marcado pela linha vermelha tracejada), usamos os valores preditos como o esperado para o consumo de energia. A diferença percentual mostrada na aba "Índices de Atividade" para os gráficos "Energia Total" e "Energia (apenas ACL)" se baseia nesses valores.')
                                      ),
                                  
-                                 withSpinner(plotlyOutput("plot_pred")))
+                                 withSpinner(plotlyOutput("plot_pred"))
+                                 )
             
                         )
                 )
@@ -96,7 +101,7 @@ ui <- fluidPage(
 )
 
 
-
+# server ------------------------------------------------------------------
 server <- function(input, output) {
 
     # The currently selected tab from the first box
@@ -116,5 +121,5 @@ server <- function(input, output) {
 }
 
 
-# Run the application 
+# run ---------------------------------------------------------------------
 shinyApp(ui, server)
