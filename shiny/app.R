@@ -83,7 +83,7 @@ ui <- fluidPage(
 
 
 server <- function(input, output) {
-    
+
     # The currently selected tab from the first box
     output$plot_atividade <- renderPlotly({
         
