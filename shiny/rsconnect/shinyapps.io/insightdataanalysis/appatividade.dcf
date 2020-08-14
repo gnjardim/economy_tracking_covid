@@ -5,8 +5,8 @@ account: insightdataanalysis
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 2667361
-bundleId: 3512874
+bundleId: 3516248
 url: https://insightdataanalysis.shinyapps.io/appatividade/
-when: 1597352434.44889
+when: 1597415630.92634
 asMultiple: FALSE
 asStatic: FALSE
