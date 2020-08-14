@@ -273,7 +273,7 @@ plot_comparacao_estado <- function(UF, plotly = FALSE) {
     # join plots
     if(plotly) {
         h <- 800
-        w <- 890
+        w <- 950
         
         # plotly options
         plot_mob <- ggplotly(plot_mob, tooltip = "text") %>% 
@@ -341,7 +341,7 @@ plot_comparacao_estado <- function(UF, plotly = FALSE) {
                           plot_total,
                           plot_acl, 
                           align = 'h', nrow = 2, ncol = 2, scale = 1,
-                          rel_widths = c(0.3, 0.3, 0.4))
+                          rel_widths = c(0.5, 0.5))
         
         x.grob <- textGrob("Doubling days of confirmed cases")
         title.grob <- textGrob(paste0(UF), gp = gpar(fontface = "bold"))

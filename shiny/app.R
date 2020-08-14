@@ -36,6 +36,21 @@ ui <- fluidPage(
     # Sidebar
     sidebarLayout(
         sidebarPanel(
+            actionButton(inputId='ab1', label="Ir para o Painel de Previsões",
+                         icon = icon("th"),
+                         onclick ="location.href='https://insightdataanalysis.shinyapps.io/covidforecast/'",
+                         style="color: #fff; background-color: #337ab7; border-color: #2e6da4"),
+            p(),
+            actionButton(inputId='ab1', label="Ir para o Painel de Subnotificação",
+                         icon = icon("th"),
+                         onclick ="location.href='https://insightdataanalysis.shinyapps.io/reportacao/'",
+                         style="color: #fff; background-color: #337ab7; border-color: #2e6da4"),
+            p(),
+            actionButton(inputId='ab2', label="Ir para o Painel de Regiões de Saúde",
+                         icon = icon("th"),
+                         onclick ="location.href='https://insightdataanalysis.shinyapps.io/Rt_RS/'",
+                         style="color: #fff; background-color: #337ab7; border-color: #2e6da4"),
+            p(),
             selectInput(inputId  = "UF",
                         label    = "Região",
                         choices  = choices,
