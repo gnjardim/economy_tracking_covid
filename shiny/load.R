@@ -381,3 +381,14 @@ choices <- c("Brasil", unique(estados %>% pull(estado))) %>%
     str_replace("Piaui", "Piauí") %>% 
     str_replace("Rondonia", "Rondônia") %>% 
     str_replace("Sao Paulo", "São Paulo")
+
+
+# remove energy from problematic states -----------------------------------
+bad_states <- c("Bahia", "Espirito Santo", "Goias", "Mato Grosso",
+                "Mato Grosso do Sul", "Piaui", "Rondonia", "Sergipe",
+                "Tocantins")
+
+estados <- estados %>% 
+    mutate(ma_dif_baseline = ifelse(estado %in% bad_states, NA, ma_dif_baseline),
+           ma_dif_baseline_acl = ifelse(estado %in% bad_states, NA, ma_dif_baseline_acl))
+
