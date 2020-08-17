@@ -15,6 +15,7 @@ energy <- read_csv2("input/energia_data.csv") %>%
                     trimws(),
            ramo = iconv(ramo, from = "UTF-8", to = "ASCII//TRANSLIT") %>% 
                   trimws()) %>% 
+    select(-`"Consumo (MWm)"`) %>% 
     clean_names() %>% 
     mutate(data = as.Date(data, "%d/%m/%Y")) %>% 
     arrange(data, classe, ramo) %>% 
