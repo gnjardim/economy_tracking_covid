@@ -253,7 +253,7 @@ plot_comparacao_estado <- function(UF, plotly = FALSE) {
         ggtitle("Energia (apenas ACL)")
     
     
-    if(length(start_recovery) != 0) {
+    if (length(start_recovery) != 0) {
         plot_mob <- plot_mob +
             geom_point(data = base_UF[base_UF$data == start_recovery, ],
                        mapping = aes(x = smth_date, y = smth_mob),
@@ -271,7 +271,7 @@ plot_comparacao_estado <- function(UF, plotly = FALSE) {
     }
     
     # join plots
-    if(plotly) {
+    if (plotly) {
         h <- 800
         w <- 950
         

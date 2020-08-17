@@ -122,7 +122,7 @@ plot_regiao_energia(acl_energy_df, "Norte", plot_fit_energy)
 ## Atividade x COVID  
 
 ### Região Sudeste  
-```{r echo = FALSE, warning = FALSE, message = FALSE, fig.width = 9, fig.height = 3}
+```{r echo = FALSE, warning = FALSE, message = FALSE, fig.width = 9, fig.height = 6}
 lista_UF <- bases_estados_df %>% 
     filter(regiao == "Sudeste") %>%
     pull(estado) %>%
@@ -133,7 +133,7 @@ walk(lista_UF, ~plot_comparacao_estado(.x))
 \pagebreak
 
 ### Região Sul  
-```{r echo = FALSE, warning = FALSE, message = FALSE, fig.width = 9, fig.height = 3}
+```{r echo = FALSE, warning = FALSE, message = FALSE, fig.width = 9, fig.height = 6}
 lista_UF <- bases_estados_df %>% 
     filter(regiao == "Sul") %>%
     pull(estado) %>%
@@ -144,7 +144,7 @@ walk(lista_UF, ~plot_comparacao_estado(.x))
 \pagebreak
 
 ### Região Centro-Oeste  
-```{r echo = FALSE, warning = FALSE, message = FALSE, fig.width = 9, fig.height = 3}
+```{r echo = FALSE, warning = FALSE, message = FALSE, fig.width = 9, fig.height = 6}
 lista_UF <- bases_estados_df %>% 
     filter(regiao =="Centro-Oeste") %>%
     pull(estado) %>%
@@ -155,7 +155,7 @@ walk(lista_UF, ~plot_comparacao_estado(.x))
 
 \pagebreak
 ### Região Nordeste  
-```{r echo = FALSE, warning = FALSE, message = FALSE, fig.width = 9, fig.height = 3}
+```{r echo = FALSE, warning = FALSE, message = FALSE, fig.width = 9, fig.height = 6}
 lista_UF <- bases_estados_df %>% 
     filter(regiao == "Nordeste") %>%
     pull(estado) %>%
@@ -166,7 +166,7 @@ walk(lista_UF, ~plot_comparacao_estado(.x))
 
 \pagebreak
 ### Região Norte  
-```{r echo = FALSE, warning = FALSE, message = FALSE, fig.width = 9, fig.height = 3}
+```{r echo = FALSE, warning = FALSE, message = FALSE, fig.width = 9, fig.height = 6}
 lista_UF <- bases_estados_df %>% 
     filter(regiao == "Norte") %>%
     pull(estado) %>%
