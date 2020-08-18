@@ -332,8 +332,8 @@ plot_comparacao_estado <- function(UF, plotly = FALSE) {
                              style(plot_total, showlegend = FALSE), 
                              plot_acl), 
                         titleX = TRUE, titleY = TRUE, nrows = 2,
-                        shareX = TRUE,
-                        widths = c(0.5, 0.5), margin = 0.03,
+                        widths = c(0.5, 0.5), 
+                        margin = c(0.01, 0.01, 0.05, 0.05),
                         which_layout = FALSE) %>% 
             layout(height = h, width = w,
                    legend = list(title=list(text='<b> Fase </b>'))) %>% 
