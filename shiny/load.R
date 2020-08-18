@@ -3,7 +3,7 @@ theme_set(theme_bw())
 
 
 # functions ---------------------------------------------------------------
-plot_fit_energy <- function(df, plotly = FALSE) {
+plot_fit_energy <- function(df, plotly = FALSE, xpos) {
     
     if(plotly) {
         total <- df %>% 
@@ -68,18 +68,19 @@ plot_fit_energy <- function(df, plotly = FALSE) {
         
         # join plots
         p <- subplot(list(style(p1, showlegend = FALSE), p2), nrows = 2, 
-                     shareY = TRUE, titleY = TRUE,
+                     shareY = TRUE, titleY = TRUE, 
                      titleX = TRUE, margin = 0.1) %>% 
             layout(xaxis  = list(title = ""),
                    xaxis2 = list(title = ""),
                    yaxis  = list(title = ""),
                    yaxis2 = list(title = ""),
                    annotations = list(
-                       list(x = -0.09,
+                       list(x = xpos,
                             text = "Média móvel de 7 dias do Consumo de Energia",
+                            font = list(size = 14),
                             textangle = 270,
-                            showarrow = F, xref='paper', yref='paper', size=46)),
-                   height = 600, width = 870)
+                            showarrow = FALSE, xref='paper', yref='paper')),
+                   height = 600, width = 750)
         
     } else {
         
@@ -106,12 +107,15 @@ plot_uf_energia <- function(UF) {
     
     if (UF == "Brasil") {
         base_regiao <- brasil
+        xpos <- -0.12
     } else {
         base_regiao <- estados %>% 
             filter(estado == UF)
+        xpos <- ifelse(mean(base_regiao$ma_consumo, na.rm = TRUE) > 1000, 
+                       -0.12, -0.095)
     }
     
-    return(plot_fit_energy(base_regiao, plotly = TRUE)) 
+    return(plot_fit_energy(base_regiao, plotly = TRUE, xpos)) 
 }
 
 
@@ -163,7 +167,7 @@ plot_comparacao_estado <- function(UF, plotly = FALSE) {
         ) +
         geom_hline(yintercept = 1, color = "red") +
         geom_path(color = "steelblue", size = 0.8) +
-        ylab("Índice de Mobilidade") +
+        ylab("Índice") +
         ggtitle("Mobilidade") +
         ylim(ymin+0.99, ymax) +
         theme(axis.title.x = element_blank(),
@@ -188,10 +192,11 @@ plot_comparacao_estado <- function(UF, plotly = FALSE) {
         ) +
         geom_hline(yintercept = 1, color = "red") +
         geom_path(color = "steelblue", size = 0.8) +
-        ylab("Índice de Atividade") +
+        ylab("") +
         ggtitle("Atividade/Mobilidade") +
         ylim(ymin+0.99, ymax) +
         theme(axis.title.x = element_blank(),
+              axis.text.y = element_blank(),
               legend.position = "none") +
         geom_point(data = base_UF[base_UF$data == start_response, ],
                    mapping = aes(shape = "Response"), 
@@ -244,12 +249,13 @@ plot_comparacao_estado <- function(UF, plotly = FALSE) {
                    mapping = aes(y = 10000, shape = "Trough"),
                    size = 2.75)+
         ylim(ymin, ymax-1) +
-        ylab("Mudança no consumo de energia")  +
+        ylab("")  +
         scale_shape_manual(name = "", 
                            breaks = c("Response", "Trough"),
                            values = shapes,
                            labels = c("Response", "Trough"))+
-        theme(axis.title.x = element_blank()) +
+        theme(axis.title.x = element_blank(),
+              axis.text.y = element_blank()) +
         ggtitle("Energia (apenas ACL)")
     
     
@@ -273,7 +279,7 @@ plot_comparacao_estado <- function(UF, plotly = FALSE) {
     # join plots
     if (plotly) {
         h <- 800
-        w <- 950
+        w <- 750
         
         # plotly options
         plot_mob <- ggplotly(plot_mob, tooltip = "text") %>% 
@@ -326,14 +332,23 @@ plot_comparacao_estado <- function(UF, plotly = FALSE) {
                              style(plot_total, showlegend = FALSE), 
                              plot_acl), 
                         titleX = TRUE, titleY = TRUE, nrows = 2,
-                        widths = c(0.5, 0.5), margin = 0.05,
+                        shareX = TRUE,
+                        widths = c(0.5, 0.5), margin = 0.03,
                         which_layout = FALSE) %>% 
-            layout(xaxis  = list(title = ""),
-                   xaxis2 = list(title = ""),
-                   xaxis3 = list(title = "Dias necessários para dobrar os casos"),
-                   xaxis4 = list(title = "Dias necessários para dobrar os casos"),
-                   height = h, width = w,
-                   legend = list(title=list(text='<b> Fase </b>')))
+            layout(height = h, width = w,
+                   legend = list(title=list(text='<b> Fase </b>'))) %>% 
+            add_annotations(
+                text = "Dias necessários para dobrar os casos",
+                x = 0.5,
+                y = 0,
+                yref = "paper",
+                xref = "paper",
+                xanchor = "center",
+                yanchor = "bottom",
+                yshift = -38,
+                showarrow = FALSE,
+                font = list(size = 14)
+            ) 
         
     } else {
         plot <- plot_grid(plot_mob, 
@@ -353,6 +368,7 @@ plot_comparacao_estado <- function(UF, plotly = FALSE) {
 
 
 plot_shiny <- function(UF, tipo) {
+    
     UF <- UF %>% iconv(from = "UTF-8", to = "ASCII//TRANSLIT")
     
     if(tipo == "atividade") {
