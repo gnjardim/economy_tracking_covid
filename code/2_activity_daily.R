@@ -14,7 +14,7 @@ theme_set(theme_classic() +
 plot_index <- function(var, title, filename) {
     
     p <- ggplot(brasil, aes(x = data, y = {{ var }})) +
-        geom_line(color = "steelblue", size = 1.2) +
+        geom_line(color = "steelblue") +
         scale_x_date(limits = c(as.Date("2020-03-17"), as.Date("2020-08-14")),
                      date_breaks = "1 week") +
         scale_y_continuous(limits = c(0.40, 1.10),
