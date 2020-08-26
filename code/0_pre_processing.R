@@ -171,7 +171,14 @@ brasil_energy_acl <- acl_energy_df %>%
 brasil <- brasil_energy %>% 
     left_join(brasil_energy_acl) %>% 
     full_join(brasil_df, by = c("data" = "date")) %>% 
-    select(1:15, 29:34, PET_Phase)
+    mutate(estado = "Brasil",
+           regiao = NA) %>% 
+    select(data, estado, regiao, consumo_diario, pred, 
+           doubl_days, smth_date, 
+           mobility, smth_mob,
+           activity, ma_consumo, ma_pred, dif_baseline, ma_dif_baseline, 
+           PET_Phase, consumo_diario_acl, pred_acl, ma_consumo_acl, ma_pred_acl,
+           dif_baseline_acl, ma_dif_baseline_acl)
     
 estados <- total_energy_df %>% 
     left_join(acl_energy_df %>% 
@@ -180,7 +187,13 @@ estados <- total_energy_df %>%
                          ma_consumo_acl      = ma_consumo     ,
                          ma_pred_acl         = ma_pred        ,
                          dif_baseline_acl    = dif_baseline   ,
-                         ma_dif_baseline_acl = ma_dif_baseline))
+                         ma_dif_baseline_acl = ma_dif_baseline)) %>% 
+    select(data, estado, regiao, consumo_diario, pred, 
+           doubl_days, smth_date, 
+           mobility, smth_mob,
+           activity, ma_consumo, ma_pred, dif_baseline, ma_dif_baseline, 
+           PET_Phase, consumo_diario_acl, pred_acl, ma_consumo_acl, ma_pred_acl,
+           dif_baseline_acl, ma_dif_baseline_acl)
     
 
 # export data -------------------------------------------------------------

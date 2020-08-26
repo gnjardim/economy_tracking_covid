@@ -52,12 +52,16 @@ ui <- fluidPage(
                          onclick = "location.href='https://insightdataanalysis.shinyapps.io/Rt_RS/'",
                          style = "color: #fff; background-color: #337ab7; border-color: #2e6da4"),
             p(),
+            p(),
             
             # input
             selectInput(inputId  = "UF",
                         label    = "Região",
                         choices  = choices,
-                        selected = "Brasil")
+                        selected = "Brasil"),
+            
+            p(),
+            downloadLink("downloadData", "Baixar Dados")
             
             ),
         
@@ -121,6 +125,17 @@ server <- function(input, output) {
                    tipo = 'pred')
         
     })
+    
+    output$downloadData <- downloadHandler(
+        filename = "covid_atividade.csv",
+        content = function(file) {
+            write_csv2(rbind(brasil, estados) %>% 
+                           rename(ma_doubl_days = smth_date,
+                                  ma_mobility   = smth_mob), 
+                       file)
+        },
+        contentType = "text/csv"
+    )
 }
 
 
