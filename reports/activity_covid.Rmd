@@ -11,6 +11,7 @@ library(tidyverse)
 library(lubridate)
 library(janitor)
 library(modelr)
+library(here)
 library(zoo)
 library(cowplot)
 library(grid)
@@ -22,10 +23,10 @@ theme_set(theme_bw())
 
 ```{r source, include=FALSE}
 # source code
-source("code/_proc_functions.R", encoding = "UTF-8")
-source("code/_plot_functions.R", encoding = "UTF-8")
-source("code/0_pre_processing.R", encoding = "UTF-8")
-source("code/1_checking_gdp_comp.R", encoding = "UTF-8")
+source(here("code/_proc_functions.R"), encoding = "UTF-8")
+source(here("code/_plot_functions.R"), encoding = "UTF-8")
+source(here("code/0_pre_processing.R"), encoding = "UTF-8")
+source(here("code/1_checking_gdp_comp.R"), encoding = "UTF-8")
 ```
 
 # Brasil  
