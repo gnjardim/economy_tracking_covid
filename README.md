@@ -13,4 +13,5 @@ Measuring and tracking Brazil's pandemic economy using mobility and energy data
 
 ### Shiny app
 - `shiny/data` contains all files needed for running the app.
+- `shiny/load.R` contains the functions needed in the app and code for loading data.
 - `shiny/app.R` contains the ui and server code.

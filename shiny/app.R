@@ -61,7 +61,9 @@ ui <- fluidPage(
                         selected = "Brasil"),
             
             p(),
-            downloadLink("downloadData", "Baixar Dados")
+            downloadLink("downloadData", "Baixar Dados"),
+            p(),
+            a(href = "https://github.com/gnjardim/economy_tracking_covid", "Códigos", rel="noopener", target="_blank")
             
             ),
         
