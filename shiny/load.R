@@ -400,7 +400,7 @@ choices <- c("Brasil", unique(estados %>% pull(estado))) %>%
 
 
 # remove energy from problematic states -----------------------------------
-bad_states <- c("Acre", "Bahia", "Espirito Santo", "Goias", "Mato Grosso",
+bad_states <- c("Acre", "Goias", "Mato Grosso",
                 "Mato Grosso do Sul", "Piaui", "Rio Grande do Sul",
                 "Rondonia", "Sergipe", "Tocantins")
 
