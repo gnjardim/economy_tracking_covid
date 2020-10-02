@@ -83,7 +83,7 @@ doubl_days <- map2(brasil$half_cum_cases, brasil$date,
 brasil_df <- brasil %>% 
     mutate(doubl_days = doubl_days) %>% 
     create_columns() %>% 
-    filter(!is.na(mobility))
+    filter(!is.na(doubl_days))
 
 
 # states ------------------------------------------------------------------
@@ -104,7 +104,7 @@ bases_estados_df <- map(list_estados, doubl_dates_st) %>%
     ungroup() %>%
     arrange(state, date, regiao) %>% 
     create_columns() %>% 
-    filter(!is.na(mobility))
+    filter(!is.na(doubl_days))
 
 
 # consumo total -----------------------------------------------------------
