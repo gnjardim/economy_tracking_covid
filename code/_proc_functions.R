@@ -72,7 +72,9 @@ create_columns <- function(df) {
         mutate(mobility  = ((retail_and_recreation_percent_change_from_baseline + 
                              grocery_and_pharmacy_percent_change_from_baseline) / 2 +  
                                 workplaces_percent_change_from_baseline) / 2,
-               smth_date = rollmean(doubl_days, 7, na.pad = T, align = "right"),
+               mobility  = ifelse(between(date, as.Date("2020-03-15"), Sys.Date()-7) &
+                                  is.na(mobility), dplyr::lag(mobility), mobility),
+               smth_date = rollmean(doubl_days, 7, na.pad = TRUE, align = "right"),
                smth_date = ifelse(half_cum_deaths == 0 & 
                                   PET_Phase != "Preparation" &
                                   is.na(smth_date), 
